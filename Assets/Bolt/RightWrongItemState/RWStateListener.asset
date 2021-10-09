@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1893448595, guid: a040fb66244a7f54289914d98ea4ef7d, type: 3}
+  m_Name: RWStateListener
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"graph":{"variables":{"collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[{"key":"output","label":null,"summary":null,"hideLabel":true}],"valueInputDefinitions":[],"valueOutputDefinitions":[{"_type":"RightWrongItemState","key":"State","label":null,"summary":null,"hideLabel":false}],"title":null,"summary":null,"pan":{"x":4.5,"y":-611.0},"zoom":1.0,"elements":[{"argumentCount":1,"coroutine":false,"defaultValues":{"target":null,"name":{"$content":"DidNeedChangeToRWState","$type":"System.String"}},"position":{"x":-342.0,"y":-668.0},"guid":"c60300dc-38b5-4971-9425-4727fae13c08","$version":"A","$type":"Bolt.CustomEvent","$id":"11"},{"defaultValues":{},"position":{"x":81.0,"y":-665.0},"guid":"32a0a256-e145-4e18-b455-61283ed30e0e","$version":"A","$type":"Bolt.GraphOutput","$id":"13"},{"sourceUnit":{"$ref":"11"},"sourceKey":"trigger","destinationUnit":{"$ref":"13"},"destinationKey":"output","guid":"583392de-1e1c-4453-846b-b975d30283f1","$type":"Bolt.ControlConnection"},{"sourceUnit":{"$ref":"11"},"sourceKey":"argument_0","destinationUnit":{"$ref":"13"},"destinationKey":"State","guid":"3ecd9e63-ece7-4e0c-83a2-940889fc9b95","$type":"Bolt.ValueConnection"}],"$version":"A"}}'
+    _objectReferences: []
