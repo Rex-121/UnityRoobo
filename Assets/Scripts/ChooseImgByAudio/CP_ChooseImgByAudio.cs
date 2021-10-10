@@ -17,21 +17,9 @@ public class CP_ChooseImgByAudio : CoursewarePlayer
     [LabelText("模版")]
     public Dictionary<ChooseImgByAudioTemplate, ChooseImgByAudioTemplateStruct> templates = new Dictionary<ChooseImgByAudioTemplate, ChooseImgByAudioTemplateStruct>();
 
-    public void DidBeginCourseware()
-    {
-
-    }
-
-    public void DidEndCourseware()
-    {
-
-    }
-
 
     private void Start()
     {
-
-        dataBridge.action += Vvv;
 
         var item = templates[template];
 
@@ -58,20 +46,22 @@ public class CP_ChooseImgByAudio : CoursewarePlayer
 
     }
 
+    private void OnEnable()
+    {
+        dataBridge.action += DidChooseItem;
+    }
+
     private void OnDisable()
     {
-        dataBridge.action -= Vvv;
+        dataBridge.action -= DidChooseItem;
     }
 
-    private void OnDestroy()
+    void DidChooseItem(RightWrongOptionAttachment rw)
     {
-        
-    }
-
-    void Vvv(RightWrongOptionAttachment rw)
-    {
-        Debug.Log("fasdfasd");
-        Debug.Log("选择了" + rw.isTheRightOption);
+        if (rw.isTheRightOption)
+        {
+            dataBridge.didEndCourseware.Invoke(this);
+        }
     }
 
 

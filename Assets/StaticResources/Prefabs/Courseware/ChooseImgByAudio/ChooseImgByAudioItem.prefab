@@ -93,10 +93,10 @@ GameObject:
   - component: {fileID: 1267479169954075350}
   - component: {fileID: 1267479169954075305}
   - component: {fileID: 1267479169954075304}
-  - component: {fileID: 1267479169954075309}
   - component: {fileID: 1267479169954075306}
   - component: {fileID: 1267479169954075307}
   - component: {fileID: 1267479169954075308}
+  - component: {fileID: -8425312308365375544}
   m_Layer: 0
   m_Name: ChooseImgByAudioItem
   m_TagString: Untagged
@@ -196,19 +196,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.4133334, y: 3.9866667}
   m_EdgeRadius: 0
---- !u!114 &1267479169954075309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1267479169954075351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8e5652321079460b8ae543e973a1b92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isTheRightOption: 0
 --- !u!114 &1267479169954075306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,7 +209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    _json: '{"declarations":{"collection":{"$content":[{"name":"RWItemSpite_SO","value":null,"$version":"A"},{"name":"RWDisplayNode","value":{"$content":0,"$type":"UnityEngine.Object"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
+    _json: '{"declarations":{"collection":{"$content":[{"name":"RWItemSpite_SO","value":null,"$version":"A"},{"name":"RWDisplayNode","value":{"$content":0,"$type":"UnityEngine.Object"},"$version":"A"},{"name":"StateLocked","value":{"$content":false,"$type":"System.Boolean"},"$version":"A"}],"$version":"A"},"$version":"A"}}'
     _objectReferences:
     - {fileID: 1267479168430783828}
 --- !u!114 &1267479169954075307
@@ -259,3 +246,18 @@ MonoBehaviour:
     _objectReferences:
     - {fileID: 11400000, guid: 11bfdb98fc0204c0cb838e632cbc9cf8, type: 2}
     - {fileID: 11400000, guid: a751721547f7845eeb6ee8f5aa163242, type: 2}
+--- !u!114 &-8425312308365375544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267479169954075351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a494dfd952c04b3cb6b5c65f1c70f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTheRightOption: 0
+  dataBridge: {fileID: 11400000, guid: a751721547f7845eeb6ee8f5aa163242, type: 2}
+  stateLocked: 0

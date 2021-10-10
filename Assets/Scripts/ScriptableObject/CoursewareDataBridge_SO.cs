@@ -6,7 +6,6 @@ using Sirenix.OdinInspector;
 
 using UnityEngine.Events;
 
-
 public class CoursewareDataBridge_SO : SerializedScriptableObject
 {
 
@@ -17,6 +16,8 @@ public class CoursewareDataBridge_SO : SerializedScriptableObject
     //{
 
     //}
+
+    public UnityAction<CoursewarePlayer> didEndCourseware;
 
     //public void DidEndCourseware()
     //{
