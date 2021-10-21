@@ -37,6 +37,9 @@ namespace Ludiq.Generated.Aot
 	// CoursewarePlayer.op_Equality
 	// CoursewarePlayer.op_Implicit
 	// CoursewarePlayer.op_Inequality
+	// CoursewarePlayItem_SO.op_Equality
+	// CoursewarePlayItem_SO.op_Implicit
+	// CoursewarePlayItem_SO.op_Inequality
 	// CP_ChooseImgByAudio.op_Equality
 	// CP_ChooseImgByAudio.op_Implicit
 	// CP_ChooseImgByAudio.op_Inequality
@@ -1009,6 +1012,41 @@ namespace Ludiq.Generated.Aot
 		// CoursewarePlayer.op_Inequality
 		[global::UnityEngine.Scripting.PreserveAttribute()]
 		public static void CoursewarePlayer_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// CoursewarePlayItem_SO.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void CoursewarePlayItem_SO_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// CoursewarePlayItem_SO.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void CoursewarePlayItem_SO_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// CoursewarePlayItem_SO.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void CoursewarePlayItem_SO_op_Inequality()
 		{
 			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
 			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
