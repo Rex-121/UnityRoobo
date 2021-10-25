@@ -5,7 +5,10 @@ using System;
 
 using Sirenix.OdinInspector;
 
-[RequireComponent(typeof(SpriteRenderer))]
+/// <summary>
+/// 音选图
+/// </summary>
+[RequireComponent(typeof(SpriteRenderer)), RequireComponent(typeof(AudioSource))]
 public class CP_ChooseImgByAudio : CoursewarePlayer
 {
 
@@ -17,6 +20,16 @@ public class CP_ChooseImgByAudio : CoursewarePlayer
     [LabelText("模版")]
     public Dictionary<ChooseImgByAudioTemplate, ChooseImgByAudioTemplateStruct> templates = new Dictionary<ChooseImgByAudioTemplate, ChooseImgByAudioTemplateStruct>();
 
+    [LabelText("反馈音效")]
+    public SoundRightWrong_SO soundEffect;
+
+
+    AudioSource audioSource;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Start()
     {
@@ -28,7 +41,7 @@ public class CP_ChooseImgByAudio : CoursewarePlayer
 
         var positions = item.inLinePositions.GetPositionByLength(length);
 
-        for (int i = 0; i < length; i ++)
+        for (int i = 0; i < length; i++)
         {
             var position = positions.positions[i];
 
@@ -53,18 +66,26 @@ public class CP_ChooseImgByAudio : CoursewarePlayer
 
     private void OnDisable()
     {
+        ClearCoursewarePlayer();
         dataBridge.action -= DidChooseItem;
     }
 
     void DidChooseItem(RightWrongOptionAttachment rw)
     {
+
+        audioSource.clip = rw.isTheRightOption ? soundEffect.right : soundEffect.wrong;
+
+        audioSource.Play();
+
         if (rw.isTheRightOption)
         {
             dataBridge.didEndCourseware.Invoke(this);
+
+            DidEndThisCourseware(this);
         }
+
+
     }
-
-
 
 }
 

@@ -8,23 +8,62 @@ public class CoursewareManager : MonoBehaviour
 {
 
     [LabelText("课件列表")]
-    public List<CoursewarePlayItem_SO> playlist;
+    public CoursewarePlaylist playlist;
 
 
-    void Start()
+    private void Start()
     {
 
-        var gb = playlist[0].coursewarePlayer;
+        Sound.Instance.Play();
 
-        var item = Instantiate(gb);
-
-        item.transform.parent = transform;
+        Next();
 
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void Next()
     {
 
+        ClearStage();
+
+        var cp = playlist.Next();
+
+        if (cp == null) return;
+
+        
+
+        gb = Instantiate(cp.coursewarePlayer);
+
+        cp.MakeData(gb, "");
+
+        gb.transform.parent = transform;
+
+
+        gb.GetComponent<CoursewarePlayer>().DidEndThisCourseware += DidEndACourseware;
     }
+
+    [ReadOnly]
+    public GameObject gb;
+
+    public void ClearStage()
+    {
+
+        if (gb == null) return;
+
+        var cp = gb.GetComponent<CoursewarePlayer>();
+
+        if (cp != null) cp.DidEndThisCourseware -= DidEndACourseware;
+
+        Destroy(gb);
+    }
+
+    void DidEndACourseware(CoursewarePlayer player)
+    {
+        Debug.Log(player + " End");
+        Next();
+    }
+
+
+
+
 }
