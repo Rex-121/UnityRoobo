@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 using Sirenix.OdinInspector;
 
@@ -73,19 +71,33 @@ public class CP_ChooseImgByAudio : CoursewarePlayer
     void DidChooseItem(RightWrongOptionAttachment rw)
     {
 
-        audioSource.clip = rw.isTheRightOption ? soundEffect.right : soundEffect.wrong;
-
-        audioSource.Play();
+        PlaySoundEffect(rw.isTheRightOption);
 
         if (rw.isTheRightOption)
         {
             dataBridge.didEndCourseware.Invoke(this);
 
-            DidEndThisCourseware(this);
+
+            creditDelegate.PlayCreditOnScreen(credit: new Score(), endPlay: () =>
+            {
+                DidEndThisCourseware(this);
+            }); 
+
+
         }
 
 
     }
+
+
+    void PlaySoundEffect(bool isRight)
+    {
+        audioSource.clip = isRight ? soundEffect.right : soundEffect.wrong;
+
+        audioSource.Play();
+
+    }
+
 
 }
 

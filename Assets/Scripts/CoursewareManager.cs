@@ -4,6 +4,7 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using System;
 
+[RequireComponent(typeof(CoursewareCredit))]
 public class CoursewareManager : MonoBehaviour
 {
 
@@ -13,8 +14,6 @@ public class CoursewareManager : MonoBehaviour
 
     private void Start()
     {
-
-        Sound.Instance.Play();
 
         Next();
 
@@ -40,6 +39,8 @@ public class CoursewareManager : MonoBehaviour
 
 
         gb.GetComponent<CoursewarePlayer>().DidEndThisCourseware += DidEndACourseware;
+
+        gb.GetComponent<CoursewarePlayer>().creditDelegate = GetComponent<CoursewareCredit>();
     }
 
     [ReadOnly]

@@ -12,6 +12,12 @@ public abstract class CoursewarePlayer : SerializedMonoBehaviour
     /// </summary>
     public Action<CoursewarePlayer> DidEndThisCourseware;
 
+
+    /// <summary>
+    /// 分数事件代理
+    /// </summary>
+    public CoursewareCreditProtocol creditDelegate;
+
     /// <summary>
     /// 课件准备就绪
     /// </summary>
