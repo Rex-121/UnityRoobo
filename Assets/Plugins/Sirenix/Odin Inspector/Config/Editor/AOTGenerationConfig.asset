@@ -16,7 +16,7 @@ MonoBehaviour:
   deleteDllAfterBuilds: 1
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 637705183357960660
+  lastScan: 637708688383748320
   supportSerializedTypes:
   - TypeName: System.Action`1[[CoursewarePlayer, Assembly-CSharp]], mscorlib
     IsCustom: 0
@@ -25,6 +25,9 @@ MonoBehaviour:
     IsCustom: 0
     Emit: 1
   - TypeName: ChooseImgByAudioTemplateStruct, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: CoursewareCreditProtocol, Assembly-CSharp
     IsCustom: 0
     Emit: 1
   - TypeName: CoursewarePlayer, Assembly-CSharp

@@ -12,8 +12,16 @@ public class CoursewareManager : MonoBehaviour
     public CoursewarePlaylist playlist;
 
 
+
+
     private void Start()
     {
+
+
+
+        FPS.Instance.LockFrame();
+
+
 
         Next();
 
@@ -29,7 +37,7 @@ public class CoursewareManager : MonoBehaviour
 
         if (cp == null) return;
 
-        
+
 
         gb = Instantiate(cp.coursewarePlayer);
 
