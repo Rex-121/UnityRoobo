@@ -486,7 +486,7 @@ MonoBehaviour:
   _overrideStereoPacking: 0
   _stereoRedGreenTint: 0
   _defaultTexture: {fileID: 0}
-  _renderer: {fileID: 1083199172}
+  _renderer: {fileID: 0}
   _materialIndex: -1
   _texturePropertyName: _MainTex
   _offset: {x: 0, y: 0}
