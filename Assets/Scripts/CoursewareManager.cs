@@ -27,7 +27,6 @@ public class CoursewareManager : MonoBehaviour
 
     }
 
-
     void Next()
     {
 
