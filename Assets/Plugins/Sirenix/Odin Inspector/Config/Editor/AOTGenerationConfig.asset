@@ -16,5 +16,70 @@ MonoBehaviour:
   deleteDllAfterBuilds: 1
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 637711283926501720
-  supportSerializedTypes: []
+  lastScan: 637713926902329930
+  supportSerializedTypes:
+  - TypeName: System.Action`1[[CoursewarePlayer, Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: ChooseImgByAudioTemplate, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: ChooseImgByAudioTemplateStruct, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: CoursewareCreditProtocol, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: CoursewarePlayer, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: CP_ChooseImgByAudioItem_SO, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[ChooseImgByAudioTemplate,
+      Assembly-CSharp],[ChooseImgByAudioTemplateStruct, Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib],[InLineDefaultPosition_SO,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.EnumEqualityComparer`1[[ChooseImgByAudioTemplate,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.GenericEqualityComparer`1[[System.Int32,
+      mscorlib]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[ChooseImgByAudioTemplate,
+      Assembly-CSharp]], mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Collections.Generic.IEqualityComparer`1[[System.Int32, mscorlib]],
+      mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: InLineDefaultPosition_SO, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: InLinePositions_SO, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: System.Int32, mscorlib
+    IsCustom: 0
+    Emit: 1
+  - TypeName: RightWrongOptionAttachment, Assembly-CSharp
+    IsCustom: 0
+    Emit: 1
+  - TypeName: UnityEngine.Sprite, UnityEngine.CoreModule
+    IsCustom: 0
+    Emit: 1
+  - TypeName: UnityEngine.Events.UnityAction`1[[CoursewarePlayer, Assembly-CSharp]],
+      UnityEngine.CoreModule
+    IsCustom: 0
+    Emit: 1
+  - TypeName: UnityEngine.Events.UnityAction`1[[RightWrongOptionAttachment, Assembly-CSharp]],
+      UnityEngine.CoreModule
+    IsCustom: 0
+    Emit: 1
