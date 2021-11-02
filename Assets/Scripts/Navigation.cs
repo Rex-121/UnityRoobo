@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(fileName = "导航", menuName = "单例SO/导航")]
 public class Navigation : SingletonSO<Navigation>
