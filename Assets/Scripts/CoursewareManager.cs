@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using System;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CoursewareCredit))]
 public class CoursewareManager : MonoBehaviour
