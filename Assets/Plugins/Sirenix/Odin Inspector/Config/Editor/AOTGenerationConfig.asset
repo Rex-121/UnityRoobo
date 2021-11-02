@@ -16,7 +16,7 @@ MonoBehaviour:
   deleteDllAfterBuilds: 1
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 637713926902329930
+  lastScan: 637714567459783300
   supportSerializedTypes:
   - TypeName: System.Action`1[[CoursewarePlayer, Assembly-CSharp]], mscorlib
     IsCustom: 0

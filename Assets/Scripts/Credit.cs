@@ -1,19 +1,60 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Credit
+[CreateAssetMenu(fileName = "评分画布", menuName = "单例SO/评分画布")]
+public class Credit : SingletonSO<Credit>, CoursewareCreditProtocol
 {
 
-    /// <summary>
-    /// 得分
-    /// </summary>
-    public int score => 0;
+    [SerializeField]
+    private GameObject prefab;
 
-}
+    [SerializeField]
+    private GameObject ratingPrefab;
+
+    private Canvas _canvas;
 
 
-public class Score: Credit
-{
+    private Canvas canvas
+    {
+        get
+        {
+            if (_canvas != null)
+            {
+                return _canvas;
+            }
 
+            var gb = Instantiate(prefab);
+
+            _canvas = gb.GetComponent<Canvas>();
+
+            return _canvas;
+
+        }
+    }
+
+    public Canvas Init()
+    {
+        canvas.gameObject.SetActive(false);
+        return canvas;
+    }
+
+    public void PlayCreditOnScreen(CreditData credit, Action endPlay)
+    {
+
+
+        canvas.gameObject.SetActive(true);
+
+        var gb = Instantiate(ratingPrefab);
+
+        gb.transform.SetParent(canvas.transform);
+
+        Delay.Instance.DelayToCall(3, () =>
+        {
+            canvas.gameObject.SetActive(false);
+            Destroy(gb);
+            endPlay();
+        });
+    }
 }

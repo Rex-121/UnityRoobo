@@ -11,17 +11,14 @@ public class CoursewareManager : MonoBehaviour
     [LabelText("课件列表")]
     public CoursewarePlaylist playlist;
 
-
-
-
     private void Start()
     {
 
-
-
         FPS.Instance.LockFrame();
 
+        CWCanvas.Instance.Init(Camera.main).gameObject.transform.SetParent(transform);
 
+        Credit.Instance.Init().gameObject.transform.SetParent(transform);
 
         Next();
 

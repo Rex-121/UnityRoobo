@@ -9,12 +9,12 @@ public class CoursewareCredit : MonoBehaviour, CoursewareCreditProtocol
 
 
 
-    public void PlayCreditOnScreen(Credit credit, Action endPlay)
+    public void PlayCreditOnScreen(CreditData credit, Action endPlay)
     {
 
         Debug.Log("得分: " + credit.score);
 
-        Delay.Instance.DelayToCall(3, endPlay);
+        Credit.Instance.PlayCreditOnScreen(credit, endPlay);
     }
 
 }
