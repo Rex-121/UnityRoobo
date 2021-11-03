@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
-using System;
-using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CoursewareCredit))]
 public class CoursewareManager : MonoBehaviour
@@ -21,50 +17,62 @@ public class CoursewareManager : MonoBehaviour
 
         Credit.Instance.Init().gameObject.transform.SetParent(transform);
 
+
+        ClearStage();
+
         Next();
 
     }
 
+    /// <summary>
+    /// 准备开始下一课件
+    /// </summary>
     void Next()
     {
-
-        ClearStage();
 
         var cp = playlist.Next();
 
         if (cp == null) return;
 
+        playingCW = Instantiate(cp.coursewarePlayer);
 
+        /// 初始化数据
+        cp.MakeData(playingCW, "");
 
-        gb = Instantiate(cp.coursewarePlayer);
+        playingCW.transform.parent = transform;
 
-        cp.MakeData(gb, "");
-
-        gb.transform.parent = transform;
-
-
-        gb.GetComponent<CoursewarePlayer>().DidEndThisCourseware += DidEndACourseware;
-
-        gb.GetComponent<CoursewarePlayer>().creditDelegate = GetComponent<CoursewareCredit>();
+        /// 绑定结束事件
+        playingCW.GetComponent<CoursewarePlayer>().DidEndThisCourseware += DidEndACourseware;
+        /// 绑定得分事件
+        playingCW.GetComponent<CoursewarePlayer>().creditDelegate = GetComponent<CoursewareCredit>();
     }
 
     [ReadOnly]
-    public GameObject gb;
+    [LabelText("正在播放的课件")]
+    public GameObject playingCW;
 
+    /// <summary>
+    /// 清空舞台
+    /// </summary>
     public void ClearStage()
     {
 
-        if (gb == null) return;
+        if (playingCW == null) return;
 
-        var cp = gb.GetComponent<CoursewarePlayer>();
+        var cp = playingCW.GetComponent<CoursewarePlayer>();
 
         if (cp != null) cp.DidEndThisCourseware -= DidEndACourseware;
 
-        Destroy(gb);
+        Destroy(playingCW);
     }
 
+    /// <summary>
+    /// 课件播放结束
+    /// </summary>
+    /// <param name="player">课件</param>
     void DidEndACourseware(CoursewarePlayer player)
     {
+        ClearStage();
         Debug.Log(player + " End");
         Next();
     }
