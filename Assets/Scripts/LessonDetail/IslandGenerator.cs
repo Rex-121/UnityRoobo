@@ -66,58 +66,61 @@ public class IslandGenerator : MonoBehaviour
         }
     }
 
-
-    // Update is called once per frame
-    void Update()
-    {
-#if UNITY_EDITOR
-        float axis = Input.GetAxis("Horizontal");
-        if (axis != 0)
-        {
-            currentX += axis * speedInEditor * Time.deltaTime;
-            Debug.Log("axis :" + axis + " ,delta time:" + Time.deltaTime + " ,speed:" + speedInEditor + "\n x:" + currentX);
-            if (currentX < 0)
-            {
-                currentX = 0;
-            }
-            else if (currentX > rightAnchor)
-            {
-                currentX = rightAnchor;
-            }
-
-            Camera.main.transform.position = new Vector3(currentX, Camera.main.transform.position.y, Camera.main.transform.position.z);
-        }
-        return;
-#elif UNITY_ANDROID
-        scrollCameraInAndroid();
-#endif
+    public float getRightAnchor() {
+        return rightAnchor;
     }
-    private void scrollCameraInAndroid()
-    {
-        if (Input.touchCount <= 0)
-        {
-            return;
-        }
-        else if (Input.touchCount > 0)
-        {
-            if (Input.touches[0].phase == TouchPhase.Moved)
-            {
-                Vector2 touchV2 = Input.touches[0].deltaPosition;
-                float x = touchV2.x * Time.deltaTime * speed;
 
-                //transform.Translate(new Vector3(x, transform.position.y, transform.position.z));
-                currentX += x;
-                if (currentX > 0)
-                {
-                    currentX = 0;
-                }
-                if (Mathf.Abs(currentX) > rightAnchor)
-                {
-                    currentX = -rightAnchor;
-                }
-                Debug.Log("delta x:" + touchV2.x + " ,delta time:" + Time.deltaTime + " ,speed:" + speed + "\n x:" + currentX);
-                Camera.main.transform.position = new Vector3(-currentX, Camera.main.transform.position.y, Camera.main.transform.position.z);
-            }
-        }
-    }
+//    // Update is called once per frame
+//    void Update()
+//    {
+//#if UNITY_EDITOR
+//        float axis = Input.GetAxis("Horizontal");
+//        if (axis != 0)
+//        {
+//            currentX += axis * speedInEditor * Time.deltaTime;
+//            Debug.Log("axis :" + axis + " ,delta time:" + Time.deltaTime + " ,speed:" + speedInEditor + "\n x:" + currentX);
+//            if (currentX < 0)
+//            {
+//                currentX = 0;
+//            }
+//            else if (currentX > rightAnchor)
+//            {
+//                currentX = rightAnchor;
+//            }
+
+//            Camera.main.transform.position = new Vector3(currentX, Camera.main.transform.position.y, Camera.main.transform.position.z);
+//        }
+//        return;
+//#elif UNITY_ANDROID
+//        scrollCameraInAndroid();
+//#endif
+//    }
+//    private void scrollCameraInAndroid()
+//    {
+//        if (Input.touchCount <= 0)
+//        {
+//            return;
+//        }
+//        else if (Input.touchCount > 0)
+//        {
+//            if (Input.touches[0].phase == TouchPhase.Moved)
+//            {
+//                Vector2 touchV2 = Input.touches[0].deltaPosition;
+//                float x = touchV2.x * Time.deltaTime * speed;
+
+//                //transform.Translate(new Vector3(x, transform.position.y, transform.position.z));
+//                currentX += x;
+//                if (currentX > 0)
+//                {
+//                    currentX = 0;
+//                }
+//                if (Mathf.Abs(currentX) > rightAnchor)
+//                {
+//                    currentX = -rightAnchor;
+//                }
+//                Debug.Log("delta x:" + touchV2.x + " ,delta time:" + Time.deltaTime + " ,speed:" + speed + "\n x:" + currentX);
+//                Camera.main.transform.position = new Vector3(-currentX, Camera.main.transform.position.y, Camera.main.transform.position.z);
+//            }
+//        }
+//    }
 }
