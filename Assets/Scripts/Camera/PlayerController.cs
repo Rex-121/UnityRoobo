@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //没有手指滑动时也得检查
         checkSurpassLimit();
@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
         scrollCameraInAndroid();
 #endif
     }
+ 
 
     private void scrollCameraInAndroid()
     {
@@ -47,7 +48,7 @@ public class PlayerController : MonoBehaviour
             if (Input.touches[0].phase == TouchPhase.Moved)
             {
                 Vector2 touchV2 = Input.touches[0].deltaPosition;
-           
+
                 float v = touchV2.x * speed * Time.deltaTime;
                 v = -v;
                 move(v);
@@ -58,7 +59,8 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("x:" + rb.transform.position.x + " ,right limit:" + rightAnchor + " ,v:" + v);
         //限速，不然容易飞出去
-        if (v > 50) { 
+        if (v > 50)
+        {
             v = 50;
         }
         if (!checkSurpassLimit())
@@ -67,7 +69,8 @@ public class PlayerController : MonoBehaviour
         }
     }
     //检查是否越界
-    private bool checkSurpassLimit() {
+    private bool checkSurpassLimit()
+    {
         if (rb.transform.position.x < 0)
         {
             rb.transform.position = new Vector3(0f, rb.transform.position.y, rb.transform.position.z);
@@ -80,7 +83,8 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(0f, rb.velocity.y);
             return true;
         }
-        else {
+        else
+        {
             return false;
         }
     }
