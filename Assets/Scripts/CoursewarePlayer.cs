@@ -7,6 +7,8 @@ using Sirenix.OdinInspector;
 public abstract class CoursewarePlayer : SerializedMonoBehaviour
 {
 
+    [Header("事件代理")]
+
     /// <summary>
     /// 课件流程结束
     /// </summary>
@@ -17,6 +19,8 @@ public abstract class CoursewarePlayer : SerializedMonoBehaviour
     /// 分数事件代理
     /// </summary>
     public CoursewareCreditProtocol creditDelegate;
+
+
 
     /// <summary>
     /// 课件准备就绪
