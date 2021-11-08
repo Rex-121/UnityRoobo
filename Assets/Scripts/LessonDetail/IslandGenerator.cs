@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Sirenix.OdinInspector;
 public class IslandGenerator : IScrollLimiter
 {
+    [Required]
     public Transform anchor;
+    [Required]
     public GameObject island1, island2, island3, island4;
+    [Required]
+    public GameObject floatingObject;
     private float left;
     private float rightAnchor;
     private int islandCount = 13;
@@ -17,6 +21,8 @@ public class IslandGenerator : IScrollLimiter
         {
             instantiateIsland(i);
         }
+        GameObject floating = Instantiate(floatingObject);
+        floating.GetComponent<PositionBridge>().setRight(rightAnchor);
     }
 
     void instantiateIsland(int index)

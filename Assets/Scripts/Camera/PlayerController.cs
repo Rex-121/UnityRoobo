@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
+//TODO support scroll verticaly
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
+    [Required]
     public float speed;
+    [Required]
     public float speedLimit;
     private float speedInEditor = 3000;
+    [Required]
     public IScrollLimiter scrollLimiter;
     private Rigidbody2D rb;
     private float rightAnchor;
