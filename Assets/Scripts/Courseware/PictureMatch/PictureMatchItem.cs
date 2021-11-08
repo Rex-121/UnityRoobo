@@ -16,6 +16,10 @@ public class PictureMatchItem : MonoBehaviour
 
     private State _state;
 
+
+    [SerializeField]
+    private Transform upsideDownPoint;
+
     [ShowInInspector, PropertyOrder(-1), LabelText("当前状态")]
     public State state
     {
@@ -112,6 +116,8 @@ public class PictureMatchItem : MonoBehaviour
 
         sprite.flipY = upsideDown;
 
+        if (upsideDown) { line.transform.position = upsideDownPoint.position; }
+
     }
 
 
@@ -122,7 +128,7 @@ public class PictureMatchItem : MonoBehaviour
 
         ToggleNormalAndChoosen();
 
-         DidTouchItem?.Invoke(this);
+        DidTouchItem?.Invoke(this);
 
     }
 

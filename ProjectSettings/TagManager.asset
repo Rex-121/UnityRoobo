@@ -52,6 +52,9 @@ TagManager:
   - name: Foreground
     uniqueID: 1263012325
     locked: 0
+  - name: VideoPlayInCW
+    uniqueID: 3583060511
+    locked: 0
   - name: Courseware
     uniqueID: 650955435
     locked: 0
