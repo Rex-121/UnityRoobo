@@ -10,7 +10,7 @@ using UnityEngine.Networking;
 public class ReadFromSandbox : MonoBehaviour
 {
 
-    public SpriteRenderer sprite;
+    //public SpriteRenderer sprite;
 
     // Start is called before the first frame update
     void Start()
@@ -38,15 +38,15 @@ public class ReadFromSandbox : MonoBehaviour
         });
 
 
-        var b = Path.Combine("file://" + Application.persistentDataPath, "aa/abc.png");
+        //var b = Path.Combine("file://" + Application.persistentDataPath, "aa/abc.png");
 
-        WebReqeust.GetTexture(b, (sp) =>
-        {
+        //WebReqeust.GetTexture(b, (sp) =>
+        //{
 
-            Sprite s = Sprite.Create(sp, new Rect(Vector2.zero, new Vector2(sp.width, sp.height)), new Vector2(0.5f, 0.5f));
+        //    Sprite s = Sprite.Create(sp, new Rect(Vector2.zero, new Vector2(sp.width, sp.height)), new Vector2(0.5f, 0.5f));
 
-            sprite.sprite = s;
-        }, (e) => { });
+        //    sprite.sprite = s;
+        //}, (e) => { });
     }
     // Update is called once per frame
     void Update()

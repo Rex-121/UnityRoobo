@@ -11,7 +11,11 @@ public class CoursewareManager : MonoBehaviour
     private void Start()
     {
 
+        Svui.Instance.AddListenerToScreen();
+
         FPS.Instance.LockFrame();
+
+        NativeCalls.Instance.sendMessageToMobileApp("fsaddfas");
 
         CWCanvas.Instance.Init(Camera.main).gameObject.transform.SetParent(transform);
 
