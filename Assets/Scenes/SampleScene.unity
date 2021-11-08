@@ -836,6 +836,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1495499360}
   - component: {fileID: 1495499359}
+  - component: {fileID: 1495499363}
+  - component: {fileID: 1495499362}
+  - component: {fileID: 1495499361}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -880,10 +883,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1821024647
-  m_SortingLayer: 1
+  m_SortingLayerID: -1266823911
+  m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2e02e4189300048d8822b8c2a399e10e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 39b0ff972eec34dd4a38ac97f342e8ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -908,6 +911,65 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1495499361
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495499358}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 12.783695, y: 9.8}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 12.783695, y: 9.8}
+  m_EdgeRadius: 0
+--- !u!114 &1495499362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495499358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -57143145, guid: a040fb66244a7f54289914d98ea4ef7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"nest":{"source":"Embed","macro":null,"embed":{"variables":{"collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":null,"summary":null,"pan":{"x":0.0,"y":0.0},"zoom":1.0,"elements":[{"nest":{"source":"Macro","macro":0,"embed":null},"defaultValues":{"Fix
+      Position":{"$content":true,"$type":"System.Boolean"},"z":{"$content":0.0,"$type":"System.Single"}},"position":{"x":-61.0,"y":38.0},"guid":"e1a08a70-6f95-427f-82b6-df3ab70d0689","$version":"A","$type":"Bolt.SuperUnit","$id":"10"},{"defaultValues":{},"position":{"x":-214.0,"y":42.0},"guid":"3669d61e-cbd1-4fe9-9dda-0865b94f9dad","$version":"A","$type":"Bolt.Self","$id":"13"},{"chainable":false,"member":{"name":"position","parameterTypes":null,"targetType":"UnityEngine.Transform","targetTypeName":"UnityEngine.Transform","$version":"A"},"defaultValues":{"target":null,"input":{"x":0.0,"y":0.0,"z":0.0,"$type":"UnityEngine.Vector3"}},"position":{"x":300.0,"y":33.0},"guid":"5b478235-09a1-40cb-a1f3-b98e695217fc","$version":"A","$type":"Bolt.SetMember","$id":"15"},{"sourceUnit":{"$ref":"10"},"sourceKey":"After
+      Mouse Drag","destinationUnit":{"$ref":"15"},"destinationKey":"assign","guid":"254783d7-fffd-4f9e-883a-6967e8c8b5ec","$type":"Bolt.ControlConnection"},{"sourceUnit":{"$ref":"13"},"sourceKey":"self","destinationUnit":{"$ref":"10"},"destinationKey":"Object","guid":"e71d30f5-b16f-4c6f-b3b0-aeaa155e681b","$type":"Bolt.ValueConnection"},{"sourceUnit":{"$ref":"10"},"sourceKey":"Position","destinationUnit":{"$ref":"15"},"destinationKey":"input","guid":"6fb645eb-a71c-4ec7-a5cf-da8ca42da41a","$type":"Bolt.ValueConnection"}],"$version":"A"}}}'
+    _objectReferences:
+    - {fileID: 11400000, guid: 462bf48b7a5ae44c6a72b7abf4379c3d, type: 2}
+--- !u!114 &1495499363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495499358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1465209106, guid: c8d0ad23af520fe46aabe2b1fecf6462, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"declarations":{"collection":{"$content":[],"$version":"A"},"$version":"A"}}'
+    _objectReferences: []
 --- !u!1 &1594986044
 GameObject:
   m_ObjectHideFlags: 0
