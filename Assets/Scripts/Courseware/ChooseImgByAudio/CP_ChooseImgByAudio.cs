@@ -75,16 +75,20 @@ public class CP_ChooseImgByAudio : CoursewarePlayer
 
         if (rw.isTheRightOption)
         {
-            dataBridge.didEndCourseware.Invoke(this);
-
-
-            creditDelegate.PlayCreditOnScreen(credit: new Score(), endPlay: () =>
-            {
-                DidEndThisCourseware(this);
-            }); 
-
-
+            DidEndCourseware();
         }
+
+    }
+
+    override public void DidEndCourseware()
+    {
+        dataBridge.didEndCourseware.Invoke(this);
+
+
+        creditDelegate.PlayCreditOnScreen(credit: new Score(), endPlay: () =>
+        {
+            DidEndThisCourseware(this);
+        });
 
 
     }

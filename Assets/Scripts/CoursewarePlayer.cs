@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using Sirenix.OdinInspector;
 
-public abstract class CoursewarePlayer : SerializedMonoBehaviour
+public abstract class CoursewarePlayer : SerializedMonoBehaviour, CoursewarePlayOrder
 {
 
     [Header("事件代理")]
@@ -33,6 +33,27 @@ public abstract class CoursewarePlayer : SerializedMonoBehaviour
     {
         DidEndThisCourseware = null;
     }
+
+    public virtual void DidStartCourseware()
+    {
+        
+    }
+
+    public virtual void DidEndCourseware()
+    {
+       
+    }
+}
+
+
+
+public interface CoursewarePlayOrder
+{
+
+    public void DidStartCourseware();
+
+
+    public void DidEndCourseware();
 
 }
 
