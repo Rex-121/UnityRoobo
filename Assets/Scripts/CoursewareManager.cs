@@ -1,5 +1,6 @@
 using UnityEngine;
 using Sirenix.OdinInspector;
+using System;
 
 [RequireComponent(typeof(CoursewareCredit))]
 public class CoursewareManager : MonoBehaviour
@@ -15,7 +16,7 @@ public class CoursewareManager : MonoBehaviour
 
         FPS.Instance.LockFrame();
 
-        NativeCalls.Instance.sendMessageToMobileApp("fsaddfas");
+
 
         CWCanvas.Instance.Init(Camera.main).gameObject.transform.SetParent(transform);
 
@@ -46,7 +47,10 @@ public class CoursewareManager : MonoBehaviour
         playingCW.transform.parent = transform;
 
         /// 绑定结束事件
-        playingCW.GetComponent<CoursewarePlayer>().DidEndThisCourseware += DidEndACourseware;
+        //playingCW.GetComponent<CoursewarePlayer>().DidEndThisCourseware += DidEndACourseware;
+
+
+        playingCW.GetComponent<CoursewarePlayer>().lifetimeDelegate = new CoursewareLifetimeListener((c) => { }, (c) => { }, (c) => { }, end: DidEndACourseware);
         /// 绑定得分事件
         playingCW.GetComponent<CoursewarePlayer>().creditDelegate = GetComponent<CoursewareCredit>();
     }
@@ -63,10 +67,6 @@ public class CoursewareManager : MonoBehaviour
 
         if (playingCW == null) return;
 
-        var cp = playingCW.GetComponent<CoursewarePlayer>();
-
-        if (cp != null) cp.DidEndThisCourseware -= DidEndACourseware;
-
         Destroy(playingCW);
     }
 
@@ -77,11 +77,7 @@ public class CoursewareManager : MonoBehaviour
     void DidEndACourseware(CoursewarePlayer player)
     {
         ClearStage();
-        Debug.Log(player + " End");
+        Logging.Log(player + " End");
         Next();
     }
-
-
-
-
 }

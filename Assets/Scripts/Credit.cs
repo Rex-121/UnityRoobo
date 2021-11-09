@@ -10,9 +10,6 @@ public class Credit : SingletonSO<Credit>, CoursewareCreditProtocol
     [SerializeField]
     private GameObject prefab;
 
-    [SerializeField]
-    private GameObject ratingPrefab;
-
     private Canvas _canvas;
 
 
@@ -46,14 +43,9 @@ public class Credit : SingletonSO<Credit>, CoursewareCreditProtocol
 
         canvas.gameObject.SetActive(true);
 
-        var gb = Instantiate(ratingPrefab);
-
-        gb.transform.SetParent(canvas.transform);
-
         Delay.Instance.DelayToCall(3, () =>
         {
             canvas.gameObject.SetActive(false);
-            Destroy(gb);
             endPlay();
         });
     }

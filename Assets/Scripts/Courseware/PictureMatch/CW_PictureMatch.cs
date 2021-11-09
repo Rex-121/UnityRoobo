@@ -107,7 +107,7 @@ public class CW_PictureMatch : CoursewarePlayer
             {
                 creditDelegate.PlayCreditOnScreen(new Score(), () =>
                 {
-                    DidEndThisCourseware(this);
+                  DidEndCourseware(this);
                 });
             }
 
