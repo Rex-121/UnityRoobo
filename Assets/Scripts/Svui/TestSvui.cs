@@ -16,6 +16,12 @@ public class TestSvui : MonoBehaviour
             //NativeCalls.Instance.sendMessageToMobileApp(f);
             Svui.Instance.SendSvuiData(f);
         });
+
+
+        Logging.Log("1");
+        Logging.Log("2");
+        Logging.Log("3");
+        Logging.Log("4fasdfsadfasdf");
     }
 
     // Update is called once per frame

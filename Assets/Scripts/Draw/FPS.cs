@@ -5,7 +5,7 @@ using UnityEngine;
 public class FPS : SingletonSO<FPS>
 {
 
-    public int fps = 60;
+    public int fps = 30;
 
     public void LockFrame()
     {
