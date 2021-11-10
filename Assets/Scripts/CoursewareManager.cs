@@ -17,16 +17,16 @@ public class CoursewareManager : MonoBehaviour
     private void Start()
     {
 
-        Svui.Instance.AddListenerToScreen();
+        //Svui.Instance.AddListenerToScreen();
 
         FPS.Instance.LockFrame();
-
 
         //cwCanvas = CWCanvas.Instance.Init(Camera.main).gameObject;
         //cwCanvas.transform.SetParent(transform);
 
         Credit.Instance.Init().gameObject.transform.SetParent(transform);
 
+        cwCanvas.GetComponent<Canvas>().worldCamera = Camera.main;
 
         ClearStage();
 
