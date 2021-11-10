@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
+using UnityEngine.UI;
+using UniRx;
 
 public class CW_FollowRead : CoursewarePlayer
 {
@@ -12,8 +15,19 @@ public class CW_FollowRead : CoursewarePlayer
     [SerializeField]
     GameObject canvas;
 
+    public Button MyButton;
+
     void Start()
     {
+
+        var s = UniRx.Observable.Timer(TimeSpan.FromSeconds(11));
+
+        var a = s.Subscribe(_ =>
+       {
+           Logging.Log("fasdfas");
+       });
+
+        //MyButton.onClick.AsObservable().Subscribe(_ => enemy.CurrentHp.Value -= 99);
 
         //var f = "{ \"audio\": \"https://roobo-test.oss-cn-beijing.aliyuncs.com/appcourse/manager/2021-07-13/c3ml5t0rjdcmt7uaegqg.mp3\",\"text\": \"ok\", \"textTimeLine\": [{ \"from\": 1260, \"to\": 1350, \"word\": \"ok\"}]}";
         //Delay.Instance.DelayToCall(4, () =>
@@ -33,10 +47,17 @@ public class CW_FollowRead : CoursewarePlayer
         Delay.Instance.DelayToCall(11, () =>
         {
 
+            a.Dispose();
+
+            Logging.Log("DelayToCall");
+
             Destroy(canvas);
 
             DidEndCourseware(this);
         });
+
+
+
 
     }
 }

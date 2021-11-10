@@ -1,18 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System;
 using System.IO;
-using UnityEngine;
-using System.Collections.Generic;
-using UnityEngine.Networking;
 
 public class ReadFromSandbox : MonoBehaviour
 {
-
-    //public SpriteRenderer sprite;
-
-    // Start is called before the first frame update
     void Start()
     {
 
@@ -48,9 +38,5 @@ public class ReadFromSandbox : MonoBehaviour
         //    sprite.sprite = s;
         //}, (e) => { });
     }
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    
 }
