@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class CW_FollowRead : CoursewarePlayer
 {
-    // Start is called before the first frame update
+
+
+    [SerializeField]
+    Transform readTextPosition;
+
+    [SerializeField]
+    GameObject canvas;
+
     void Start()
     {
 
@@ -13,11 +20,23 @@ public class CW_FollowRead : CoursewarePlayer
         //{
         //    NativeCalls.Instance.sendMessageToMobileApp(f);
         //});
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
+
+        var d = Camera.main.WorldToScreenPoint(readTextPosition.position);
+        Logging.Log(d);
+
+
+        canvas = Instantiate(canvas, Vector3.zero, Quaternion.identity, cwCanvas.transform);
+
+        canvas.transform.localScale = Vector3.one;
+
+        Delay.Instance.DelayToCall(11, () =>
+        {
+
+            Destroy(canvas);
+
+            DidEndCourseware(this);
+        });
 
     }
 }

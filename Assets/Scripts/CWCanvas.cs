@@ -2,7 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 标记为废弃
+/// </summary>
 [CreateAssetMenu(fileName = "课件画布", menuName = "单例SO/课件画布")]
 public class CWCanvas : SingletonSO<CWCanvas>
 {
@@ -39,6 +41,8 @@ public class CWCanvas : SingletonSO<CWCanvas>
     public Canvas Init(Camera camera)
     {
         canvas.renderMode = RenderMode.ScreenSpaceCamera;
+
+        //canvas.GetComponent<Canvs>
 
         if (camera != null)
         {

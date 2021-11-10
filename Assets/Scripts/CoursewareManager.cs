@@ -9,6 +9,11 @@ public class CoursewareManager : MonoBehaviour
     [LabelText("课件列表")]
     public CoursewarePlaylist playlist;
 
+
+    [ShowInInspector]
+    [LabelText("课件画布")]
+    public GameObject cwCanvas;
+
     private void Start()
     {
 
@@ -17,8 +22,8 @@ public class CoursewareManager : MonoBehaviour
         FPS.Instance.LockFrame();
 
 
-
-        CWCanvas.Instance.Init(Camera.main).gameObject.transform.SetParent(transform);
+        //cwCanvas = CWCanvas.Instance.Init(Camera.main).gameObject;
+        //cwCanvas.transform.SetParent(transform);
 
         Credit.Instance.Init().gameObject.transform.SetParent(transform);
 
@@ -45,12 +50,9 @@ public class CoursewareManager : MonoBehaviour
         cp.MakeData(playingCW, "");
 
         playingCW.transform.parent = transform;
-
-        /// 绑定结束事件
-        //playingCW.GetComponent<CoursewarePlayer>().DidEndThisCourseware += DidEndACourseware;
-
-
+        playingCW.GetComponent<CoursewarePlayer>().cwCanvas = cwCanvas;
         playingCW.GetComponent<CoursewarePlayer>().lifetimeDelegate = new CoursewareLifetimeListener((c) => { }, (c) => { }, (c) => { }, end: DidEndACourseware);
+
         /// 绑定得分事件
         playingCW.GetComponent<CoursewarePlayer>().creditDelegate = GetComponent<CoursewareCredit>();
     }

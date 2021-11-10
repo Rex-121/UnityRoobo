@@ -17,6 +17,10 @@ public abstract class CoursewarePlayer : SerializedMonoBehaviour, CoursewareLife
 
 
 
+    public GameObject cwCanvas;
+
+
+
     /// <summary>
     /// 课件准备就绪
     /// </summary>
