@@ -27,11 +27,13 @@ public class DragTarget : MonoBehaviour
         }
         isCollided = true;
         Debug.Log("on collision!!!");
-        if (collision.transform.name.Equals("airplane"))
+        if (collision.transform.name.Equals("dragItem1"))
         {
             audioSource.clip = rwSO.right;
             audioSource.Play();
             spriteRenderer.sprite = collision.transform.GetComponent<SpriteRenderer>().sprite;
+            transform.localScale = collision.transform.localScale;
+            Destroy(collision.gameObject);
         }
         else
         {
