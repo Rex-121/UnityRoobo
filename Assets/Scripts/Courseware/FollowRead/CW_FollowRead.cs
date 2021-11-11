@@ -15,17 +15,17 @@ public class CW_FollowRead : CoursewarePlayer
     [SerializeField]
     GameObject canvas;
 
-    public Button MyButton;
 
     void Start()
     {
-
-        var s = UniRx.Observable.Timer(TimeSpan.FromSeconds(11));
+        
+        var s = UniRx.Observable.Timer(TimeSpan.FromSeconds(11)).TakeUntilDestroy(this);
 
         var a = s.Subscribe(_ =>
        {
            Logging.Log("fasdfas");
        });
+
 
         //MyButton.onClick.AsObservable().Subscribe(_ => enemy.CurrentHp.Value -= 99);
 
@@ -35,29 +35,23 @@ public class CW_FollowRead : CoursewarePlayer
         //    NativeCalls.Instance.sendMessageToMobileApp(f);
         //});
 
-
-        var d = Camera.main.WorldToScreenPoint(readTextPosition.position);
-        Logging.Log(d);
-
-
         canvas = Instantiate(canvas, Vector3.zero, Quaternion.identity, cwCanvas.transform);
 
         canvas.transform.localScale = Vector3.one;
 
-        Delay.Instance.DelayToCall(11, () =>
+
+        string[] values = { "Ha" , "Hunter", "Tom", "Lily", "Jay", "Jim", "Kuku", "Locu" };
+
+        canvas.GetComponent<CW_FollowRead_Canvas>().MakeData(new List<string>(values));
+
+
+        Delay.Instance.DelayToCall(10, () =>
         {
-
-            a.Dispose();
-
-            Logging.Log("DelayToCall");
 
             Destroy(canvas);
 
             DidEndCourseware(this);
         });
-
-
-
 
     }
 }

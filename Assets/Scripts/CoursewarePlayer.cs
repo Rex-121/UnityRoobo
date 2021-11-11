@@ -37,6 +37,12 @@ public abstract class CoursewarePlayer : SerializedMonoBehaviour, CoursewareLife
         creditDelegate = null;
     }
 
+
+    public virtual void Play()
+    {
+
+    }
+
     public virtual void DidLoadCourseware(CoursewarePlayer player)
     {
         lifetimeDelegate?.DidLoadCourseware(player);

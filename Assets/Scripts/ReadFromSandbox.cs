@@ -1,5 +1,8 @@
 using UnityEngine;
 using System.IO;
+using System.Diagnostics;
+
+using UniRx;
 
 public class ReadFromSandbox : MonoBehaviour
 {
@@ -7,26 +10,19 @@ public class ReadFromSandbox : MonoBehaviour
     {
 
 
-        var path = Application.persistentDataPath;
-        Debug.Log("---------------------------");
-        Debug.Log(path);
-        Debug.Log("---------------------------");
-
-        var a = Path.Combine("file://" + Application.persistentDataPath, "aa/abc.wav");
-
-        Debug.Log(a);
-
-        //"https://roobo-test.oss-cn-beijing.aliyuncs.com/appcourse/manager/2021-09-22/c55gk2et0gb0jnjrog3g.wav"
-        WebReqeust.GetAudio(a, (clip) =>
+        WebReqeust.GetAudio("", (clip) =>
         {
-            GetComponent<AudioSource>().clip = clip;
 
-            GetComponent<AudioSource>().Play();
+
         }, (e) => {
-            Debug.Log("errorororororororo");
-            Debug.Log(e);
+            Logging.Log("errorororororororo");
+            Logging.Log(e);
         });
 
+
+        Observable.Timer(System.TimeSpan.FromSeconds(20)).Subscribe(_ => {
+            K();
+        });
 
         //var b = Path.Combine("file://" + Application.persistentDataPath, "aa/abc.png");
 
@@ -38,5 +34,42 @@ public class ReadFromSandbox : MonoBehaviour
         //    sprite.sprite = s;
         //}, (e) => { });
     }
-    
+
+
+
+    void K()
+    {
+        var path = Application.persistentDataPath;
+        Logging.Log("---------------------------");
+        Logging.Log(path);
+        Logging.Log("---------------------------");
+
+        var a = Path.Combine("file://" + Application.persistentDataPath, "aa/abc.wav");
+
+        Logging.Log(a);
+
+        Stopwatch sw = new Stopwatch();
+        sw.Start();
+
+        WebReqeust.GetAudio(a, (clip) =>
+        {
+            sw.Stop();
+
+            UnityEngine.Debug.Log(string.Format("total: {0} ms", sw.ElapsedMilliseconds));
+
+            GetComponent<AudioSource>().clip = clip;
+
+            GetComponent<AudioSource>().Play();
+
+
+        }, (e) => {
+            Logging.Log("errorororororororo");
+            Logging.Log(e);
+            sw.Stop();
+
+            UnityEngine.Debug.Log(string.Format("total: {0} ms", sw.ElapsedMilliseconds));
+        });
+
+    }
+
 }
