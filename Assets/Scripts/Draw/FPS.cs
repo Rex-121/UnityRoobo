@@ -7,12 +7,12 @@ public class FPS : SingletonSO<FPS>
 
     [ShowInInspector]
     [LabelText("默认帧率")]
-    private int fps = 30;
+    private int fps = 60;
 
 
     [ShowInInspector]
     [LabelText("当前帧率")]
-    private int cFps = 30;
+    private int cFps = 60;
 
     /// <summary>
     /// 锁定帧率

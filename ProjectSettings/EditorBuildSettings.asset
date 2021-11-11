@@ -20,7 +20,4 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/LessonDetails.unity
     guid: cb3aeb144060541a8a8916c5a73c9c08
-  - enabled: 0
-    path: Assets/Scenes/NewScene.unity
-    guid: d5e0c1d6b3bc644b3b3c9ab3de997ce5
   m_configObjects: {}
