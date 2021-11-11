@@ -23,9 +23,9 @@ public class Cruiser : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //正确的值应该是screen width ➗2 但是这里不➗2是为了让飞行物飞出屏幕
-        end = GetComponentInParent<PositionBridge>().getRight() + ScreenSize.getScreenWidth();
-        start = -ScreenSize.getScreenWidth();
+        //最后加一个值确保飞到屏幕外
+        end = GetComponentInParent<PositionBridge>().getRight() + ScreenSize.getScreenWidthInUnit();
+        start = -ScreenSize.getScreenWidthInUnit();
         transform.position = new Vector3(reverse ? end : start, transform.position.y, transform.position.z);
         Debug.Log("end:" + end);
         fly();
@@ -58,7 +58,7 @@ public class Cruiser : MonoBehaviour
 
     private void floating()
     {
-      transform.DOMoveY(transform.position.y+waggleVaule, waggleDuration).SetLoops(-1, LoopType.Yoyo);
+        transform.DOMoveY(transform.position.y + waggleVaule, waggleDuration).SetLoops(-1, LoopType.Yoyo);
     }
 
     private void OnDestroy()
@@ -66,9 +66,5 @@ public class Cruiser : MonoBehaviour
         if (null != flyTween) { flyTween.Kill(); }
 
     }
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
 }
