@@ -17,12 +17,9 @@ public class CoursewareManager : MonoBehaviour
     private void Start()
     {
 
-        //Svui.Instance.AddListenerToScreen();
+        NativeBridge.Instance.AddListenerToScreen();
 
         FPS.Instance.LockFrame();
-
-        //cwCanvas = CWCanvas.Instance.Init(Camera.main).gameObject;
-        //cwCanvas.transform.SetParent(transform);
 
         Credit.Instance.Init().gameObject.transform.SetParent(transform);
 
@@ -55,6 +52,9 @@ public class CoursewareManager : MonoBehaviour
 
         /// 绑定得分事件
         playingCW.GetComponent<CoursewarePlayer>().creditDelegate = GetComponent<CoursewareCredit>();
+
+
+        playingCW.GetComponent<CoursewarePlayer>().Play();
     }
 
     [ReadOnly]

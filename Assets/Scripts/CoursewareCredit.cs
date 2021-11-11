@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using System.Diagnostics;
+using UniRx;
 
 public class CoursewareCredit : MonoBehaviour, CoursewareCreditProtocol
 {
@@ -13,7 +15,7 @@ public class CoursewareCredit : MonoBehaviour, CoursewareCreditProtocol
     public void PlayCreditOnScreen(CreditData credit, Action endPlay)
     {
 
-        Debug.Log("得分: " + credit.score);
+        Logging.Log("得分: " + credit.score);
 
         creditPanel.SetActive(true);
 
@@ -25,5 +27,32 @@ public class CoursewareCredit : MonoBehaviour, CoursewareCreditProtocol
 
         });
     }
+
+
+
+    //private void Start()
+    //{
+    //    UniRx.Observable.Timer(System.TimeSpan.FromSeconds(2)).Subscribe(_ =>
+    //    {
+    //        StartCoroutine(GetR());
+    //    });
+        
+    //}
+
+    //IEnumerator GetR()
+    //{
+
+
+    //    Stopwatch sws = new Stopwatch();
+    //    sws.Start();
+        
+    //    var a = Resources.Load("RatingStars");
+
+    //    yield return Instantiate(a, creditPanel.transform);
+
+    //    sws.Stop();
+    //    UnityEngine.Debug.Log(string.Format("total: {0} ms", sws.ElapsedMilliseconds));
+    //}
+
 
 }

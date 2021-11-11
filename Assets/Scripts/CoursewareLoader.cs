@@ -27,6 +27,8 @@ public class CoursewareLoader : MonoBehaviour
             sw.Stop();
 
             UnityEngine.Debug.Log(string.Format("total: {0} ms", sw.ElapsedMilliseconds));
+
+
         });
     }
 

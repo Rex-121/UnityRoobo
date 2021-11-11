@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b1558669de874682838b9fcb5e68a33, type: 3}
-  m_Name: Svui
+  m_Name: NativeBridge
   m_EditorClassIdentifier: 
