@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using System.Diagnostics;
+using BestHTTP;
 
 public class CSV
 {
@@ -30,19 +31,8 @@ public class CSV
     {
         Stopwatch sw = new Stopwatch();
         sw.Start();
-        StreamReader reader = null;
-        string a = path;// + "/" + fileName;
-        Logging.Log(a);
-        //Resources.Load
-        try
-        {
 
-            reader = File.OpenText(a);
-        }
-        catch
-        {
-
-        }
+        StreamReader reader = new StreamReader(new MemoryStream(Resources.Load<TextAsset>("adfa").bytes));
 
         List<string> values = new List<string>();
 
@@ -51,11 +41,44 @@ public class CSV
         {
             values.Add(line);
         }
+
         reader.Close();
         reader.Dispose();
         sw.Stop();
         Logging.Log("读取文件 " + fileName + " " + sw.ElapsedMilliseconds);
+
+
+        Logging.Log("读取----文件 " + fileName + " " + sw.ElapsedMilliseconds);
+
+        KKK();
+        //LLL();
         return values;
+    }
+
+
+    void LLL()
+    {
+        Stopwatch sw = new Stopwatch();
+        sw.Start();
+        Logging.Log("开始读取resource");
+        var a = Resources.LoadAll("");
+        Logging.Log(a);
+        Logging.Log("结束读取resource " + sw.ElapsedMilliseconds);
+        sw.Stop();
+    }
+
+
+    void KKK()
+    {
+        
+
+        Stopwatch sw = new Stopwatch();
+        sw.Start();
+        Logging.Log("开始读取resource");
+        FPS.Default.LockFrame();
+
+        Logging.Log("结束读取resource " + sw.ElapsedMilliseconds);
+        sw.Stop();
     }
 
 }

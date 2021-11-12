@@ -45,7 +45,7 @@ public class CW_FollowRead : CoursewarePlayer
         canvas.GetComponent<CW_FollowRead_Canvas>().MakeData(new List<string>(values));
 
 
-        Delay.Instance.DelayToCall(10, () =>
+        Delay.Default.DelayToCall(10, () =>
         {
 
             Destroy(canvas);

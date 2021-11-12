@@ -48,7 +48,7 @@ public class Cruiser : MonoBehaviour
                                    .OnComplete(() =>
                                    {
                                        transform.position = new Vector3(reverse ? end : start, transform.position.y, transform.position.z);
-                                       Delay.Instance.DelayToCall(3, () =>
+                                       Delay.Default.DelayToCall(3, () =>
                                        {
                                            fly();
                                        });

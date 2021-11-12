@@ -26,11 +26,11 @@ public class RealmCanvas : MonoBehaviour
 
         a = Observable.EveryEndOfFrame().Take(1).SelectMany(LoadSceneAsync).Subscribe();
 
-        var v = Path.Combine(Application.dataPath, "adfa.csv");
+        //var v = Path.Combine(Application.streamingAssetsPath, "adfa.csv");
 
-        var k = CSV.Instance.ReadFromFile(v, "adfa.csv");
-        Logging.Log(k);
-        k.ForEach(v => Logging.Log(v));
+        //var k = CSV.Instance.ReadFromFile(v, "adfa.csv");
+        //Logging.Log(k);
+        //k.ForEach(v => Logging.Log(v));
     }
 
     AsyncOperation async;
@@ -60,7 +60,7 @@ public class RealmCanvas : MonoBehaviour
         Stopwatch sw = new Stopwatch();
         Logging.Log("FPS开始 " + sw.ElapsedMilliseconds + "ms");
         sw.Start();
-        FPS.Instance.LockFrame();
+        FPS.Default.LockFrame();
         //Application.targetFrameRate = 60;
 
         //var gb = new GameObject("FPSDisplay");

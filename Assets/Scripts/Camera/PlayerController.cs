@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FPS.Instance.LockFrame();
+        FPS.Default.LockFrame();
         rb = GetComponent<Rigidbody2D>();
         rightAnchor = scrollLimiter.getRightLimit();
     }

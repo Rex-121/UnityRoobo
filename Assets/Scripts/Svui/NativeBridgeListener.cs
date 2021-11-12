@@ -6,7 +6,7 @@ public class NativeBridgeListener : MonoBehaviour
 {
     public void DidEndSvui(string message)
     {
-        NativeBridge.Instance.DidReceiveFromNative(message);
+        NativeBridge.Default.DidReceiveFromNative(message);
     }
 
 }

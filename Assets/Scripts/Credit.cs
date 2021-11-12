@@ -13,6 +13,8 @@ public class Credit : SingletonSO<Credit>, CoursewareCreditProtocol
     private Canvas _canvas;
 
 
+    public static Credit Default => Instance("评分画布");
+
     private Canvas canvas
     {
         get
@@ -43,7 +45,7 @@ public class Credit : SingletonSO<Credit>, CoursewareCreditProtocol
 
         canvas.gameObject.SetActive(true);
 
-        Delay.Instance.DelayToCall(3, () =>
+        Delay.Default.DelayToCall(3, () =>
         {
             canvas.gameObject.SetActive(false);
             endPlay();

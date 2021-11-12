@@ -9,7 +9,7 @@ public class Delay : SingletonSO<Delay>
 
     private MonoBehaviour mono;
 
-
+    public static Delay Default => Instance("延迟调用");
 
     private void Init()
     {

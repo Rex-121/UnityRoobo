@@ -6,6 +6,7 @@ using UnityEngine;
 public class NativeCalls : SingletonSO<NativeCalls>
 {
 
+    public static NativeCalls Default => Instance("原生通信");
 
     public void sendMessageToMobileApp(string message)
     {

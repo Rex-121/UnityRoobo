@@ -1,18 +1,19 @@
 using UnityEngine;
 
-public class SingletonSO<T> : ScriptableObject where T: SingletonSO<T>
+public class SingletonSO<T> : ScriptableObject where T : SingletonSO<T>
 {
-
 
     private static T instance;
 
-    public static T Instance
+    public static T Shared
     {
         get
         {
 
             if (instance == null)
             {
+
+                
                 T[] assets = Resources.LoadAll<T>("");
 
                 if (assets == null || assets.Length < 1)
@@ -21,13 +22,26 @@ public class SingletonSO<T> : ScriptableObject where T: SingletonSO<T>
                 }
                 else if (assets.Length > 1)
                 {
-                    Debug.LogWarning("多个单例");
+                    Logging.Log("多个单例");
                 }
                 instance = assets[0];
             }
 
             return instance;
         }
+    }
+
+
+    public static T Instance(string path)
+    {
+        if (instance == null)
+            {
+                T assets = Resources.Load<T>("Singleton/" + path);
+                instance = assets;
+            }
+
+            return instance;
+       
     }
 
 
