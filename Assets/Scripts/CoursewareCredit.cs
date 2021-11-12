@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 using System.Diagnostics;
@@ -30,29 +29,26 @@ public class CoursewareCredit : MonoBehaviour, CoursewareCreditProtocol
 
 
 
-    //private void Start()
-    //{
-    //    UniRx.Observable.Timer(System.TimeSpan.FromSeconds(2)).Subscribe(_ =>
-    //    {
-    //        StartCoroutine(GetR());
-    //    });
-        
-    //}
+    private void Start()
+    {
+        Observable.EveryEndOfFrame().Take(1).SelectMany(GetR).SelectMany(GetR).Subscribe();
 
-    //IEnumerator GetR()
-    //{
+    }
+
+    IEnumerator GetR()
+    {
 
 
-    //    Stopwatch sws = new Stopwatch();
-    //    sws.Start();
-        
-    //    var a = Resources.Load("RatingStars");
+        Stopwatch sws = new Stopwatch();
+        sws.Start();
 
-    //    yield return Instantiate(a, creditPanel.transform);
+        var a = Resources.Load("RatingStars");
 
-    //    sws.Stop();
-    //    UnityEngine.Debug.Log(string.Format("total: {0} ms", sws.ElapsedMilliseconds));
-    //}
+        yield return Instantiate(a, creditPanel.transform);
+
+        sws.Stop();
+        UnityEngine.Debug.Log(string.Format("total: {0} ms", sws.ElapsedMilliseconds));
+    }
 
 
 }

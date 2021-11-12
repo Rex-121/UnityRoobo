@@ -1,6 +1,7 @@
 using UnityEngine;
 using Sirenix.OdinInspector;
-using System;
+using UniRx;
+using System.Collections;
 
 [RequireComponent(typeof(CoursewareCredit))]
 public class CoursewareManager : MonoBehaviour
@@ -16,19 +17,43 @@ public class CoursewareManager : MonoBehaviour
 
     private void Start()
     {
-
-        NativeBridge.Instance.AddListenerToScreen();
-
-        FPS.Instance.LockFrame();
-
-        Credit.Instance.Init().gameObject.transform.SetParent(transform);
-
         cwCanvas.GetComponent<Canvas>().worldCamera = Camera.main;
+    }
 
+    void EveryThingReady(Unit a)
+    {
         ClearStage();
 
         Next();
+    }
 
+    void OnEnable()
+    {
+        EveryThingReady(Unit.Default);
+        //Observable.EveryEndOfFrame().Take(1)
+        //    .SelectMany(Observable.FromCoroutine(DrawCreditBlockCanvas))
+        //    .SelectMany(Observable.FromCoroutine(AddListenerToScreen))
+        //    .SelectMany(Observable.FromCoroutine(DrawFPS))
+        //    .Subscribe(EveryThingReady);
+    }
+
+    IEnumerator DrawCreditBlockCanvas()
+    {
+        var a = Credit.Instance.Init().gameObject;
+        a.transform.SetParent(transform);
+        yield return 0;
+    }
+
+    IEnumerator AddListenerToScreen()
+    {
+        NativeBridge.Instance.AddListenerToScreen();
+        yield return 0;
+    }
+
+    IEnumerator DrawFPS()
+    {
+        FPS.Instance.LockFrame();
+        yield return 0;
     }
 
     /// <summary>
@@ -57,8 +82,8 @@ public class CoursewareManager : MonoBehaviour
         playingCW.GetComponent<CoursewarePlayer>().Play();
     }
 
-    [ReadOnly]
-    [LabelText("正在播放的课件")]
+    //[ReadOnly]
+    //[LabelText("正在播放的课件")]
     public GameObject playingCW;
 
     /// <summary>

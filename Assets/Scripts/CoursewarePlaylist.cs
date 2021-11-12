@@ -57,6 +57,8 @@ public class CoursewarePlaylist : MonoBehaviour
     public CoursewarePlayer_SO Next()
     {
 
+        if (playlist.Count == 0) return null;
+
         if (!last)
         {
             index++;
