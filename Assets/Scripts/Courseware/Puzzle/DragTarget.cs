@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
+
 public class DragTarget : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
-    private bool isCollided;
     [Required]
     private AudioSource audioSource;
-
     public SoundRightWrong_SO rwSO;
+    private Collider2D currentCollision;
+    private DragItem currentCollisionDragItem;
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,32 +21,48 @@ public class DragTarget : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (isCollided)
+        if (collision != currentCollision)
+        {
+            currentCollision = collision;
+            currentCollisionDragItem = collision.GetComponent<DragItem>();
+        }
+        Logging.Log("doomed!!!");
+        currentCollisionDragItem.setDoomed(true);
+        Debug.Log("on collision!!!" + currentCollisionDragItem);
+        if (null == currentCollisionDragItem)
         {
             return;
         }
-        isCollided = true;
-        Debug.Log("on collision!!!");
-        if (collision.transform.name.Equals("dragItem1"))
+        if (currentCollisionDragItem.isCollidable())
         {
-            audioSource.clip = rwSO.right;
-            audioSource.Play();
-            spriteRenderer.sprite = collision.transform.GetComponent<SpriteRenderer>().sprite;
-            transform.localScale = collision.transform.localScale;
-            Destroy(collision.gameObject);
-        }
-        else
-        {
-            audioSource.clip = rwSO.wrong;
-            audioSource.Play();
+
+            if (collision.transform.name.Equals("dragItem"+name.Replace("dragTarget","")))
+            {
+                audioSource.clip = rwSO.right;
+                audioSource.Play();
+                spriteRenderer.sprite = collision.transform.GetComponent<SpriteRenderer>().sprite;
+                transform.localScale = collision.transform.localScale;
+                Destroy(collision.gameObject);
+                GetComponent<Collider2D>().enabled = false;
+            }
+            else
+            {
+                audioSource.clip = rwSO.wrong;
+                audioSource.Play();
+                currentCollisionDragItem.setDoomed(false);
+                currentCollisionDragItem.moveToOriginalPosition();
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        isCollided = false;
+        if (null != currentCollisionDragItem)
+        {
+            Logging.Log("released!!!!");
+            currentCollisionDragItem.setDoomed(false);
+        }
     }
-
 }
