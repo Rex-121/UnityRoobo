@@ -18,15 +18,9 @@ public class User : SingletonSO<User>
     [Serializable]
     public struct Token
     {
-
-
         public string account;
         public string appUserID;
         public string accessToken;
-
-
-       
-
     }
 
 }
