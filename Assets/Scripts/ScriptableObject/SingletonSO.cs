@@ -1,6 +1,7 @@
 using UnityEngine;
+using Sirenix.OdinInspector;
 
-public class SingletonSO<T> : ScriptableObject where T : SingletonSO<T>
+public class SingletonSO<T> : SerializedScriptableObject where T : SingletonSO<T>
 {
 
     private static T instance;

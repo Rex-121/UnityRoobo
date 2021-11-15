@@ -593,7 +593,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc8d9b50791b43a8b04dd6f69e4b792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playlist: []
+  playlist:
+  - {fileID: 11400000, guid: 9351dbcd0d672462cad3e23304afdf07, type: 2}
   index: -1
   courseware: {fileID: 0}
 --- !u!114 &1353640215192394180

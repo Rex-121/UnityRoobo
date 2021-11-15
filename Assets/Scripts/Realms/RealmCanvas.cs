@@ -24,13 +24,7 @@ public class RealmCanvas : MonoBehaviour
         releam.SetActive(true);
         island.SetActive(false);
 
-        a = Observable.EveryEndOfFrame().Take(1).SelectMany(LoadSceneAsync).Subscribe();
-
-        //var v = Path.Combine(Application.streamingAssetsPath, "adfa.csv");
-
-        //var k = CSV.Instance.ReadFromFile(v, "adfa.csv");
-        //Logging.Log(k);
-        //k.ForEach(v => Logging.Log(v));
+        //a = Observable.EveryEndOfFrame().Take(1).SelectMany(LoadSceneAsync).Subscribe();
     }
 
     AsyncOperation async;
@@ -80,14 +74,14 @@ public class RealmCanvas : MonoBehaviour
     }
     private void OnDisable()
     {
-        a.Dispose();
+        //a.Dispose();
     }
 
 
     public void LoadScene()
     {
 
-        async.allowSceneActivation = true;
+        //async.allowSceneActivation = true;
         //SceneManager.LoadScene("SampleScene");
 
     }
