@@ -2,9 +2,10 @@
 using UnityEngine;
 using UniRx;
 
+using UnityEngine.UI;
+
 public class LoginManager : MonoBehaviour
 {
-
 
     struct ABC
     {
