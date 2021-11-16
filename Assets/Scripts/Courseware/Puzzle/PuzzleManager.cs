@@ -33,6 +33,7 @@ public class PuzzleManager : CoursewarePlayer
     private Vector2 targetTableSize;
     private Vector3 targetTablePosition;
     private List<DragItemBean> testData = new List<DragItemBean>();
+    private int puzzleSolvedCount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -168,6 +169,14 @@ public class PuzzleManager : CoursewarePlayer
             GameObject item = list[i];
             //计算位置
             item.transform.position = new Vector3(dragTable.transform.position.x, start-spaceEven*(i+1), item.transform.position.z);
+        }
+    }
+
+    public void onePuzzleSolved()
+    {
+        puzzleSolvedCount++;
+        if (puzzleSolvedCount >= testData.Count) {
+            DidEndCourseware(this);
         }
     }
 }

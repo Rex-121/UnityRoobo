@@ -12,6 +12,7 @@ public class DragTarget : MonoBehaviour
     public SoundRightWrong_SO rwSO;
     private Collider2D currentCollision;
     private DragItem currentCollisionDragItem;
+    private PuzzleManager puzzleManager;
 
 
     // Start is called before the first frame update
@@ -19,6 +20,7 @@ public class DragTarget : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
+        puzzleManager= transform.parent.GetComponent<PuzzleManager>();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -46,6 +48,7 @@ public class DragTarget : MonoBehaviour
                 transform.localScale = collision.transform.localScale;
                 Destroy(collision.gameObject);
                 GetComponent<Collider2D>().enabled = false;
+                puzzleManager.onePuzzleSolved();
             }
             else
             {
