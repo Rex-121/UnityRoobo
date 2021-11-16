@@ -3,6 +3,8 @@ using Sirenix.OdinInspector;
 using UniRx;
 using System.Collections;
 
+using System.Diagnostics;
+
 [RequireComponent(typeof(CoursewareCredit))]
 public class CoursewareManager : MonoBehaviour
 {
@@ -29,10 +31,21 @@ public class CoursewareManager : MonoBehaviour
 
     void OnEnable()
     {
+        //.SelectMany(Observable.FromCoroutine(DrawCreditBlockCanvas))
+        //.SelectMany(Observable.FromCoroutine(AddListenerToScreen))
+
+        Stopwatch sw = new Stopwatch();
+        sw.Start();
+
         Observable.EveryEndOfFrame().Take(1)
-            .SelectMany(Observable.FromCoroutine(DrawCreditBlockCanvas))
             .SelectMany(Observable.FromCoroutine(AddListenerToScreen))
             .SelectMany(Observable.FromCoroutine(DrawFPS))
+            .Select(v =>
+            {
+                sw.Stop();
+                Logging.Log("加载完成场景所需" + sw.ElapsedMilliseconds);
+                return v;
+            })
             .Subscribe(EveryThingReady);
 
 
@@ -64,13 +77,34 @@ public class CoursewareManager : MonoBehaviour
     {
 
         var cp = playlist.Next();
-
         if (cp == null) return;
 
+        Stopwatch sw = new Stopwatch();
+        sw.Start();
+
+        //var r = Resources.Load("Prefabs/Courseware/FollowRead/FollowRead") as GameObject;
+        //Logging.Log("读取资源" + sw.ElapsedMilliseconds);
+
+
         playingCW = Instantiate(cp.coursewarePlayer);
+        sw.Stop();
+        Logging.Log("生产资源" + sw.ElapsedMilliseconds);
+
+
+
+        //Stopwatch sws = new Stopwatch();
+        //sws.Start();
+
+        //var rf = Resources.Load("Prefabs/Courseware/PictureMatch/PictureMatch") as GameObject;
+        //Logging.Log("读取资源" + sw.ElapsedMilliseconds);
+        ////if (cp == null) return;
+        ////playingCW = Instantiate(rf);
+        //sws.Stop();
+        //Logging.Log("生产资源" + sw.ElapsedMilliseconds);
+
 
         /// 初始化数据
-        cp.MakeData(playingCW, "");
+        //cp.MakeData(playingCW, "");
 
         playingCW.transform.parent = transform;
 

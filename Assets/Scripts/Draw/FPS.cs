@@ -1,5 +1,7 @@
 using UnityEngine;
 using Sirenix.OdinInspector;
+using System.Collections.Generic;
+
 
 [CreateAssetMenu(fileName = "FPS", menuName = "单例SO/FPS")]
 public class FPS : SingletonSO<FPS>
@@ -12,6 +14,8 @@ public class FPS : SingletonSO<FPS>
             return Instance("FPS");
         }
     }
+
+    public Dictionary<string, string> defaultHeaders = new Dictionary<string, string>();
 
 
     [ShowInInspector]

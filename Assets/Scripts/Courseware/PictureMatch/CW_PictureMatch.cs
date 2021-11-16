@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using System.Diagnostics;
+
 public class CW_PictureMatch : CoursewarePlayer
 {
 
@@ -24,6 +26,10 @@ public class CW_PictureMatch : CoursewarePlayer
     // Start is called before the first frame update
     void Start()
     {
+        Stopwatch sw = new Stopwatch();
+
+        sw.Start();
+
         for (int i = 0; i < 4; i++)
         {
             var gb = Instantiate(itemPrefab);
@@ -32,6 +38,7 @@ public class CW_PictureMatch : CoursewarePlayer
             var script = gb.GetComponent<PictureMatchItem>();
             script.key = i.ToString();
             script.DidTouchItem += UpperTouch;
+            Logging.Log(sw.ElapsedMilliseconds);
         }
 
         for (int i = 0; i < 4; i++)
@@ -43,7 +50,10 @@ public class CW_PictureMatch : CoursewarePlayer
             script.key = i.ToString();
             script.upsideDown = true;
             script.DidTouchItem += DownTouch;
+            Logging.Log(sw.ElapsedMilliseconds);
         }
+        sw.Stop();
+        Logging.Log("end" + sw.ElapsedMilliseconds);
     }
 
 

@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4152411839269581345}
-  - component: {fileID: 6732480534744849541}
   - component: {fileID: 357211829743263073}
+  - component: {fileID: -6444385703423223984}
   m_Layer: 3
   m_Name: FollowRead
   m_TagString: Untagged
@@ -34,7 +34,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6732480534744849541
+--- !u!210 &357211829743263073
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645915656328859834}
+  m_Enabled: 1
+  m_SortingLayerID: 650955435
+  m_SortingLayer: 5
+  m_SortingOrder: 0
+--- !u!114 &-6444385703423223984
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -62,19 +73,8 @@ MonoBehaviour:
       Entry: 6
       Data: 
   cwCanvas: {fileID: 0}
-  readTextPosition: {fileID: 1384125704939402360}
+  readTextPosition: {fileID: 0}
   canvas: {fileID: 4731870635357319952, guid: 7bb3e5cd347914df3aedf9aad88ece3a, type: 3}
---- !u!210 &357211829743263073
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1645915656328859834}
-  m_Enabled: 1
-  m_SortingLayerID: 650955435
-  m_SortingLayer: 5
-  m_SortingOrder: 0
 --- !u!1 &2611525559367189506
 GameObject:
   m_ObjectHideFlags: 0
