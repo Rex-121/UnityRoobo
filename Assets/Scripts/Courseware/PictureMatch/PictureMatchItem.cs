@@ -4,6 +4,8 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 
 using System;
+using UnityEngine.Rendering;
+
 [RequireComponent(typeof(SpriteRenderer))]
 public class PictureMatchItem : MonoBehaviour
 {
@@ -86,6 +88,9 @@ public class PictureMatchItem : MonoBehaviour
     private SpriteRenderer sprite;
 
 
+    public SortingGroup sortingGroup;
+
+
     [SerializeField]
     private PictureMatchItem_SO file;
 
@@ -116,7 +121,13 @@ public class PictureMatchItem : MonoBehaviour
 
         sprite.flipY = upsideDown;
 
-        if (upsideDown) { line.transform.position = upsideDownPoint.position; }
+        if (upsideDown)
+        {
+            //线的渲染问题？
+            sortingGroup.sortingOrder = -1;
+
+            line.transform.position = upsideDownPoint.position;
+        }
 
     }
 
@@ -143,7 +154,7 @@ public class PictureMatchItem : MonoBehaviour
 
         item.state = state;
 
-        line.DrawTheLine(line.transform.position, item.line.transform.position);
+        line.DrawTheLine(line.transform, item.line.transform);
 
         return Matched();
     }

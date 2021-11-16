@@ -2,26 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Shapes;
+
 public class DrawLine : MonoBehaviour
 {
 
+    public Line line;
 
-    public LineRenderer line;
-
-
-    public void DrawTheLine(Vector3 from, Vector3 to)
+    private void Awake()
     {
-        line.positionCount = 2;
+        line = GetComponent<Line>();
+    }
 
-        line.SetPosition(0, from);
-
-        line.SetPosition(1, to);
+    public void DrawTheLine(Transform from, Transform to)
+    {
+        line.End = transform.InverseTransformPoint(to.position);
     }
 
 
     public void ClearLine()
     {
-        line.positionCount = 0;
+        line.Start = Vector3.zero;
+        line.End = Vector3.zero;
+        //line.positionCount = 0;
     }
 
 }

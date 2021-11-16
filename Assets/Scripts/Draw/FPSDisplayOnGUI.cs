@@ -14,6 +14,7 @@ public class FPSDisplayOnGUI : MonoBehaviour
 
     private void Start()
     {
+
         lastInterval = Time.realtimeSinceStartup;
         frames = 0;
 

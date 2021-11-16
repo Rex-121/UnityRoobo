@@ -37,6 +37,9 @@ namespace Ludiq.Generated.Aot
 	// CoursewareDataBridge_SO.op_Equality
 	// CoursewareDataBridge_SO.op_Implicit
 	// CoursewareDataBridge_SO.op_Inequality
+	// CoursewareLoader.op_Equality
+	// CoursewareLoader.op_Implicit
+	// CoursewareLoader.op_Inequality
 	// CoursewareManager.op_Equality
 	// CoursewareManager.op_Implicit
 	// CoursewareManager.op_Inequality
@@ -70,18 +73,36 @@ namespace Ludiq.Generated.Aot
 	// Cruiser.op_Equality
 	// Cruiser.op_Implicit
 	// Cruiser.op_Inequality
+	// CW_FollowRead.op_Equality
+	// CW_FollowRead.op_Implicit
+	// CW_FollowRead.op_Inequality
+	// CW_FollowRead_Canvas.op_Equality
+	// CW_FollowRead_Canvas.op_Implicit
+	// CW_FollowRead_Canvas.op_Inequality
+	// CW_FollowRead_SO.op_Equality
+	// CW_FollowRead_SO.op_Implicit
+	// CW_FollowRead_SO.op_Inequality
 	// CW_PictureMatch.op_Equality
 	// CW_PictureMatch.op_Implicit
 	// CW_PictureMatch.op_Inequality
-	// CWCanvas.op_Equality
-	// CWCanvas.op_Implicit
-	// CWCanvas.op_Inequality
+	// CW_Puzzle_SO.op_Equality
+	// CW_Puzzle_SO.op_Implicit
+	// CW_Puzzle_SO.op_Inequality
 	// Delay.op_Equality
 	// Delay.op_Implicit
 	// Delay.op_Inequality
 	// DG.Tweening.DOTweenAnimation.op_Equality
 	// DG.Tweening.DOTweenAnimation.op_Implicit
 	// DG.Tweening.DOTweenAnimation.op_Inequality
+	// Dragable.op_Equality
+	// Dragable.op_Implicit
+	// Dragable.op_Inequality
+	// DragItem.op_Equality
+	// DragItem.op_Implicit
+	// DragItem.op_Inequality
+	// DragTarget.op_Equality
+	// DragTarget.op_Implicit
+	// DragTarget.op_Inequality
 	// DrawLine.op_Equality
 	// DrawLine.op_Implicit
 	// DrawLine.op_Inequality
@@ -103,6 +124,9 @@ namespace Ludiq.Generated.Aot
 	// FPSDisplayOnGUI.op_Equality
 	// FPSDisplayOnGUI.op_Implicit
 	// FPSDisplayOnGUI.op_Inequality
+	// HttpHost.op_Equality
+	// HttpHost.op_Implicit
+	// HttpHost.op_Inequality
 	// InLinePositions_SO.op_Equality
 	// InLinePositions_SO.op_Implicit
 	// InLinePositions_SO.op_Inequality
@@ -112,6 +136,195 @@ namespace Ludiq.Generated.Aot
 	// IslandGenerator.op_Equality
 	// IslandGenerator.op_Implicit
 	// IslandGenerator.op_Inequality
+	// LoginManager.op_Equality
+	// LoginManager.op_Implicit
+	// LoginManager.op_Inequality
+	// Michsky.UI.ModernUIPack.AnimatedIconHandler.op_Equality
+	// Michsky.UI.ModernUIPack.AnimatedIconHandler.op_Implicit
+	// Michsky.UI.ModernUIPack.AnimatedIconHandler.op_Inequality
+	// Michsky.UI.ModernUIPack.ButtonManager.op_Equality
+	// Michsky.UI.ModernUIPack.ButtonManager.op_Implicit
+	// Michsky.UI.ModernUIPack.ButtonManager.op_Inequality
+	// Michsky.UI.ModernUIPack.ButtonManagerBasic.op_Equality
+	// Michsky.UI.ModernUIPack.ButtonManagerBasic.op_Implicit
+	// Michsky.UI.ModernUIPack.ButtonManagerBasic.op_Inequality
+	// Michsky.UI.ModernUIPack.ButtonManagerBasicIcon.op_Equality
+	// Michsky.UI.ModernUIPack.ButtonManagerBasicIcon.op_Implicit
+	// Michsky.UI.ModernUIPack.ButtonManagerBasicIcon.op_Inequality
+	// Michsky.UI.ModernUIPack.ButtonManagerBasicWithIcon.op_Equality
+	// Michsky.UI.ModernUIPack.ButtonManagerBasicWithIcon.op_Implicit
+	// Michsky.UI.ModernUIPack.ButtonManagerBasicWithIcon.op_Inequality
+	// Michsky.UI.ModernUIPack.ButtonManagerIcon.op_Equality
+	// Michsky.UI.ModernUIPack.ButtonManagerIcon.op_Implicit
+	// Michsky.UI.ModernUIPack.ButtonManagerIcon.op_Inequality
+	// Michsky.UI.ModernUIPack.ButtonManagerWithIcon.op_Equality
+	// Michsky.UI.ModernUIPack.ButtonManagerWithIcon.op_Implicit
+	// Michsky.UI.ModernUIPack.ButtonManagerWithIcon.op_Inequality
+	// Michsky.UI.ModernUIPack.ContextMenuContent.op_Equality
+	// Michsky.UI.ModernUIPack.ContextMenuContent.op_Implicit
+	// Michsky.UI.ModernUIPack.ContextMenuContent.op_Inequality
+	// Michsky.UI.ModernUIPack.ContextMenuContentMobile.op_Equality
+	// Michsky.UI.ModernUIPack.ContextMenuContentMobile.op_Implicit
+	// Michsky.UI.ModernUIPack.ContextMenuContentMobile.op_Inequality
+	// Michsky.UI.ModernUIPack.ContextMenuManager.op_Equality
+	// Michsky.UI.ModernUIPack.ContextMenuManager.op_Implicit
+	// Michsky.UI.ModernUIPack.ContextMenuManager.op_Inequality
+	// Michsky.UI.ModernUIPack.ContextMenuSubMenu.op_Equality
+	// Michsky.UI.ModernUIPack.ContextMenuSubMenu.op_Implicit
+	// Michsky.UI.ModernUIPack.ContextMenuSubMenu.op_Inequality
+	// Michsky.UI.ModernUIPack.CustomDropdown.op_Equality
+	// Michsky.UI.ModernUIPack.CustomDropdown.op_Implicit
+	// Michsky.UI.ModernUIPack.CustomDropdown.op_Inequality
+	// Michsky.UI.ModernUIPack.CustomInputField.op_Equality
+	// Michsky.UI.ModernUIPack.CustomInputField.op_Implicit
+	// Michsky.UI.ModernUIPack.CustomInputField.op_Inequality
+	// Michsky.UI.ModernUIPack.CustomToggle.op_Equality
+	// Michsky.UI.ModernUIPack.CustomToggle.op_Implicit
+	// Michsky.UI.ModernUIPack.CustomToggle.op_Inequality
+	// Michsky.UI.ModernUIPack.DemoListShadow.op_Equality
+	// Michsky.UI.ModernUIPack.DemoListShadow.op_Implicit
+	// Michsky.UI.ModernUIPack.DemoListShadow.op_Inequality
+	// Michsky.UI.ModernUIPack.DropdownMultiSelect.op_Equality
+	// Michsky.UI.ModernUIPack.DropdownMultiSelect.op_Implicit
+	// Michsky.UI.ModernUIPack.DropdownMultiSelect.op_Inequality
+	// Michsky.UI.ModernUIPack.HorizontalSelector.op_Equality
+	// Michsky.UI.ModernUIPack.HorizontalSelector.op_Implicit
+	// Michsky.UI.ModernUIPack.HorizontalSelector.op_Inequality
+	// Michsky.UI.ModernUIPack.InputSystemChecker.op_Equality
+	// Michsky.UI.ModernUIPack.InputSystemChecker.op_Implicit
+	// Michsky.UI.ModernUIPack.InputSystemChecker.op_Inequality
+	// Michsky.UI.ModernUIPack.LaunchURL.op_Equality
+	// Michsky.UI.ModernUIPack.LaunchURL.op_Implicit
+	// Michsky.UI.ModernUIPack.LaunchURL.op_Inequality
+	// Michsky.UI.ModernUIPack.ModalWindowManager.op_Equality
+	// Michsky.UI.ModernUIPack.ModalWindowManager.op_Implicit
+	// Michsky.UI.ModernUIPack.ModalWindowManager.op_Inequality
+	// Michsky.UI.ModernUIPack.NotificationManager.op_Equality
+	// Michsky.UI.ModernUIPack.NotificationManager.op_Implicit
+	// Michsky.UI.ModernUIPack.NotificationManager.op_Inequality
+	// Michsky.UI.ModernUIPack.NotificationStacking.op_Equality
+	// Michsky.UI.ModernUIPack.NotificationStacking.op_Implicit
+	// Michsky.UI.ModernUIPack.NotificationStacking.op_Inequality
+	// Michsky.UI.ModernUIPack.PBFilled.op_Equality
+	// Michsky.UI.ModernUIPack.PBFilled.op_Implicit
+	// Michsky.UI.ModernUIPack.PBFilled.op_Inequality
+	// Michsky.UI.ModernUIPack.PieChart.op_Equality
+	// Michsky.UI.ModernUIPack.PieChart.op_Implicit
+	// Michsky.UI.ModernUIPack.PieChart.op_Inequality
+	// Michsky.UI.ModernUIPack.ProgressBar.op_Equality
+	// Michsky.UI.ModernUIPack.ProgressBar.op_Implicit
+	// Michsky.UI.ModernUIPack.ProgressBar.op_Inequality
+	// Michsky.UI.ModernUIPack.RadialSlider.op_Equality
+	// Michsky.UI.ModernUIPack.RadialSlider.op_Implicit
+	// Michsky.UI.ModernUIPack.RadialSlider.op_Inequality
+	// Michsky.UI.ModernUIPack.RangeMaxSlider.op_Equality
+	// Michsky.UI.ModernUIPack.RangeMaxSlider.op_Implicit
+	// Michsky.UI.ModernUIPack.RangeMaxSlider.op_Inequality
+	// Michsky.UI.ModernUIPack.RangeMinSlider.op_Equality
+	// Michsky.UI.ModernUIPack.RangeMinSlider.op_Implicit
+	// Michsky.UI.ModernUIPack.RangeMinSlider.op_Inequality
+	// Michsky.UI.ModernUIPack.RangeSlider.op_Equality
+	// Michsky.UI.ModernUIPack.RangeSlider.op_Implicit
+	// Michsky.UI.ModernUIPack.RangeSlider.op_Inequality
+	// Michsky.UI.ModernUIPack.Ripple.op_Equality
+	// Michsky.UI.ModernUIPack.Ripple.op_Implicit
+	// Michsky.UI.ModernUIPack.Ripple.op_Inequality
+	// Michsky.UI.ModernUIPack.SliderManager.op_Equality
+	// Michsky.UI.ModernUIPack.SliderManager.op_Implicit
+	// Michsky.UI.ModernUIPack.SliderManager.op_Inequality
+	// Michsky.UI.ModernUIPack.SwitchManager.op_Equality
+	// Michsky.UI.ModernUIPack.SwitchManager.op_Implicit
+	// Michsky.UI.ModernUIPack.SwitchManager.op_Inequality
+	// Michsky.UI.ModernUIPack.TooltipContent.op_Equality
+	// Michsky.UI.ModernUIPack.TooltipContent.op_Implicit
+	// Michsky.UI.ModernUIPack.TooltipContent.op_Inequality
+	// Michsky.UI.ModernUIPack.TooltipManager.op_Equality
+	// Michsky.UI.ModernUIPack.TooltipManager.op_Implicit
+	// Michsky.UI.ModernUIPack.TooltipManager.op_Inequality
+	// Michsky.UI.ModernUIPack.UIElementInFront.op_Equality
+	// Michsky.UI.ModernUIPack.UIElementInFront.op_Implicit
+	// Michsky.UI.ModernUIPack.UIElementInFront.op_Inequality
+	// Michsky.UI.ModernUIPack.UIGradient.op_Equality
+	// Michsky.UI.ModernUIPack.UIGradient.op_Implicit
+	// Michsky.UI.ModernUIPack.UIGradient.op_Inequality
+	// Michsky.UI.ModernUIPack.UIManager.op_Equality
+	// Michsky.UI.ModernUIPack.UIManager.op_Implicit
+	// Michsky.UI.ModernUIPack.UIManager.op_Inequality
+	// Michsky.UI.ModernUIPack.UIManagerAnimatedIcon.op_Equality
+	// Michsky.UI.ModernUIPack.UIManagerAnimatedIcon.op_Implicit
+	// Michsky.UI.ModernUIPack.UIManagerAnimatedIcon.op_Inequality
+	// Michsky.UI.ModernUIPack.UIManagerButton.op_Equality
+	// Michsky.UI.ModernUIPack.UIManagerButton.op_Implicit
+	// Michsky.UI.ModernUIPack.UIManagerButton.op_Inequality
+	// Michsky.UI.ModernUIPack.UIManagerButtonEditor.op_Equality
+	// Michsky.UI.ModernUIPack.UIManagerButtonEditor.op_Implicit
+	// Michsky.UI.ModernUIPack.UIManagerButtonEditor.op_Inequality
+	// Michsky.UI.ModernUIPack.UIManagerContextMenu.op_Equality
+	// Michsky.UI.ModernUIPack.UIManagerContextMenu.op_Implicit
+	// Michsky.UI.ModernUIPack.UIManagerContextMenu.op_Inequality
+	// Michsky.UI.ModernUIPack.UIManagerDropdown.op_Equality
+	// Michsky.UI.ModernUIPack.UIManagerDropdown.op_Implicit
+	// Michsky.UI.ModernUIPack.UIManagerDropdown.op_Inequality
+	// Michsky.UI.ModernUIPack.UIManagerHSelector.op_Equality
+	// Michsky.UI.ModernUIPack.UIManagerHSelector.op_Implicit
+	// Michsky.UI.ModernUIPack.UIManagerHSelector.op_Inequality
+	// Michsky.UI.ModernUIPack.UIManagerInputField.op_Equality
+	// Michsky.UI.ModernUIPack.UIManagerInputField.op_Implicit
+	// Michsky.UI.ModernUIPack.UIManagerInputField.op_Inequality
+	// Michsky.UI.ModernUIPack.UIManagerModalWindow.op_Equality
+	// Michsky.UI.ModernUIPack.UIManagerModalWindow.op_Implicit
+	// Michsky.UI.ModernUIPack.UIManagerModalWindow.op_Inequality
+	// Michsky.UI.ModernUIPack.UIManagerNotification.op_Equality
+	// Michsky.UI.ModernUIPack.UIManagerNotification.op_Implicit
+	// Michsky.UI.ModernUIPack.UIManagerNotification.op_Inequality
+	// Michsky.UI.ModernUIPack.UIManagerPieChart.op_Equality
+	// Michsky.UI.ModernUIPack.UIManagerPieChart.op_Implicit
+	// Michsky.UI.ModernUIPack.UIManagerPieChart.op_Inequality
+	// Michsky.UI.ModernUIPack.UIManagerProgressBar.op_Equality
+	// Michsky.UI.ModernUIPack.UIManagerProgressBar.op_Implicit
+	// Michsky.UI.ModernUIPack.UIManagerProgressBar.op_Inequality
+	// Michsky.UI.ModernUIPack.UIManagerProgressBarLoop.op_Equality
+	// Michsky.UI.ModernUIPack.UIManagerProgressBarLoop.op_Implicit
+	// Michsky.UI.ModernUIPack.UIManagerProgressBarLoop.op_Inequality
+	// Michsky.UI.ModernUIPack.UIManagerProgressBarLoopEditor.op_Equality
+	// Michsky.UI.ModernUIPack.UIManagerProgressBarLoopEditor.op_Implicit
+	// Michsky.UI.ModernUIPack.UIManagerProgressBarLoopEditor.op_Inequality
+	// Michsky.UI.ModernUIPack.UIManagerScrollbar.op_Equality
+	// Michsky.UI.ModernUIPack.UIManagerScrollbar.op_Implicit
+	// Michsky.UI.ModernUIPack.UIManagerScrollbar.op_Inequality
+	// Michsky.UI.ModernUIPack.UIManagerSlider.op_Equality
+	// Michsky.UI.ModernUIPack.UIManagerSlider.op_Implicit
+	// Michsky.UI.ModernUIPack.UIManagerSlider.op_Inequality
+	// Michsky.UI.ModernUIPack.UIManagerSliderEditor.op_Equality
+	// Michsky.UI.ModernUIPack.UIManagerSliderEditor.op_Implicit
+	// Michsky.UI.ModernUIPack.UIManagerSliderEditor.op_Inequality
+	// Michsky.UI.ModernUIPack.UIManagerSwitch.op_Equality
+	// Michsky.UI.ModernUIPack.UIManagerSwitch.op_Implicit
+	// Michsky.UI.ModernUIPack.UIManagerSwitch.op_Inequality
+	// Michsky.UI.ModernUIPack.UIManagerToggle.op_Equality
+	// Michsky.UI.ModernUIPack.UIManagerToggle.op_Implicit
+	// Michsky.UI.ModernUIPack.UIManagerToggle.op_Inequality
+	// Michsky.UI.ModernUIPack.UIManagerTooltip.op_Equality
+	// Michsky.UI.ModernUIPack.UIManagerTooltip.op_Implicit
+	// Michsky.UI.ModernUIPack.UIManagerTooltip.op_Inequality
+	// Michsky.UI.ModernUIPack.UIManagerWindowManager.op_Equality
+	// Michsky.UI.ModernUIPack.UIManagerWindowManager.op_Implicit
+	// Michsky.UI.ModernUIPack.UIManagerWindowManager.op_Inequality
+	// Michsky.UI.ModernUIPack.WindowDragger.op_Equality
+	// Michsky.UI.ModernUIPack.WindowDragger.op_Implicit
+	// Michsky.UI.ModernUIPack.WindowDragger.op_Inequality
+	// Michsky.UI.ModernUIPack.WindowManager.op_Equality
+	// Michsky.UI.ModernUIPack.WindowManager.op_Implicit
+	// Michsky.UI.ModernUIPack.WindowManager.op_Inequality
+	// Michsky.UI.ModernUIPack.WindowManagerButton.op_Equality
+	// Michsky.UI.ModernUIPack.WindowManagerButton.op_Implicit
+	// Michsky.UI.ModernUIPack.WindowManagerButton.op_Inequality
+	// NativeBridge.op_Equality
+	// NativeBridge.op_Implicit
+	// NativeBridge.op_Inequality
+	// NativeBridgeListener.op_Equality
+	// NativeBridgeListener.op_Implicit
+	// NativeBridgeListener.op_Inequality
 	// NativeCalls.op_Equality
 	// NativeCalls.op_Implicit
 	// NativeCalls.op_Inequality
@@ -133,6 +346,9 @@ namespace Ludiq.Generated.Aot
 	// PositionBridge.op_Equality
 	// PositionBridge.op_Implicit
 	// PositionBridge.op_Inequality
+	// PuzzleManager.op_Equality
+	// PuzzleManager.op_Implicit
+	// PuzzleManager.op_Inequality
 	// ReadFromSandbox.op_Equality
 	// ReadFromSandbox.op_Implicit
 	// ReadFromSandbox.op_Inequality
@@ -167,6 +383,9 @@ namespace Ludiq.Generated.Aot
 	// SoundRightWrong_SO.op_Inequality
 	// string.op_Equality
 	// string.op_Inequality
+	// TestSvui.op_Equality
+	// TestSvui.op_Implicit
+	// TestSvui.op_Inequality
 	// UnityEngine.AI.NavMeshAgent.op_Equality
 	// UnityEngine.AI.NavMeshAgent.op_Implicit
 	// UnityEngine.AI.NavMeshAgent.op_Inequality
@@ -834,6 +1053,9 @@ namespace Ludiq.Generated.Aot
 	// UnityEngine.WindZone.op_Equality
 	// UnityEngine.WindZone.op_Implicit
 	// UnityEngine.WindZone.op_Inequality
+	// User.op_Equality
+	// User.op_Implicit
+	// User.op_Inequality
 	[UnityEngine.Scripting.PreserveAttribute()]
 	public class AotStubs
 	{
@@ -1109,6 +1331,41 @@ namespace Ludiq.Generated.Aot
 		// CoursewareDataBridge_SO.op_Inequality
 		[global::UnityEngine.Scripting.PreserveAttribute()]
 		public static void CoursewareDataBridge_SO_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// CoursewareLoader.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void CoursewareLoader_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// CoursewareLoader.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void CoursewareLoader_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// CoursewareLoader.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void CoursewareLoader_op_Inequality()
 		{
 			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
 			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
@@ -1503,6 +1760,111 @@ namespace Ludiq.Generated.Aot
 			optimized.Invoke(default(object[]));
 		}
 		
+		// CW_FollowRead.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void CW_FollowRead_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// CW_FollowRead.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void CW_FollowRead_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// CW_FollowRead.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void CW_FollowRead_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// CW_FollowRead_Canvas.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void CW_FollowRead_Canvas_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// CW_FollowRead_Canvas.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void CW_FollowRead_Canvas_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// CW_FollowRead_Canvas.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void CW_FollowRead_Canvas_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// CW_FollowRead_SO.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void CW_FollowRead_SO_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// CW_FollowRead_SO.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void CW_FollowRead_SO_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// CW_FollowRead_SO.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void CW_FollowRead_SO_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
 		// CW_PictureMatch.op_Equality
 		[global::UnityEngine.Scripting.PreserveAttribute()]
 		public static void CW_PictureMatch_op_Equality()
@@ -1538,9 +1900,9 @@ namespace Ludiq.Generated.Aot
 			optimized.Invoke(default(object[]));
 		}
 		
-		// CWCanvas.op_Equality
+		// CW_Puzzle_SO.op_Equality
 		[global::UnityEngine.Scripting.PreserveAttribute()]
-		public static void CWCanvas_op_Equality()
+		public static void CW_Puzzle_SO_op_Equality()
 		{
 			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
 			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
@@ -1550,9 +1912,9 @@ namespace Ludiq.Generated.Aot
 			optimized.Invoke(default(object[]));
 		}
 		
-		// CWCanvas.op_Implicit
+		// CW_Puzzle_SO.op_Implicit
 		[global::UnityEngine.Scripting.PreserveAttribute()]
-		public static void CWCanvas_op_Implicit()
+		public static void CW_Puzzle_SO_op_Implicit()
 		{
 			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
 			bool conversion = ((bool)(arg0));
@@ -1561,9 +1923,9 @@ namespace Ludiq.Generated.Aot
 			optimized.Invoke(default(object[]));
 		}
 		
-		// CWCanvas.op_Inequality
+		// CW_Puzzle_SO.op_Inequality
 		[global::UnityEngine.Scripting.PreserveAttribute()]
-		public static void CWCanvas_op_Inequality()
+		public static void CW_Puzzle_SO_op_Inequality()
 		{
 			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
 			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
@@ -1634,6 +1996,111 @@ namespace Ludiq.Generated.Aot
 		// DG.Tweening.DOTweenAnimation.op_Inequality
 		[global::UnityEngine.Scripting.PreserveAttribute()]
 		public static void DG_Tweening_DOTweenAnimation_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Dragable.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Dragable_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Dragable.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Dragable_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Dragable.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Dragable_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// DragItem.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void DragItem_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// DragItem.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void DragItem_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// DragItem.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void DragItem_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// DragTarget.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void DragTarget_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// DragTarget.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void DragTarget_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// DragTarget.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void DragTarget_op_Inequality()
 		{
 			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
 			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
@@ -1890,6 +2357,41 @@ namespace Ludiq.Generated.Aot
 			optimized.Invoke(default(object[]));
 		}
 		
+		// HttpHost.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void HttpHost_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// HttpHost.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void HttpHost_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// HttpHost.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void HttpHost_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
 		// InLinePositions_SO.op_Equality
 		[global::UnityEngine.Scripting.PreserveAttribute()]
 		public static void InLinePositions_SO_op_Equality()
@@ -1986,6 +2488,2211 @@ namespace Ludiq.Generated.Aot
 		// IslandGenerator.op_Inequality
 		[global::UnityEngine.Scripting.PreserveAttribute()]
 		public static void IslandGenerator_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// LoginManager.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void LoginManager_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// LoginManager.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void LoginManager_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// LoginManager.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void LoginManager_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.AnimatedIconHandler.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_AnimatedIconHandler_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.AnimatedIconHandler.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_AnimatedIconHandler_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.AnimatedIconHandler.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_AnimatedIconHandler_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ButtonManager.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ButtonManager_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ButtonManager.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ButtonManager_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ButtonManager.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ButtonManager_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ButtonManagerBasic.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ButtonManagerBasic_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ButtonManagerBasic.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ButtonManagerBasic_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ButtonManagerBasic.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ButtonManagerBasic_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ButtonManagerBasicIcon.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ButtonManagerBasicIcon_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ButtonManagerBasicIcon.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ButtonManagerBasicIcon_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ButtonManagerBasicIcon.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ButtonManagerBasicIcon_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ButtonManagerBasicWithIcon.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ButtonManagerBasicWithIcon_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ButtonManagerBasicWithIcon.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ButtonManagerBasicWithIcon_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ButtonManagerBasicWithIcon.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ButtonManagerBasicWithIcon_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ButtonManagerIcon.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ButtonManagerIcon_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ButtonManagerIcon.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ButtonManagerIcon_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ButtonManagerIcon.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ButtonManagerIcon_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ButtonManagerWithIcon.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ButtonManagerWithIcon_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ButtonManagerWithIcon.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ButtonManagerWithIcon_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ButtonManagerWithIcon.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ButtonManagerWithIcon_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ContextMenuContent.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ContextMenuContent_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ContextMenuContent.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ContextMenuContent_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ContextMenuContent.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ContextMenuContent_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ContextMenuContentMobile.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ContextMenuContentMobile_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ContextMenuContentMobile.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ContextMenuContentMobile_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ContextMenuContentMobile.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ContextMenuContentMobile_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ContextMenuManager.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ContextMenuManager_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ContextMenuManager.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ContextMenuManager_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ContextMenuManager.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ContextMenuManager_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ContextMenuSubMenu.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ContextMenuSubMenu_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ContextMenuSubMenu.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ContextMenuSubMenu_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ContextMenuSubMenu.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ContextMenuSubMenu_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.CustomDropdown.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_CustomDropdown_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.CustomDropdown.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_CustomDropdown_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.CustomDropdown.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_CustomDropdown_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.CustomInputField.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_CustomInputField_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.CustomInputField.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_CustomInputField_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.CustomInputField.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_CustomInputField_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.CustomToggle.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_CustomToggle_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.CustomToggle.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_CustomToggle_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.CustomToggle.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_CustomToggle_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.DemoListShadow.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_DemoListShadow_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.DemoListShadow.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_DemoListShadow_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.DemoListShadow.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_DemoListShadow_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.DropdownMultiSelect.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_DropdownMultiSelect_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.DropdownMultiSelect.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_DropdownMultiSelect_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.DropdownMultiSelect.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_DropdownMultiSelect_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.HorizontalSelector.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_HorizontalSelector_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.HorizontalSelector.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_HorizontalSelector_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.HorizontalSelector.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_HorizontalSelector_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.InputSystemChecker.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_InputSystemChecker_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.InputSystemChecker.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_InputSystemChecker_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.InputSystemChecker.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_InputSystemChecker_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.LaunchURL.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_LaunchURL_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.LaunchURL.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_LaunchURL_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.LaunchURL.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_LaunchURL_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ModalWindowManager.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ModalWindowManager_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ModalWindowManager.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ModalWindowManager_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ModalWindowManager.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ModalWindowManager_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.NotificationManager.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_NotificationManager_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.NotificationManager.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_NotificationManager_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.NotificationManager.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_NotificationManager_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.NotificationStacking.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_NotificationStacking_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.NotificationStacking.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_NotificationStacking_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.NotificationStacking.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_NotificationStacking_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.PBFilled.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_PBFilled_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.PBFilled.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_PBFilled_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.PBFilled.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_PBFilled_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.PieChart.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_PieChart_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.PieChart.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_PieChart_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.PieChart.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_PieChart_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ProgressBar.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ProgressBar_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ProgressBar.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ProgressBar_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.ProgressBar.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_ProgressBar_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.RadialSlider.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_RadialSlider_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.RadialSlider.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_RadialSlider_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.RadialSlider.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_RadialSlider_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.RangeMaxSlider.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_RangeMaxSlider_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.RangeMaxSlider.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_RangeMaxSlider_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.RangeMaxSlider.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_RangeMaxSlider_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.RangeMinSlider.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_RangeMinSlider_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.RangeMinSlider.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_RangeMinSlider_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.RangeMinSlider.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_RangeMinSlider_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.RangeSlider.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_RangeSlider_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.RangeSlider.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_RangeSlider_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.RangeSlider.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_RangeSlider_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.Ripple.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_Ripple_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.Ripple.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_Ripple_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.Ripple.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_Ripple_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.SliderManager.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_SliderManager_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.SliderManager.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_SliderManager_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.SliderManager.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_SliderManager_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.SwitchManager.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_SwitchManager_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.SwitchManager.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_SwitchManager_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.SwitchManager.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_SwitchManager_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.TooltipContent.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_TooltipContent_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.TooltipContent.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_TooltipContent_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.TooltipContent.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_TooltipContent_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.TooltipManager.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_TooltipManager_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.TooltipManager.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_TooltipManager_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.TooltipManager.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_TooltipManager_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIElementInFront.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIElementInFront_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIElementInFront.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIElementInFront_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIElementInFront.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIElementInFront_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIGradient.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIGradient_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIGradient.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIGradient_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIGradient.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIGradient_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManager.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManager_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManager.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManager_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManager.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManager_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerAnimatedIcon.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerAnimatedIcon_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerAnimatedIcon.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerAnimatedIcon_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerAnimatedIcon.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerAnimatedIcon_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerButton.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerButton_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerButton.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerButton_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerButton.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerButton_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerButtonEditor.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerButtonEditor_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerButtonEditor.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerButtonEditor_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerButtonEditor.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerButtonEditor_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerContextMenu.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerContextMenu_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerContextMenu.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerContextMenu_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerContextMenu.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerContextMenu_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerDropdown.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerDropdown_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerDropdown.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerDropdown_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerDropdown.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerDropdown_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerHSelector.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerHSelector_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerHSelector.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerHSelector_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerHSelector.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerHSelector_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerInputField.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerInputField_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerInputField.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerInputField_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerInputField.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerInputField_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerModalWindow.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerModalWindow_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerModalWindow.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerModalWindow_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerModalWindow.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerModalWindow_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerNotification.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerNotification_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerNotification.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerNotification_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerNotification.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerNotification_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerPieChart.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerPieChart_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerPieChart.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerPieChart_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerPieChart.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerPieChart_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerProgressBar.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerProgressBar_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerProgressBar.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerProgressBar_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerProgressBar.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerProgressBar_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerProgressBarLoop.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerProgressBarLoop_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerProgressBarLoop.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerProgressBarLoop_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerProgressBarLoop.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerProgressBarLoop_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerProgressBarLoopEditor.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerProgressBarLoopEditor_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerProgressBarLoopEditor.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerProgressBarLoopEditor_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerProgressBarLoopEditor.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerProgressBarLoopEditor_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerScrollbar.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerScrollbar_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerScrollbar.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerScrollbar_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerScrollbar.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerScrollbar_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerSlider.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerSlider_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerSlider.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerSlider_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerSlider.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerSlider_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerSliderEditor.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerSliderEditor_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerSliderEditor.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerSliderEditor_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerSliderEditor.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerSliderEditor_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerSwitch.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerSwitch_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerSwitch.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerSwitch_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerSwitch.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerSwitch_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerToggle.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerToggle_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerToggle.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerToggle_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerToggle.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerToggle_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerTooltip.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerTooltip_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerTooltip.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerTooltip_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerTooltip.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerTooltip_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerWindowManager.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerWindowManager_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerWindowManager.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerWindowManager_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.UIManagerWindowManager.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_UIManagerWindowManager_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.WindowDragger.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_WindowDragger_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.WindowDragger.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_WindowDragger_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.WindowDragger.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_WindowDragger_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.WindowManager.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_WindowManager_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.WindowManager.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_WindowManager_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.WindowManager.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_WindowManager_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.WindowManagerButton.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_WindowManagerButton_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.WindowManagerButton.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_WindowManagerButton_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// Michsky.UI.ModernUIPack.WindowManagerButton.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void Michsky_UI_ModernUIPack_WindowManagerButton_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// NativeBridge.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void NativeBridge_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// NativeBridge.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void NativeBridge_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// NativeBridge.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void NativeBridge_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// NativeBridgeListener.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void NativeBridgeListener_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// NativeBridgeListener.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void NativeBridgeListener_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// NativeBridgeListener.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void NativeBridgeListener_op_Inequality()
 		{
 			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
 			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
@@ -2231,6 +4938,41 @@ namespace Ludiq.Generated.Aot
 		// PositionBridge.op_Inequality
 		[global::UnityEngine.Scripting.PreserveAttribute()]
 		public static void PositionBridge_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// PuzzleManager.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void PuzzleManager_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// PuzzleManager.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void PuzzleManager_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// PuzzleManager.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void PuzzleManager_op_Inequality()
 		{
 			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
 			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
@@ -2636,6 +5378,41 @@ namespace Ludiq.Generated.Aot
 			string arg1 = default(string);
 			bool @operator = (arg0 != arg1);
 			global::Ludiq.StaticFunctionInvoker<string, string, bool> optimized = new global::Ludiq.StaticFunctionInvoker<string, string, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// TestSvui.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void TestSvui_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// TestSvui.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void TestSvui_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// TestSvui.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void TestSvui_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
 			optimized.Invoke(null, arg0, arg1);
 			optimized.Invoke(default(object[]));
 		}
@@ -10397,6 +13174,41 @@ namespace Ludiq.Generated.Aot
 		// UnityEngine.WindZone.op_Inequality
 		[global::UnityEngine.Scripting.PreserveAttribute()]
 		public static void UnityEngine_WindZone_op_Inequality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 != arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// User.op_Equality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void User_op_Equality()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
+			bool @operator = (arg0 == arg1);
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0, arg1);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// User.op_Implicit
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void User_op_Implicit()
+		{
+			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
+			bool conversion = ((bool)(arg0));
+			global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool> optimized = new global::Ludiq.StaticFunctionInvoker<UnityEngine.Object, bool>(default(global::System.Reflection.MethodInfo));
+			optimized.Invoke(null, arg0);
+			optimized.Invoke(default(object[]));
+		}
+		
+		// User.op_Inequality
+		[global::UnityEngine.Scripting.PreserveAttribute()]
+		public static void User_op_Inequality()
 		{
 			global::UnityEngine.Object arg0 = default(global::UnityEngine.Object);
 			global::UnityEngine.Object arg1 = default(global::UnityEngine.Object);
