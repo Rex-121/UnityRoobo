@@ -1,16 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 using UniRx;
 
 public class CW_FollowRead : CoursewarePlayer
 {
 
-
-    [SerializeField]
-    Transform readTextPosition;
 
     [SerializeField]
     GameObject canvas;
@@ -45,13 +40,26 @@ public class CW_FollowRead : CoursewarePlayer
         canvas.GetComponent<CW_FollowRead_Canvas>().MakeData(new List<string>(values));
 
 
-        Delay.Default.DelayToCall(10, () =>
+        Observable.Timer(TimeSpan.FromSeconds(5)).Subscribe(_ =>
         {
-
             Destroy(canvas);
 
-            DidEndCourseware(this);
-        });
 
+            creditDelegate.PlayCreditOnScreen(new Score(), () =>
+            {
+                DidEndCourseware(this);
+            });
+
+        }).AddTo(this);
+
+
+    }
+
+    private void OnDestroy()
+    {
+        if (canvas != null)
+        {
+            Destroy(canvas);
+        }
     }
 }

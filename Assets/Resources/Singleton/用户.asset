@@ -22,6 +22,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   token:
-    appUserID: 
-    accessToken: 
-    account: 
+    account: 50000000593
+    appUserID: oQ:004cb531d52e2be2ed0b6f12e1afccfd
+    accessToken: 7b12525f72fb3a7adecd28942890296a

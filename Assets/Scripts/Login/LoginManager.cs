@@ -24,16 +24,14 @@ public class LoginManager : MonoBehaviour
     }
 
 
-    public LoadingScreenManager lsm;
+    //public LoadingScreenManager lsm;
 
-    AsyncOperation async;
+    //AsyncOperation async;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
-        var d = NativeBridge.Default;
 
         Logging.Log(User.Default.token.account);
 
@@ -46,17 +44,12 @@ public class LoginManager : MonoBehaviour
          {
              Logging.Log("fasd");
              Logging.Log("error");
-             Logging.Log(e.Message);
+             Logging.Log((e as HttpError).message);
+             Logging.Log((e as HttpError).code);
          }, () => { Logging.Log("com"); }).AddTo(this);
 
-        //StartCoroutine(LoadSceneAsync());
 
-        //Observable.EveryEndOfFrame().Take(1).SelectMany(LoadLineAsync).Subscribe().AddTo(this);
-
-        //Observable.EveryEndOfFrame().Take(1).SelectMany(LoadSceneAsync).Subscribe().AddTo(this);
-
-
-        Observable.EveryEndOfFrame().Take(1).SelectMany(Observable.FromCoroutine(LoadSceneAsync)).Subscribe().AddTo(this);
+        //Observable.EveryEndOfFrame().Take(1).SelectMany(Observable.FromCoroutine(LoadSceneAsync)).Subscribe().AddTo(this);
     }
 
     private void OnMouseDown()
@@ -65,7 +58,7 @@ public class LoginManager : MonoBehaviour
         //SceneManager.LoadScene("SampleScene");
         //lsm.LoadScene("SampleScene");
 
-        async.allowSceneActivation = true;
+        //async.allowSceneActivation = true;
 
         //gameObject.SetActive(false);
 
@@ -73,49 +66,26 @@ public class LoginManager : MonoBehaviour
 
 
 
-    IEnumerator LoadSceneAsync()
-    {
-        Stopwatch sw = new Stopwatch();
+    //IEnumerator LoadSceneAsync()
+    //{
+    //    Stopwatch sw = new Stopwatch();
 
-        sw.Start();
-        async = SceneManager.LoadSceneAsync("SampleScene");
-        async.allowSceneActivation = false;
-        while (async.progress < 0.9f)
-        {
-            Logging.Log("加载进度" + async.progress);
-            yield return new WaitForEndOfFrame();
-        }
+    //    sw.Start();
+    //    async = SceneManager.LoadSceneAsync("SampleScene");
+    //    async.allowSceneActivation = false;
+    //    while (async.progress < 0.9f)
+    //    {
+    //        Logging.Log("加载进度" + async.progress);
+    //        yield return new WaitForEndOfFrame();
+    //    }
 
-        sw.Stop();
+    //    sw.Stop();
 
-        Logging.Log("加载完成 " + sw.ElapsedMilliseconds + "ms");
-        Logging.Log("加载完成" + async.progress);
+    //    Logging.Log("加载完成 " + sw.ElapsedMilliseconds + "ms");
+    //    Logging.Log("加载完成" + async.progress);
 
-        yield return 0;
-    }
-
-    ResourceRequest rw;
-
-    IEnumerator LoadCWAsync()
-    {
-        Stopwatch sw = new Stopwatch();
-
-        sw.Start();
-        rw = Resources.LoadAsync("CoursewareManager", typeof(GameObject));
-
-        while (!rw.isDone)
-        {
-            Logging.Log("加载进度CoursewareManager" + rw.progress);
-            yield return new WaitForEndOfFrame();
-        }
-
-        sw.Stop();
-        Instantiate(rw.asset);
-        Logging.Log("加载完成CoursewareManager " + sw.ElapsedMilliseconds + "ms");
-        Logging.Log("加载完成CoursewareManager" + rw.progress);
-
-        yield return 0;
-    }
+    //    yield return 0;
+    //}
 
 }
 

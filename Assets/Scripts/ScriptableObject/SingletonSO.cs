@@ -54,7 +54,7 @@ public class SingletonSO<T> : SerializedScriptableObject where T : SingletonSO<T
 
             sw.Stop();
 
-            Logging.Log("Ins单例耗时" + path + " " + sw.ElapsedMilliseconds);
+            Logging.Log("--->单例耗时 `" + path + "` " + sw.ElapsedMilliseconds + "ms<---");
         }
 
         return instance;

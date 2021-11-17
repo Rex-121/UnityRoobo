@@ -18,12 +18,8 @@ public class CoursewareManager : MonoBehaviour
     [LabelText("课件画布")]
     public GameObject cwCanvas;
 
-    private void Start()
-    {
 
-    }
-
-    void EveryThingReady(Unit a)
+    void EveryThingReady()
     {
         ClearStage();
 
@@ -33,45 +29,13 @@ public class CoursewareManager : MonoBehaviour
     void OnEnable()
     {
 
-        cwCanvas.GetComponent<Canvas>().worldCamera = Camera.main;
-
-        //.SelectMany(Observable.FromCoroutine(DrawCreditBlockCanvas))
-        //.SelectMany(Observable.FromCoroutine(AddListenerToScreen))
-
-        Stopwatch sw = new Stopwatch();
-        sw.Start();
-
-        Observable.EveryEndOfFrame().Take(1)
-            .SelectMany(Observable.FromCoroutine(AddListenerToScreen))
-            .SelectMany(Observable.FromCoroutine(DrawFPS))
-            .Select(v =>
-            {
-                sw.Stop();
-                Logging.Log("加载完成场景所需" + sw.ElapsedMilliseconds);
-                return v;
-            })
-            .Subscribe(EveryThingReady).AddTo(this);
+        //cwCanvas.GetComponent<Canvas>().worldCamera = Camera.main;
 
 
-    }
+        Observable.EveryEndOfFrame().Take(1)   
+            .Subscribe(_ => EveryThingReady()).AddTo(this);
 
-    IEnumerator DrawCreditBlockCanvas()
-    {
-        var a = Credit.Default.Init().gameObject;
-        a.transform.SetParent(transform);
-        yield return 0;
-    }
 
-    IEnumerator AddListenerToScreen()
-    {
-        NativeBridge.Default.AddListenerToScreen();
-        yield return 0;
-    }
-
-    IEnumerator DrawFPS()
-    {
-        FPS.Default.LockFrame();
-        yield return 0;
     }
 
     /// <summary>
@@ -90,26 +54,9 @@ public class CoursewareManager : MonoBehaviour
         Stopwatch sw = new Stopwatch();
         sw.Start();
 
-        //var r = Resources.Load("Prefabs/Courseware/FollowRead/FollowRead") as GameObject;
-        //Logging.Log("读取资源" + sw.ElapsedMilliseconds);
-
-
         playingCW = Instantiate(cp.coursewarePlayer);
         sw.Stop();
         Logging.Log("生产资源" + sw.ElapsedMilliseconds);
-
-
-
-        //Stopwatch sws = new Stopwatch();
-        //sws.Start();
-
-        //var rf = Resources.Load("Prefabs/Courseware/PictureMatch/PictureMatch") as GameObject;
-        //Logging.Log("读取资源" + sw.ElapsedMilliseconds);
-        ////if (cp == null) return;
-        ////playingCW = Instantiate(rf);
-        //sws.Stop();
-        //Logging.Log("生产资源" + sw.ElapsedMilliseconds);
-
 
         /// 初始化数据
         //cp.MakeData(playingCW, "");
@@ -130,8 +77,8 @@ public class CoursewareManager : MonoBehaviour
         player.Play();
     }
 
-    //[ReadOnly]
-    //[LabelText("正在播放的课件")]
+    [ReadOnly]
+    [LabelText("正在播放的课件")]
     public GameObject playingCW;
 
     /// <summary>

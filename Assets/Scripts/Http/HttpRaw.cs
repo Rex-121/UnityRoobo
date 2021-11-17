@@ -55,7 +55,7 @@ public class HttpRaw
         HTTPRequest requestx;
         requestx = new HTTPRequest(BuildPath(path), HTTPMethods.Post, (r, re) =>
         {
-            SelectData(re, success, error);
+            SelectData(r, re, success, error);
         });
 
         AddHeaderFor(requestx);
@@ -83,7 +83,7 @@ public class HttpRaw
     }
 
 
-    static void SelectData(HTTPResponse response, Action<HTTPResponse> success, Action<HttpError> error)
+    static void SelectData(HTTPRequest request, HTTPResponse response, Action<HTTPResponse> success, Action<HttpError> error)
     {
         if (response.StatusCode == 200)
         {

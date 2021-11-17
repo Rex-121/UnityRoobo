@@ -15,8 +15,6 @@ public class FPS : SingletonSO<FPS>
         }
     }
 
-    public Dictionary<string, string> defaultHeaders = new Dictionary<string, string>();
-
 
     [ShowInInspector]
     [LabelText("默认帧率")]
@@ -46,8 +44,8 @@ public class FPS : SingletonSO<FPS>
 
         gb.AddComponent<FPSDisplayOnGUI>();
 
+        DontDestroyOnLoad(gb);
     }
-
 
     /// <summary>
     /// 锁定帧率, 默认 `30`

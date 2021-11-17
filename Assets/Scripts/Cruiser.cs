@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using DG.Tweening;
+using UniRx;
+using System;
 
 public class Cruiser : MonoBehaviour
 {
@@ -19,6 +21,8 @@ public class Cruiser : MonoBehaviour
     private float start;
     private float duration;
     private Tween flyTween;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -48,10 +52,7 @@ public class Cruiser : MonoBehaviour
                                    .OnComplete(() =>
                                    {
                                        transform.position = new Vector3(reverse ? end : start, transform.position.y, transform.position.z);
-                                       Delay.Default.DelayToCall(3, () =>
-                                       {
-                                           fly();
-                                       });
+                                       Observable.Timer(TimeSpan.FromSeconds(3)).Subscribe(_ => fly()).AddTo(this);
                                    });
         }
     }

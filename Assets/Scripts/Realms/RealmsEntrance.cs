@@ -6,52 +6,59 @@ using System.Diagnostics;
 
 using UniRx;
 
+using UnityEngine.SceneManagement;
+
 public class RealmsEntrance : MonoBehaviour
 {
 
-    [ShowInInspector]
-    [LabelText("课件管理器")]
-    private CoursewareManager cwManager;
+    ReactiveProperty<float> progress = new ReactiveProperty<float>();
 
-    // Start is called before the first frame update
-    void Start()
+
+    private void OnEnable()
     {
+        FPS.Default.LockFrame();
 
-        //Stopwatch sw = new Stopwatch();
-        //sw.Start();
-        //var gb = Resources.Load("CoursewareManager") as GameObject;
+        progress.Distinct().Subscribe(value =>
+        {
+            Logging.Log("SampleScene 加载 " + value);
+        }).AddTo(this);
 
-        //Logging.Log("开始加载 CoursewareManager" + sw.ElapsedMilliseconds);
-        //var p = Instantiate(gb);
+        progress.Where(v => v >= 1).Take(1).Subscribe(value =>
+        {
+            Logging.Log("SampleScene 加载完成");
+        }).AddTo(this);
 
-        //Logging.Log("开始渲染 CoursewareManager" + sw.ElapsedMilliseconds);
-        //sw.Stop();
-        //cwManager = p.GetComponent<CoursewareManager>();
+        Observable.EveryEndOfFrame().Take(1).SelectMany(Observable.FromCoroutine(LoadSceneAsync)).Subscribe();
 
-        //Observable.EveryEndOfFrame().Take(1).SelectMany(loadCW).Subscribe().AddTo(this);
     }
 
-
-    //IEnumerator loadCW()
-    //{
-    //    Logging.Log("开始加载 CoursewareManager");
-    //    Stopwatch sw = new Stopwatch();
-    //    sw.Start();
-    //    var gb = Resources.Load("CoursewareManager") as GameObject;
-
-    //    Logging.Log("开始加载 CoursewareManager" + sw.ElapsedMilliseconds);
-    //    var p = Instantiate(gb);
-
-    //    Logging.Log("开始渲染 CoursewareManager" + sw.ElapsedMilliseconds);
-    //    sw.Stop();
-    //    cwManager = p.GetComponent<CoursewareManager>();
-
-    //    yield return cwManager;
-    //}
-
-    // Update is called once per frame
-    void Update()
+    private void OnMouseDown()
     {
+        async.allowSceneActivation = true;
+    }
 
+    AsyncOperation async;
+
+    IEnumerator LoadSceneAsync()
+    {
+        Stopwatch sw = new Stopwatch();
+
+        sw.Start();
+        async = SceneManager.LoadSceneAsync("SampleScene");
+
+
+        async.allowSceneActivation = false;
+
+        while (async.progress < 0.9f)
+        {
+            progress.Value = async.progress;
+            yield return new WaitForEndOfFrame();
+        }
+
+        progress.Value = 1;
+
+        sw.Stop();
+
+        Logging.Log("加载完成 " + sw.ElapsedMilliseconds + "ms");
     }
 }
