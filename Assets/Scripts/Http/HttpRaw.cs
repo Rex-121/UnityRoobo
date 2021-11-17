@@ -83,15 +83,59 @@ public class HttpRaw
     }
 
 
+    public static void Get(string path, Action<HTTPResponse> success, Action<HttpError> error)
+    {
+
+
+        HTTPRequest requestx;
+        requestx = new HTTPRequest(BuildPath(path), HTTPMethods.Get, (r, re) =>
+        {
+            SelectData(r, re, success, error);
+        });
+
+        AddHeaderFor(requestx);
+
+        requestx.Send();
+    }
+
+
+
+    public static void GetResource(string path, Action<HTTPResponse> success, Action<HttpError> error)
+    {
+
+
+        HTTPRequest requestx;
+        requestx = new HTTPRequest(new Uri(path), HTTPMethods.Get, (r, re) =>
+        {
+            SelectData(r, re, success, error);
+        });
+
+        //AddHeaderFor(requestx);
+
+        requestx.Send();
+    }
+
+
     static void SelectData(HTTPRequest request, HTTPResponse response, Action<HTTPResponse> success, Action<HttpError> error)
     {
         if (response.StatusCode == 200)
         {
             success(response);
+
+
         }
         else
         {
-            error(new HttpError(response.StatusCode, response.Message, HttpError.Type.HTTP));
+
+            if (response.StatusCode == 304 && !request.DisableCache)
+            {
+                success(response);
+            }
+            else
+            {
+                error(new HttpError(response.StatusCode, response.Message, HttpError.Type.HTTP));
+            }
+
         }
     }
 
