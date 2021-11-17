@@ -4,6 +4,7 @@ using UniRx;
 using System.Collections;
 
 using System.Diagnostics;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CoursewareCredit))]
 public class CoursewareManager : MonoBehaviour
@@ -19,7 +20,7 @@ public class CoursewareManager : MonoBehaviour
 
     private void Start()
     {
-        cwCanvas.GetComponent<Canvas>().worldCamera = Camera.main;
+
     }
 
     void EveryThingReady(Unit a)
@@ -31,6 +32,9 @@ public class CoursewareManager : MonoBehaviour
 
     void OnEnable()
     {
+
+        cwCanvas.GetComponent<Canvas>().worldCamera = Camera.main;
+
         //.SelectMany(Observable.FromCoroutine(DrawCreditBlockCanvas))
         //.SelectMany(Observable.FromCoroutine(AddListenerToScreen))
 
@@ -46,7 +50,7 @@ public class CoursewareManager : MonoBehaviour
                 Logging.Log("加载完成场景所需" + sw.ElapsedMilliseconds);
                 return v;
             })
-            .Subscribe(EveryThingReady);
+            .Subscribe(EveryThingReady).AddTo(this);
 
 
     }
@@ -77,7 +81,11 @@ public class CoursewareManager : MonoBehaviour
     {
 
         var cp = playlist.Next();
-        if (cp == null) return;
+        if (cp == null)
+        {
+            SceneManager.LoadScene("Realm");
+            return;
+        }
 
         Stopwatch sw = new Stopwatch();
         sw.Start();

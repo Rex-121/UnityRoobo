@@ -54,6 +54,9 @@ public class LoginManager : MonoBehaviour
         //Observable.EveryEndOfFrame().Take(1).SelectMany(LoadLineAsync).Subscribe().AddTo(this);
 
         //Observable.EveryEndOfFrame().Take(1).SelectMany(LoadSceneAsync).Subscribe().AddTo(this);
+
+
+        Observable.EveryEndOfFrame().Take(1).SelectMany(Observable.FromCoroutine(LoadSceneAsync)).Subscribe().AddTo(this);
     }
 
     private void OnMouseDown()
@@ -62,10 +65,9 @@ public class LoginManager : MonoBehaviour
         //SceneManager.LoadScene("SampleScene");
         //lsm.LoadScene("SampleScene");
 
-        //async.allowSceneActivation = true;
+        async.allowSceneActivation = true;
 
-
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
 
     }
 
@@ -88,6 +90,31 @@ public class LoginManager : MonoBehaviour
 
         Logging.Log("加载完成 " + sw.ElapsedMilliseconds + "ms");
         Logging.Log("加载完成" + async.progress);
+
+        yield return 0;
+    }
+
+    ResourceRequest rw;
+
+    IEnumerator LoadCWAsync()
+    {
+        Stopwatch sw = new Stopwatch();
+
+        sw.Start();
+        rw = Resources.LoadAsync("CoursewareManager", typeof(GameObject));
+
+        while (!rw.isDone)
+        {
+            Logging.Log("加载进度CoursewareManager" + rw.progress);
+            yield return new WaitForEndOfFrame();
+        }
+
+        sw.Stop();
+        Instantiate(rw.asset);
+        Logging.Log("加载完成CoursewareManager " + sw.ElapsedMilliseconds + "ms");
+        Logging.Log("加载完成CoursewareManager" + rw.progress);
+
+        yield return 0;
     }
 
 }
