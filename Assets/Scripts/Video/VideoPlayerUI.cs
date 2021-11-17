@@ -16,6 +16,11 @@ public class VideoPlayerUI : MonoBehaviour
     public Slider progressSlider;
     private bool _wasPlayingBeforeTimelineDrag;
     private IDisposable disappearSchedule;
+    private bool isDraging = false;
+    private bool isControllUIShown = true;
+    private float lastVideoClickTime;
+    private int videoClickCount = 0;
+    private IDisposable doubleClickTimer;
 
     private void Start()
     {
@@ -42,16 +47,6 @@ public class VideoPlayerUI : MonoBehaviour
             entry.eventID = EventTriggerType.PointerUp;
             entry.callback.AddListener((data) => { OnProgressSliderEndDrag(); });
             trigger.triggers.Add(entry);
-
-            entry = new EventTrigger.Entry();
-            entry.eventID = EventTriggerType.PointerEnter;
-            entry.callback.AddListener((data) => { OnProgressSliderBeginHover((PointerEventData)data); });
-            trigger.triggers.Add(entry);
-
-            entry = new EventTrigger.Entry();
-            entry.eventID = EventTriggerType.PointerExit;
-            entry.callback.AddListener((data) => { OnProgressSliderEndHover((PointerEventData)data); });
-            trigger.triggers.Add(entry);
         }
     }
 
@@ -64,18 +59,19 @@ public class VideoPlayerUI : MonoBehaviour
             {
                 mediaPlayer.Pause();
             }
+            progressSlider.handleRect.localScale = new Vector3(2.5f, 2.5f, 1f);
             OnProgressSliderDrag();
         }
     }
 
-    private void OnProgressSliderDrag() {
+    private void OnProgressSliderDrag()
+    {
         if (mediaPlayer && mediaPlayer.Control != null)
         {
             TimeRange timelineRange = GetTimelineRange();
             double time = timelineRange.startTime + (progressSlider.value * timelineRange.duration);
             mediaPlayer.Control.Seek(time);
-            //TODO controll through a bool
-            scheduleDisappear();
+            isDraging = true;
         }
     }
 
@@ -88,23 +84,10 @@ public class VideoPlayerUI : MonoBehaviour
                 mediaPlayer.Play();
                 _wasPlayingBeforeTimelineDrag = false;
             }
+            progressSlider.handleRect.localScale = new Vector3(1f, 1f, 1f);
+            isDraging = false;
             scheduleDisappear();
         }
-    }
-
-    private void OnProgressSliderBeginHover(PointerEventData data)
-    {
-        Logging.Log("game object name:"+data.pointerCurrentRaycast.gameObject.name);
-        if (data.pointerCurrentRaycast.gameObject.name =="Handle")
-        {
-            progressSlider.handleRect.localScale = new Vector3(2.5f, 2.5f, 1f);
-        }
-    }
-
-    private void OnProgressSliderEndHover(PointerEventData data)
-    {
-        progressSlider.handleRect.localScale = new Vector3(1f, 1f, 1f);
-        scheduleDisappear();
     }
 
     private void Update()
@@ -127,29 +110,74 @@ public class VideoPlayerUI : MonoBehaviour
 
     public void OnMouseDown()
     {
-        //TODO toggle display
-        Logging.Log("OnCanvasDown");
-        showControllUI();
     }
 
     public void OnMouseUp()
     {
-        Logging.Log("OnCanvasUp");
-        scheduleDisappear();
+        if (null != doubleClickTimer)
+        {
+            doubleClickTimer.Dispose();
+        }
+        videoClickCount++;
+        doubleClickTimer = Observable.Timer(TimeSpan.FromMilliseconds(300)).Subscribe(V =>
+        {
+            videoClickCount = 0;
+        });
+        if (videoClickCount >= 2)
+        {
+            videoClickCount = 0;
+            toggleVideoPlay();
+        }
+        else {
+            toggleUIVisible();
+        }
     }
 
-    public void showControllUI() {
+    private void toggleVideoPlay()
+    {
+        if (mediaPlayer.Control.IsPlaying())
+        {
+            mediaPlayer.Pause();
+        }
+        else {
+            mediaPlayer.Play();
+        }
+    }
+
+    private void toggleUIVisible()
+    {
+        if (isControllUIShown)
+        {
+            hideControllUI();
+        }
+        else {
+            showControllUI();
+            scheduleDisappear();
+        }
+    }
+
+    private void showControllUI()
+    {
+        isControllUIShown = true;
         progressSlider.transform.localScale = new Vector3(1f, 1f, 1f);
     }
 
-    private void scheduleDisappear() {
+    private void hideControllUI()
+    {
+        isControllUIShown = false;
+        progressSlider.transform.localScale = Vector3.zero;
+    }
+
+    private void scheduleDisappear()
+    {
         if (null != disappearSchedule)
         {
             disappearSchedule.Dispose();
         }
         disappearSchedule = Observable.Timer(TimeSpan.FromSeconds(3)).Subscribe(v =>
         {
-            progressSlider.transform.localScale = Vector3.zero;
+            if (isDraging) { return; }
+            hideControllUI();
         });
     }
 
