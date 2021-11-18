@@ -547,9 +547,14 @@ PrefabInstance:
       propertyPath: mediaPlayer
       value: 
       objectReference: {fileID: 854675428}
+    - target: {fileID: 2853435110819918767, guid: 472c0c49271fa4726bd1f8cf077b0d4c, type: 3}
+      propertyPath: m_ScreenMatchMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2853435110819918770, guid: 472c0c49271fa4726bd1f8cf077b0d4c, type: 3}
       propertyPath: m_Name
       value: VideoPlayerUI
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6588606153127887079, guid: 472c0c49271fa4726bd1f8cf077b0d4c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 472c0c49271fa4726bd1f8cf077b0d4c, type: 3}
