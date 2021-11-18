@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Shapes;
+
 public class DrawLine : MonoBehaviour
 {
 
-    //public Line line;
+    public Line line;
 
     private void Awake()
     {
-        //line = GetComponent<Line>();
+        line = GetComponent<Line>();
     }
 
     public void DrawTheLine(Transform from, Transform to)
@@ -18,14 +20,14 @@ public class DrawLine : MonoBehaviour
 
         //GetComponent<MeshFilter>().mesh.enab
 
-        //line.End = transform.InverseTransformPoint(to.position);
+        line.End = transform.InverseTransformPoint(to.position);
     }
 
 
     public void ClearLine()
     {
-        //line.Start = Vector3.zero;
-        //line.End = Vector3.zero;
+        line.Start = Vector3.zero;
+        line.End = Vector3.zero;
         //line.positionCount = 0;
     }
 
