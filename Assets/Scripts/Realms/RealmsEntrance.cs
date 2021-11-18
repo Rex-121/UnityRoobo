@@ -29,7 +29,6 @@ public class RealmsEntrance : MonoBehaviour
         }).AddTo(this);
 
         Observable.EveryEndOfFrame().Take(1).SelectMany(Observable.FromCoroutine(LoadSceneAsync)).Subscribe();
-
     }
 
     private void OnMouseDown()
