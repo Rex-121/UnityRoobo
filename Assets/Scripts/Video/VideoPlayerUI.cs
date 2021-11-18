@@ -108,18 +108,14 @@ public class VideoPlayerUI : MonoBehaviour
         }
     }
 
-    public void OnMouseDown()
-    {
-    }
-
-    public void OnMouseUp()
+    public void handleVideoTouch()
     {
         if (null != doubleClickTimer)
         {
             doubleClickTimer.Dispose();
         }
         videoClickCount++;
-        doubleClickTimer = Observable.Timer(TimeSpan.FromMilliseconds(300)).Subscribe(V =>
+        doubleClickTimer = Observable.Timer(TimeSpan.FromMilliseconds(500)).Subscribe(V =>
         {
             videoClickCount = 0;
         });
@@ -128,7 +124,8 @@ public class VideoPlayerUI : MonoBehaviour
             videoClickCount = 0;
             toggleVideoPlay();
         }
-        else {
+        else
+        {
             toggleUIVisible();
         }
     }
