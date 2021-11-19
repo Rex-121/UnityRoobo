@@ -8,32 +8,10 @@ using System;
 public class HttpRaw
 {
 
-    [Serializable]
-    public struct Data<T>
+
+    static HTTPRequest AddHeaderFor(HTTPRequest request, Dictionary<string, string> headers)
     {
-        public T data;
-        public string msg;
-        public int result;
-        public string desc;
-    }
-
-    [Serializable]
-    public struct RawData
-    {
-        public string msg;
-        public int result;
-        public string desc;
-
-        public bool success => result == 0;
-
-
-        //public string JSON;
-    }
-
-
-    static HTTPRequest AddHeaderFor(HTTPRequest request)
-    {
-        var headers = HttpHost.Default.defaultHeaders;
+        if (headers == null) return request;
 
         foreach (KeyValuePair<string, string> keyValue in headers)
         {
@@ -43,22 +21,17 @@ public class HttpRaw
         return request;
     }
 
-    static Uri BuildPath(string path)
-    {
-        return new Uri(HttpHost.Default.host + "/" + path);
-    }
-
-    public static void Post(string path, object data, Action<HTTPResponse> success, Action<HttpError> error)
+    public static void Post(Uri uri, Dictionary<string, string> headers, object data, Action<HTTPResponse> success, Action<HttpError> error)
     {
 
 
         HTTPRequest requestx;
-        requestx = new HTTPRequest(BuildPath(path), HTTPMethods.Post, (r, re) =>
+        requestx = new HTTPRequest(uri, HTTPMethods.Post, (r, re) =>
         {
             SelectData(r, re, success, error);
         });
 
-        AddHeaderFor(requestx);
+        AddHeaderFor(requestx, headers);
 
         if (data != null)
         {
@@ -83,17 +56,17 @@ public class HttpRaw
     }
 
 
-    public static void Get(string path, Action<HTTPResponse> success, Action<HttpError> error)
+    public static void Get(Uri uri, Dictionary<string, string> headers, Action<HTTPResponse> success, Action<HttpError> error)
     {
 
 
         HTTPRequest requestx;
-        requestx = new HTTPRequest(BuildPath(path), HTTPMethods.Get, (r, re) =>
+        requestx = new HTTPRequest(uri, HTTPMethods.Get, (r, re) =>
         {
             SelectData(r, re, success, error);
         });
 
-        AddHeaderFor(requestx);
+        AddHeaderFor(requestx, headers);
 
         requestx.Send();
     }
@@ -109,8 +82,6 @@ public class HttpRaw
         {
             SelectData(r, re, success, error);
         });
-
-        //AddHeaderFor(requestx);
 
         requestx.Send();
     }

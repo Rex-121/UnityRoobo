@@ -1,29 +1,51 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 using UniRx;
 
-using BestHTTP;
-
 using System.Diagnostics;
 
 using System;
-
-
+using System.Collections.Generic;
 
 public class HttpRx
 {
+
+    [Serializable]
+    public struct Data<T>
+    {
+        public T data;
+        public string msg;
+        public int result;
+        public string desc;
+    }
+
+    [Serializable]
+    public struct Ignore
+    {
+
+    }
+
+    static Uri BuildPath(string path)
+    {
+        return new Uri(HttpHost.Default.host + path);
+    }
+
+    static Dictionary<string, string> GetHeaders()
+    {
+        return HttpHost.Default.defaultHeaders;
+    }
+
+
     static IObservable<T> RawPost<T>(string path, object data)
     {
         Stopwatch sw = new Stopwatch();
         return Observable.Create<T>((ob) =>
         {
-            HttpRaw.Post(path, data, (r) =>
+            HttpRaw.Post(BuildPath(path), GetHeaders(), data, (r) =>
             {
                 try
                 {
-                    var data = JsonUtility.FromJson<HttpRaw.Data<T>>(r.DataAsText);
+                    var data = JsonUtility.FromJson<Data<T>>(r.DataAsText);
                     ob.OnNext(data.data);
 
                 }
@@ -55,16 +77,17 @@ public class HttpRx
         return RawPost<Ignore>(path, data);
     }
 
+    /// ------------------------------------------------------------------------
+
     static IObservable<T> RawGet<T>(string path)
     {
-        Stopwatch sw = new Stopwatch();
         return Observable.Create<T>((ob) =>
         {
-            HttpRaw.Get(path, (r) =>
+            HttpRaw.Get(BuildPath(path), GetHeaders(), (r) =>
             {
                 try
                 {
-                    var data = JsonUtility.FromJson<HttpRaw.Data<T>>(r.DataAsText);
+                    var data = JsonUtility.FromJson<Data<T>>(r.DataAsText);
                     ob.OnNext(data.data);
 
                 }
@@ -136,10 +159,6 @@ public class HttpRx
       });
     }
 
-    [Serializable]
-    public struct Ignore
-    {
 
-    }
 
 }

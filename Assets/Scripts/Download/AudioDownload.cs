@@ -4,7 +4,9 @@ using UnityEngine;
 
 using Sirenix.OdinInspector;
 using UniRx;
-using System;
+using System.Diagnostics;
+
+using UniRx;
 
 public class AudioDownload : MonoBehaviour
 {
@@ -18,21 +20,61 @@ public class AudioDownload : MonoBehaviour
 
     AudioSource audioSource;
 
+
+    public SpriteRenderer spriteRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
 
         audioSource = GetComponent<AudioSource>();
 
-        HttpRx.GetAudio(uri).Take(1).Subscribe(v =>
-        {
-            SetClip(v);
-        }).AddTo(this);
+
+        Observable.Timer(System.TimeSpan.FromSeconds(25)).Subscribe
+            (_ =>
+            {
+
+                Storage.GetImage(Parcel.FromLocal("abc.png")).Take(1).Subscribe(v =>
+                {
+                    
+      
+                    spriteRenderer.sprite = v;
+
+                }, (e) =>
+                {
+                    Logging.Log("error" + e);
+                }).AddTo(this);
+
+
+                Stopwatch sw = new Stopwatch();
+
+                sw.Start();
+
+                Storage.GetAudio(Parcel.FromLocal("abc.wav")).Take(1).Subscribe(v =>
+                {
+
+                    sw.Stop();
+
+                    Logging.Log(sw.ElapsedMilliseconds);
+                    SetClip(v);
+
+                }, (e) =>
+                {
+                    Logging.Log("error" + e);
+                }).AddTo(this);
+
+
+            }).AddTo(this);
+
+
     }
 
 
     void SetClip(AudioClip clip)
     {
+
+        Logging.Log("name" + clip.name);
+
         audioSource.clip = clip;
         audioSource.Play();
     }

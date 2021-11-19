@@ -29,6 +29,12 @@ public class RealmsEntrance : MonoBehaviour
         }).AddTo(this);
 
         Observable.EveryEndOfFrame().Take(1).SelectMany(Observable.FromCoroutine(LoadSceneAsync)).Subscribe();
+
+        Logging.Log(SystemInfo.graphicsDeviceName);
+
+        Logging.Log(SystemInfo.graphicsDeviceVendor);
+
+        Logging.Log(Application.persistentDataPath);
     }
 
     private void OnMouseDown()
@@ -43,7 +49,7 @@ public class RealmsEntrance : MonoBehaviour
         Stopwatch sw = new Stopwatch();
 
         sw.Start();
-        async = SceneManager.LoadSceneAsync("SampleScene");
+        async = SceneManager.LoadSceneAsync("Courseware");
 
 
         async.allowSceneActivation = false;

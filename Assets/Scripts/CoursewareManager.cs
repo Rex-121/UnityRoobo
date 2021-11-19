@@ -26,7 +26,7 @@ public class CoursewareManager : MonoBehaviour
         Next();
     }
 
-    void OnEnable()
+    void Start()
     {
 
         //cwCanvas.GetComponent<Canvas>().worldCamera = Camera.main;
@@ -47,7 +47,7 @@ public class CoursewareManager : MonoBehaviour
         var cp = playlist.Next();
         if (cp == null)
         {
-            SceneManager.LoadScene("Realm");
+            //SceneManager.LoadScene("Realm");
             return;
         }
 
