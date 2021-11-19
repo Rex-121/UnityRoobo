@@ -87,6 +87,9 @@ public class HttpRx
             {
                 try
                 {
+                    Logging.Log(r.DataAsText);
+
+
                     var data = JsonUtility.FromJson<Data<T>>(r.DataAsText);
                     ob.OnNext(data.data);
 
@@ -107,6 +110,13 @@ public class HttpRx
             return null;
         });
     }
+
+
+    public static IObservable<T> Get<T>(string path)
+    {
+        return RawGet<T>(path);
+    }
+
 
     static IObservable<byte[]> RawGetResource(string path)
     {

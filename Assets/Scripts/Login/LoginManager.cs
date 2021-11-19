@@ -1,6 +1,8 @@
 
 using UnityEngine;
 using UniRx;
+using System;
+using System.Collections.Generic;
 
 public class LoginManager : MonoBehaviour
 {
@@ -36,8 +38,24 @@ public class LoginManager : MonoBehaviour
         // }, () => { Logging.Log("com"); }).AddTo(this);
 
 
+        HttpRx.Get<Dictionary<string, string>>("/pudding/teacher/v1/course/list?subjectId=4&type=delay").Subscribe(v =>
+        {
+            Logging.Log(v);
+            Logging.Log("fasdf");
+        }, e =>
+        {
+            Logging.Log(e);
+        });
+
+
     }
 
+
+    [Serializable]
+    public class X
+    {
+        public string id;
+    }
 
 }
 
