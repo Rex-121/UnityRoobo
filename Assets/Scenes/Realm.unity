@@ -1088,7 +1088,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224086071809384054, guid: bdb8f55c79de3ce429e354b19dc74938, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 786
       objectReference: {fileID: 0}
     - target: {fileID: 224086071809384054, guid: bdb8f55c79de3ce429e354b19dc74938, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1096,7 +1096,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224086071809384054, guid: bdb8f55c79de3ce429e354b19dc74938, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 413
       objectReference: {fileID: 0}
     - target: {fileID: 224086071809384054, guid: bdb8f55c79de3ce429e354b19dc74938, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1136,7 +1136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224413972544493284, guid: bdb8f55c79de3ce429e354b19dc74938, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 640
       objectReference: {fileID: 0}
     - target: {fileID: 224413972544493284, guid: bdb8f55c79de3ce429e354b19dc74938, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1437,6 +1437,7 @@ GameObject:
   - component: {fileID: 1839926700}
   - component: {fileID: 1839926702}
   - component: {fileID: 1839926701}
+  - component: {fileID: 1839926703}
   m_Layer: 0
   m_Name: Realms
   m_TagString: Untagged
@@ -1593,6 +1594,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29fbb977be72c485d85046dfacee735f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1839926703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839926695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70e5b790321974e598c669563ac5a87c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2048472930

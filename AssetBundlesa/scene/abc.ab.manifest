@@ -1,0 +1,53 @@
+ManifestFileVersion: 0
+CRC: 2832497327
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 4ff351b8a568a7f18325cd1d3e555e41
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: a2ffd5faf1b2ce452ddef378413eea53
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 49
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f1b3b4b945939a54ea0b23d3396115fb, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/RemoteResources/ff/skeleton.png
+- Assets/RemoteResources/ff/skeleton.json
+- Assets/RemoteResources/ff/skeleton.atlas.txt
+- Assets/RemoteResources/vvv.png
+- Assets/RemoteResources/ff/skeleton_Material.mat
+- Assets/RemoteResources/ff/skeleton_Atlas.asset
+- Assets/RemoteResources/Spine GameObject (skeleton).prefab
+- Assets/RemoteResources/ff/skeleton_SkeletonData.asset
+- Assets/RemoteResources/Square.prefab
+Dependencies: []
