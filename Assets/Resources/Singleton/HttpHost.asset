@@ -43,7 +43,7 @@ MonoBehaviour:
       Data: Content-Type
     - Name: $v
       Entry: 1
-      Data: application/json; charset=utf-8
+      Data: application/x-www-form-urlencoded
     - Name: 
       Entry: 8
       Data: 

@@ -59,7 +59,6 @@ public class HttpRaw
     public static void Get(Uri uri, Dictionary<string, string> headers, Action<HTTPResponse> success, Action<HttpError> error)
     {
 
-
         HTTPRequest requestx;
         requestx = new HTTPRequest(uri, HTTPMethods.Get, (r, re) =>
         {
@@ -67,7 +66,7 @@ public class HttpRaw
         });
 
         AddHeaderFor(requestx, headers);
-
+        
         requestx.Send();
     }
 
@@ -89,6 +88,7 @@ public class HttpRaw
 
     static void SelectData(HTTPRequest request, HTTPResponse response, Action<HTTPResponse> success, Action<HttpError> error)
     {
+
         if (response.StatusCode == 200)
         {
             success(response);
