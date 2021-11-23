@@ -13,6 +13,7 @@ public class RealmsEntrance : MonoBehaviour
 
     ReactiveProperty<float> progress = new ReactiveProperty<float>();
 
+    //public GameObject lessonDetailPre;
 
     private void OnEnable()
     {
@@ -35,11 +36,29 @@ public class RealmsEntrance : MonoBehaviour
         Logging.Log(SystemInfo.graphicsDeviceVendor);
 
         Logging.Log(Application.persistentDataPath);
+
+
     }
 
     private void OnMouseDown()
     {
-        async.allowSceneActivation = true;
+        //async.allowSceneActivation = true;
+
+
+
+        Stopwatch sw = new Stopwatch();
+
+        var gb = Resources.Load("LessonDetails", typeof(GameObject));
+
+        Logging.Log("加载afd " + sw.ElapsedMilliseconds);
+
+        Instantiate(gb);
+
+        gameObject.SetActive(false);
+
+        sw.Stop();
+
+        Logging.Log("生成afd " + sw.ElapsedMilliseconds);
     }
 
     AsyncOperation async;

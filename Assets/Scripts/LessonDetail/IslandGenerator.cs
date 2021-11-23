@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using Cinemachine;
 public class IslandGenerator : IScrollLimiter
 {
     [Required]
@@ -10,10 +11,20 @@ public class IslandGenerator : IScrollLimiter
     public GameObject island1, island2, island3, island4;
     [Required]
     public GameObject floatingObject;
+    [Required]
+    public GameObject playerWithCameraObject;
     private float left;
     private float rightAnchor;
     private int islandCount = 13;
 
+     void OnEnable()
+    {
+        Camera.main.gameObject.AddComponent<CinemachineBrain>();    
+    }
+     void OnDisable()
+    {
+        Destroy(Camera.main.gameObject.GetComponent<CinemachineBrain>());
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +34,10 @@ public class IslandGenerator : IScrollLimiter
         }
         GameObject floating = Instantiate(floatingObject);
         floating.GetComponent<PositionBridge>().setRight(rightAnchor);
+        floating.transform.SetParent(transform);
+        GameObject playerWithCamera = Instantiate(playerWithCameraObject);
+        playerWithCamera.GetComponent<PositionBridge>().setRight(rightAnchor);
+        playerWithCamera.transform.SetParent(transform);
     }
 
     void instantiateIsland(int index)
@@ -44,7 +59,8 @@ public class IslandGenerator : IScrollLimiter
             rightAnchor = left + island.GetComponent<SpriteRenderer>().bounds.size.x + anchor.transform.position.x;
         }
         island.transform.position = new Vector3(left, anchor.transform.position.y, 0);
-        Instantiate(island);
+       GameObject islandGameObject= Instantiate(island);
+        islandGameObject.transform.SetParent(transform);
     }
 
     GameObject getIslandByPosition(int index)

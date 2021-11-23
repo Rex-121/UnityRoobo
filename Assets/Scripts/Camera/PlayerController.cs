@@ -12,8 +12,6 @@ public class PlayerController : MonoBehaviour
     [Required]
     public float speedLimit;
     private float speedInEditor = 3000;
-    [Required]
-    public IScrollLimiter scrollLimiter;
     private Rigidbody2D rb;
     private float rightAnchor;
     // Start is called before the first frame update
@@ -21,14 +19,14 @@ public class PlayerController : MonoBehaviour
     {
         FPS.Default.LockFrame();
         rb = GetComponent<Rigidbody2D>();
-        rightAnchor = scrollLimiter.getRightLimit();
+        rightAnchor = GetComponentInParent<PositionBridge>().getRight();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         if (rightAnchor <= 0) {
-            Destroy(rb);
+            rb.gameObject.SetActive(false);
             return;
         }
 #if UNITY_EDITOR
