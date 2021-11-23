@@ -24,7 +24,7 @@ public class LoadAssetBundle : MonoBehaviour
         Observable.Timer(System.TimeSpan.FromSeconds(10)).Subscribe(_ =>
         {
             StartCoroutine(StartXXX());
-        });
+        }).AddTo(this);
         
     }
 

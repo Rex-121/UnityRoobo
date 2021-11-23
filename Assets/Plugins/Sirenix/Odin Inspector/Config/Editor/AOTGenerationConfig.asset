@@ -16,7 +16,7 @@ MonoBehaviour:
   deleteDllAfterBuilds: 1
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
-  lastScan: 637729427097759570
+  lastScan: 637732600669849080
   supportSerializedTypes:
   - TypeName: ChooseImgByAudioTemplate, Assembly-CSharp
     IsCustom: 0

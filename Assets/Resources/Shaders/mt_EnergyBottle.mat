@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: mt_EnergyBottle
+  m_Shader: {fileID: -6465566751694194690, guid: bca9d86449f9f4adaae5bcc432609ba3, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 4000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_9040b9513e6a45a0996e2ccb57e556cd: 0.48
+    - Vector1_95f5b92155944422a8fc5f4eb59aca30: 0.32
+    m_Colors:
+    - Color_52d113d3044041cd9135b7bc92df1e12: {r: 0.41509432, g: 0.3498011, b: 0.23300105, a: 0}
+    - Color_92f99f46ab4e4086ab7682061be4102d: {r: 0.74509805, g: 0.5427422, b: 0.16470586, a: 0}
+  m_BuildTextureStacks: []

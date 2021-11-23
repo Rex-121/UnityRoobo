@@ -24,7 +24,8 @@ public class HttpRaw
     public static void Post(Uri uri, Dictionary<string, string> headers, object data, Action<HTTPResponse> success, Action<HttpError> error)
     {
 
-
+        Logging.Log(success);
+        Logging.Log(error);
         HTTPRequest requestx;
         requestx = new HTTPRequest(uri, HTTPMethods.Post, (r, re) =>
         {
@@ -88,16 +89,19 @@ public class HttpRaw
 
     static void SelectData(HTTPRequest request, HTTPResponse response, Action<HTTPResponse> success, Action<HttpError> error)
     {
+        if (response == null)
+        {
+            error(new HttpError(-8888, "", HttpError.Type.HTTP));
+            return;
+        }
 
         if (response.StatusCode == 200)
         {
             success(response);
-
-
         }
         else
         {
-
+            Logging.Log("3");
             if (response.StatusCode == 304 && !request.DisableCache)
             {
                 success(response);

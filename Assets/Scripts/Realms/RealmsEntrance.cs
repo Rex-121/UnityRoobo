@@ -8,6 +8,8 @@ using UniRx;
 
 using UnityEngine.SceneManagement;
 
+using UnityEngine.UI;
+
 public class RealmsEntrance : MonoBehaviour
 {
 
@@ -29,7 +31,7 @@ public class RealmsEntrance : MonoBehaviour
             Logging.Log("SampleScene 加载完成");
         }).AddTo(this);
 
-        Observable.EveryEndOfFrame().Take(1).SelectMany(Observable.FromCoroutine(LoadSceneAsync)).Subscribe();
+        Observable.EveryEndOfFrame().Take(1).SelectMany(Observable.FromCoroutine(LoadSceneAsync)).Subscribe().AddTo(this);
 
         Logging.Log(SystemInfo.graphicsDeviceName);
 
@@ -38,6 +40,12 @@ public class RealmsEntrance : MonoBehaviour
         Logging.Log(Application.persistentDataPath);
 
 
+    }
+
+
+    public void LoadCWScene()
+    {
+        async.allowSceneActivation = true;
     }
 
     private void OnMouseDown()

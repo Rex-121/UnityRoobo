@@ -8,12 +8,20 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-
 public class HttpRx
 {
 
     [Serializable]
-    public struct Data<T>
+    public class Data<T>
+    {
+        public T data;
+        public string msg;
+        public int result;
+        public string desc;
+    }
+
+    [Serializable]
+    public class DataX<T>
     {
         public T data;
         public string msg;
@@ -91,9 +99,6 @@ public class HttpRx
             {
                 try
                 {
-                    Logging.Log(r.DataAsText);
-
-
                     var data = JsonUtility.FromJson<Data<T>>(r.DataAsText);
                     ob.OnNext(data.data);
 

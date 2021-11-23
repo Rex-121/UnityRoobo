@@ -118,7 +118,7 @@ public class VideoPlayerUI : MonoBehaviour
         doubleClickTimer = Observable.Timer(TimeSpan.FromMilliseconds(500)).Subscribe(V =>
         {
             videoClickCount = 0;
-        });
+        }).AddTo(this);
         if (videoClickCount >= 2)
         {
             videoClickCount = 0;
