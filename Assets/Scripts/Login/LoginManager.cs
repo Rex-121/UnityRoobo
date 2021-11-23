@@ -54,14 +54,14 @@ public class LoginManager : MonoBehaviour
         //a.Add("type", "delay");
 
 
-        HttpRx.Get<Dictionary<string, string>>("/pudding/teacher/v1/course/list", a).Subscribe(v =>
-        {
-            Logging.Log(v);
-            Logging.Log("fasdf");
-        }, e =>
-        {
-            Logging.Log((e as HttpError).message);
-        });
+        //HttpRx.Get<Dictionary<string, string>>("/pudding/teacher/v1/course/list", a).Subscribe(v =>
+        //{
+        //    Logging.Log(v);
+        //    Logging.Log("fasdf");
+        //}, e =>
+        //{
+        //    Logging.Log((e as HttpError).message);
+        //});
     }
 
 
