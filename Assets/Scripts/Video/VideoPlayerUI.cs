@@ -30,6 +30,7 @@ public class VideoPlayerUI : MonoBehaviour
 
     private void CreateProgressDragEvents()
     {
+
         EventTrigger trigger = progressSlider.gameObject.GetComponent<EventTrigger>();
         if (trigger != null)
         {

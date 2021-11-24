@@ -10,12 +10,20 @@ using UnityEngine.SceneManagement;
 
 using UnityEngine.UI;
 
+using Spine;
+
 public class RealmsEntrance : MonoBehaviour
 {
 
     ReactiveProperty<float> progress = new ReactiveProperty<float>();
 
     //public GameObject lessonDetailPre;
+
+    public Transform realmUI;
+
+
+    public Transform sencUI;
+
 
     private void OnEnable()
     {
@@ -40,8 +48,113 @@ public class RealmsEntrance : MonoBehaviour
         Logging.Log(Application.persistentDataPath);
 
 
+        Stopwatch sw = new Stopwatch();
+
+        sw.Start();
+
+       Logging.Log("file://" + Application.persistentDataPath + "/value.wav");
+
+        WebReqeust.GetAudio("file://" + Application.persistentDataPath + "/value.wav", (c) =>
+        {
+
+            Logging.Log("sff" + sw.ElapsedMilliseconds);
+
+            Logging.Log("fasdgadsf");
+
+            GetComponent<AudioSource>().clip = c;
+
+            GetComponent<AudioSource>().Play();
+
+        }, (e) => {
+
+            Logging.Log("error");
+            Logging.Log(e);
+        });
+
+        //Stopwatch sw = new Stopwatch();
+
+        //sw.Start();
+
+        //WebReqeust.GetAudio("https://dwn.roobo.com/apps/zhixueyuan/dev/pudding/pudding/4.2.2/value.wav", (c) =>
+        //{
+
+        //    Logging.Log("sff" + sw.ElapsedMilliseconds);
+
+        //    Logging.Log("fasdgadsf");
+
+        //    GetComponent<AudioSource>().clip = c;
+
+        //    GetComponent<AudioSource>().Play();
+
+        //}, (e) => {
+
+        //    Logging.Log("error");
+        //    Logging.Log(e);
+        //});
     }
 
+
+    public void ReLoadRealm()
+    {
+        Logging.Log("fdasfas");
+        SceneManager.LoadScene("Realm");
+    }
+
+
+    public Image[] imgs;
+
+    string indexing;
+
+    public GameObject ship;
+
+    public void ToggleSecondary(string index)
+    {
+
+        realmUI.gameObject.SetActive(false);
+
+        ship.SetActive(false);
+
+        foreach (var i in imgs)
+        {
+            i.gameObject.SetActive(false);
+        }
+
+        switch (index)
+        {
+            case "0":
+                imgs[0].gameObject.SetActive(true);
+                break;
+            case "1":
+                imgs[1].gameObject.SetActive(true);
+                break;
+            case "2":
+                imgs[2].gameObject.SetActive(true);
+                break;
+            case "3":
+                imgs[3].gameObject.SetActive(true);
+                break;
+            case "4":
+                imgs[4].gameObject.SetActive(true);
+                break;
+        }
+
+        if (index == indexing)
+        {
+            realmUI.gameObject.SetActive(true);
+            indexing = null;
+            ship.SetActive(true);
+        }
+        else
+        {
+            indexing = index;
+        }
+        
+
+        //bool display = sencUI.gameObject.activeInHierarchy;
+
+        //realmUI.gameObject.SetActive(display);
+        //sencUI.gameObject.SetActive(!display);
+    }
 
     public void LoadCWScene()
     {

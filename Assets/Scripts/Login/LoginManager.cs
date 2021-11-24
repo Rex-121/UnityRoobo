@@ -35,18 +35,18 @@ public class LoginManager : MonoBehaviour
 
         Logging.Log(date1);
 
-        //HttpRx.Post<User.Token>("/pudding/manager/v1/provisional/tempAccount/login", new ABC("50000000593", "lu23t0gk5110")).Subscribe((r) =>
-        //{
-        //    User.Default.token = r;
-        //    Logging.Log(r.accessToken);
-        //    Logging.Log("fasd");
-        //}, (e) =>
-        // {
-        //     Logging.Log("fasd");
-        //     Logging.Log("error");
-        //     Logging.Log((e as HttpError).message);
-        //     Logging.Log((e as HttpError).code);
-        // }, () => { Logging.Log("com"); }).AddTo(this);
+        HttpRx.Post<User.Token>("/pudding/manager/v1/provisional/tempAccount/login", new ABC("50000000593", "lu23t0gk5110")).Subscribe((r) =>
+        {
+            User.Default.token = r;
+            Logging.Log(r.accessToken);
+            Logging.Log("fasd");
+        }, (e) =>
+         {
+             Logging.Log("fasd");
+             Logging.Log("error");
+             Logging.Log((e as HttpError).message);
+             Logging.Log((e as HttpError).code);
+         }, () => { Logging.Log("com"); }).AddTo(this);
 
         //var a = new Dictionary<string, string>();
 

@@ -37,6 +37,15 @@ public class User : SingletonSO<User>
 
     }
 
+    [LabelText("踢出时间")]
+    public int expireTime = 10;
+
+
+    [LabelText("下次踢出时间")]
+    [DisplayAsString]
+    public DateTime nextExpireTime;
+
+
     private IDisposable expireDis;
 
     void ExpireCul()
@@ -45,7 +54,7 @@ public class User : SingletonSO<User>
 
         if (token == null) return;
 
-        var f = new DateTime();
+        nextExpireTime = DateTime.Now.AddMinutes(expireTime);
 
         expireDis = Observable.Timer(TimeSpan.FromMinutes(3)).Subscribe();
     }
