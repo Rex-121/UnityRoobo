@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 using Spine;
-
+using DG.Tweening;
 public class RealmsEntrance : MonoBehaviour
 {
 
@@ -24,6 +24,8 @@ public class RealmsEntrance : MonoBehaviour
 
     public Transform sencUI;
 
+
+    public Transform imagss;
 
     private void OnEnable()
     {
@@ -45,14 +47,14 @@ public class RealmsEntrance : MonoBehaviour
 
         Logging.Log(SystemInfo.graphicsDeviceVendor);
 
-        Logging.Log(Application.persistentDataPath);
+        Logging.Log(UnityEngine.Application.persistentDataPath);
 
 
         Stopwatch sw = new Stopwatch();
 
         sw.Start();
 
-       Logging.Log("file://" + Application.persistentDataPath + "/value.wav");
+        Logging.Log("file://" + Application.persistentDataPath + "/value.wav");
 
         WebReqeust.GetAudio("file://" + Application.persistentDataPath + "/value.wav", (c) =>
         {
@@ -65,7 +67,8 @@ public class RealmsEntrance : MonoBehaviour
 
             GetComponent<AudioSource>().Play();
 
-        }, (e) => {
+        }, (e) =>
+        {
 
             Logging.Log("error");
             Logging.Log(e);
@@ -91,6 +94,13 @@ public class RealmsEntrance : MonoBehaviour
         //    Logging.Log("error");
         //    Logging.Log(e);
         //});
+        //var mat = imagss.GetComponent<Image>().materialForRendering;
+        //Logging.Log("vafdasdfa" + mat.GetFloat("_ShineLocation"));
+        //DOTween.To(() => 0f, (v) =>
+        //{
+        //    mat.SetFloat("_ShineLocation", Mathf.Min(1, v));
+        //}, 1, 1.5f).SetLoops(-1);
+
     }
 
 
@@ -148,7 +158,7 @@ public class RealmsEntrance : MonoBehaviour
         {
             indexing = index;
         }
-        
+
 
         //bool display = sencUI.gameObject.activeInHierarchy;
 
