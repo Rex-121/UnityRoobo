@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 1726182683, guid: a4865f1ab4504ed8a368670db22f409c, type: 3}
   m_Name: AOTGenerationConfig
   m_EditorClassIdentifier: 
-  automateBeforeBuilds: 1
+  automateBeforeBuilds: 0
   deleteDllAfterBuilds: 1
   AutomateForAllAOTPlatforms: 1
   automateForPlatforms: 0900000014000000
+<<<<<<< HEAD
+  lastScan: 0
+  supportSerializedTypes: []
+=======
   lastScan: 637734452357541480
   supportSerializedTypes:
   - TypeName: ChooseImgByAudioTemplate, Assembly-CSharp
@@ -101,3 +105,4 @@ MonoBehaviour:
       UnityEngine.CoreModule
     IsCustom: 0
     Emit: 1
+>>>>>>> a8addc425e5a9e23aabc3b0bf8e7a2df1a03afa4

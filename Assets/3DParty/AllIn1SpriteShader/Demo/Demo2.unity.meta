@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Plugins/Android/AndroidManifest.xml.meta
+guid: c553cf5d08babdb45aa97d02b5d96608
+TextScriptImporter:
+=======
 guid: 63119d9cc000fdf4b96768c82b7d49b3
 DefaultImporter:
+>>>>>>> a8addc425e5a9e23aabc3b0bf8e7a2df1a03afa4:Assets/3DParty/AllIn1SpriteShader/Demo/Demo2.unity.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
