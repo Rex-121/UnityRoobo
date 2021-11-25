@@ -10,22 +10,16 @@ using UnityEngine.SceneManagement;
 
 using UnityEngine.UI;
 
-using Spine;
-using DG.Tweening;
 public class RealmsEntrance : MonoBehaviour
 {
 
     ReactiveProperty<float> progress = new ReactiveProperty<float>();
-
-    //public GameObject lessonDetailPre;
 
     public Transform realmUI;
 
 
     public Transform sencUI;
 
-
-    public Transform imagss;
 
     private void OnEnable()
     {
@@ -43,70 +37,12 @@ public class RealmsEntrance : MonoBehaviour
 
         Observable.EveryEndOfFrame().Take(1).SelectMany(Observable.FromCoroutine(LoadSceneAsync)).Subscribe().AddTo(this);
 
-        Logging.Log(SystemInfo.graphicsDeviceName);
-
-        Logging.Log(SystemInfo.graphicsDeviceVendor);
-
-        Logging.Log(UnityEngine.Application.persistentDataPath);
-
-
-        Stopwatch sw = new Stopwatch();
-
-        sw.Start();
-
-        Logging.Log("file://" + Application.persistentDataPath + "/value.wav");
-
-        WebReqeust.GetAudio("file://" + Application.persistentDataPath + "/value.wav", (c) =>
-        {
-
-            Logging.Log("sff" + sw.ElapsedMilliseconds);
-
-            Logging.Log("fasdgadsf");
-
-            GetComponent<AudioSource>().clip = c;
-
-            GetComponent<AudioSource>().Play();
-
-        }, (e) =>
-        {
-
-            Logging.Log("error");
-            Logging.Log(e);
-        });
-
-        //Stopwatch sw = new Stopwatch();
-
-        //sw.Start();
-
-        //WebReqeust.GetAudio("https://dwn.roobo.com/apps/zhixueyuan/dev/pudding/pudding/4.2.2/value.wav", (c) =>
-        //{
-
-        //    Logging.Log("sff" + sw.ElapsedMilliseconds);
-
-        //    Logging.Log("fasdgadsf");
-
-        //    GetComponent<AudioSource>().clip = c;
-
-        //    GetComponent<AudioSource>().Play();
-
-        //}, (e) => {
-
-        //    Logging.Log("error");
-        //    Logging.Log(e);
-        //});
-        //var mat = imagss.GetComponent<Image>().materialForRendering;
-        //Logging.Log("vafdasdfa" + mat.GetFloat("_ShineLocation"));
-        //DOTween.To(() => 0f, (v) =>
-        //{
-        //    mat.SetFloat("_ShineLocation", Mathf.Min(1, v));
-        //}, 1, 1.5f).SetLoops(-1);
 
     }
 
 
     public void ReLoadRealm()
     {
-        Logging.Log("fdasfas");
         SceneManager.LoadScene("Realm");
     }
 
