@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using Cinemachine;
+using UniRx;
+using System;
+
 public class IslandGenerator : IScrollLimiter
 {
     [Required]
@@ -15,32 +18,49 @@ public class IslandGenerator : IScrollLimiter
     public GameObject playerWithCameraObject;
     private float left;
     private float rightAnchor;
-    private int islandCount = 13;
+    private int islandCount;
 
-     void OnEnable()
+    void OnEnable()
     {
-        Camera.main.gameObject.AddComponent<CinemachineBrain>();    
+        Camera.main.gameObject.AddComponent<CinemachineBrain>();
     }
-     void OnDisable()
+
+    void OnDisable()
     {
         Destroy(Camera.main.gameObject.GetComponent<CinemachineBrain>());
     }
+
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < islandCount; i++)
-        {
-            instantiateIsland(i);
-        }
-        GameObject floating = Instantiate(floatingObject);
-        floating.GetComponent<PositionBridge>().setRight(rightAnchor);
-        floating.transform.SetParent(transform);
-        GameObject playerWithCamera = Instantiate(playerWithCameraObject);
-        playerWithCamera.GetComponent<PositionBridge>().setRight(rightAnchor);
-        playerWithCamera.transform.SetParent(transform);
+        doGetLessonDetails(()=>{
+            GameObject floating = Instantiate(floatingObject);
+            floating.GetComponent<PositionBridge>().setRight(rightAnchor);
+            floating.transform.SetParent(transform);
+            GameObject playerWithCamera = Instantiate(playerWithCameraObject);
+            playerWithCamera.GetComponent<PositionBridge>().setRight(rightAnchor);
+            playerWithCamera.transform.SetParent(transform);
+        });
     }
 
-    void instantiateIsland(int index)
+    private void doGetLessonDetails(Action then)
+    {
+        HttpRx.Get<LessonDetailsBean.Data>("/pudding/teacher/v1/course/5509/lesson/6979/round/list").Subscribe(v =>
+        {
+            islandCount = v.list.Count;
+            for (int i = 0; i <islandCount; i++)
+            {
+                instantiateIsland(i,v.list[i]);
+            }
+            then();
+        }, e =>
+        {
+            Logging.Log((e as HttpError).message);
+            Logging.Log((e as HttpError).Message);
+        });
+    }
+
+    private void instantiateIsland(int index,LessonDetailsBean.ListItem item)
     {
         GameObject island = getIslandByPosition(index);
         if (index == 0)
@@ -59,11 +79,12 @@ public class IslandGenerator : IScrollLimiter
             rightAnchor = left + island.GetComponent<SpriteRenderer>().bounds.size.x + anchor.transform.position.x;
         }
         island.transform.position = new Vector3(left, anchor.transform.position.y, 0);
-       GameObject islandGameObject= Instantiate(island);
+        GameObject islandGameObject = Instantiate(island);
         islandGameObject.transform.SetParent(transform);
+        islandGameObject.GetComponent<IslandChipGenerator>().setData(item);
     }
 
-    GameObject getIslandByPosition(int index)
+    private GameObject getIslandByPosition(int index)
     {
         if (index == 0)
         {

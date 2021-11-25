@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using Sirenix.OdinInspector;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,14 +10,18 @@ public class IslandChipGenerator : MonoBehaviour
     [LabelText("图标")]
     [Required]
     public SpriteRenderer sprite;
+    private LessonDetailsBean.ListItem data;
 
-    // Start is called before the first frame update
-    void Start()
+    public void onItemClick()
     {
-        text.text = "测试";   
+        Logging.Log("on item click:" + data.name);
     }
 
-    public void onItemClick() {
-        Logging.Log("on item click");
+    public void setData(LessonDetailsBean.ListItem item)
+    {
+        data = item;
+        text.text = item.name;
+
+        SpriteUtil.loadImageToSprite(item.icon,sprite,new Vector2(0.5f,0f));
     }
 }

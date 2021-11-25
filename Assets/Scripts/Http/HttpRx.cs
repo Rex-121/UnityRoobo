@@ -100,6 +100,7 @@ public class HttpRx
                 try
                 {
                     var data = JsonUtility.FromJson<Data<T>>(r.DataAsText);
+
                     ob.OnNext(data.data);
 
                 }

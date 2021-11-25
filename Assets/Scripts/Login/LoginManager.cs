@@ -57,13 +57,11 @@ public class LoginManager : MonoBehaviour
         //HttpRx.Get<Dictionary<string, string>>("/pudding/teacher/v1/course/list", a).Subscribe(v =>
         //{
         //    Logging.Log(v);
-        //    //JsonDecoder.DecodeText(v);
         //    Logging.Log("fasdf");
         //}, e =>
         //{
-        //    Logging.Log(e);
+        //    Logging.Log((e as HttpError).message);
         //});
-
     }
 
 

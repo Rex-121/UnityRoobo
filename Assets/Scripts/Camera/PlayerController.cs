@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         if (rightAnchor <= 0) {
+            Logging.Log("right anchor <=0!!!!!");
             rb.gameObject.SetActive(false);
             return;
         }

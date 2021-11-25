@@ -35,4 +35,8 @@ public class ScreenSize
         Logging.Log("camera size:" + cameraSize);
         return (cameraSize * 2) / getScreenHeight();
     }
+
+    public static int getPPU() {
+        return 100;
+    }
 }
