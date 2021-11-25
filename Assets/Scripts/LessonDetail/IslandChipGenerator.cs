@@ -1,23 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class IslandChipGenerator : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-       
+    [LabelText("标题")]
+    [Required]
+    public Text text;
+    [LabelText("图标")]
+    [Required]
+    public SpriteRenderer sprite;
+    private LessonDetailsBean.ListItem data;
 
+    public void onItemClick()
+    {
+        Logging.Log("on item click:" + data.name);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void setData(LessonDetailsBean.ListItem item)
     {
+        data = item;
+        text.text = item.name;
 
-        //var v3 = Camera.main.WorldToScreenPoint(anchor.position);
-
-        //text.transform.position = v3;
+        SpriteUtil.loadImageToSprite(item.icon,sprite,new Vector2(0.5f,0f));
     }
 }

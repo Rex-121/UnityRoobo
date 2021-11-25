@@ -1,8 +1,6 @@
 using UnityEngine;
 using Sirenix.OdinInspector;
 using UniRx;
-using System.Collections;
-
 using System.Diagnostics;
 using UnityEngine.SceneManagement;
 
@@ -26,16 +24,15 @@ public class CoursewareManager : MonoBehaviour
         Next();
     }
 
+    public void Play()
+    {
+        EveryThingReady();
+    }
+
     void Start()
     {
-
-        //cwCanvas.GetComponent<Canvas>().worldCamera = Camera.main;
-
-
         Observable.EveryEndOfFrame().Take(1)   
-            .Subscribe(_ => EveryThingReady()).AddTo(this);
-
-
+            .Subscribe().AddTo(this);
     }
 
     /// <summary>
@@ -47,7 +44,7 @@ public class CoursewareManager : MonoBehaviour
         var cp = playlist.Next();
         if (cp == null)
         {
-            //SceneManager.LoadScene("Realm");
+            SceneManager.LoadScene("Realm");
             return;
         }
 

@@ -30,6 +30,7 @@ public class VideoPlayerUI : MonoBehaviour
 
     private void CreateProgressDragEvents()
     {
+
         EventTrigger trigger = progressSlider.gameObject.GetComponent<EventTrigger>();
         if (trigger != null)
         {
@@ -118,7 +119,7 @@ public class VideoPlayerUI : MonoBehaviour
         doubleClickTimer = Observable.Timer(TimeSpan.FromMilliseconds(500)).Subscribe(V =>
         {
             videoClickCount = 0;
-        });
+        }).AddTo(this);
         if (videoClickCount >= 2)
         {
             videoClickCount = 0;

@@ -80,23 +80,15 @@ public class PuzzleManager : CoursewarePlayer
 
     private void generateTargetTable()
     {
-        WebReqeust.GetTexture("https://roobo-test.oss-cn-beijing.aliyuncs.com/appcourse/manager/2021-10-15/c5kfkggpjsa9p75btg90.png",
-          (result) =>
-          {
-              var targetTab = Instantiate(targetTable);
-              SpriteRenderer spriteRenderer = targetTab.GetComponent<SpriteRenderer>();
-              //替换sprite 
-              spriteRenderer.sprite = Sprite.Create(result, new Rect(Vector2.zero, new Vector2(result.width, result.height)), new Vector2(0f, 1f));
-              //修改大小
-              targetTab.transform.localScale = new Vector3(targetTableSize.x * 100 / result.width, targetTableSize.y * 100 / result.height, targetTab.transform.localScale.z);
-              Debug.Log("image width:" + result.width + " ,height:" + result.height);
-              //计算位置
-              targetTab.transform.position = targetTablePosition;
-              targetTab.transform.SetParent(transform);
-          }, (msg) =>
-          {
-              Debug.Log("load image failed:" + msg);
-          });
+        var targetTab = Instantiate(targetTable);
+        SpriteRenderer spriteRenderer = targetTab.GetComponent<SpriteRenderer>();
+        SpriteUtil.loadImageToSprite("https://roobo-test.oss-cn-beijing.aliyuncs.com/appcourse/manager/2021-10-15/c5kfkggpjsa9p75btg90.png", spriteRenderer,
+            targetTableSize.x,targetTableSize.y,new Vector2(0f, 1f), () =>
+        {
+            //计算位置
+            targetTab.transform.position = targetTablePosition;
+            targetTab.transform.SetParent(transform);
+        });
     }
 
     private void generateDragTarget()
@@ -130,52 +122,45 @@ public class PuzzleManager : CoursewarePlayer
         for (int i = 0; i < testData.Count; i++)
         {
             DragItemBean item = testData[i];
-            WebReqeust.GetTexture(item.imageUrl, (result) =>
-            {
-                GameObject dragI = Instantiate(dragItem);
-                SpriteRenderer spriteRenderer = dragI.GetComponent<SpriteRenderer>();
-                //替换sprite 
-                spriteRenderer.sprite = Sprite.Create(result, new Rect(Vector2.zero, new Vector2(result.width, result.height)), new Vector2(0.5f, 0.5f));
-                //修改大小
-                float dragIW = item.widthRatio / 100 * targetTableSize.x;
-                float dragIH = item.heightRatio / 100 * targetTableSize.y;
-                float dragIWScale = dragIW * 100 / result.width;
-                float dragIHscale = dragIH * 100 / result.height;
-                dragI.transform.localScale = new Vector3(dragIWScale, dragIHscale, dragI.transform.localScale.z);
-                Debug.Log("image width:" + result.width + " ,height:" + result.height);
+
+            GameObject dragI = Instantiate(dragItem);
+            SpriteRenderer spriteRenderer = dragI.GetComponent<SpriteRenderer>();
+            float dragIW = item.widthRatio / 100 * targetTableSize.x;
+            float dragIH = item.heightRatio / 100 * targetTableSize.y;
+            SpriteUtil.loadImageToSprite(item.imageUrl,spriteRenderer,dragIW,dragIH,()=> {
                 //修改碰撞体大小
                 BoxCollider2D boxCollider2D = dragI.GetComponent<BoxCollider2D>();
-                boxCollider2D.size = new Vector2(dragIW / dragIWScale, dragIH / dragIHscale) / 2;//因为已经整体放大了，所以需要除去
+                boxCollider2D.size = new Vector2(dragIW / dragI.transform.localScale.x, dragIH / dragI.transform.localScale.y) / 2;//因为已经整体放大了，所以需要除去
 
                 dragI.transform.SetParent(transform);
                 dragI.name = "dragItem" + item.id;
                 dragItems.Add(dragI);
                 layoutDragItem(dragItems);
-            }, (errMsg) =>
-            {
-                Logging.Log("load image failed:" + errMsg);
             });
         }
     }
 
-    private void layoutDragItem(List<GameObject> list) {
+    private void layoutDragItem(List<GameObject> list)
+    {
         list.Shuffle();
         SpriteRenderer dragTableSpriteRenderer = dragTable.GetComponent<SpriteRenderer>();
         float dragTableHeight = dragTableSpriteRenderer.bounds.size.y;
-        float spaceEven=dragTableHeight/(list.Count+1);
+        float spaceEven = dragTableHeight / (list.Count + 1);
         float start = dragTable.transform.position.y + dragTableHeight / 2f;
 
-        for (int i=0;i<list.Count;i++) {
+        for (int i = 0; i < list.Count; i++)
+        {
             GameObject item = list[i];
             //计算位置
-            item.transform.position = new Vector3(dragTable.transform.position.x, start-spaceEven*(i+1), item.transform.position.z);
+            item.transform.position = new Vector3(dragTable.transform.position.x, start - spaceEven * (i + 1), item.transform.position.z);
         }
     }
 
     public void onePuzzleSolved()
     {
         puzzleSolvedCount++;
-        if (puzzleSolvedCount >= testData.Count) {
+        if (puzzleSolvedCount >= testData.Count)
+        {
             DidEndCourseware(this);
         }
     }

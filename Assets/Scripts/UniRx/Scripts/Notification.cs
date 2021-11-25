@@ -27,7 +27,7 @@ namespace UniRx
     /// The type of the result returned from the observer's notification handlers.
     /// This type parameter is covariant. That is, you can use either the type you specified or any type that is more derived. For more information about covariance and contravariance, see Covariance and Contravariance in Generics.
     /// </typeparam>
-    public interface IObserver<TValue, TResult>
+    public interface IObservable<TValue, TResult>
     {
         /// <summary>
         /// Notifies the observer of a new element in the sequence.
@@ -201,7 +201,7 @@ namespace UniRx
             /// </summary>
             /// <param name="observer">Observer to invoke the notification on.</param>
             /// <returns>Result produced by the observation.</returns>
-            public override TResult Accept<TResult>(IObserver<T, TResult> observer)
+            public override TResult Accept<TResult>(IObservable<T, TResult> observer)
             {
                 if (observer == null)
                     throw new ArgumentNullException("observer");
@@ -335,7 +335,7 @@ namespace UniRx
             /// </summary>
             /// <param name="observer">Observer to invoke the notification on.</param>
             /// <returns>Result produced by the observation.</returns>
-            public override TResult Accept<TResult>(IObserver<T, TResult> observer)
+            public override TResult Accept<TResult>(IObservable<T, TResult> observer)
             {
                 if (observer == null)
                     throw new ArgumentNullException("observer");
@@ -460,7 +460,7 @@ namespace UniRx
             /// </summary>
             /// <param name="observer">Observer to invoke the notification on.</param>
             /// <returns>Result produced by the observation.</returns>
-            public override TResult Accept<TResult>(IObserver<T, TResult> observer)
+            public override TResult Accept<TResult>(IObservable<T, TResult> observer)
             {
                 if (observer == null)
                     throw new ArgumentNullException("observer");
@@ -583,7 +583,7 @@ namespace UniRx
         /// <typeparam name="TResult">The type of the result returned from the observer's notification handlers.</typeparam>
         /// <param name="observer">Observer to invoke the notification on.</param>
         /// <returns>Result produced by the observation.</returns>
-        public abstract TResult Accept<TResult>(IObserver<T, TResult> observer);
+        public abstract TResult Accept<TResult>(IObservable<T, TResult> observer);
 
         /// <summary>
         /// Invokes the delegate corresponding to the notification.

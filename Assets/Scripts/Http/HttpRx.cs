@@ -6,12 +6,22 @@ using System.Diagnostics;
 
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 public class HttpRx
 {
 
     [Serializable]
-    public struct Data<T>
+    public class Data<T>
+    {
+        public T data;
+        public string msg;
+        public int result;
+        public string desc;
+    }
+
+    [Serializable]
+    public class DataX<T>
     {
         public T data;
         public string msg;
@@ -25,9 +35,11 @@ public class HttpRx
 
     }
 
-    static Uri BuildPath(string path)
+    static Uri BuildPath(string path, Dictionary<string, string> query)
     {
-        return new Uri(HttpHost.Default.host + path);
+        var build = new UriBuilder(HttpHost.Default.host + path);
+        build.Query = UrlQuery.Make(query);
+        return build.Uri;
     }
 
     static Dictionary<string, string> GetHeaders()
@@ -41,7 +53,7 @@ public class HttpRx
         Stopwatch sw = new Stopwatch();
         return Observable.Create<T>((ob) =>
         {
-            HttpRaw.Post(BuildPath(path), GetHeaders(), data, (r) =>
+            HttpRaw.Post(BuildPath(path, null), GetHeaders(), data, (r) =>
             {
                 try
                 {
@@ -79,18 +91,16 @@ public class HttpRx
 
     /// ------------------------------------------------------------------------
 
-    static IObservable<T> RawGet<T>(string path)
+    static IObservable<T> RawGet<T>(string path, Dictionary<string, string> query)
     {
         return Observable.Create<T>((ob) =>
         {
-            HttpRaw.Get(BuildPath(path), GetHeaders(), (r) =>
+            HttpRaw.Get(uri: BuildPath(path, query), headers: GetHeaders(), (r) =>
             {
                 try
                 {
-                    Logging.Log(r.DataAsText);
-
-
                     var data = JsonUtility.FromJson<Data<T>>(r.DataAsText);
+
                     ob.OnNext(data.data);
 
                 }
@@ -111,12 +121,28 @@ public class HttpRx
         });
     }
 
-
-    public static IObservable<T> Get<T>(string path)
+    /// <summary>
+    /// GET
+    /// </summary>
+    /// <typeparam name="T">解析数据</typeparam>
+    /// <param name="path">接口</param>
+    /// <param name="query">query参数</param>
+    /// <returns></returns>
+    public static IObservable<T> Get<T>(string path, Dictionary<string, string> query)
     {
-        return RawGet<T>(path);
+        return RawGet<T>(path, query);
     }
 
+    /// <summary>
+    /// GET
+    /// </summary>
+    /// <typeparam name="T">解析数据</typeparam>
+    /// <param name="path">接口</param>
+    /// <returns></returns>
+    public static IObservable<T> Get<T>(string path)
+    {
+        return RawGet<T>(path, query: null);
+    }
 
     static IObservable<byte[]> RawGetResource(string path)
     {
@@ -170,5 +196,50 @@ public class HttpRx
     }
 
 
+
+}
+
+
+
+class UrlQuery
+{
+
+    private const int EscapeTreshold = 256;
+
+
+    public static string Make(Dictionary<string, string> parmas)
+    {
+        if (parmas == null) return "";
+        
+        string v = "";
+        foreach (KeyValuePair<string, string> dic in parmas)
+        {
+            v += (EscapeString(dic.Key) + "=" + EscapeString(dic.Value));
+            v += "&";
+        }
+        var index = v.LastIndexOf("&");
+        v = v.Remove(index);
+
+        Logging.Log("QUERY" + v);
+
+        return v;
+    }
+
+    public static string EscapeString(string originalString)
+    {
+        if (originalString.Length < EscapeTreshold)
+            return Uri.EscapeDataString(originalString);
+        else
+        {
+            int loops = originalString.Length / EscapeTreshold;
+            StringBuilder sb = new StringBuilder(loops);
+
+            for (int i = 0; i <= loops; i++)
+                sb.Append(i < loops ?
+                             Uri.EscapeDataString(originalString.Substring(EscapeTreshold * i, EscapeTreshold)) :
+                             Uri.EscapeDataString(originalString.Substring(EscapeTreshold * i)));
+            return sb.ToString();
+        }
+    }
 
 }
