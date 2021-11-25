@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FPSDisplayOnGUI : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class FPSDisplayOnGUI : MonoBehaviour
     private int frames = 0;
     private float fps;
 
+    public TextMeshProUGUI text;
 
     private void Start()
     {
@@ -30,12 +33,16 @@ public class FPSDisplayOnGUI : MonoBehaviour
             frames = 0;
             lastInterval = timeNow;
         }
+
+        if (text != null)
+            text.text = fps.ToString("0");
     }
-    void OnGUI()
-    {
-        var a = new GUIStyle();
-        a.normal.textColor = Color.black;
-        GUI.Label(new Rect(200, 40, 100, 30), fps.ToString(), a);
-    }
+
+    //void OnGUI()
+    //{
+    //    var a = new GUIStyle();
+    //    a.normal.textColor = Color.black;
+    //    GUI.Label(new Rect(200, 40, 100, 30), fps.ToString(), a);
+    //}
 
 }

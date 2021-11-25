@@ -39,12 +39,6 @@ public class FPS : SingletonSO<FPS>
     private void Lock()
     {
         Application.targetFrameRate = cFps;
-
-        var gb = new GameObject("FPSDisplay");
-
-        gb.AddComponent<FPSDisplayOnGUI>();
-
-        DontDestroyOnLoad(gb);
     }
 
     /// <summary>

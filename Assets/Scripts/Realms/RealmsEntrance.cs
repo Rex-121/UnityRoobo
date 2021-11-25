@@ -37,6 +37,18 @@ public class RealmsEntrance : MonoBehaviour
 
         Observable.EveryEndOfFrame().Take(1).SelectMany(Observable.FromCoroutine(LoadSceneAsync)).Subscribe().AddTo(this);
 
+        //Navigation.Shared
+
+
+        WebReqeust.GetAudio("https://roobo-test.oss-cn-beijing.aliyuncs.com/appcourse/manager/2021-07-13/c3ml5t0rjdcmt7uaegqg.mp3", (c) =>
+        {
+            Logging.Log("fasgas");
+            GetComponent<AudioSource>().clip = c;
+            GetComponent<AudioSource>().Play();
+        }, (e) =>
+        {
+            Logging.Log(e);
+        });
 
     }
 

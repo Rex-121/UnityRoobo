@@ -86,7 +86,7 @@ public static class WebReqeust
     private static IEnumerator GetAudioCoroutine(string url, Action<AudioClip> onSuccess, Action<string> onError)
     {
 
-        using (UnityWebRequest unityWebRequest = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.WAV))
+        using (UnityWebRequest unityWebRequest = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.MPEG))
         {
             yield return unityWebRequest.SendWebRequest();
 

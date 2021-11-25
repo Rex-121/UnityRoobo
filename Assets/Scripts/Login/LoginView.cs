@@ -21,7 +21,7 @@ public class LoginView : MonoBehaviour
     Text btnSwitchText;
 
     [ShowInInspector]
-    [LabelText("·¢ËÍÑéÖ¤ÂëÎÄ±¾")]
+    [LabelText("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½Ä±ï¿½")]
     private Text btnSendText;
     // Start is called before the first frame update
     void Start()
@@ -63,16 +63,16 @@ public class LoginView : MonoBehaviour
         Debug.Log("a=============" + a);
 
         string b = javaClass.Call<string>("ObtainWifiInfo");
-        Debug.Log("a=============»ñÈ¡wifiÇ¿¶È=" + b);
+        Debug.Log("a=============ï¿½ï¿½È¡wifiÇ¿ï¿½ï¿½=" + b);
 
         //javaClass.Call("getAndroidString");
-        javaClass.Call("UnityCallAndroidToast", "ÕâÊÇUnityµ÷ÓÃAndroidµÄToast£¡");
+        javaClass.Call("UnityCallAndroidToast", "ï¿½ï¿½ï¿½ï¿½Unityï¿½ï¿½ï¿½ï¿½Androidï¿½ï¿½Toastï¿½ï¿½");
 
         int sum = javaClass.Call<int>("Sum", new object[] { 10, 20 });
         Debug.Log("a=============sum=" + sum);
 
         string simType = javaClass.Call<string>("CheckSIM");
-        Debug.Log("a=============»ñÈ¡ÔËÓªÉÌÃû³Æ=" + simType);
+        Debug.Log("a=============ï¿½ï¿½È¡ï¿½ï¿½Óªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½=" + simType);
 
         string batteryData = javaClass.Call<string>("MonitorBatteryState");
         OnBatteryDataBack(batteryData);
@@ -84,45 +84,45 @@ public class LoginView : MonoBehaviour
 
                 javaClass.Call("GetAllWidget");
 
-                //Unity±¾µØÍÆËÍ
-                javaClass.Call("SendNotification", new string[] { "Ææ¼£:×îÇ¿Õß", "ÓÂÊ¿ÃÇ Ä§ÁúÌÖ·¥¼´½«¿ªÊ¼" });
+                //Unityï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+                javaClass.Call("SendNotification", new string[] { "ï¿½æ¼£:ï¿½ï¿½Ç¿ï¿½ï¿½", "ï¿½ï¿½Ê¿ï¿½ï¿½ Ä§ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼" });
 
-                //µ÷ÓÃAPP
+                //ï¿½ï¿½ï¿½ï¿½APP
                 javaClass.Call("CallThirdApp", "com.tencent.mm");
 
-                //»ñÈ¡°²×°apk
+                //ï¿½ï¿½È¡ï¿½ï¿½×°apk
                 javaClass.Call("GetAllPackageName");
 
-                //5sÖØÆôÓ¦ÓÃ
+                //5sï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½
                 javaClass.Call("RestartApplication2");
 
-                //ÖØÆôÓ¦ÓÃ
+                //ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½
                 javaClass.Call("RestartApplication1");
 
-                //UIÏß³ÌÖØÆôÓ¦ÓÃ
+                //UIï¿½ß³ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½
                 javaClass.Call("RestartApplicationOnUIThread");
 
-                //Á¢¼´ÖØÆôÓ¦ÓÃ
+                //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½
                 javaClass.Call("RestartApplication");
 
-                //´´½¨°²×¿ Toast
-                javaClass.Call("CreateToast", "³õÊ¼»¯ÖÐ...");
+                //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¿ Toast
+                javaClass.Call("CreateToast", "ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½...");
 
-                //µ÷ÓÃ°²×¿Õð¶¯
+                //ï¿½ï¿½ï¿½Ã°ï¿½×¿ï¿½ï¿½
                 javaClass.Call("ClickShake");
 
-                javaClass.Call("UnityCallAndroidToast", "ÕâÊÇUnityµ÷ÓÃAndroidµÄToast£¡");*/
+                javaClass.Call("UnityCallAndroidToast", "ï¿½ï¿½ï¿½ï¿½Unityï¿½ï¿½ï¿½ï¿½Androidï¿½ï¿½Toastï¿½ï¿½");*/
     }
 
     public void GetBatteryLevel()
     {
         try
         {
-            //»ñÈ¡µçÁ¿
+            //ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
             float batteryLevel= SystemInfo.batteryLevel* 100;
-            Debug.Log("a=============µçÁ¿£º" + batteryLevel);
+            Debug.Log("a=============ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" + batteryLevel);
             BatteryStatus batteryStatus = SystemInfo.batteryStatus ;
-            Debug.Log("a=============³äµç×´Ì¬£º" + batteryStatus);
+            Debug.Log("a=============ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½" + batteryStatus);
             inputName.text = "" + batteryStatus;
             
         }
@@ -141,18 +141,18 @@ public class LoginView : MonoBehaviour
     }
 
     /// <summary>
-    /// ·µ»Ø°´Å¥
+    /// ï¿½ï¿½ï¿½Ø°ï¿½Å¥
     /// </summary>
     public void OnBackPress()
     {
-        //ÌøÈëÉèÖÃÒ³
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò³
         AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
         AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity");
         jo.Call("enterSettingActivity");
     }
 
     /// <summary>
-    /// ¼ì²éÊÇ·ñ¿Éµã»÷µÇÂ¼
+    /// ï¿½ï¿½ï¿½ï¿½Ç·ï¿½Éµï¿½ï¿½ï¿½ï¿½Â¼
     /// </summary>
     public void CheckEnableLogin()
     {
@@ -168,13 +168,13 @@ public class LoginView : MonoBehaviour
     }
 
     /// <summary>
-    /// ÇÐ»»µÇÂ¼·½Ê½
+    /// ï¿½Ð»ï¿½ï¿½ï¿½Â¼ï¿½ï¿½Ê½
     /// </summary>
     public void OnSwitchClick()
     {
         isPhonePwd = !isPhonePwd;
-        btnSwitchText.text = isPhonePwd ? "ÇÐ»»ÑéÖ¤ÂëµÇÂ¼" : "ÇÐ»»ÃÜÂëµÇÂ¼";
-        inputPwdHint.text = isPhonePwd ? "ÇëÊäÈë6Î»ÊýÃÜÂë" : "ÇëÊäÈëÑéÖ¤Âë";
+        btnSwitchText.text = isPhonePwd ? "ï¿½Ð»ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½Â¼" : "ï¿½Ð»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼";
+        inputPwdHint.text = isPhonePwd ? "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½6Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" : "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½";
         btnSend.gameObject.SetActive(!isPhonePwd);
         inputPwd.text = "";
         inputPwd.contentType = isPhonePwd ? InputField.ContentType.Standard : InputField.ContentType.IntegerNumber;
@@ -182,7 +182,7 @@ public class LoginView : MonoBehaviour
     }
 
     /// <summary>
-    /// µã»÷·¢ËÍÑéÖ¤Âë
+    /// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½
     /// </summary>
     public void OnSendVerifyCode()
     {
@@ -190,7 +190,7 @@ public class LoginView : MonoBehaviour
     }
 
     /// <summary>
-    /// µÇÂ¼
+    /// ï¿½ï¿½Â¼
     /// </summary>
     public void OnLoginSubmit()
     {
@@ -198,16 +198,16 @@ public class LoginView : MonoBehaviour
         string pwd = inputPwd.text;
         if (isPhonePwd)
         {
-            //ÓÃ»§ÃûÃÜÂë
+            //ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         }
         else
         {
-            //ÓÃ»§ÃûÑéÖ¤Âë
+            //ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½
         }
     }
 
     /// <summary>
-    /// ÒþË½Õþ²ß
+    /// ï¿½ï¿½Ë½ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     public void OnPrivacyClick()
     {
@@ -215,7 +215,7 @@ public class LoginView : MonoBehaviour
     }
 
     /// <summary>
-    /// ÓÃ»§Ð­Òé
+    /// ï¿½Ã»ï¿½Ð­ï¿½ï¿½
     /// </summary>
     public void OnUserAgreement()
     {
@@ -252,43 +252,43 @@ public class LoginView : MonoBehaviour
         if (args[2] == "2")
         {
            
-            Debug.Log("a=============µç³Ø³äµçÖÐ" );
+            Debug.Log("a=============ï¿½ï¿½Ø³ï¿½ï¿½ï¿½ï¿½" );
         }
         else
         {
-            Debug.Log("a=============µç³Ø·ÅµçÖÐ");
+            Debug.Log("a=============ï¿½ï¿½Ø·Åµï¿½ï¿½ï¿½");
         }
         float percent = int.Parse(args[0]) / float.Parse(args[1]);
         string tx= (Mathf.CeilToInt(percent) + "%").ToString();
-        Debug.Log("a=============µç³Ø="+tx);
+        Debug.Log("a=============ï¿½ï¿½ï¿½="+tx);
     }
     void OnWifiDataBack(string wifiData)//strength+"|"+intToIp(ip)+"|"+mac+"|"+ssid;
     {
-        //·ÖÎöwifiÐÅºÅÇ¿¶È
-        //»ñÈ¡RSSI£¬RSSI¾ÍÊÇ½ÓÊÜÐÅºÅÇ¿¶ÈÖ¸Ê¾¡£
-        //µÃµ½µÄÖµÊÇÒ»¸ö0µ½-100µÄÇø¼äÖµ£¬ÊÇÒ»¸öintÐÍÊý¾Ý£¬ÆäÖÐ0µ½-50±íÊ¾ÐÅºÅ×îºÃ£¬
-        //-50µ½-70±íÊ¾ÐÅºÅÆ«²î£¬Ð¡ÓÚ-70±íÊ¾×î²î£¬
-        //ÓÐ¿ÉÄÜÁ¬½Ó²»ÉÏ»òÕßµôÏß£¬Ò»°ãWifiÒÑ¶ÏÔòÖµÎª-200¡£
+        //ï¿½ï¿½ï¿½ï¿½wifiï¿½Åºï¿½Ç¿ï¿½ï¿½
+        //ï¿½ï¿½È¡RSSIï¿½ï¿½RSSIï¿½ï¿½ï¿½Ç½ï¿½ï¿½ï¿½ï¿½Åºï¿½Ç¿ï¿½ï¿½Ö¸Ê¾ï¿½ï¿½
+        //ï¿½Ãµï¿½ï¿½ï¿½Öµï¿½ï¿½Ò»ï¿½ï¿½0ï¿½ï¿½-100ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½intï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½-50ï¿½ï¿½Ê¾ï¿½Åºï¿½ï¿½ï¿½Ã£ï¿½
+        //-50ï¿½ï¿½-70ï¿½ï¿½Ê¾ï¿½Åºï¿½Æ«ï¿½î£¬Ð¡ï¿½ï¿½-70ï¿½ï¿½Ê¾ï¿½ï¿½î£¬
+        //ï¿½Ð¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó²ï¿½ï¿½Ï»ï¿½ï¿½ßµï¿½ï¿½ß£ï¿½Ò»ï¿½ï¿½Wifiï¿½Ñ¶ï¿½ï¿½ï¿½ÖµÎª-200ï¿½ï¿½
         string log = "";
         log += wifiData;
         string[] args = wifiData.Split('|');
         if (int.Parse(args[0]) > -50 && int.Parse(args[0]) < 0)
         {
-            log += "WifiÐÅºÅÇ¿¶ÈºÜ°ô";
+            log += "Wifiï¿½Åºï¿½Ç¿ï¿½ÈºÜ°ï¿½";
         }
         else if (int.Parse(args[0]) > -70 && int.Parse(args[0]) < -50)
         {
-            log += "WifiÐÅºÅÇ¿¶ÈÒ»°ã";
+            log += "Wifiï¿½Åºï¿½Ç¿ï¿½ï¿½Ò»ï¿½ï¿½";
         }
         else if (int.Parse(args[0]) > -150 && int.Parse(args[0]) < -70)
         {
-            log += "WifiÐÅºÅÇ¿¶ÈºÜÈõ";
+            log += "Wifiï¿½Åºï¿½Ç¿ï¿½Èºï¿½ï¿½ï¿½";
         }
         else if (int.Parse(args[0]) < -200)
         {
-            log += "WifiÐÅºÅJJÁË";
+            log += "Wifiï¿½Åºï¿½JJï¿½ï¿½";
         }
-        string ip = "IP£º" + args[1];
+        string ip = "IPï¿½ï¿½" + args[1];
         string mac = "MAC:" + args[2];
         string ssid = "Wifi Name:" + args[3];
         log += ip;
@@ -298,7 +298,7 @@ public class LoginView : MonoBehaviour
     }
 
     /// <summary>
-    /// °²×¿ÈÕÖ¾
+    /// ï¿½ï¿½×¿ï¿½ï¿½Ö¾
     /// </summary>
     /// <param name="str"></param>
     void OnCoderReturn(string str)
@@ -312,14 +312,14 @@ public class LoginView : MonoBehaviour
         string[] args = batteryData.Split('|');
         if (args[2] == "2")
         {
-            Debug.Log("a=============µç³Ø³äµçÖÐ=" );
+            Debug.Log("a=============ï¿½ï¿½Ø³ï¿½ï¿½ï¿½ï¿½=" );
         }
         else
         {
-            Debug.Log("a=============µç³Ø·ÅµçÖÐ=");
+            Debug.Log("a=============ï¿½ï¿½Ø·Åµï¿½ï¿½ï¿½=");
         }
         string text = (args[0] + "%").ToString();
-        Debug.Log("a=============µç³Ø·ÅµçÖÐ="+ text);
+        Debug.Log("a=============ï¿½ï¿½Ø·Åµï¿½ï¿½ï¿½="+ text);
     }
 
     void OnWifiDataReturn(string wifiData)
@@ -329,21 +329,21 @@ public class LoginView : MonoBehaviour
         string[] args = wifiData.Split('|');
         if (int.Parse(args[0]) > -50 && int.Parse(args[0]) < 100)
         {
-            log += "WifiÐÅºÅÇ¿¶ÈºÜ°ô";
+            log += "Wifiï¿½Åºï¿½Ç¿ï¿½ÈºÜ°ï¿½";
         }
         else if (int.Parse(args[0]) > -70 && int.Parse(args[0]) < -50)
         {
-            log += "WifiÐÅºÅÇ¿¶ÈÒ»°ã";
+            log += "Wifiï¿½Åºï¿½Ç¿ï¿½ï¿½Ò»ï¿½ï¿½";
         }
         else if (int.Parse(args[0]) > -150 && int.Parse(args[0]) < -70)
         {
-            log += "WifiÐÅºÅÇ¿¶ÈºÜÈõ";
+            log += "Wifiï¿½Åºï¿½Ç¿ï¿½Èºï¿½ï¿½ï¿½";
         }
         else if (int.Parse(args[0]) < -200)
         {
-            log += "WifiÐÅºÅJJÁË";
+            log += "Wifiï¿½Åºï¿½JJï¿½ï¿½";
         }
-        string ip = "IP£º" + args[1];
+        string ip = "IPï¿½ï¿½" + args[1];
         string mac = "MAC:" + args[2];
         string ssid = "Wifi Name:" + args[3];
         log += ip;

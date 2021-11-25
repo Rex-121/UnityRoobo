@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Setting.unity
-    guid: 985a424bbf03871498e17d2f35d94a92
-  - enabled: 0
-    path: Assets/Scenes/WifiScene.unity
-    guid: 673a725b6cc7cee4b8268eab2e22f6d4
   - enabled: 1
     path: Assets/Scenes/LoginScence.unity
     guid: 8c9323e240271fa4d81a4fb01a74cbe7
+  - enabled: 1
+    path: Assets/Scenes/Courseware.unity
+    guid: c54827988307145b8bfdbeeb7dff82d1
+  - enabled: 1
+    path: Assets/Scenes/Realm.unity
+    guid: 4186f6d31a89149c5bd1ddbf25449de8
   m_configObjects: {}
