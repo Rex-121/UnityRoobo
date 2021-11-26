@@ -38,7 +38,7 @@ public class NativeCalls : SingletonSO<NativeCalls>
     /// <summary>
     ///  打开设置按钮
     /// </summary>
-    public static void PushSettingMenus()
+    public void PushSettingMenus()
     {
 
 
