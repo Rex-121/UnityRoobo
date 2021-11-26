@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using DG.Tweening;
 using Sirenix.OdinInspector;
+using UnityEngine.UI;
 
 public enum LoadImageSizeType
 {
@@ -79,7 +80,6 @@ public class SpriteUtil
                //替换sprite 
                sprite.sprite = Sprite.Create(result, new Rect(Vector2.zero, new Vector2(result.width, result.height)), anchor);
                //修改大小
-               float imageRatio = result.height / result.width;
                switch (loadImageSizeType)
                {
                    case LoadImageSizeType.GameObjectSize:
@@ -88,16 +88,16 @@ public class SpriteUtil
                    case LoadImageSizeType.ImageSize:
                        break;
                    case LoadImageSizeType.AdapteToGameObjectWidth:
-                       sprite.transform.localScale = new Vector3(originalWidth * 100f / result.width, originalWidth * 100f / result.width * imageRatio, sprite.transform.localScale.z);
+                       sprite.transform.localScale = new Vector3(originalWidth * 100f / result.width, originalWidth * 100f / result.width , sprite.transform.localScale.z);
                        break;
                    case LoadImageSizeType.AdaptedToGameObjectHeight:
-                       sprite.transform.localScale = new Vector3(originalHeight * 100f / result.height / imageRatio, originalHeight * 100f / result.height, sprite.transform.localScale.z);
+                       sprite.transform.localScale = new Vector3(originalHeight * 100f / result.height , originalHeight * 100f / result.height, sprite.transform.localScale.z);
                        break;
                    case LoadImageSizeType.AdapteToWidth:
-                       sprite.transform.localScale = new Vector3(width * 100f / result.width, width * 100f / result.width * imageRatio, sprite.transform.localScale.z);
+                       sprite.transform.localScale = new Vector3(width * 100f / result.width, width * 100f / result.width, sprite.transform.localScale.z);
                        break;
                    case LoadImageSizeType.AdapteToHeight:
-                       sprite.transform.localScale = new Vector3(height * 100f / result.height / imageRatio, height * 100f / result.height, sprite.transform.localScale.z);
+                       sprite.transform.localScale = new Vector3(height * 100f / result.height , height * 100f / result.height, sprite.transform.localScale.z);
                        break;
                    case LoadImageSizeType.Fixed:
                        sprite.transform.localScale = new Vector3(width * 100f / result.width, height * 100f / result.height, sprite.transform.localScale.z);
@@ -107,6 +107,63 @@ public class SpriteUtil
 
                if (null != then) { then(); }
                if (duration > 0) { sprite.DOColor(color, duration); }
+           };
+           //渐隐
+           //sprite.DOColor(new Color(0f, 0f, 0f, 0f), 0.3f).OnComplete(afterImageLoad) ;
+           afterImageLoad();
+       }, (msg) =>
+       {
+           Debug.Log("load image failed:" + msg);
+       });
+    }
+
+    public static void loadImageToUIImage(string url, Image imageObject, LoadImageSizeType loadImageSizeType, float width, float height, Vector2 anchor, float duration, Action then)
+    {
+        WebReqeust.GetTexture(url,
+       (result) =>
+       {
+           Color color = imageObject.color;
+           if (duration > 0) {
+               imageObject.color = new Color(0f, 0f, 0f, 0f);
+           }
+
+           float originalWidth = imageObject.rectTransform.sizeDelta.x;
+           float originalHeight = imageObject.rectTransform.sizeDelta.y;
+       
+           TweenCallback afterImageLoad = () =>
+           {
+               //替换sprite 
+               imageObject.sprite = Sprite.Create(result, new Rect(Vector2.zero, new Vector2(result.width, result.height)), anchor);
+               //修改大小
+               float imageRatio =(float)result.height / (float)result.width;
+               Logging.Log("image width:"+result.width+" ,height:"+result.height+" ,ratio:"+imageRatio);
+               switch (loadImageSizeType)
+               {
+                   case LoadImageSizeType.GameObjectSize:
+                       break;
+                   case LoadImageSizeType.ImageSize:
+                       imageObject.rectTransform.sizeDelta = new Vector2(result.width,result.height);
+                       break;
+                   case LoadImageSizeType.AdapteToGameObjectWidth:
+                       imageObject.rectTransform.sizeDelta = new Vector3(originalWidth , originalWidth * imageRatio);
+                       break;
+                   case LoadImageSizeType.AdaptedToGameObjectHeight:
+                       imageObject.rectTransform.sizeDelta = new Vector3(originalHeight/imageRatio, originalHeight);
+                       break;
+                   case LoadImageSizeType.AdapteToWidth:
+                       imageObject.rectTransform.sizeDelta = new Vector3(width, width*imageRatio);
+                       break;
+                   case LoadImageSizeType.AdapteToHeight:
+                       imageObject.rectTransform.sizeDelta = new Vector3(height/imageRatio,height);
+                       break;
+                   case LoadImageSizeType.Fixed:
+                       imageObject.rectTransform.sizeDelta = new Vector3(width, height);
+                       break;
+               }
+
+
+               if (null != then) { then(); }
+               if (duration > 0) { imageObject.DOColor(color, duration); }
            };
            //渐隐
            //sprite.DOColor(new Color(0f, 0f, 0f, 0f), 0.3f).OnComplete(afterImageLoad) ;

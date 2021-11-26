@@ -1,13 +1,14 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.UI;
 
-[RequireComponent(typeof(SpriteRenderer))]
-public class SpriteLoader : MonoBehaviour
+[RequireComponent(typeof(Image))]
+public class UISpriteLoader : MonoBehaviour
 {
     [Required]
     public string url;
     [LabelText("图片尺寸类型")]
-    public LoadImageSizeType loadImageSizeType=LoadImageSizeType.GameObjectSize;
+    public LoadImageSizeType loadImageSizeType = LoadImageSizeType.GameObjectSize;
     [EnableIf("@this.loadImageSizeType==LoadImageSizeType.Fixed||this.loadImageSizeType==LoadImageSizeType.AdapteToWidth")]
     public float width;
     [EnableIf("@this.loadImageSizeType==LoadImageSizeType.Fixed||this.loadImageSizeType==LoadImageSizeType.AdapteToHeight")]
@@ -18,7 +19,7 @@ public class SpriteLoader : MonoBehaviour
 
     void Start()
     {
-        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        SpriteUtil.loadImageToSprite(url,spriteRenderer,loadImageSizeType,width,height,anchor,animDuration,null);
+        Image image = GetComponent<Image>();
+        SpriteUtil.loadImageToUIImage(url, image, loadImageSizeType, width, height, anchor, animDuration, null);
     }
 }

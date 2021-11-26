@@ -7,6 +7,8 @@ using System.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 public class HttpRx
 {
@@ -21,9 +23,9 @@ public class HttpRx
     }
 
     [Serializable]
-    public class DataX<T>
+    public class DataDic
     {
-        public T data;
+        public string data;
         public string msg;
         public int result;
         public string desc;
@@ -57,6 +59,7 @@ public class HttpRx
             {
                 try
                 {
+
                     var data = JsonUtility.FromJson<Data<T>>(r.DataAsText);
                     ob.OnNext(data.data);
 
@@ -89,6 +92,13 @@ public class HttpRx
         return RawPost<Ignore>(path, data);
     }
 
+    [Serializable]
+    class aakak {
+       public int id;
+
+    }
+
+
     /// ------------------------------------------------------------------------
 
     static IObservable<T> RawGet<T>(string path, Dictionary<string, string> query)
@@ -99,9 +109,34 @@ public class HttpRx
             {
                 try
                 {
-                    var data = JsonUtility.FromJson<Data<T>>(r.DataAsText);
+                    //var data = JsonUtility.FromJson<Data<T>>(r.DataAsText);
 
-                    ob.OnNext(data.data);
+
+                    Logging.Log("1111fasdfasdf");
+
+
+
+                   var a = JObject.Parse(r.DataAsText);
+
+                    var aaaa = a["data"];
+
+                    var bbbb = aaaa["courseInfo"].ToObject<aakak>();
+
+                   
+                    Logging.Log(bbbb.id);
+                    //var s = JsonConvert.DeserializeObject<Dictionary<string, string>>(r.DataAsText, new JsonSerializerSettings());
+                    //Logging.Log(s);
+                    //Logging.Log("fasdfasdf");
+                    //foreach (KeyValuePair<string, string> k in s)
+                    //{
+
+                    //    Logging.Log(k.Key + " " + k.Value);
+                    //}
+
+                    //Logging.Log("fasgasdfasdfas");
+
+
+                    //ob.OnNext(data.data);
 
                 }
                 catch
