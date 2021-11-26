@@ -17,6 +17,9 @@ public class Battery : MonoBehaviour
 
     public Image batteryImage;
 
+    public bool displayLevel = false;
+
+    public Text levetText;
 
     private void Start()
     {
@@ -39,18 +42,35 @@ public class Battery : MonoBehaviour
             .AddTo(this);
 
         /// 隐藏/展示 电池条
-        batteryStatus.Subscribe((c) => batteryImage.gameObject.SetActive(!c)).AddTo(this);
+        batteryStatus.Subscribe(ToggleBatteyCharging).AddTo(this);
 
         /// 改变电池电量条
-        batteryStatus.TakeWhile(c => !c).Select((_) => SystemInfo.batteryLevel).DistinctUntilChanged().Subscribe(level =>
-        {
-            batteryImage.GetComponent<RectTransform>().sizeDelta = new Vector2(42 * level, 20);
-
-            batteryImage.color = batterySO.BatterySliderColor(level);
-
-        }).AddTo(this);
+        batteryStatus.Where(c => !c).Select((_) => SystemInfo.batteryLevel)
+            .DistinctUntilChanged()
+            .Subscribe(ChangeLevel)
+            .AddTo(this);
 
     }
+
+
+    void ToggleBatteyCharging(bool charging)
+    {
+        batteryImage.gameObject.SetActive(!charging);
+        ChangeLevel(SystemInfo.batteryLevel);
+    }
+
+    void ChangeLevel(float level) {
+
+        batteryImage.GetComponent<RectTransform>().sizeDelta = new Vector2(42 * level, 20);
+
+        batteryImage.color = batterySO.BatterySliderColor(level);
+
+        if (displayLevel && levetText != null)
+        {
+            levetText.text = (level * 100).ToString("0") + "%";
+        }
+    }
+
 
 
     bool isCharging()
