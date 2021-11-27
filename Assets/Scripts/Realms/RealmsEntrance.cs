@@ -25,7 +25,7 @@ public class RealmsEntrance : MonoBehaviour
     {
         FPS.Default.LockFrame();
 
-        progress.Distinct().Subscribe(value =>
+        progress.Select(v=>v.ToString("0")).Distinct().Subscribe(value =>
         {
             Logging.Log("SampleScene 加载 " + value);
         }).AddTo(this);

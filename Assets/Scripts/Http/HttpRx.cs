@@ -11,6 +11,30 @@ using System.Text;
 public class HttpRx
 {
 
+    public static IObservable<BestHTTP.HTTPResponse> RawRequest(Uri uri, BestHTTP.HTTPMethods methods, Dictionary<string, string> headers, object data)
+    {
+        return Observable.Create<BestHTTP.HTTPResponse>(ob =>
+        {
+
+            HttpRaw.Reqeust(uri, methods, headers, data, (value) =>
+            {
+                ob.OnNext(value);
+                ob.OnCompleted();
+
+            }, (error) =>
+            {
+                ob.OnError(error);
+            });
+
+
+            return null;
+        });
+    }
+
+
+
+    /// -------------------------
+
     [Serializable]
     public class Data<T>
     {
@@ -99,6 +123,9 @@ public class HttpRx
             {
                 try
                 {
+
+                    Forge.Check(r.DataAsText);
+
                     var data = JsonUtility.FromJson<Data<T>>(r.DataAsText);
 
                     ob.OnNext(data.data);
@@ -210,7 +237,7 @@ class UrlQuery
     public static string Make(Dictionary<string, string> parmas)
     {
         if (parmas == null) return "";
-        
+
         string v = "";
         foreach (KeyValuePair<string, string> dic in parmas)
         {

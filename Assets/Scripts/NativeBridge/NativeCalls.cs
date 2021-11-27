@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -62,6 +63,70 @@ public class NativeCalls : SingletonSO<NativeCalls>
         }
 #endif
 
+
+    }
+
+    [Serializable]
+    public struct Wifi: IEqualityComparer<NativeCalls.Wifi>
+    {
+
+        public int strength;
+
+        public string ssid;
+
+        public Wifi(int s, string n)
+        {
+            strength = s;
+            ssid = "";
+        }
+
+        public static Wifi None()
+        {
+            return new Wifi(0, "");
+        }
+
+        public bool Equals(Wifi x, Wifi y)
+        {
+            var aa = x.ssid == y.ssid && x.strength == y.strength;
+            Logging.Log("fasgasdf " + aa);
+            return aa;
+        }
+
+        public int GetHashCode(Wifi obj)
+        {
+            return obj.GetHashCode();
+        }
+    }
+
+
+    /// <summary>
+    ///  打开设置按钮
+    /// </summary>
+    public Wifi WifiStrength()
+    {
+
+
+#if UNITY_EDITOR
+        return Wifi.None();
+#endif
+
+#if UNITY_IOS
+        return Wifi.None();
+#elif UNITY_ANDROID
+        try
+        {
+            //获取Wifi信息
+            AndroidJavaObject javaObject = new AndroidJavaObject("com.pudding.settingplugins.SettingPlugins");
+            string wifiData = javaObject.Call<string>("obtainWifiInfo");
+            //OnWifiDataBack(wifiData);
+            return JsonUtility.FromJson<Wifi>(wifiData);
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e);
+            return Wifi.None();
+        }
+#endif
 
     }
 
