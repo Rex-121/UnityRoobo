@@ -10,6 +10,8 @@ public static class ScenesMenu
     public static void Assets_Scenes_LessonDetails_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/LessonDetails.unity"); }
     [MenuItem("切换场景/LoginScence", priority = 10)]
     public static void Assets_Scenes_LoginScence_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/LoginScence.unity"); }
+    [MenuItem("切换场景/Poem", priority = 10)]
+    public static void Assets_Scenes_Poem_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/Poem.unity"); }
     [MenuItem("切换场景/Puzzle", priority = 10)]
     public static void Assets_Scenes_Puzzle_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/Puzzle.unity"); }
     [MenuItem("切换场景/Realm", priority = 10)]

@@ -7,6 +7,8 @@ using System.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 public class HttpRx
 {
@@ -45,9 +47,9 @@ public class HttpRx
     }
 
     [Serializable]
-    public class DataX<T>
+    public class DataDic
     {
-        public T data;
+        public string data;
         public string msg;
         public int result;
         public string desc;
@@ -81,6 +83,7 @@ public class HttpRx
             {
                 try
                 {
+
                     var data = JsonUtility.FromJson<Data<T>>(r.DataAsText);
                     ob.OnNext(data.data);
 
@@ -113,6 +116,13 @@ public class HttpRx
         return RawPost<Ignore>(path, data);
     }
 
+    [Serializable]
+    class aakak {
+       public int id;
+
+    }
+
+
     /// ------------------------------------------------------------------------
 
     static IObservable<T> RawGet<T>(string path, Dictionary<string, string> query)
@@ -123,8 +133,6 @@ public class HttpRx
             {
                 try
                 {
-
-                    Forge.Check(r.DataAsText);
 
                     var data = JsonUtility.FromJson<Data<T>>(r.DataAsText);
 
