@@ -60,11 +60,14 @@ public class RealmsEntrance : MonoBehaviour
 
         switch (value)
         {
-            case "2":
+            case "美术":
                 classType = 学科.类型.美术;
                 break;
-            case "1":
+            case "语言":
                 classType = 学科.类型.语言;
+                break;
+            case "音乐":
+                classType = 学科.类型.音乐;
                 break;
         }
 

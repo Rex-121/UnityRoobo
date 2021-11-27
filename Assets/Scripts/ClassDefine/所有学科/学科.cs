@@ -13,7 +13,7 @@ public abstract class 学科: ScriptableObject
     public enum 类型
     {
 
-        美术, 语言
+        美术, 语言, 音乐
 
     }
 
@@ -28,6 +28,7 @@ public static class 学科拓展
         {
             case 学科.类型.美术: return "美术";
             case 学科.类型.语言: return "语言";
+            case 学科.类型.音乐: return "音乐";
         }
         return "";
     }
