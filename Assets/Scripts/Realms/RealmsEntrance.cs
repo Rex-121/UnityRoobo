@@ -37,10 +37,10 @@ public class RealmsEntrance : MonoBehaviour
 
         Observable.EveryEndOfFrame().Take(1).SelectMany(Observable.FromCoroutine(LoadSceneAsync)).Subscribe().AddTo(this);
 
-        Navigation.Shared.menu.Subscribe(menu =>
+        Navigation.Shared.menu.Subscribe(菜单 =>
         {
-            index.gameObject.SetActive(menu == Navigation.Menu.index);
-            sencondry.gameObject.SetActive(menu == Navigation.Menu.secondary);
+            index.gameObject.SetActive(菜单 == Navigation.菜单.一级);
+            sencondry.gameObject.SetActive(菜单 == Navigation.菜单.二级);
         }).AddTo(this);
     }
 
@@ -56,19 +56,19 @@ public class RealmsEntrance : MonoBehaviour
     /// <param name="value"></param>
     public void DidNeedPushSecondaryMenu(string value)
     {
-        ClassSubject.Type classType = ClassSubject.Type.Art;
+        学科.类型 classType = 学科.类型.美术;
 
         switch (value)
         {
             case "2":
-                classType = ClassSubject.Type.Art;
+                classType = 学科.类型.美术;
                 break;
             case "1":
-                classType = ClassSubject.Type.Language;
+                classType = 学科.类型.语言;
                 break;
         }
 
-        Navigation.Shared.SetNewClassType(classType);
+        Navigation.Shared.切换学科(classType);
     }
 
     public void LoadCWScene()

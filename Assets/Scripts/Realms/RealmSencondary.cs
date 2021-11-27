@@ -19,7 +19,7 @@ public class RealmSencondary : MonoBehaviour
         {
             if (type == null) return;
             canvas = transform.Find("二级入口展示");
-            gb = Instantiate(gbSO.GetSecondary((ClassSubject.Type)type), canvas);
+            gb = Instantiate(gbSO.GetSecondary((学科.类型)type), canvas);
         }).AddTo(this);
     }
 
@@ -35,6 +35,6 @@ public class RealmSencondary : MonoBehaviour
 
     public void BackToIndex()
     {
-        Navigation.Shared.SetNewClassType(null);
+        Navigation.Shared.切换学科(null);
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 using Sirenix.OdinInspector;
@@ -14,12 +12,12 @@ public class RealmSecondary_SO : SerializedScriptableObject
 
 
 
-    public GameObject GetSecondary(ClassSubject.Type type)
+    public GameObject GetSecondary(学科.类型 type)
     {
 
         switch (type)
         {
-            case ClassSubject.Type.Art:
+            case 学科.类型.美术:
                 return art;
         }
         return new GameObject("Empty");
