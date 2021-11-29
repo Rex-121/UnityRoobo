@@ -6,6 +6,8 @@ public static class ScenesMenu
     public static void Assets_Scenes_Courseware_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/Courseware.unity"); }
     [MenuItem("切换场景/EmptyScene", priority = 10)]
     public static void Assets_Scenes_EmptyScene_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/EmptyScene.unity"); }
+    [MenuItem("切换场景/FreezeImageScene", priority = 10)]
+    public static void Assets_Scenes_FreezeImageScene_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/FreezeImageScene.unity"); }
     [MenuItem("切换场景/LessonDetails", priority = 10)]
     public static void Assets_Scenes_LessonDetails_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/LessonDetails.unity"); }
     [MenuItem("切换场景/LoginScence", priority = 10)]
