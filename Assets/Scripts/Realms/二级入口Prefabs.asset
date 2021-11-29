@@ -15,10 +15,72 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 8114632030240491915, guid: 74979ab9b492e46749bede0afb722189, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  art: {fileID: 7440372936940766576, guid: 6b69d03011db24a2aad19f2ff7dd80c3, type: 3}
+    SerializationNodes:
+    - Name: entrances
+      Entry: 7
+      Data: "0|System.Collections.Generic.Dictionary`2[[\u5B66\u79D1+\u7C7B\u578B,
+        ClassDefine],[UnityEngine.GameObject, UnityEngine.CoreModule]], mscorlib"
+    - Name: comparer
+      Entry: 7
+      Data: "1|System.Collections.Generic.EnumEqualityComparer`1[[\u5B66\u79D1+\u7C7B\u578B,
+        ClassDefine]], mscorlib"
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 

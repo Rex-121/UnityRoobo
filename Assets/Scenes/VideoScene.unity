@@ -427,5 +427,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6325073600673129483, guid: a1214b6129f6442a89c222bb52e06234, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325073600673129483, guid: a1214b6129f6442a89c222bb52e06234, type: 3}
+      propertyPath: _mediaPath._path
+      value: videoSD.m3u8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325073600673129483, guid: a1214b6129f6442a89c222bb52e06234, type: 3}
+      propertyPath: _mediaPath._pathType
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1214b6129f6442a89c222bb52e06234, type: 3}

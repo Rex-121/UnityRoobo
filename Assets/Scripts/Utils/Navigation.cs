@@ -6,33 +6,28 @@ using Sirenix.OdinInspector;
 public class Navigation : SingletonSO<Navigation>
 {
 
-    //public ClassCategory category;
-
-
-    //public ClassSubject subject;
+    [HideInInspector]
+    public ReactiveProperty<菜单> menu = new ReactiveProperty<菜单>(菜单.一级);
 
     [HideInInspector]
-    public ReactiveProperty<Menu> menu = new ReactiveProperty<Menu>(Menu.index);
+    public ReactiveProperty<学科.类型?> classType;// = new ReactiveProperty<ClassSubject.Type>();
 
-    [HideInInspector]
-    public ReactiveProperty<ClassSubject.Type?> classType;// = new ReactiveProperty<ClassSubject.Type>();
-
-    private ClassSubject _currentType;
+    private 学科 _currentType;
 
     [ShowInInspector]
-    public ClassSubject currentType
+    public 学科 当前学科
     {
         set
         {
             _currentType = value;
             if (_currentType == null)
             {
-                menu.Value = Menu.index;
+                menu.Value = 菜单.一级;
                 classType.Value = null;
             }
             else
             {
-                menu.Value = Menu.secondary;
+                menu.Value = 菜单.二级;
                 classType.Value = _currentType.type;
             }
         }
@@ -41,39 +36,25 @@ public class Navigation : SingletonSO<Navigation>
     }
 
     [System.Serializable]
-    public enum Menu
+    public enum 菜单
     {
-        index, secondary, third
+        一级, 二级, 三级
     }
 
     /// <summary>
     /// 选择了新的学科
     /// </summary>
     /// <param name="type">学科</param>
-    public void SetNewClassType(ClassSubject.Type? type)
+    public void 切换学科(学科.类型? 学科类型)
     {
-
-        string fileName = "";
-        switch (type)
-        {
-            case ClassSubject.Type.Art:
-                fileName = "美术";
-                break;
-            case ClassSubject.Type.Language:
-                fileName = "英语";
-                break;
-        }
-
-        currentType = Resources.Load<ClassSubject>("Class/" + fileName);
-
-        //currentType = (ClassSubject.Type)type;
-        //classType.Value = type;
+        当前学科 = Resources.Load<学科>("Class/" + 学科类型.SO文件名());
     }
+
 
     public void Start()
     {
-        classType = new ReactiveProperty<ClassSubject.Type?>();
-        currentType = null;
+        classType = new ReactiveProperty<学科.类型?>();
+        当前学科 = null;
     }
 
 

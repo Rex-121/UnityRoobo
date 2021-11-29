@@ -19,12 +19,6 @@ public class SpriteLoader : MonoBehaviour
     void Start()
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        if (width <= 0) {
-            width= spriteRenderer.sprite.bounds.size.x*spriteRenderer.transform.localScale.x;
-        }
-        if (height <= 0) {
-            height = spriteRenderer.sprite.bounds.size.y*spriteRenderer.transform.localScale.y;
-        }
         SpriteUtil.loadImageToSprite(url,spriteRenderer,loadImageSizeType,width,height,anchor,animDuration,null);
     }
 }

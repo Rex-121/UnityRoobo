@@ -7,9 +7,35 @@ using System.Diagnostics;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 public class HttpRx
 {
+
+    public static IObservable<BestHTTP.HTTPResponse> RawRequest(Uri uri, BestHTTP.HTTPMethods methods, Dictionary<string, string> headers, object data)
+    {
+        return Observable.Create<BestHTTP.HTTPResponse>(ob =>
+        {
+
+            HttpRaw.Reqeust(uri, methods, headers, data, (value) =>
+            {
+                ob.OnNext(value);
+                ob.OnCompleted();
+
+            }, (error) =>
+            {
+                ob.OnError(error);
+            });
+
+
+            return null;
+        });
+    }
+
+
+
+    /// -------------------------
 
     [Serializable]
     public class Data<T>
@@ -21,9 +47,9 @@ public class HttpRx
     }
 
     [Serializable]
-    public class DataX<T>
+    public class DataDic
     {
-        public T data;
+        public string data;
         public string msg;
         public int result;
         public string desc;
@@ -57,8 +83,23 @@ public class HttpRx
             {
                 try
                 {
-                    var data = JsonUtility.FromJson<Data<T>>(r.DataAsText);
-                    ob.OnNext(data.data);
+                    var data = Forge.ParseNet(r.DataAsText);
+
+                    if (data.success)
+                    {
+
+                        ob.OnNext(data.data.ToObject<T>());
+
+                        //Forge.Check(r.DataAsText);
+                        //var datax = JsonUtility.FromJson<Data<T>>(r.DataAsText);
+                        //ob.OnNext(datax.data);
+                    }
+                    else
+                    {
+                        ob.OnError(new HttpError(data.result, data.msg, HttpError.Type.Business));
+                    }
+                    //var data = JsonUtility.FromJson<Data<T>>(r.DataAsText);
+                    //ob.OnNext(data.data);
 
                 }
                 catch
@@ -89,6 +130,14 @@ public class HttpRx
         return RawPost<Ignore>(path, data);
     }
 
+    [Serializable]
+    class aakak
+    {
+        public int id;
+
+    }
+
+
     /// ------------------------------------------------------------------------
 
     static IObservable<T> RawGet<T>(string path, Dictionary<string, string> query)
@@ -99,9 +148,27 @@ public class HttpRx
             {
                 try
                 {
-                    var data = JsonUtility.FromJson<Data<T>>(r.DataAsText);
 
-                    ob.OnNext(data.data);
+                    var data = Forge.ParseNet(r.DataAsText);
+
+                    if (data.success)
+                    {
+
+                        ob.OnNext(data.data.ToObject<T>());
+
+                        //Forge.Check(r.DataAsText);
+                        //var datax = JsonUtility.FromJson<Data<T>>(r.DataAsText);
+                        //ob.OnNext(datax.data);
+                    }
+                    else
+                    {
+                        ob.OnError(new HttpError(data.result, data.msg, HttpError.Type.Business));
+                    }
+
+
+                    //var data = JsonUtility.FromJson<Data<T>>(r.DataAsText);
+
+                    //ob.OnNext(data.data);
 
                 }
                 catch
@@ -132,6 +199,18 @@ public class HttpRx
     {
         return RawGet<T>(path, query);
     }
+
+    ///// <summary>
+    ///// GET
+    ///// </summary>
+    ///// <typeparam name="T">解析数据</typeparam>
+    ///// <param name="path">接口</param>
+    ///// <param name="query">query参数</param>
+    ///// <returns></returns>
+    //public static IObservable<JToken> GetJToken(string path, Dictionary<string, string> query)
+    //{
+    //    return RawGet<JToken>(path, query);
+    //}
 
     /// <summary>
     /// GET
@@ -210,7 +289,7 @@ class UrlQuery
     public static string Make(Dictionary<string, string> parmas)
     {
         if (parmas == null) return "";
-        
+
         string v = "";
         foreach (KeyValuePair<string, string> dic in parmas)
         {

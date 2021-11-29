@@ -25,7 +25,7 @@ public class RealmsEntrance : MonoBehaviour
     {
         FPS.Default.LockFrame();
 
-        progress.Distinct().Subscribe(value =>
+        progress.Select(v=>v.ToString("0")).Distinct().Subscribe(value =>
         {
             Logging.Log("SampleScene 加载 " + value);
         }).AddTo(this);
@@ -37,10 +37,10 @@ public class RealmsEntrance : MonoBehaviour
 
         Observable.EveryEndOfFrame().Take(1).SelectMany(Observable.FromCoroutine(LoadSceneAsync)).Subscribe().AddTo(this);
 
-        Navigation.Shared.menu.Subscribe(menu =>
+        Navigation.Shared.menu.Subscribe(菜单 =>
         {
-            index.gameObject.SetActive(menu == Navigation.Menu.index);
-            sencondry.gameObject.SetActive(menu == Navigation.Menu.secondary);
+            index.gameObject.SetActive(菜单 == Navigation.菜单.一级);
+            sencondry.gameObject.SetActive(菜单 == Navigation.菜单.二级);
         }).AddTo(this);
     }
 
@@ -56,19 +56,22 @@ public class RealmsEntrance : MonoBehaviour
     /// <param name="value"></param>
     public void DidNeedPushSecondaryMenu(string value)
     {
-        ClassSubject.Type classType = ClassSubject.Type.Art;
+        学科.类型 classType = 学科.类型.美术;
 
         switch (value)
         {
-            case "2":
-                classType = ClassSubject.Type.Art;
+            case "美术":
+                classType = 学科.类型.美术;
                 break;
-            case "1":
-                classType = ClassSubject.Type.Language;
+            case "语言":
+                classType = 学科.类型.语言;
+                break;
+            case "音乐":
+                classType = 学科.类型.音乐;
                 break;
         }
 
-        Navigation.Shared.SetNewClassType(classType);
+        Navigation.Shared.切换学科(classType);
     }
 
     public void LoadCWScene()
@@ -83,7 +86,7 @@ public class RealmsEntrance : MonoBehaviour
         Stopwatch sw = new Stopwatch();
 
         sw.Start();
-        async = SceneManager.LoadSceneAsync("Courseware");
+        async = SceneManager.LoadSceneAsync("Courseware", LoadSceneMode.Single);
 
 
         async.allowSceneActivation = false;
@@ -108,6 +111,17 @@ public class RealmsEntrance : MonoBehaviour
     /// </summary>
     public void PushSettingPage()
     {
-        NativeCalls.Default.PushSettingMenus();
+
+        Stopwatch sw = new Stopwatch();
+
+        sw.Start();
+
+        Logging.Log("开始");
+
+        SceneManager.LoadScene("LoginScence");
+
+        sw.Stop();
+        Logging.Log("结束" +  sw.ElapsedMilliseconds);
+        //NativeCalls.Default.PushSettingMenus();
     }
 }

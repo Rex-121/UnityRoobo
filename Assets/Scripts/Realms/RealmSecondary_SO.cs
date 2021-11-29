@@ -1,27 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 using Sirenix.OdinInspector;
+using System.Collections.Generic;
 
 [CreateAssetMenu(fileName = "二级入口Prefabs", menuName = "学科/二级入口Prefabs")]
 public class RealmSecondary_SO : SerializedScriptableObject
 {
 
-    [LabelText("美术")]
-    public GameObject art;
+    public Dictionary<学科.类型, GameObject> entrances = new Dictionary<学科.类型, GameObject>();
 
-
-
-
-    public GameObject GetSecondary(ClassSubject.Type type)
+    public GameObject GetSecondary(学科.类型 type)
     {
 
-        switch (type)
+        if (entrances.ContainsKey(type))
         {
-            case ClassSubject.Type.Art:
-                return art;
+            return entrances[type];
         }
+
         return new GameObject("Empty");
     }
 

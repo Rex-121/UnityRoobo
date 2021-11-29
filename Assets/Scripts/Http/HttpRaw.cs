@@ -21,6 +21,27 @@ public class HttpRaw
         return request;
     }
 
+
+
+    public static void Reqeust(Uri uri, HTTPMethods methods, Dictionary<string, string> headers, object data, Action<HTTPResponse> success, Action<HttpError> error)
+    {
+        switch (methods)
+        {
+            case HTTPMethods.Get:
+                Get(uri, headers, success, error);
+                return;
+            case HTTPMethods.Post:
+                Post(uri, headers, data, success, error);
+                return;
+        }
+
+        error(new HttpError(-999, "尚不支持 " + methods.ToString(), HttpError.Type.Business));
+    }
+
+
+
+
+
     public static void Post(Uri uri, Dictionary<string, string> headers, object data, Action<HTTPResponse> success, Action<HttpError> error)
     {
 
@@ -67,7 +88,7 @@ public class HttpRaw
         });
 
         AddHeaderFor(requestx, headers);
-        
+
         requestx.Send();
     }
 
@@ -115,8 +136,6 @@ public class HttpRaw
     }
 
 }
-
-
 
 public class HttpError : ApplicationException
 {
