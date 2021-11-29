@@ -433,7 +433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6325073600673129483, guid: a1214b6129f6442a89c222bb52e06234, type: 3}
       propertyPath: _mediaPath._path
-      value: Video-5.m3u8
+      value: videoSD.m3u8
       objectReference: {fileID: 0}
     - target: {fileID: 6325073600673129483, guid: a1214b6129f6442a89c222bb52e06234, type: 3}
       propertyPath: _mediaPath._pathType

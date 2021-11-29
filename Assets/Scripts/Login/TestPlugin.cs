@@ -24,33 +24,33 @@ public class TestPlugin : MonoBehaviour
 
     private void OnGUI()
     {
-        if (GUI.Button(new Rect(10, 10, 140, 40), "·¢ËÍÍ¨Öª"))
+        if (GUI.Button(new Rect(10, 10, 140, 40), "ï¿½ï¿½ï¿½ï¿½Í¨Öª"))
         {
             /*AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
             AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity");*/
             AndroidJavaObject jo = new AndroidJavaObject("com.pudding.settingplugins.SettingClass");
-            jo.Call("UnityCallAndroidToast", "ÕâÊÇUnityµ÷ÓÃAndroidµÄToast£¡");
+            jo.Call("UnityCallAndroidToast", "ï¿½ï¿½ï¿½ï¿½Unityï¿½ï¿½ï¿½ï¿½Androidï¿½ï¿½Toastï¿½ï¿½");
         }
 
-        if (GUI.Button(new Rect(10, 70, 140, 40), "ÇóºÍ"))
+        if (GUI.Button(new Rect(10, 70, 140, 40), "ï¿½ï¿½ï¿½"))
         {
           /*  AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
             AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity");*/
             AndroidJavaObject jo = new AndroidJavaObject("com.pudding.settingplugins.SettingClass");
             int sum = jo.Call<int>("Sum", new object[] { 10, 20 });
             log.text = ""+ sum;
-            jo.Call("ClickShake");//µ÷ÓÃ°²×¿Õð¶¯
+            jo.Call("ClickShake");//ï¿½ï¿½ï¿½Ã°ï¿½×¿ï¿½ï¿½
         }
 
-        if (GUI.Button(new Rect(10, 130, 140, 40), "Toast"))//´´½¨°²×¿ Toast
+        if (GUI.Button(new Rect(10, 130, 140, 40), "Toast"))//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¿ Toast
         {
             /*AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
             AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity");*/
             AndroidJavaObject jo = new AndroidJavaObject("com.pudding.settingplugins.SettingClass");
-            jo.Call("CreateToast", "³õÊ¼»¯ÖÐ...");
+            jo.Call("CreateToast", "ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½...");
         }
 
-        if (GUI.Button(new Rect(10, 190, 140, 40), "Á¢¼´ÖØÆôÓ¦ÓÃ"))
+        if (GUI.Button(new Rect(10, 190, 140, 40), "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½"))
         {
             /* AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
              AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity");*/
@@ -58,7 +58,7 @@ public class TestPlugin : MonoBehaviour
             jo.Call("RestartApplication");
         }
 
-        if (GUI.Button(new Rect(10, 250, 140, 40), "UIÏß³ÌÖØÆôÓ¦ÓÃ"))
+        if (GUI.Button(new Rect(10, 250, 140, 40), "UIï¿½ß³ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½"))
         {
             /* AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
              AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity");*/
@@ -66,7 +66,7 @@ public class TestPlugin : MonoBehaviour
             jo.Call("RestartApplicationOnUIThread");
         }
 
-        if (GUI.Button(new Rect(10, 310, 140, 40), "ÖØÆôÓ¦ÓÃ"))
+        if (GUI.Button(new Rect(10, 310, 140, 40), "ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½"))
         {
             /*AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
             AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity");*/
@@ -74,7 +74,7 @@ public class TestPlugin : MonoBehaviour
             jo.Call("RestartApplication1");
         }
 
-        if (GUI.Button(new Rect(10, 370, 140, 40), "5sÖØÆôÓ¦ÓÃ"))
+        if (GUI.Button(new Rect(10, 370, 140, 40), "5sï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½"))
         {
             /* AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
              AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity");*/
@@ -82,7 +82,7 @@ public class TestPlugin : MonoBehaviour
             jo.Call("RestartApplication2");
         }
 
-        if (GUI.Button(new Rect(10, 430, 140, 40), "»ñÈ¡°²×°apk"))
+        if (GUI.Button(new Rect(10, 430, 140, 40), "ï¿½ï¿½È¡ï¿½ï¿½×°apk"))
         {
             /*AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
             AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity");*/
@@ -90,7 +90,7 @@ public class TestPlugin : MonoBehaviour
             jo.Call("GetAllPackageName");
         }
 
-        if (GUI.Button(new Rect(10, 490, 140, 40), "µ÷ÓÃAPP"))
+        if (GUI.Button(new Rect(10, 490, 140, 40), "ï¿½ï¿½ï¿½ï¿½APP"))
         {
             /*  AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
               AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity");*/
@@ -98,15 +98,15 @@ public class TestPlugin : MonoBehaviour
             jo.Call("CallThirdApp", "com.tencent.mm");
         }
 
-        if (GUI.Button(new Rect(10, 550, 140, 40), "Unity±¾µØÍÆËÍ"))
+        if (GUI.Button(new Rect(10, 550, 140, 40), "Unityï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"))
         {
             /* AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
              AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity");*/
             AndroidJavaObject jo = new AndroidJavaObject("com.pudding.settingplugins.SettingClass");
-            jo.Call("SendNotification", new string[] { "Ææ¼£:×îÇ¿Õß", "ÓÂÊ¿ÃÇ Ä§ÁúÌÖ·¥¼´½«¿ªÊ¼" });
+            jo.Call("SendNotification", new string[] { "ï¿½æ¼£:ï¿½ï¿½Ç¿ï¿½ï¿½", "ï¿½ï¿½Ê¿ï¿½ï¿½ Ä§ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼" });
         }
 
-        if (GUI.Button(new Rect(10, 610, 140, 40), "»ñÈ¡ËùÓÐApp"))
+        if (GUI.Button(new Rect(10, 610, 140, 40), "ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½App"))
         {
             /* AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
              AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity");*/
@@ -114,7 +114,7 @@ public class TestPlugin : MonoBehaviour
             jo.Call("GetAllWidget");
         }
 
-        if (GUI.Button(new Rect(10, 670, 140, 40), "»ñÈ¡ÒÑ°²×°µÄApp"))
+        if (GUI.Button(new Rect(10, 670, 140, 40), "ï¿½ï¿½È¡ï¿½Ñ°ï¿½×°ï¿½ï¿½App"))
         {
             /* AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
              AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity");*/
@@ -122,7 +122,7 @@ public class TestPlugin : MonoBehaviour
             jo.Call("GetInstalledPackageName");
         }
 
-        if (GUI.Button(new Rect(10, 730, 140, 40), "»ñÈ¡µç³ØÐÅÏ¢"))
+        if (GUI.Button(new Rect(10, 730, 140, 40), "ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢"))
         {
             /* AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
              AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity");*/
@@ -131,7 +131,7 @@ public class TestPlugin : MonoBehaviour
             OnBatteryDataBack(batteryData);
         }
 
-        if (GUI.Button(new Rect(10, 790, 140, 40), "»ñÈ¡wifiÇ¿¶È"))
+        if (GUI.Button(new Rect(10, 790, 140, 40), "ï¿½ï¿½È¡wifiÇ¿ï¿½ï¿½"))
         {
             /*AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
             AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity");*/
@@ -139,7 +139,7 @@ public class TestPlugin : MonoBehaviour
             wifiData = jo.Call<string>("ObtainWifiInfo");
             OnWifiDataBack(wifiData);
         }
-        if (GUI.Button(new Rect(10, 850, 140, 40), "»ñÈ¡ÔËÓªÉÌÃû³Æ"))
+        if (GUI.Button(new Rect(10, 850, 140, 40), "ï¿½ï¿½È¡ï¿½ï¿½Óªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"))
         {
             /*AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
             AndroidJavaObject jo = jc.GetStatic<AndroidJavaObject>("currentActivity");*/
@@ -175,41 +175,41 @@ public class TestPlugin : MonoBehaviour
         string[] args = batteryData.Split('|');
         if (args[2] == "2")
         {
-            log.text += "µç³Ø³äµçÖÐ";
+            log.text += "ï¿½ï¿½Ø³ï¿½ï¿½ï¿½ï¿½";
         }
         else
         {
-            log.text += "µç³Ø·ÅµçÖÐ";
+            log.text += "ï¿½ï¿½Ø·Åµï¿½ï¿½ï¿½";
         }
         float percent = int.Parse(args[0]) / float.Parse(args[1]);
         log.text += (Mathf.CeilToInt(percent) + "%").ToString();
     }
     void OnWifiDataBack(string wifiData)//strength+"|"+intToIp(ip)+"|"+mac+"|"+ssid;
     {
-        //·ÖÎöwifiÐÅºÅÇ¿¶È
-        //»ñÈ¡RSSI£¬RSSI¾ÍÊÇ½ÓÊÜÐÅºÅÇ¿¶ÈÖ¸Ê¾¡£
-        //µÃµ½µÄÖµÊÇÒ»¸ö0µ½-100µÄÇø¼äÖµ£¬ÊÇÒ»¸öintÐÍÊý¾Ý£¬ÆäÖÐ0µ½-50±íÊ¾ÐÅºÅ×îºÃ£¬
-        //-50µ½-70±íÊ¾ÐÅºÅÆ«²î£¬Ð¡ÓÚ-70±íÊ¾×î²î£¬
-        //ÓÐ¿ÉÄÜÁ¬½Ó²»ÉÏ»òÕßµôÏß£¬Ò»°ãWifiÒÑ¶ÏÔòÖµÎª-200¡£
+        //ï¿½ï¿½ï¿½ï¿½wifiï¿½Åºï¿½Ç¿ï¿½ï¿½
+        //ï¿½ï¿½È¡RSSIï¿½ï¿½RSSIï¿½ï¿½ï¿½Ç½ï¿½ï¿½ï¿½ï¿½Åºï¿½Ç¿ï¿½ï¿½Ö¸Ê¾ï¿½ï¿½
+        //ï¿½Ãµï¿½ï¿½ï¿½Öµï¿½ï¿½Ò»ï¿½ï¿½0ï¿½ï¿½-100ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½intï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½ï¿½ï¿½ï¿½0ï¿½ï¿½-50ï¿½ï¿½Ê¾ï¿½Åºï¿½ï¿½ï¿½Ã£ï¿½
+        //-50ï¿½ï¿½-70ï¿½ï¿½Ê¾ï¿½Åºï¿½Æ«ï¿½î£¬Ð¡ï¿½ï¿½-70ï¿½ï¿½Ê¾ï¿½ï¿½î£¬
+        //ï¿½Ð¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó²ï¿½ï¿½Ï»ï¿½ï¿½ßµï¿½ï¿½ß£ï¿½Ò»ï¿½ï¿½Wifiï¿½Ñ¶ï¿½ï¿½ï¿½ÖµÎª-200ï¿½ï¿½
         log.text += wifiData;
         string[] args = wifiData.Split('|');
         if (int.Parse(args[0]) > -50 && int.Parse(args[0]) < 0)
         {
-            log.text += "WifiÐÅºÅÇ¿¶ÈºÜ°ô";
+            log.text += "Wifiï¿½Åºï¿½Ç¿ï¿½ÈºÜ°ï¿½";
         }
         else if (int.Parse(args[0]) > -70 && int.Parse(args[0]) < -50)
         {
-            log.text += "WifiÐÅºÅÇ¿¶ÈÒ»°ã";
+            log.text += "Wifiï¿½Åºï¿½Ç¿ï¿½ï¿½Ò»ï¿½ï¿½";
         }
         else if (int.Parse(args[0]) > -150 && int.Parse(args[0]) < -70)
         {
-            log.text += "WifiÐÅºÅÇ¿¶ÈºÜÈõ";
+            log.text += "Wifiï¿½Åºï¿½Ç¿ï¿½Èºï¿½ï¿½ï¿½";
         }
         else if (int.Parse(args[0]) < -200)
         {
-            log.text += "WifiÐÅºÅJJÁË";
+            log.text += "Wifiï¿½Åºï¿½JJï¿½ï¿½";
         }
-        string ip = "IP£º" + args[1];
+        string ip = "IPï¿½ï¿½" + args[1];
         string mac = "MAC:" + args[2];
         string ssid = "Wifi Name:" + args[3];
         log.text += ip;
@@ -218,7 +218,7 @@ public class TestPlugin : MonoBehaviour
     }
 
     /// <summary>
-    /// °²×¿ÈÕÖ¾
+    /// ï¿½ï¿½×¿ï¿½ï¿½Ö¾
     /// </summary>
     /// <param name="str"></param>
     void OnCoderReturn(string str)
@@ -231,11 +231,11 @@ public class TestPlugin : MonoBehaviour
         string[] args = batteryData.Split('|');
         if (args[2] == "2")
         {
-            log.text += "µç³Ø³äµçÖÐ";
+            log.text += "ï¿½ï¿½Ø³ï¿½ï¿½ï¿½ï¿½";
         }
         else
         {
-            log.text += "µç³Ø·ÅµçÖÐ";
+            log.text += "ï¿½ï¿½Ø·Åµï¿½ï¿½ï¿½";
         }
         log.text += (args[0] + "%").ToString();
     }
@@ -246,21 +246,21 @@ public class TestPlugin : MonoBehaviour
         string[] args = wifiData.Split('|');
         if (int.Parse(args[0]) > -50 && int.Parse(args[0]) < 100)
         {
-            log.text += "WifiÐÅºÅÇ¿¶ÈºÜ°ô";
+            log.text += "Wifiï¿½Åºï¿½Ç¿ï¿½ÈºÜ°ï¿½";
         }
         else if (int.Parse(args[0]) > -70 && int.Parse(args[0]) < -50)
         {
-            log.text += "WifiÐÅºÅÇ¿¶ÈÒ»°ã";
+            log.text += "Wifiï¿½Åºï¿½Ç¿ï¿½ï¿½Ò»ï¿½ï¿½";
         }
         else if (int.Parse(args[0]) > -150 && int.Parse(args[0]) < -70)
         {
-            log.text += "WifiÐÅºÅÇ¿¶ÈºÜÈõ";
+            log.text += "Wifiï¿½Åºï¿½Ç¿ï¿½Èºï¿½ï¿½ï¿½";
         }
         else if (int.Parse(args[0]) < -200)
         {
-            log.text += "WifiÐÅºÅJJÁË";
+            log.text += "Wifiï¿½Åºï¿½JJï¿½ï¿½";
         }
-        string ip = "IP£º" + args[1];
+        string ip = "IPï¿½ï¿½" + args[1];
         string mac = "MAC:" + args[2];
         string ssid = "Wifi Name:" + args[3];
         log.text += ip;

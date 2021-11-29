@@ -83,9 +83,23 @@ public class HttpRx
             {
                 try
                 {
+                    var data = Forge.ParseNet(r.DataAsText);
 
-                    var data = JsonUtility.FromJson<Data<T>>(r.DataAsText);
-                    ob.OnNext(data.data);
+                    if (data.success)
+                    {
+
+                        ob.OnNext(data.data.ToObject<T>());
+
+                        //Forge.Check(r.DataAsText);
+                        //var datax = JsonUtility.FromJson<Data<T>>(r.DataAsText);
+                        //ob.OnNext(datax.data);
+                    }
+                    else
+                    {
+                        ob.OnError(new HttpError(data.result, data.msg, HttpError.Type.Business));
+                    }
+                    //var data = JsonUtility.FromJson<Data<T>>(r.DataAsText);
+                    //ob.OnNext(data.data);
 
                 }
                 catch

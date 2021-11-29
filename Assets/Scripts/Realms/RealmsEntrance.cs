@@ -86,7 +86,7 @@ public class RealmsEntrance : MonoBehaviour
         Stopwatch sw = new Stopwatch();
 
         sw.Start();
-        async = SceneManager.LoadSceneAsync("Courseware");
+        async = SceneManager.LoadSceneAsync("Courseware", LoadSceneMode.Single);
 
 
         async.allowSceneActivation = false;
@@ -111,6 +111,17 @@ public class RealmsEntrance : MonoBehaviour
     /// </summary>
     public void PushSettingPage()
     {
-        NativeCalls.Default.PushSettingMenus();
+
+        Stopwatch sw = new Stopwatch();
+
+        sw.Start();
+
+        Logging.Log("开始");
+
+        SceneManager.LoadScene("LoginScence");
+
+        sw.Stop();
+        Logging.Log("结束" +  sw.ElapsedMilliseconds);
+        //NativeCalls.Default.PushSettingMenus();
     }
 }
