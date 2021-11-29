@@ -48,6 +48,13 @@ public class ForgeData
 
     }
 
+    ///pudding/teacher/v1/course/5509/lesson/6979/round/list
+    public struct RoundList
+    {
+        public List<Rounds> list;
+
+        public int total;
+    }
 
 
     public struct Rounds : RooboEveryInfo
@@ -62,7 +69,7 @@ public class ForgeData
 
         public enum Type
         {
-            Video, Picture, PicBook, WordFuns
+            Video, Picture, PicBook, WordFuns, Dubbing
         }
 
         [JsonConverter(typeof(StringEnumConverter))]

@@ -117,8 +117,9 @@ public class HttpRx
     }
 
     [Serializable]
-    class aakak {
-       public int id;
+    class aakak
+    {
+        public int id;
 
     }
 
@@ -134,9 +135,26 @@ public class HttpRx
                 try
                 {
 
-                    var data = JsonUtility.FromJson<Data<T>>(r.DataAsText);
+                    var data = Forge.ParseNet(r.DataAsText);
 
-                    ob.OnNext(data.data);
+                    if (data.success)
+                    {
+
+                        ob.OnNext(data.data.ToObject<T>());
+
+                        //Forge.Check(r.DataAsText);
+                        //var datax = JsonUtility.FromJson<Data<T>>(r.DataAsText);
+                        //ob.OnNext(datax.data);
+                    }
+                    else
+                    {
+                        ob.OnError(new HttpError(data.result, data.msg, HttpError.Type.Business));
+                    }
+
+
+                    //var data = JsonUtility.FromJson<Data<T>>(r.DataAsText);
+
+                    //ob.OnNext(data.data);
 
                 }
                 catch
@@ -167,6 +185,18 @@ public class HttpRx
     {
         return RawGet<T>(path, query);
     }
+
+    ///// <summary>
+    ///// GET
+    ///// </summary>
+    ///// <typeparam name="T">解析数据</typeparam>
+    ///// <param name="path">接口</param>
+    ///// <param name="query">query参数</param>
+    ///// <returns></returns>
+    //public static IObservable<JToken> GetJToken(string path, Dictionary<string, string> query)
+    //{
+    //    return RawGet<JToken>(path, query);
+    //}
 
     /// <summary>
     /// GET

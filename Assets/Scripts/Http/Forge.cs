@@ -15,10 +15,13 @@ public class Forge
 {
 
     [JsonObject(MemberSerialization.Fields)]
-    struct Data
+    public struct Data
     {
         [JsonProperty, JsonRequired]
         public int result;// "result": 0,
+
+
+        public bool success => result == 0;
 
         public string msg;
 
@@ -28,6 +31,11 @@ public class Forge
 
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public JToken data;
+    }
+
+    public static Data ParseNet(string jsonString)
+    {
+        return JsonConvert.DeserializeObject<Data>(jsonString);
     }
 
 
@@ -44,13 +52,13 @@ public class Forge
             Logging.Log(dic.result + " " + dic.msg);
 
             Logging.Log(dic.data);
-            var aa = dic.data.ToObject<ForgeData.Course>();
+            var aa = dic.data.ToObject<ForgeData.RoundList>();
 
-            Logging.Log(aa.course.name);
+            //Logging.Log(aa.course.name);
 
-            List<Round> r = new List<Round>(aa.rounds.Count);
+            List<Round> r = new List<Round>(aa.list.Count);
 
-            foreach (var v in aa.rounds)
+            foreach (var v in aa.list)
             {
                 r.Add(new Round(v));
             }
@@ -58,6 +66,25 @@ public class Forge
             var rQueue = new RoundQueue(r);
 
             Logging.Log(rQueue.FlowDescription());
+
+
+            //Logging.Log(dic.result + " " + dic.msg);
+
+            //Logging.Log(dic.data);
+            //var aa = dic.data.ToObject<ForgeData.Course>();
+
+            //Logging.Log(aa.course.name);
+
+            //List<Round> r = new List<Round>(aa.rounds.Count);
+
+            //foreach (var v in aa.rounds)
+            //{
+            //    r.Add(new Round(v));
+            //}
+
+            //var rQueue = new RoundQueue(r);
+
+            //Logging.Log(rQueue.FlowDescription());
 
             /// 勿删
             //foreach (var p in aa.rounds)
@@ -113,6 +140,10 @@ public class Forge
 
 }
 
+
+
+/// --------------------------------------------------------------------------------------------------
+
 public class RoundQueue
 {
 
@@ -126,7 +157,7 @@ public class RoundQueue
 }
 
 
-public class Round
+public struct Round
 {
 
     /// <summary>
@@ -134,15 +165,20 @@ public class Round
     /// </summary>
     public string name;
 
+    public string icon;
+
+    public int id;
+
     public ForgeData.Rounds.DisplayMode displayMode;
 
     public ForgeData.Rounds.Pipeline pipeline;
 
     public Round(ForgeData.Rounds round)
     {
+        id = round.id;
         name = round.name;
         displayMode = round.displayMode;
-
+        icon = round.icon;
         pipeline = round.endAction;
     }
 
