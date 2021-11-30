@@ -53,6 +53,10 @@ public class LoginManager : MonoBehaviour
         account.Subscribe(v =>
         {
             loginBtn.interactable = v.validate;
+            Color nowColor;
+            string color = v.validate ? "#FFFFFF" : "#AEAEAE";
+            ColorUtility.TryParseHtmlString(color, out nowColor);
+            loginBtn.GetComponentInChildren<Text>().color = nowColor;
         }).AddTo(this);
 
 
