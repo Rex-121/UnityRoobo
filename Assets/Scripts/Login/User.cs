@@ -14,10 +14,18 @@ public class User : SingletonSO<User>
 
     private Token _token;
 
-
-    private void OnEnable()
+    public bool isLogin
     {
-        Logging.Log("fasfasgasfa");
+
+        get
+        {
+            if (_token != null)
+            {
+                return !string.IsNullOrEmpty(_token.account);
+            }
+            return false;
+        }
+
     }
 
     [ReadOnly]
@@ -52,17 +60,50 @@ public class User : SingletonSO<User>
     {
         expireDis?.Dispose();
 
+        CheckTimeOut();
+
         if (token == null) return;
+
 
         nextExpireTime = DateTime.Now.AddMinutes(expireTime);
 
-        expireDis = Observable.Timer(TimeSpan.FromMinutes(3)).Subscribe();
+        expireDis = Observable.Timer(TimeSpan.FromMinutes(expireTime)).Subscribe(v =>
+        {
+            ClearToken();
+        });
     }
 
     void ClearToken()
     {
+        Logging.Log(DateTime.Now + "->踢出->" + token.account);
         token = null;
+        nextExpireTime = DateTime.MinValue;
     }
+
+#if UNITY_EDITOR
+
+    private IDisposable checkTimeOut;
+    [LabelText("下次踢出倒计时")]
+    [DisplayAsString]
+    public TimeSpan nextExpireTimeCountDown;
+
+#endif
+
+    void CheckTimeOut()
+    {
+#if UNITY_EDITOR
+
+        checkTimeOut?.Dispose();
+
+        if (!isLogin) return;
+
+        checkTimeOut = Observable.Interval(TimeSpan.FromSeconds(1)).Subscribe(_ =>
+        {
+            nextExpireTimeCountDown = nextExpireTime.Subtract(DateTime.Now);
+        });
+#endif
+    }
+
 
     private void OnDestroy()
     {

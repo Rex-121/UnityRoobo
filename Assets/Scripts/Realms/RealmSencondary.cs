@@ -1,7 +1,6 @@
 using UnityEngine;
 using Sirenix.OdinInspector;
 using UniRx;
-
 public class RealmSencondary : MonoBehaviour
 {
 
@@ -12,10 +11,13 @@ public class RealmSencondary : MonoBehaviour
 
     private GameObject gb;
 
-    // Start is called before the first frame update
+
+
     void Start()
     {
-        Navigation.Shared.classType.Subscribe(type =>
+
+        Observable.CombineLatest(Navigation.Shared.classType, Navigation.Shared.menu.Where(v => v == Navigation.菜单.二级), (v, _) => v)
+            .Subscribe((type) =>
         {
             if (type == null) return;
             canvas = transform.Find("二级入口展示");
@@ -23,18 +25,11 @@ public class RealmSencondary : MonoBehaviour
         }).AddTo(this);
     }
 
-
     private void OnDisable()
     {
 
         if (gb == null) return;
 
         Destroy(gb);
-    }
-
-
-    public void BackToIndex()
-    {
-        Navigation.Shared.切换学科(null);
     }
 }

@@ -10,9 +10,29 @@ public class Navigation : SingletonSO<Navigation>
     public ReactiveProperty<菜单> menu = new ReactiveProperty<菜单>(菜单.一级);
 
     [HideInInspector]
-    public ReactiveProperty<学科.类型?> classType;// = new ReactiveProperty<ClassSubject.Type>();
+    public ReactiveProperty<学科.类型?> classType;
 
     private 学科 _currentType;
+
+    [LabelText("课程")]
+    public ClassCategory classCategory
+    {
+        set
+        {
+            _classCategory = value;
+            if (_classCategory == null)
+            {
+                menu.Value = 菜单.二级;
+            }
+            else
+            {
+                menu.Value = 菜单.三级;
+            }
+        }
+
+        get { return _classCategory; }
+    }
+    private ClassCategory _classCategory;
 
     [ShowInInspector]
     public 学科 当前学科
@@ -39,6 +59,13 @@ public class Navigation : SingletonSO<Navigation>
     public enum 菜单
     {
         一级, 二级, 三级
+    }
+
+
+    public void 选择延时课()
+    {
+        classCategory = Resources.Load<ClassCategory>("Class/延时课");
+        classCategory.subject = 当前学科;
     }
 
     /// <summary>

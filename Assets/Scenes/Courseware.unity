@@ -280,7 +280,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _mediaPlayer: {fileID: 6325073600880961430}
-  _defaultTexture: {fileID: 0}
+  _defaultTexture: {fileID: 2800000, guid: b382c41f6a534374390fe6d5e6e82ca8, type: 3}
   _uvRect:
     serializedVersion: 2
     x: 0
