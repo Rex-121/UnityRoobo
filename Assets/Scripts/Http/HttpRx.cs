@@ -74,7 +74,7 @@ public class HttpRx
     }
 
 
-    static IObservable<T> RawPost<T>(string path, object data)
+    public static IObservable<T> RawPost<T>(string path, object data)
     {
         Stopwatch sw = new Stopwatch();
         return Observable.Create<T>((ob) =>
