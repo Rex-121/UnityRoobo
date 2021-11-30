@@ -20,8 +20,23 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
-  token:
-    account: 50000000593
-    appUserID: oQ:004cb531d52e2be2ed0b6f12e1afccfd
-    accessToken: 7b12525f72fb3a7adecd28942890296a
+    SerializationNodes:
+    - Name: nextExpireTime
+      Entry: 7
+      Data: System.DateTime, mscorlib
+    - Name: 
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: nextExpireTimeCountDown
+      Entry: 7
+      Data: System.TimeSpan, mscorlib
+    - Name: 
+      Entry: 3
+      Data: -637738788879000310
+    - Name: 
+      Entry: 8
+      Data: 
+  expireTime: 1

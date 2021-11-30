@@ -30,22 +30,22 @@ public class Battery : MonoBehaviour
     void ChangeBackGroundImageIfNeeded()
     {
         var batteryStatus = Observable.EveryUpdate()
-            .Select((a) => isCharging())
-            .DistinctUntilChanged();
+            .Select((a) => isCharging());
 
-        batteryStatus.Subscribe(v => Logging.Log("充电中 " + v)).AddTo(this);
+        batteryStatus.DistinctUntilChanged().Subscribe(v => Logging.Log("充电中 " + v)).AddTo(this);
 
         /// 切换充电状态图片
-        batteryStatus
+        batteryStatus.DistinctUntilChanged()
             .Select((charing) => charing ? batterySO.charging : batterySO.background)
             .Subscribe(sprite => backgroundImage.sprite = sprite)
             .AddTo(this);
 
         /// 隐藏/展示 电池条
-        batteryStatus.Subscribe(ToggleBatteyCharging).AddTo(this);
+        batteryStatus.DistinctUntilChanged().Subscribe(ToggleBatteyCharging).AddTo(this);
 
         /// 改变电池电量条
-        batteryStatus.Where(c => !c).Select((_) => SystemInfo.batteryLevel)
+        batteryStatus.Where(c => !c)
+            .Select((_) => SystemInfo.batteryLevel)
             .DistinctUntilChanged()
             .Subscribe(ChangeLevel)
             .AddTo(this);
@@ -59,7 +59,10 @@ public class Battery : MonoBehaviour
         ChangeLevel(SystemInfo.batteryLevel);
     }
 
-    void ChangeLevel(float level) {
+    void ChangeLevel(float level)
+    {
+
+        Logging.Log("电池" + level);
 
         batteryImage.GetComponent<RectTransform>().sizeDelta = new Vector2(42 * level, 20);
 

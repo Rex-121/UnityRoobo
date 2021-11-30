@@ -20,6 +20,9 @@ public class RealmsEntrance : MonoBehaviour
     [LabelText("二级页面")]
     public Transform sencondry;
 
+    [LabelText("三级页面")]
+    public Transform third;
+
 
     private void Start()
     {
@@ -41,7 +44,9 @@ public class RealmsEntrance : MonoBehaviour
         {
             index.gameObject.SetActive(菜单 == Navigation.菜单.一级);
             sencondry.gameObject.SetActive(菜单 == Navigation.菜单.二级);
+            third.gameObject.SetActive(菜单 == Navigation.菜单.三级);
         }).AddTo(this);
+
     }
 
 
@@ -88,7 +93,6 @@ public class RealmsEntrance : MonoBehaviour
         sw.Start();
         async = SceneManager.LoadSceneAsync("Courseware", LoadSceneMode.Single);
 
-
         async.allowSceneActivation = false;
 
         while (async.progress < 0.9f)
@@ -111,17 +115,14 @@ public class RealmsEntrance : MonoBehaviour
     /// </summary>
     public void PushSettingPage()
     {
-
-        Stopwatch sw = new Stopwatch();
-
-        sw.Start();
-
-        Logging.Log("开始");
-
-        SceneManager.LoadScene("LoginScence");
-
-        sw.Stop();
-        Logging.Log("结束" +  sw.ElapsedMilliseconds);
-        //NativeCalls.Default.PushSettingMenus();
+        if (User.Shared.isLogin)
+        {
+            NativeCalls.Shared.PushSettingMenus();
+        }
+        else
+        {
+            SceneManager.LoadScene("LoginScence");
+        }
+        
     }
 }

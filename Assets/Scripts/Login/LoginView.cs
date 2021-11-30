@@ -1,4 +1,4 @@
-using System.Collections; using System.Collections.Generic; using UnityEngine; using UnityEngine.UI;  using Sirenix.OdinInspector; using System; using UnityEngine.SceneManagement;
+using UnityEngine; using UnityEngine.UI;  using Sirenix.OdinInspector; using System; using UnityEngine.SceneManagement;
 
 using UniRx;
 using Newtonsoft.Json.Linq;
@@ -165,4 +165,3 @@ public class LoginView : MonoBehaviour {     bool isPhonePwd = true;     C
     }
 
     /// <summary>     /// login     /// </summary>     public void OnLoginSubmit()     {         string name = inputName.text;         string pwd = inputPwd.text;         if (isPhonePwd)         {                     }         else         {                      }     }      /// <summary>     ///      /// </summary>     public void OnPrivacyClick()     {      }      /// <summary>     ///     /// </summary>     public void OnUserAgreement()     {      } } 
-
