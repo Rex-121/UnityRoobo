@@ -115,14 +115,15 @@ public class RealmsEntrance : MonoBehaviour
     /// </summary>
     public void PushSettingPage()
     {
-        if (User.Shared.isLogin)
-        {
-            NativeCalls.Shared.PushSettingMenus();
-        }
-        else
-        {
-            SceneManager.LoadScene("LoginScence");
-        }
-        
+        NativeCalls.Shared.PushSettingMenus();
+        //if (User.Shared.isLogin)
+        //{
+        //    NativeCalls.Shared.PushSettingMenus();
+        //}
+        //else
+        //{
+        //    SceneManager.LoadScene("LoginScence");
+        //}
+
     }
 }

@@ -44,6 +44,7 @@ public class LoginManager : MonoBehaviour
 
 
         public bool validate => !string.IsNullOrEmpty(account) && !string.IsNullOrEmpty(password);
+
     }
 
 
