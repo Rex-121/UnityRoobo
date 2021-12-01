@@ -56,7 +56,7 @@ public class HttpRx
     }
 
     [Serializable]
-    public struct Ignore
+    public class Ignore
     {
 
     }
@@ -74,7 +74,7 @@ public class HttpRx
     }
 
 
-    public static IObservable<T> RawPost<T>(string path, object data)
+    static IObservable<T> RawPost<T>(string path, object data)
     {
         Stopwatch sw = new Stopwatch();
         return Observable.Create<T>((ob) =>
@@ -83,24 +83,7 @@ public class HttpRx
             {
                 try
                 {
-                    var data = Forge.ParseNet(r.DataAsText);
-
-                    if (data.success)
-                    {
-
-                        ob.OnNext(data.data.ToObject<T>());
-
-                        //Forge.Check(r.DataAsText);
-                        //var datax = JsonUtility.FromJson<Data<T>>(r.DataAsText);
-                        //ob.OnNext(datax.data);
-                    }
-                    else
-                    {
-                        ob.OnError(new HttpError(data.result, data.msg, HttpError.Type.Business));
-                    }
-                    //var data = JsonUtility.FromJson<Data<T>>(r.DataAsText);
-                    //ob.OnNext(data.data);
-
+                    ParseData<T>(r.DataAsText, ob);
                 }
                 catch
                 {
@@ -130,13 +113,32 @@ public class HttpRx
         return RawPost<Ignore>(path, data);
     }
 
-    [Serializable]
-    class aakak
+    static void ParseData<T>(string jsonString, IObserver<T> ob)
     {
-        public int id;
+        Logging.Log(jsonString);
 
+        var data = Forge.ParseNet(jsonString);
+
+        if (data.success)
+        {
+            if (typeof(T) == typeof(Ignore))
+            {
+                Logging.Log("ignal");
+                object v = new Ignore();
+
+                ob.OnNext((T)v);
+            }
+            else
+            {
+                ob.OnNext(data.data.ToObject<T>());
+            }
+
+        }
+        else
+        {
+            ob.OnError(new HttpError(data.result, data.msg, HttpError.Type.Business));
+        }
     }
-
 
     /// ------------------------------------------------------------------------
 
@@ -148,27 +150,18 @@ public class HttpRx
             {
                 try
                 {
+                    ParseData<T>(r.DataAsText, ob);
+                    //var data = Forge.ParseNet(r.DataAsText);
 
-                    var data = Forge.ParseNet(r.DataAsText);
+                    //if (data.success)
+                    //{
 
-                    if (data.success)
-                    {
-
-                        ob.OnNext(data.data.ToObject<T>());
-
-                        //Forge.Check(r.DataAsText);
-                        //var datax = JsonUtility.FromJson<Data<T>>(r.DataAsText);
-                        //ob.OnNext(datax.data);
-                    }
-                    else
-                    {
-                        ob.OnError(new HttpError(data.result, data.msg, HttpError.Type.Business));
-                    }
-
-
-                    //var data = JsonUtility.FromJson<Data<T>>(r.DataAsText);
-
-                    //ob.OnNext(data.data);
+                    //    ob.OnNext(data.data.ToObject<T>());
+                    //}
+                    //else
+                    //{
+                    //    ob.OnError(new HttpError(data.result, data.msg, HttpError.Type.Business));
+                    //}
 
                 }
                 catch
