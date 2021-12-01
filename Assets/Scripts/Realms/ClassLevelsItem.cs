@@ -8,13 +8,13 @@ public class ClassLevelsItem : MonoBehaviour
 {
     public Text label;
 
-    public string leadingText = "Level";
+    public string leadingText = "L";
 
     public int index = 0;
 
     void Start()
     {
-        label.text = leadingText + " " + (index + 1);
+        label.text = leadingText + "" + (index + 1);
     }
 
 }

@@ -8,7 +8,8 @@ public abstract class 学科: ScriptableObject
     [ShowInInspector]
     public abstract 类型 type { get; }
 
-
+    [LabelText("主题颜色")]
+    public Color theme;
 
     public enum 类型
     {

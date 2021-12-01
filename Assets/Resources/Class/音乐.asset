@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5aafa54ea26d4ca39ae89a4e2161d5c, type: 3}
   m_Name: "\u97F3\u4E50"
   m_EditorClassIdentifier: 
+  theme: {r: 0.50980395, g: 0.3372549, b: 0.88235295, a: 1}

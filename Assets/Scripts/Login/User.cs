@@ -80,18 +80,18 @@ public class User : SingletonSO<User>
         nextExpireTime = DateTime.MinValue;
     }
 
-#if UNITY_EDITOR
+//#if UNITY_EDITOR
 
     private IDisposable checkTimeOut;
     [LabelText("下次踢出倒计时")]
     [DisplayAsString]
     public TimeSpan nextExpireTimeCountDown;
 
-#endif
+//#endif
 
     void CheckTimeOut()
     {
-#if UNITY_EDITOR
+//#if UNITY_EDITOR
 
         checkTimeOut?.Dispose();
 
@@ -101,7 +101,7 @@ public class User : SingletonSO<User>
         {
             nextExpireTimeCountDown = nextExpireTime.Subtract(DateTime.Now);
         });
-#endif
+//#endif
     }
 
 
