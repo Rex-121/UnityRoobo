@@ -604,7 +604,7 @@
     },
     "m_Name": "progress",
     "m_DefaultReferenceName": "Vector1_0e86d2f0e6a645f68d68117da069de1e",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_progress",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
