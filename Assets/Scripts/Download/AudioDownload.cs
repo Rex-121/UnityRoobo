@@ -6,13 +6,11 @@ using Sirenix.OdinInspector;
 using UniRx;
 using System.Diagnostics;
 
-using UniRx;
-
 public class AudioDownload : MonoBehaviour
 {
 
-    [ShowInInspector]
-    string uri = "https://roobo-test.oss-cn-beijing.aliyuncs.com/appcourse/manager/2021-09-30/c5anlfnfnhdbg6qujeo0.wav";
+    //[ShowInInspector]
+    //string uri = "https://roobo-test.oss-cn-beijing.aliyuncs.com/appcourse/manager/2021-09-30/c5anlfnfnhdbg6qujeo0.wav";
 
 
     [ShowInInspector]

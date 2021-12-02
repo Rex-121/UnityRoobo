@@ -25,6 +25,7 @@ public class RealmThird : MonoBehaviour
     void Start()
     {
 
+        
         levels.level.Subscribe(lev =>
         {
 

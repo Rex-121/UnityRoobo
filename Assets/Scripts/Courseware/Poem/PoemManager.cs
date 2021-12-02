@@ -109,7 +109,7 @@ public class PoemManager : MonoBehaviour
             {
                 return int.Parse(i) + 1;
             }
-            catch (Exception e)
+            catch 
             {
                 return -1;
             }
