@@ -1,0 +1,3 @@
+[submodule "Assets/3DParty"]
+	path = Assets/3DParty
+	url = git@git.365jiating.com:app/Unity-Roobo-3DParty.git
