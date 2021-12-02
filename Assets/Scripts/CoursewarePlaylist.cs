@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using UniRx;
 
-
-public class CoursewarePlaylist : MonoBehaviour
+public class CoursewarePlaylist : SerializedMonoBehaviour
 {
 
 
+
     [LabelText("课件列表")]
-    public List<CoursewarePlayer_SO> playlist;
+    public List<CoursewarePlayer_SO> playlist = new List<CoursewarePlayer_SO>();
 
     //[SerializeField]
     //[ReadOnly]
@@ -53,6 +54,22 @@ public class CoursewarePlaylist : MonoBehaviour
     [ReadOnly]
     [SerializeField]
     CoursewarePlayer_SO courseware;
+
+
+    private void Start()
+    {
+        API.GetCoursePlayInfo().Subscribe(v =>
+        {
+            //var process = v.rounds[0].process[0].process;
+            //var a = GetComponent<CoursewareSupportList>().supports[process.type];
+            //a.ParseData(process.content);
+            //playlist.Add(a);
+        }, (e) =>
+        {
+            Logging.Log((e as HttpError).message);
+        });
+    }
+
 
     public CoursewarePlayer_SO Next()
     {

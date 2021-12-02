@@ -12,20 +12,29 @@ public class RRRR : MonoBehaviour
 
         Logging.Log("RRRR");
 
-        //HttpRx.Get<string>("/pudding/teacher/v1/course/5509/lesson/6965/play/info").Subscribe(v =>
-        //{
-        //    Logging.Log(v);
-        //}, e => {
+        API.GetCoursePlayInfo().Subscribe(v =>
+        {
+            Logging.Log(v);
 
-        //    Logging.Log(e);
 
-        //    Logging.Log((e as HttpError).message);
-        //});
+            //Logging.Log(v.queue);
+            //Forge
+
+        }, e =>
+        {
+
+            Logging.Log(e);
+
+            Logging.Log((e as HttpError).message);
+        });
+
+       
 
         HttpRx.Get<ForgeData.RoundList>("/pudding/teacher/v1/course/5509/lesson/6979/round/list").Select(UpdateRoundValue).Subscribe(v =>
         {
             Logging.Log(v);
-        }, e => {
+        }, e =>
+        {
 
             Logging.Log(e);
 

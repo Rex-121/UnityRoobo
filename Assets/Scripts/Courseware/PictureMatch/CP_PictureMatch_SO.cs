@@ -4,7 +4,7 @@ using UnityEngine;
 public class CP_PictureMatch_SO : CoursewarePlayer_SO
 {
 
-    public override bool MakeData(GameObject player, dynamic data)
+    public override bool MakeData(GameObject player)
     {
         return true;
     }

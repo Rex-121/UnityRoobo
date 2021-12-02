@@ -16,14 +16,14 @@ public class ForgeData
 
 
 
-    public struct PictureRound
-    {
+    //public struct PictureRound
+    //{
 
-        public Process process;
+    //    public Process process;
 
-        public string src;
+    //    public string src;
 
-    }
+    //}
 
     public struct VideoRound
     {
@@ -105,8 +105,6 @@ public class ForgeData
         [JsonProperty(propertyName: "subtype")]
         public DisplayMode displayMode;
     }
-
-
 
 
     public struct Course

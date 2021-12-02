@@ -5,7 +5,7 @@ using UnityEngine;
 public class CP_ChooseImgByAudio_SO : CoursewarePlayer_SO
 {
 
-    public override bool MakeData(GameObject player, dynamic data)
+    public override bool MakeData(GameObject player)
     {
         var play = player.GetComponent<CP_ChooseImgByAudio>();
 

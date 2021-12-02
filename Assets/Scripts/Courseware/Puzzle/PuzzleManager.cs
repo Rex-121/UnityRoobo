@@ -2,19 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json;
 
 
-struct DragItemBean
-{
-    public int id;
-    public string imageUrl;
-    public float widthRatio;
-    public float heightRatio;
-    public float leftRatio;
-    public float topRatio;
-}
 public class PuzzleManager : CoursewarePlayer
 {
+
+    public struct Data
+    {
+        public DragItemBean board;
+        public List<DragItemBean> list;
+
+        public float height;
+
+        public float width;
+    }
+
+
+    public struct DragItemBean
+    {
+        public string id;
+        [JsonProperty("image")]
+        public string imageUrl;
+        [JsonProperty("width")]
+        public float widthRatio;
+        [JsonProperty("height")]
+        public float heightRatio;
+        [JsonProperty("left")]
+        public float leftRatio;
+        [JsonProperty("top")]
+        public float topRatio;
+    }
+
+
+
+
+
+
     [Title("拼图")]
     [LabelText("拼图背景版")]
     [Required]
@@ -39,7 +64,7 @@ public class PuzzleManager : CoursewarePlayer
     void Start()
     {
         DragItemBean item = new DragItemBean();
-        item.id = 0;
+        item.id = "0";
         item.imageUrl = "https://roobo-test.oss-cn-beijing.aliyuncs.com/appcourse/manager/2021-10-15/c5kijiopjsa9p75btm30.png";
         item.widthRatio = 50.453172205438065f;
         item.heightRatio = 35.90909090909091f;
@@ -47,7 +72,7 @@ public class PuzzleManager : CoursewarePlayer
         item.topRatio = 28.994755244755243f;
         testData.Add(item);
         DragItemBean item1 = new DragItemBean();
-        item1.id = 1;
+        item1.id = "1";
         item1.imageUrl = "https://roobo-test.oss-cn-beijing.aliyuncs.com/appcourse/manager/2021-10-15/c5kijtgpjsa9p75btm40.png";
         item1.widthRatio = 51.963746223564954f;
         item1.heightRatio = 27.500000000000004f;
@@ -55,7 +80,7 @@ public class PuzzleManager : CoursewarePlayer
         item1.topRatio = -5.625000000000001f;
         testData.Add(item1);
         DragItemBean item2 = new DragItemBean();
-        item2.id = 2;
+        item2.id = "2";
         item2.imageUrl = "https://roobo-test.oss-cn-beijing.aliyuncs.com/appcourse/manager/2021-10-15/c5kikbopjsa9p75btm50.png";
         item2.widthRatio = 34.44108761329305f;
         item2.heightRatio = 26.36363636363636f;
@@ -83,12 +108,12 @@ public class PuzzleManager : CoursewarePlayer
         var targetTab = Instantiate(targetTable);
         SpriteRenderer spriteRenderer = targetTab.GetComponent<SpriteRenderer>();
         SpriteUtil.loadImageToSprite("https://roobo-test.oss-cn-beijing.aliyuncs.com/appcourse/manager/2021-10-15/c5kfkggpjsa9p75btg90.png", spriteRenderer,
-            targetTableSize.x,targetTableSize.y,new Vector2(0f, 1f), () =>
-        {
-            //计算位置
-            targetTab.transform.position = targetTablePosition;
-            targetTab.transform.SetParent(transform);
-        });
+            targetTableSize.x, targetTableSize.y, new Vector2(0f, 1f), () =>
+          {
+              //计算位置
+              targetTab.transform.position = targetTablePosition;
+              targetTab.transform.SetParent(transform);
+          });
     }
 
     private void generateDragTarget()
@@ -127,7 +152,8 @@ public class PuzzleManager : CoursewarePlayer
             SpriteRenderer spriteRenderer = dragI.GetComponent<SpriteRenderer>();
             float dragIW = item.widthRatio / 100 * targetTableSize.x;
             float dragIH = item.heightRatio / 100 * targetTableSize.y;
-            SpriteUtil.loadImageToSprite(item.imageUrl,spriteRenderer,dragIW,dragIH,()=> {
+            SpriteUtil.loadImageToSprite(item.imageUrl, spriteRenderer, dragIW, dragIH, () =>
+            {
                 //修改碰撞体大小
                 BoxCollider2D boxCollider2D = dragI.GetComponent<BoxCollider2D>();
                 boxCollider2D.size = new Vector2(dragIW / dragI.transform.localScale.x, dragIH / dragI.transform.localScale.y) / 2;//因为已经整体放大了，所以需要除去

@@ -180,6 +180,38 @@ public struct Round
         displayMode = round.displayMode;
         icon = round.icon;
         pipeline = round.endAction;
+        content = round.content;
+
+        if (content == null)
+        {
+            process = new List<RoundProcess>();
+        }
+        else
+        {
+            process = content.ToObject<List<RoundProcess>>();
+        }
+       
+    }
+
+    private JToken content;
+
+    public List<RoundProcess> process;
+
+
+}
+
+
+//TODO:
+public struct RoundProcess
+{
+    public string src;
+
+    public Process process;
+
+    public struct Process
+    {
+        public string type;
+        public JToken content;
     }
 
 

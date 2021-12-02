@@ -15,7 +15,6 @@ public class VideoCourseware : MonoBehaviour
 
         if (videoPlayer.Control.IsPaused()) return;
 
-        Logging.Log(videoPlayer.Control.GetCurrentTime());
         if (videoPlayer.Control.GetCurrentTime() >= 5)
         {
             videoPlayer.Pause();

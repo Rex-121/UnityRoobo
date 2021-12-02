@@ -56,7 +56,7 @@ public class CoursewareManager : MonoBehaviour
         Logging.Log("生产资源" + sw.ElapsedMilliseconds);
 
         /// 初始化数据
-        //cp.MakeData(playingCW, "");
+        cp.MakeData(playingCW);
 
         playingCW.transform.parent = transform;
 

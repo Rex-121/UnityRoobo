@@ -193,17 +193,17 @@ public class HttpRx
         return RawGet<T>(path, query);
     }
 
-    ///// <summary>
-    ///// GET
-    ///// </summary>
-    ///// <typeparam name="T">解析数据</typeparam>
-    ///// <param name="path">接口</param>
-    ///// <param name="query">query参数</param>
-    ///// <returns></returns>
-    //public static IObservable<JToken> GetJToken(string path, Dictionary<string, string> query)
-    //{
-    //    return RawGet<JToken>(path, query);
-    //}
+    /// <summary>
+    /// GET
+    /// </summary>
+    /// <typeparam name="T">解析数据</typeparam>
+    /// <param name="path">接口</param>
+    /// <param name="query">query参数</param>
+    /// <returns></returns>
+    public static IObservable<Ignore> Get(string path, Dictionary<string, string> query)
+    {
+        return RawGet<Ignore>(path, query);
+    }
 
     /// <summary>
     /// GET
@@ -213,8 +213,21 @@ public class HttpRx
     /// <returns></returns>
     public static IObservable<T> Get<T>(string path)
     {
-        return RawGet<T>(path, query: null);
+        return Get<T>(path, query: null);
     }
+
+    /// <summary>
+    /// GET
+    /// </summary>
+    /// <typeparam name="T">解析数据</typeparam>
+    /// <param name="path">接口</param>
+    /// <param name="query">query参数</param>
+    /// <returns></returns>
+    public static IObservable<Ignore> Get(string path)
+    {
+        return Get<Ignore>(path);
+    }
+
 
     static IObservable<byte[]> RawGetResource(string path)
     {
