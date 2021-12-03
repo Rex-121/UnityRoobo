@@ -8,23 +8,23 @@ import com.unity3d.player.UnityPlayerActivity;
 public abstract class OverrideUnityActivity extends UnityPlayerActivity {
     public static OverrideUnityActivity instance = null;
 
-    abstract protected void initSvui(String id,String appPackageId,String appToken,String appUId, boolean isTest);
+    abstract protected void initSvui(String json);
 
-    abstract protected void oralEvaluate(String id,String text);
+    abstract protected void oralEvaluate(String json);
 
-    abstract protected void startQa(String id,int lessionId, String dialogId);
+    abstract protected void startQa(String json);
 
-    abstract protected void stopCapture(String id);
+    abstract protected void stopCapture();
 
-    abstract protected void tts(String id,String text, String language);
+    abstract protected void tts(String json);
 
-    abstract protected void clearAudioRecord(String id);
+    abstract protected void clearAudioRecord();
 
-    abstract protected void getAudioRecordSize(String id);
+    abstract protected long getAudioRecordSize();
 
-    abstract protected void clearPcm(String id);
+    abstract protected void clearPcm();
 
-    abstract protected void release(String id);
+    abstract protected void release();
 
 
     @Override

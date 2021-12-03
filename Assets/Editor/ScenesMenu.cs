@@ -24,6 +24,10 @@ public static class ScenesMenu
     public static void Assets_Scenes_RooboAvatar_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/RooboAvatar.unity"); }
     [MenuItem("切换场景/SampleScene", priority = 10)]
     public static void Assets_Scenes_SampleScene_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/SampleScene.unity"); }
+    [MenuItem("切换场景/SettingScene", priority = 10)]
+    public static void Assets_Scenes_SettingScene_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/SettingScene.unity"); }
+    [MenuItem("切换场景/SvuiDemo", priority = 10)]
+    public static void Assets_Scenes_SvuiDemo_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/SvuiDemo.unity"); }
     [MenuItem("切换场景/TestScene", priority = 10)]
     public static void Assets_Scenes_TestScene_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/TestScene.unity"); }
     [MenuItem("切换场景/VideoScene", priority = 10)]
