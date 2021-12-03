@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SettingScene.unity
     guid: 00413dddc51a82549b16d49d5ec969d4
+  - enabled: 0
+    path: Assets/Scenes/TestScene.unity
+    guid: a75c94ca8761d4befb1ef9548de22d2a
+  - enabled: 1
+    path: Assets/Scenes/SvuiDemo.unity
+    guid: 84d1d67cc84d8488cb2e197a0cce2625
   m_configObjects: {}
