@@ -15,14 +15,16 @@ public class PoemManager : MonoBehaviour
     [Required]
     public Canvas canvas;
     [Required]
-    public GameObject leftScroll,rightScroll;
+    public GameObject leftScroll, rightScroll;
     [Required]
     public GameObject scrollBg;
     [Required]
     public List<Text> poemTexts;
     [Required]
     public Image cursor;
-
+    [Required]
+    public MicrophoneController microphoneController;
+    private BehaviorSubject<MicrophoneState> microphoneStateStream = new BehaviorSubject<MicrophoneState>(MicrophoneState.HIDE);
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +35,12 @@ public class PoemManager : MonoBehaviour
         {
             cursorMoveTo(0, false);
         }).AddTo(this);
+        setupMicrophone();
+    }
 
+    private void setupMicrophone()
+    {
+        microphoneController.setStateStream(microphoneStateStream);
     }
 
     private void CreatePoemClickEvents()
@@ -66,7 +73,8 @@ public class PoemManager : MonoBehaviour
             closeScroll();
             return;
         }
-        cursorMoveTo(getIndexByName(data.pointerCurrentRaycast.gameObject.name), true);
+        int clickIndex = getIndexByName(data.pointerCurrentRaycast.gameObject.name);
+        cursorMoveTo(clickIndex, true);
     }
 
     private void closeScroll()
@@ -109,7 +117,7 @@ public class PoemManager : MonoBehaviour
             {
                 return int.Parse(i) + 1;
             }
-            catch 
+            catch
             {
                 return -1;
             }
@@ -122,7 +130,10 @@ public class PoemManager : MonoBehaviour
         {
             return;
         }
-        Logging.Log("poem x:" + poemTexts[index].rectTransform.position.x + "\n" + "poem width:" + poemTexts[index].rectTransform.sizeDelta.x / 2);
+        if (withAnim)
+        {
+            microphoneStateStream.OnNext(MicrophoneState.RECORDING);
+        }
         Vector3 end = new Vector3(poemTexts[index].rectTransform.position.x - poemTexts[index].rectTransform.sizeDelta.x / 2 * canvas.transform.localScale.x,
             poemTexts[index].rectTransform.position.y, cursor.transform.position.z);
         if (withAnim)
