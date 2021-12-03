@@ -114,8 +114,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mask: {fileID: 5119202664204218882}
-  commonAlertPrefab: {fileID: 3079684803475765888, guid: 3f69478b2f044422996e09ea84e72899, type: 3}
+  commonAlertPrefab: {fileID: 3079684803475765888, guid: 785606f272d484230a7dbb9c42b77cb9, type: 3}
   scrollAlertPrefab: {fileID: 3079684803475765888, guid: 5abb0f6d48591442697e358d4b9a4407, type: 3}
+  networkAlertPrefab: {fileID: 3079684803475765888, guid: 3f69478b2f044422996e09ea84e72899, type: 3}
 --- !u!1 &5119202664204218882
 GameObject:
   m_ObjectHideFlags: 0

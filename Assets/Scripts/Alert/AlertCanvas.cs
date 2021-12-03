@@ -6,11 +6,16 @@ using System;
 
 public class AlertCanvas : MonoBehaviour
 {
-    public GameObject mask;
+    [SerializeField]
+    private GameObject mask;
 
-    public GameObject commonAlertPrefab;
-    public GameObject scrollAlertPrefab;
-        
+    [SerializeField]
+    private GameObject commonAlertPrefab;
+    [SerializeField]
+    private GameObject scrollAlertPrefab;
+    [SerializeField]
+    private GameObject networkAlertPrefab;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +31,7 @@ public class AlertCanvas : MonoBehaviour
 
     public void Show()
     {
-        CommonScrollAlert("厉害啊啊啊", "空气喝个我哦起文化宫皮还欠我个IQ我我欧巴歌起舞不公平为确保工期微博过去哦IG抱歉哦我我不够切割我我去玩爆破", (a) => {
+        ShowNetworkAlert((a) => {
             if (a)
             {
                 Debug.Log("YES");
@@ -38,13 +43,25 @@ public class AlertCanvas : MonoBehaviour
         });
     }
 
-    public void CommonScrollAlert(string title, string content, Action<bool> callback)
+    //通用弹窗
+    public void ShowCommonAlert(string title, string content)
+    {
+        ShowCommonAlert(title, content, null);
+    }
+
+    public void ShowCommonAlert(string title, string content, Action<bool> callback)
     {
         var custom = Instantiate(commonAlertPrefab, mask.transform).GetComponent<CommonAlert>();
         custom.SetTitle(title);
         custom.SetContent(content);
         custom.callback = callback;
         custom.Present();
+    }
+
+    //滚动内容弹窗
+    public void ShowScrollAlert(string title, string content)
+    {
+        ShowScrollAlert(title, content, null);
     }
 
     public void ShowScrollAlert(string title, string content, Action<bool> callback)
@@ -56,5 +73,17 @@ public class AlertCanvas : MonoBehaviour
         custom.Present();
     }
 
+    //网络问题弹窗
+    public void ShowNetworkAlert()
+    {
+        ShowNetworkAlert(null);
+    }
+
+    public void ShowNetworkAlert(Action<bool> callback)
+    {
+        var custom = Instantiate(networkAlertPrefab, mask.transform).GetComponent<CommonAlert>();
+        custom.callback = callback;
+        custom.Present();
+    }
 
 }
