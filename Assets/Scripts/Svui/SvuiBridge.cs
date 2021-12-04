@@ -170,6 +170,7 @@ public class SvuiBridge : SingletonSO<SvuiBridge>
             return 0;
         }
 #endif
+        return 0;
     }
 
     public void clearPcm()
