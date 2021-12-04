@@ -20,6 +20,11 @@ public class CoursewareManager : MonoBehaviour
     public GameObject cwCanvas;
 
 
+    [LabelText("视频播放器")]
+    public VideoCourseware videoCourseware;
+
+
+
     void EveryThingReady()
     {
         ClearStage();
@@ -56,6 +61,32 @@ public class CoursewareManager : MonoBehaviour
         Play();
     }
 
+
+    public void NextRound()
+    {
+
+        var round = roundlist.GetRound();
+
+        if (round == null)
+        {
+            SceneManager.LoadScene("Realm");
+            return;
+        }
+
+        switch (round.type)
+        {
+            case RoundIsPlaying.Type.picture:
+                playlist.round = round;
+                Next();
+                break;
+            case RoundIsPlaying.Type.video:
+                videoCourseware.SetRound(round);
+                playlist.round = round;
+                break;
+        }
+
+    }
+
     /// <summary>
     /// 准备开始下一课件
     /// </summary>
@@ -75,19 +106,32 @@ public class CoursewareManager : MonoBehaviour
                 return;
             }
 
+            switch (round.type)
+            {
+                case RoundIsPlaying.Type.picture:
+                    playlist.round = round;
+                    Next();
+                    break;
+                case RoundIsPlaying.Type.video:
+                    videoCourseware.SetRound(round);
+                    playlist.round = round;
+                    break;
+            }
 
-            playlist.round = round;
 
-            Next();
             //SceneManager.LoadScene("Realm");
             return;
         }
+        PlayCourseware(cp);
 
+    }
+
+    public void PlayCourseware(CoursewarePlayer_SO cp)
+    {
         Stopwatch sw = new Stopwatch();
         sw.Start();
 
         playingCW = Instantiate(cp.coursewarePlayer, transform);
-
 
         sw.Stop();
         Logging.Log("生产资源" + sw.ElapsedMilliseconds);
@@ -108,6 +152,7 @@ public class CoursewareManager : MonoBehaviour
 
         player.Play();
     }
+
 
     [ReadOnly]
     [LabelText("正在播放的课件")]
@@ -132,6 +177,22 @@ public class CoursewareManager : MonoBehaviour
     {
         ClearStage();
         Logging.Log(player + " End");
-        Next();
+
+
+
+
+        if (roundlist.currentRound.type == RoundIsPlaying.Type.video)
+        {
+            if (!videoCourseware.Continue())
+            {
+                Next();
+            }
+        }
+        else
+        {
+            Next();
+        }
+
+
     }
 }
