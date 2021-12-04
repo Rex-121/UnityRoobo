@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UniRx;
 
 public class FreezeImageView : MonoBehaviour
 {
@@ -16,14 +17,11 @@ public class FreezeImageView : MonoBehaviour
     [LabelText("底部Grid")]
     public GridLayoutGroup mBottomGrid;
 
-    [ShowInInspector]
     [LabelText("中部Grid")]
     public GridLayoutGroup mCenterGrid;
 
-    [ShowInInspector]
-    [LabelText("最上层Panel")]
-    public GameObject mPanel;
-
+    [LabelText("遮罩")]
+    public Transform mShadow;
 
     public GameObject prefabImage;
     // Start is called before the first frame update
@@ -139,51 +137,34 @@ public class FreezeImageView : MonoBehaviour
     private bool isCenter = false;
     private Vector3 localPos;
     private Vector3 worldPos;
-    public void OnClickToMoteScale(GameObject gb,Vector3 localPos,Vector3 worldPos)
+    public void OnClickToMoteScale(GameObject gb)
     {
-        GameObject gameObject = new GameObject("gob");
-        Image image = gameObject.AddComponent<Image>();
         
-        image.color = new Color(1,1,1,0.2f);
-        gameObject.transform.localPosition = new Vector3(640, 400);
-        RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
-        rectTransform.sizeDelta = new Vector2(1280, 800);
-        gameObject.transform.SetParent(transform);
+        //gameObject = new GameObject("遮罩容器");
+        //Image image = gameObject.AddComponent<Image>();
+        //Button button = gameObject.AddComponent<Button>();
 
-        var outerPrafeb = Instantiate(gb, gameObject.transform);
+        //button.OnClickAsObservable().Take(1).Subscribe((_)=>
+        //{
+        //    Destroy(gameObject);
+        //}).AddTo(this);
+
+        //image.color = new Color(0, 0, 0, 0.7f);
+        //gameObject.transform.localPosition = new Vector3(640, 400);
+        //RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
+        //rectTransform.sizeDelta = new Vector2(1280, 800);
+
+
+
+        var outerPrafeb = Instantiate(gb, mShadow.transform);
+        outerPrafeb.GetComponent<Button>().enabled = false;
         outerPrafeb.transform.localPosition = worldPos;
-        if (isCenter)
-        {
-            outerPrafeb.transform.DOMove(new Vector3(640, 400, 1000), 1);
-            outerPrafeb.transform.DOScale(new Vector3(2, 2, 1000), 1);
-        }
-        else
-        {
-            outerPrafeb.transform.DOMove(new Vector3(640, 400, 1000), 1);
-            outerPrafeb.transform.DOScale(new Vector3(2, 2, 1000), 1);
-        }
-        isCenter = !isCenter;
+        outerPrafeb.transform.DOMove(new Vector3(640, 400, 1000), 0.3f);
+        outerPrafeb.transform.DOScale(new Vector3(2, 2, 1000), 0.3f);
+        mShadow.gameObject.SetActive(true);
 
-
-        //Debug.Log("" + this.name + " localPos=" + localPos + " worldPos=" + worldPos);
-        //if (worldPos.x == 0.0f)
-        //{
-        //    localPos = this.gameObject.transform.localPosition;
-        //    Debug.Log("" + this.name + " localPos=" + localPos);
-        //    worldPos = this.gameObject.transform.parent.transform.TransformPoint(localPos);
-        //    Debug.Log("" + this.name + " worldPos=" + worldPos);
-        //}
-        //if (!isCenter)
-        //{
-        //    outerPrafeb.transform.DOMove(new Vector3(640, 400, 0), 1);
-        //    outerPrafeb.transform.DOScale(new Vector3(2, 2, 0), 1);
-        //}
-        //else
-        //{
-        //    outerPrafeb.transform.DOMove(worldPos, 1);
-        //    outerPrafeb.transform.DOScale(new Vector3(1, 1, 0), 1);
-        //}
-        //isCenter = !isCenter;
     }
+
+    
 
 }

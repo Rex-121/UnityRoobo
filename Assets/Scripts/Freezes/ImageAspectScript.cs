@@ -22,40 +22,12 @@ public class ImageAspectScript : MonoBehaviour
 
     bool isCenter = false;
 
-    public System.Action<GameObject,Vector3,Vector3> onClick;
+    public System.Action<GameObject> onClick;
 
     public void OnClickToMoteScale()
     {
-        //Debug.Log("" + this.name + " localPos=" + localPos + " worldPos=" + worldPos);
-        //if (worldPos.x == 0.0f)
-        //{
-        //    localPos = this.gameObject.transform.localPosition;
-        //    Debug.Log("" + this.name + " localPos=" + localPos);
-        //    worldPos = this.gameObject.transform.parent.transform.TransformPoint(localPos);
-        //    Debug.Log("" + this.name + " worldPos=" + worldPos);
-        //}
-        onClick(this.gameObject, localPos, worldPos);
+        onClick(this.gameObject);
 
-        //Debug.Log("" + this.name + " localPos=" + localPos + " worldPos=" + worldPos);
-        //if (worldPos.x == 0.0f)
-        //{
-        //    localPos = this.gameObject.transform.localPosition;
-        //    Debug.Log("" + this.name + " localPos=" + localPos);
-        //    worldPos = this.gameObject.transform.parent.transform.TransformPoint(localPos);
-        //    Debug.Log("" + this.name + " worldPos=" + worldPos);
-        //}
-        //if (!isCenter)
-        //{
-        //    transform.DOMove(new Vector3(640, 400, 0), 1);
-        //    transform.DOScale(new Vector3(2, 2, 0), 1);
-
-        //}
-        //else
-        //{
-        //    transform.DOMove(worldPos, 1);
-        //    transform.DOScale(new Vector3(1, 1, 0), 1);
-        //}
-        //isCenter = !isCenter;
     }
 
 }
