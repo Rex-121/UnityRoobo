@@ -10,4 +10,15 @@ public class CoursewareSupportList : SerializedMonoBehaviour
 
 
 
+
+    public CoursewarePlayer_SO suppoting(CoursewareType type)
+    {
+
+        if (supports.ContainsKey(type)) return supports[type];
+
+        Logging.Log("暂不支持" + type);
+
+        return null;
+    }
+
 }
