@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FPS.Default.LockFrame();
+        FPS.Shared.LockFrame();
         rb = GetComponent<Rigidbody2D>();
         rightAnchor = GetComponentInParent<PositionBridge>().getRight();
     }

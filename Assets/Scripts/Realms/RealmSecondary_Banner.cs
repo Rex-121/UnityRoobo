@@ -27,7 +27,7 @@ public class RealmSecondary_Banner : MonoBehaviour
 
     public void SetTintColor()
     {
-        var subject = Navigation.Shared.当前学科;
+        var subject = Navigation.Shared.currentSubject;
 
         if (subject == null) return;
 

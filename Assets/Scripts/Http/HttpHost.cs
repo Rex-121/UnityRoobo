@@ -5,8 +5,6 @@ using UnityEngine;
 public class HttpHost : SingletonSO<HttpHost>
 {
 
-    public static HttpHost Default => Instance("HttpHost");
-
     public string host = "http://appcourse.roobo.com.cn";
 
     public Dictionary<string, string> defaultHeaders = new Dictionary<string, string>();

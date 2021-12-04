@@ -5,7 +5,7 @@ public class PluginHelper : MonoBehaviour
 
     public void ButtonPressed()
     {
-        NativeCalls.Default.sendMessageToMobileApp("fasdgasdfasdfsad");
+        NativeCalls.Shared.sendMessageToMobileApp("fasdgasdfasdfsad");
     }
 
 }

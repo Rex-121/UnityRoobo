@@ -42,24 +42,24 @@ public class SingletonSO<T> : SerializedScriptableObject where T : SingletonSO<T
     }
 
 
-    public static T Instance(string path)
-    {
-        if (instance == null)
-        {
-            Stopwatch sw = new Stopwatch();
+    //public static T Instance(string path)
+    //{
+    //    if (instance == null)
+    //    {
+    //        Stopwatch sw = new Stopwatch();
 
-            sw.Start();
-            T assets = Resources.Load<T>("Singleton/" + path);
-            instance = assets;
+    //        sw.Start();
+    //        T assets = Resources.Load<T>("Singleton/" + path);
+    //        instance = assets;
 
-            sw.Stop();
+    //        sw.Stop();
 
-            Logging.Log("--->单例耗时 `" + path + "` " + sw.ElapsedMilliseconds + "ms<---");
-        }
+    //        Logging.Log("--->单例耗时 `" + path + "` " + sw.ElapsedMilliseconds + "ms<---");
+    //    }
 
-        return instance;
+    //    return instance;
 
-    }
+    //}
 
 
 

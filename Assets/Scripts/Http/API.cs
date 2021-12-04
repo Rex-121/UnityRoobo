@@ -18,9 +18,7 @@ public class API
     {
         return HttpRx.Get<ForgeData.Course>("/pudding/teacher/v1/course/5509/lesson/7196/play/info").Select(v =>
         {
-            var queue = UpdateRoundValue(v.rounds);
-            Logging.Log("fasfdas" + queue.rounds[0].process[0].process.type);
-            return queue;
+            return UpdateRoundValue(v.rounds);
         });
     }
 

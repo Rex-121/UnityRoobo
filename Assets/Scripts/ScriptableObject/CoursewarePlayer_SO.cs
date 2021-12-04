@@ -23,9 +23,8 @@ public class CoursewarePlayer_SO : SerializedScriptableObject
     }
 
 
-    public virtual bool ParseData(JToken content)
+    public virtual CoursewarePlayer_SO ParseData(JToken content)
     {
-        return true;
+        return null;
     }
-
 }

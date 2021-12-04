@@ -20,7 +20,7 @@ public class RealmBackButton : MonoBehaviour
     }
     void Start()
     {
-        Navigation.Shared.menu.Select(v => v != Navigation.菜单.一级).Subscribe(display =>
+        Navigation.Shared.menu.Select(v => v != Navigation.Menu.index).Subscribe(display =>
         {
             backButton.gameObject.SetActive(display);
         }).AddTo(this);

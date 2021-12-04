@@ -15,39 +15,6 @@ public class ForgeData
 {
 
 
-
-    //public struct PictureRound
-    //{
-
-    //    public Process process;
-
-    //    public string src;
-
-    //}
-
-    public struct VideoRound
-    {
-
-        public List<StopPoints> stopPoints;
-
-        public string src;
-
-    }
-
-    public struct StopPoints
-    {
-        public int at;
-        public Process process;
-    }
-
-    public struct Process
-    {
-        public string type;
-
-        public JToken content { get; set; }
-
-    }
-
     ///pudding/teacher/v1/course/5509/lesson/6979/round/list
     public struct RoundList
     {
@@ -104,7 +71,106 @@ public class ForgeData
 
         [JsonProperty(propertyName: "subtype")]
         public DisplayMode displayMode;
+
+
+        public List<RoundProcess> processList
+        {
+            get
+            {
+
+                var list = new List<RoundProcess>();
+
+                Logging.Log("Before typpeeeee " + type);
+
+
+                if (content == null) goto exit;
+
+
+                Logging.Log("typpeeeee " + type);
+
+                switch (type)
+                {
+                    case Type.Picture:
+                        list.AddRange(content.ToObject<List<RoundProcess>>());
+                        break;
+                    case Type.PicBook:
+                        Logging.Log("typpeeeee " + content);
+                        list.Add(new RoundProcess("", new RoundProcess.Process(CoursewareType.cartoonBooks, content), 0));
+                        break;
+                }
+
+            exit:
+                return list;
+            }
+        }
+
+        public VideoRoundProcess videoProcess
+        {
+            get
+            {
+                try
+                {
+
+                    return content.ToObject<VideoRoundProcess>();
+                }
+
+                catch (Exception e)
+                {
+                    Logging.Log(e.Message);
+                }
+                return new VideoRoundProcess();
+            }
+        }
     }
+
+
+
+    public struct RoundProcess
+    {
+        public string src;
+
+        public int at;
+
+        public Process process;
+
+        public struct Process
+        {
+            public CoursewareType type;
+
+            public JToken content;
+
+            public Process(CoursewareType type, JToken content)
+            {
+                this.type = type;
+                this.content = content;
+            }
+
+        }
+
+        public RoundProcess(string s, Process p, int at)
+        {
+            src = s;
+            this.at = at;
+            process = p;
+        }
+    }
+
+    public struct VideoRoundProcess
+    {
+        public List<StopPoints> stopPoints;
+
+        public string video;
+
+        public struct StopPoints
+        {
+            public int at;
+            public RoundProcess.Process process;
+        }
+    }
+
+
+
+
 
 
     public struct Course
@@ -175,4 +241,31 @@ class ConvertEndAction : Newtonsoft.Json.JsonConverter
     {
         throw new NotImplementedException();
     }
+}
+
+
+
+
+
+
+public static class VideoRoundProcessExtension
+{
+
+    public static CW_OriginContent cw_OriginContent(this ForgeData.VideoRoundProcess.StopPoints o)
+    {
+        return new CW_OriginContent(o.process.type, o.process.content, new CW_OriginContent.Joint(o.at));
+    }
+
+
+    public static CW_OriginContent cw_OriginContent(this ForgeData.RoundProcess o)
+    {
+        return o.process.cw_OriginContent();
+    }
+
+
+    public static CW_OriginContent cw_OriginContent(this ForgeData.RoundProcess.Process o)
+    {
+        return new CW_OriginContent(o.type, o.content, CW_OriginContent.Joint.Empty());
+    }
+
 }

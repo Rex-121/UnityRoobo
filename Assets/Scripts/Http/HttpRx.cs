@@ -63,14 +63,14 @@ public class HttpRx
 
     static Uri BuildPath(string path, Dictionary<string, string> query)
     {
-        var build = new UriBuilder(HttpHost.Default.host + path);
+        var build = new UriBuilder(HttpHost.Shared.host + path);
         build.Query = UrlQuery.Make(query);
         return build.Uri;
     }
 
     static Dictionary<string, string> GetHeaders()
     {
-        return HttpHost.Default.defaultHeaders;
+        return HttpHost.Shared.defaultHeaders;
     }
 
 

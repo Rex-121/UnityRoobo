@@ -14,28 +14,31 @@ public class CW_Puzzle_SO : CoursewarePlayer_SO
     /// <returns>是否可以播放</returns>
     public override bool MakeData(GameObject player)
     {
-        return false;
+        player.GetComponent<PuzzleManager>().setData(item);
+        return true;
     }
 
 
     public PuzzleManager.Data item;
 
 
-    public override bool ParseData(JToken content)
+
+    public override CoursewarePlayer_SO ParseData(JToken content)
     {
+        var value = CreateInstance<CW_Puzzle_SO>();
+
+        value.coursewarePlayer = coursewarePlayer;
+
         try
         {
-            item = content.ToObject<PuzzleManager.Data>();
-
-            Logging.Log("widht" + item.width);
-        } catch (Exception e)
+            value.item = content.ToObject<PuzzleManager.Data>();
+        }
+        catch (Exception e)
         {
             Logging.Log(e.Message);
         }
 
-       
 
-        return true;
+        return value;
     }
-
 }

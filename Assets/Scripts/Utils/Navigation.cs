@@ -7,12 +7,12 @@ public class Navigation : SingletonSO<Navigation>
 {
 
     [HideInInspector]
-    public ReactiveProperty<菜单> menu = new ReactiveProperty<菜单>(菜单.一级);
+    public ReactiveProperty<Menu> menu = new ReactiveProperty<Menu>(Menu.index);
 
     [HideInInspector]
-    public ReactiveProperty<学科.类型?> classType;
+    public ReactiveProperty<ClassSubjectType?> classType = new ReactiveProperty<ClassSubjectType?>();
 
-    private 学科 _currentType;
+    private ClassSubject _currentType;
 
     [LabelText("课程")]
     public ClassCategory classCategory
@@ -22,11 +22,11 @@ public class Navigation : SingletonSO<Navigation>
             _classCategory = value;
             if (_classCategory == null)
             {
-                menu.Value = 菜单.二级;
+                menu.Value = Menu.secondary;
             }
             else
             {
-                menu.Value = 菜单.三级;
+                menu.Value = Menu.third;
             }
         }
 
@@ -35,19 +35,19 @@ public class Navigation : SingletonSO<Navigation>
     private ClassCategory _classCategory;
 
     [ShowInInspector]
-    public 学科 当前学科
+    public ClassSubject currentSubject
     {
         set
         {
             _currentType = value;
             if (_currentType == null)
             {
-                menu.Value = 菜单.一级;
+                menu.Value = Menu.index;
                 classType.Value = null;
             }
             else
             {
-                menu.Value = 菜单.二级;
+                menu.Value = Menu.secondary;
                 classType.Value = _currentType.type;
             }
         }
@@ -56,32 +56,32 @@ public class Navigation : SingletonSO<Navigation>
     }
 
     [System.Serializable]
-    public enum 菜单
+    public enum Menu
     {
-        一级, 二级, 三级
+        index, secondary, third
     }
 
 
     public void 选择延时课()
     {
         classCategory = Resources.Load<ClassCategory>("Class/延时课");
-        classCategory.subject = 当前学科;
+        classCategory.subject = currentSubject;
     }
 
     /// <summary>
     /// 选择了新的学科
     /// </summary>
     /// <param name="type">学科</param>
-    public void 切换学科(学科.类型? 学科类型)
+    public void 切换学科(ClassSubjectType? sType)
     {
-        当前学科 = Resources.Load<学科>("Class/" + 学科类型.SO文件名());
+        currentSubject = Resources.Load<ClassSubject>("Class/" + sType.SO文件名());
     }
 
 
     public void Start()
     {
-        classType = new ReactiveProperty<学科.类型?>();
-        当前学科 = null;
+        //classType = new ReactiveProperty<ClassSubject.Type?>();
+        currentSubject = null;
     }
 
 
