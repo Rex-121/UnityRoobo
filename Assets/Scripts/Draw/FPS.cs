@@ -7,15 +7,6 @@ using System.Collections.Generic;
 public class FPS : SingletonSO<FPS>
 {
 
-    public static FPS Default
-    {
-        get
-        {
-            return Instance("FPS");
-        }
-    }
-
-
     [ShowInInspector]
     [LabelText("默认帧率")]
     private int fps = 60;

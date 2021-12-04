@@ -11,6 +11,9 @@ public class CoursewareManager : MonoBehaviour
     [LabelText("课件列表")]
     public CoursewarePlaylist playlist;
 
+    [LabelText("课件列表")]
+    public CoursewareRoundingList roundlist;
+
 
     [ShowInInspector]
     [LabelText("课件画布")]
@@ -31,8 +34,26 @@ public class CoursewareManager : MonoBehaviour
 
     void Start()
     {
-        Observable.EveryEndOfFrame().Take(1)   
+
+        API.GetCoursePlayInfo()
+            .Subscribe(GetAllRoundList, (e) =>
+        {
+            Logging.Log((e as HttpError).message);
+        }).AddTo(this);
+
+
+        Observable.EveryEndOfFrame().Take(1)
             .Subscribe().AddTo(this);
+    }
+
+
+    void GetAllRoundList(RoundQueue queue)
+    {
+        foreach (var r in queue.rounds)
+        {
+            GetComponent<CoursewareRoundingList>().SetRoundList(r.playlist);
+        }
+        Play();
     }
 
     /// <summary>
@@ -42,23 +63,37 @@ public class CoursewareManager : MonoBehaviour
     {
 
         var cp = playlist.Next();
+
         if (cp == null)
         {
-            SceneManager.LoadScene("Realm");
+
+            var round = roundlist.GetRound();
+
+            if (round == null)
+            {
+                SceneManager.LoadScene("Realm");
+                return;
+            }
+
+
+            playlist.round = round;
+
+            Next();
+            //SceneManager.LoadScene("Realm");
             return;
         }
 
         Stopwatch sw = new Stopwatch();
         sw.Start();
 
-        playingCW = Instantiate(cp.coursewarePlayer);
+        playingCW = Instantiate(cp.coursewarePlayer, transform);
+
+
         sw.Stop();
         Logging.Log("生产资源" + sw.ElapsedMilliseconds);
 
         /// 初始化数据
         cp.MakeData(playingCW);
-
-        playingCW.transform.parent = transform;
 
         CoursewarePlayer player = playingCW.GetComponent<CoursewarePlayer>();
 

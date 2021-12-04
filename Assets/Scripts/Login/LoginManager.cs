@@ -79,7 +79,7 @@ public class LoginManager : MonoBehaviour
     {
         HttpRx.Post<User.Token>("/pudding/manager/v1/provisional/tempAccount/login", account.Value).Subscribe((r) =>
         {
-            User.Default.token = r;
+            User.Shared.token = r;
             Logging.Log(r.accessToken);
             Logging.Log("fasd");
 

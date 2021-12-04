@@ -5,9 +5,9 @@ public class RealmNavigation : MonoBehaviour
 
     private static RealmNavigation instance = null;
 
-    private void Awake()
+    private void Start()
     {
- 
+
         if (instance == null)
         {
             instance = this;

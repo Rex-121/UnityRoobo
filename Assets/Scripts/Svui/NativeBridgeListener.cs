@@ -6,7 +6,8 @@ public class NativeBridgeListener : MonoBehaviour
 {
     public void DidReceiveFromNative(string message)
     {
-        NativeBridge.Default.DidReceiveFromNative(message);
-        SvuiBridge.Default.DidReceiveFromNative(message);
+
+        NativeBridge.Shard.DidReceiveFromNative(message);
+        SvuiBridge.Shard.DidReceiveFromNative(message);
     }
 }

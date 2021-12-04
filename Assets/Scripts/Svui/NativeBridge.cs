@@ -6,8 +6,6 @@ using UnityEngine;
 public class NativeBridge : SingletonSO<NativeBridge>
 {
 
-    public static NativeBridge Default => Instance("NativeBridge");
-
     // 将监听器加入场景
     public void AddListenerToScreen()
     {
@@ -27,7 +25,7 @@ public class NativeBridge : SingletonSO<NativeBridge>
 
         Debug.Log(mes);
 
-        NativeCalls.Default.sendMessageToMobileApp(mes);
+        NativeCalls.Shared.sendMessageToMobileApp(mes);
     }
 
 

@@ -7,9 +7,9 @@ using System.Collections.Generic;
 public class RealmSecondary_SO : SerializedScriptableObject
 {
 
-    public Dictionary<学科.类型, GameObject> entrances = new Dictionary<学科.类型, GameObject>();
+    public Dictionary<ClassSubjectType, GameObject> entrances = new Dictionary<ClassSubjectType, GameObject>();
 
-    public GameObject GetSecondary(学科.类型 type)
+    public GameObject GetSecondary(ClassSubjectType type)
     {
 
         if (entrances.ContainsKey(type))

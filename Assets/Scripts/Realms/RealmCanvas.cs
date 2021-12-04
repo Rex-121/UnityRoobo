@@ -54,7 +54,7 @@ public class RealmCanvas : MonoBehaviour
         Stopwatch sw = new Stopwatch();
         Logging.Log("FPS开始 " + sw.ElapsedMilliseconds + "ms");
         sw.Start();
-        FPS.Default.LockFrame();
+        FPS.Shared.LockFrame();
         //Application.targetFrameRate = 60;
 
         //var gb = new GameObject("FPSDisplay");
