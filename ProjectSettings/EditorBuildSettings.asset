@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SettingScene.unity
     guid: 00413dddc51a82549b16d49d5ec969d4
+  - enabled: 0
+    path: Assets/Scenes/AIDrawScene.unity
+    guid: 91744f7e3537a11478710e34ce80a1bf
+  - enabled: 1
+    path: Assets/Scenes/FreezeScene.unity
+    guid: f8f262a678979684eac838b15914e7d9
   m_configObjects: {}

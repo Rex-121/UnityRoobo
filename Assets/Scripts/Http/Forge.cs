@@ -173,6 +173,9 @@ public struct Round
 
     public ForgeData.Rounds.Pipeline pipeline;
 
+
+    public ForgeData.Rounds.Type type;
+
     public Round(ForgeData.Rounds round)
     {
         id = round.id;
@@ -180,10 +183,35 @@ public struct Round
         displayMode = round.displayMode;
         icon = round.icon;
         pipeline = round.endAction;
+
+        type = round.type;
+
+
+        playlist = new List<RoundIsPlaying>();
+
+        playlist.AddRange(RoundQueueParse.ParseQueue(this, round));
+
+
     }
 
+    public List<RoundIsPlaying> playlist;
+
+
+
+    struct Picture
+    {
+        public string src;
+
+        public ForgeData.RoundProcess.Process process;
+    }
 
 }
+
+
+
+
+
+
 
 public static class RoundExtensions
 {
@@ -223,3 +251,44 @@ public static class RoundExtensions
     }
 }
 
+
+
+
+
+
+/// <summary>
+/// 原始数据
+/// </summary>
+public struct CW_OriginContent
+{
+
+    public JToken content;
+
+    public CoursewareType type;
+
+    /// <summary>
+    ///  节点
+    /// </summary>
+    public Joint joint;
+
+    public struct Joint
+    {
+        public int at;
+
+        public Joint(int at)
+        {
+            this.at = at;
+        }
+
+        public static Joint Empty() => new Joint(0);
+
+    }
+
+
+    public CW_OriginContent(CoursewareType type, JToken token, Joint joint)
+    {
+        this.type = type;
+        this.joint = joint;
+        content = token;
+    }
+}

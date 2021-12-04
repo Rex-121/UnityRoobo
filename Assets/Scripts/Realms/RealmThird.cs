@@ -42,7 +42,7 @@ public class RealmThird : MonoBehaviour
 
                  var itemSc = item.GetComponent<RealmLevelListItem>();
                  var stir = @"{'icon': 'afsa', 'name': 'vvv', 'locked': true}";
-                 var itemValue = new RealmLevelListItem.IndexedItem(i, Navigation.Shared.当前学科.theme, JsonConvert.DeserializeObject<RealmLevelListItem.Item>(stir));
+                 var itemValue = new RealmLevelListItem.IndexedItem(i, Navigation.Shared.currentSubject.theme, JsonConvert.DeserializeObject<RealmLevelListItem.Item>(stir));
 
                  itemSc.SetItem(itemValue);
 

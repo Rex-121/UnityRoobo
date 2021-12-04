@@ -14,6 +14,6 @@ public class RealmThird_Item_SO : SerializedScriptableObject
     }
 
 
-    public Dictionary<学科.类型, Item> itemTheme = new Dictionary<学科.类型, Item>();
+    public Dictionary<ClassSubjectType, Item> itemTheme = new Dictionary<ClassSubjectType, Item>();
 
 }

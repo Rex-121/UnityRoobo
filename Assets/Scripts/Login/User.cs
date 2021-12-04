@@ -10,8 +10,6 @@ public class User : SingletonSO<User>
 {
 
 
-    public static User Default => Instance("用户");
-
     private Token _token;
 
     public bool isLogin

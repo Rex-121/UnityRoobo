@@ -13,15 +13,14 @@ public class VideoCourseware : MonoBehaviour
     void Update()
     {
 
-        if (videoPlayer.Control.IsPaused()) return;
+        //if (videoPlayer.Control.IsPaused()) return;
 
-        Logging.Log(videoPlayer.Control.GetCurrentTime());
-        if (videoPlayer.Control.GetCurrentTime() >= 5)
-        {
-            videoPlayer.Pause();
-            cwManager.Play();
-            gameObject.SetActive(false);
-        }
+        //if (videoPlayer.Control.GetCurrentTime() >= 5)
+        //{
+        //    videoPlayer.Pause();
+        //    cwManager.Play();
+        //    gameObject.SetActive(false);
+        //}
 
     }
 }

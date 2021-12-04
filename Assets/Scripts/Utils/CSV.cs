@@ -75,7 +75,7 @@ public class CSV
         Stopwatch sw = new Stopwatch();
         sw.Start();
         Logging.Log("开始读取resource");
-        FPS.Default.LockFrame();
+        FPS.Shared.LockFrame();
 
         Logging.Log("结束读取resource " + sw.ElapsedMilliseconds);
         sw.Stop();

@@ -7,15 +7,9 @@ using UnityEngine;
 public class NativeCalls : SingletonSO<NativeCalls>
 {
 
-    public static NativeCalls Default => Instance("原生通信");
-
     public void sendMessageToMobileApp(string message)
     {
 
-#if UNITY_EDITOR
-        Debug.Log("Unity Editor");
-        return;
-#endif
 
 #if UNITY_IOS
         NativeAPI.sendMessageToMobileApp(message);
@@ -42,11 +36,6 @@ public class NativeCalls : SingletonSO<NativeCalls>
     public void PushSettingMenus()
     {
 
-
-#if UNITY_EDITOR
-        Debug.Log("Unity Editor PushSettingMenus");
-        return;
-#endif
 
 #if UNITY_IOS
         Debug.Log("iOS PushSettingMenus");
@@ -87,9 +76,7 @@ public class NativeCalls : SingletonSO<NativeCalls>
 
         public bool Equals(Wifi x, Wifi y)
         {
-            var aa = x.ssid == y.ssid && x.strength == y.strength;
-            Logging.Log("fasgasdf " + aa);
-            return aa;
+            return x.ssid == y.ssid && x.strength == y.strength;
         }
 
         public int GetHashCode(Wifi obj)
@@ -104,12 +91,7 @@ public class NativeCalls : SingletonSO<NativeCalls>
     /// </summary>
     public Wifi WifiStrength()
     {
-
-
-#if UNITY_EDITOR
         return Wifi.None();
-#endif
-
 #if UNITY_IOS
         return Wifi.None();
 #elif UNITY_ANDROID

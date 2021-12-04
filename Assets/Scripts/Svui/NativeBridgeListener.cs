@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class NativeBridgeListener : MonoBehaviour
 {
-    public void DidEndSvui(string message)
+    public void DidReceiveFromNative(string message)
     {
-        NativeBridge.Default.DidReceiveFromNative(message);
-    }
 
+        NativeBridge.Shared.DidReceiveFromNative(message);
+        SvuiBridge.Shared.DidReceiveFromNative(message);
+    }
 }
