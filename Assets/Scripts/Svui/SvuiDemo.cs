@@ -19,7 +19,7 @@ public class SvuiDemo : MonoBehaviour
 
     private void initSvui()
     {
-        SvuiBridge.Default.initSvui("JDJ5HOluh", "e3079fc40bf7fce29a0edcbf5fa7febb", "JD:813c0b516b3db6c78da42815e90eec4f", true).TakeLast(1)
+        SvuiBridge.Shared.initSvui("JDJ5HOluh", "e3079fc40bf7fce29a0edcbf5fa7febb", "JD:813c0b516b3db6c78da42815e90eec4f", true).TakeLast(1)
         .DoOnError(e =>
         {
             Logging.Log("svui init failed:" + e.Message);
@@ -34,7 +34,7 @@ public class SvuiDemo : MonoBehaviour
 
     public void oralEvaluate()
     {
-        SvuiBridge.Default.oralEvaluate("test", SvuiBridge.Language.ENG, false, 5).TakeLast(1)
+        SvuiBridge.Shared.oralEvaluate("test", SvuiBridge.Language.ENG, false, 5).TakeLast(1)
             .DoOnError(e =>
             {
                 Logging.Log(e.Message);
@@ -48,7 +48,7 @@ public class SvuiDemo : MonoBehaviour
 
     public void qa()
     {
-        SvuiBridge.Default.startQA(6965, "mjqykhpeo6337j0vsw").TakeLast(1)
+        SvuiBridge.Shared.startQA(6965, "mjqykhpeo6337j0vsw").TakeLast(1)
           .DoOnError(e =>
           {
               Logging.Log(e.Message);
@@ -60,13 +60,13 @@ public class SvuiDemo : MonoBehaviour
     }
 
     public void stopCapture() {
-        SvuiBridge.Default.stopCapture();
+        SvuiBridge.Shared.stopCapture();
         text.text = "STOP";
     }
 
     public void tts()
     {
-        SvuiBridge.Default.tts("test tts",SvuiBridge.Language.ENG).TakeLast(1)
+        SvuiBridge.Shared.tts("test tts",SvuiBridge.Language.ENG).TakeLast(1)
           .DoOnError(e =>
           {
               Logging.Log(e.Message);

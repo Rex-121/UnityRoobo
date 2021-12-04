@@ -14,7 +14,7 @@ public class SvuiBridge : SingletonSO<SvuiBridge>
         JP,
         ENG,
     }
-    public static SvuiBridge Default => Instance("SvuiBridge");
+
     private int id = 0;
     Dictionary<int, BehaviorSubject<bool>> initCallMap = new Dictionary<int, BehaviorSubject<bool>>();
     Dictionary<int, BehaviorSubject<OralResultBean>> oralCallMap = new Dictionary<int, BehaviorSubject<OralResultBean>>();
