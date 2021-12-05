@@ -4,14 +4,15 @@ using UniRx;
 using System.Diagnostics;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(CoursewareCredit))]
+[RequireComponent(typeof(CoursewareCredit), typeof(CoursewarePlaylist), typeof(CoursewareRoundingList))]
+[RequireComponent(typeof(CoursewareVideoPlaylist))]
 public class CoursewareManager : MonoBehaviour
 {
 
-    [LabelText("课件列表")]
+    [HideInInspector]
     public CoursewarePlaylist playlist;
 
-    [LabelText("课件列表")]
+    [HideInInspector]
     public CoursewareRoundingList roundlist;
 
 
@@ -21,7 +22,7 @@ public class CoursewareManager : MonoBehaviour
 
 
     [LabelText("视频播放器")]
-    public VideoCourseware videoCourseware;
+    public CoursewareVideoPlaylist videoPlaylist;
 
 
 
@@ -39,6 +40,9 @@ public class CoursewareManager : MonoBehaviour
 
     void Start()
     {
+
+
+        FPS.Shared.LockFrame();
 
         API.GetCoursePlayInfo()
             .Subscribe(GetAllRoundList, (e) =>
@@ -80,8 +84,7 @@ public class CoursewareManager : MonoBehaviour
                 Next();
                 break;
             case RoundIsPlaying.Type.video:
-                videoCourseware.SetRound(round);
-                playlist.round = round;
+                videoPlaylist.round = round;
                 break;
         }
 
@@ -95,35 +98,51 @@ public class CoursewareManager : MonoBehaviour
 
         var cp = playlist.Next();
 
-        if (cp == null)
+        /// 如果还有课件，直接播放
+        if (cp != null) goto play;
+
+        /// 重新分配round
+        var round = roundlist.GetRound();
+
+        /// 如果没有round，返回首页
+        if (round == null) goto exit;
+
+
+        //playlist.round = round;
+
+
+        switch (round.type)
         {
+            case RoundIsPlaying.Type.picture:
+                playlist.round = round;
+                goto remake;
 
-            var round = roundlist.GetRound();
-
-            if (round == null)
-            {
-                SceneManager.LoadScene("Realm");
+            case RoundIsPlaying.Type.video:
+                videoPlaylist.round = round;
+                //playlist.round = round;
                 return;
-            }
-
-            switch (round.type)
-            {
-                case RoundIsPlaying.Type.picture:
-                    playlist.round = round;
-                    Next();
-                    break;
-                case RoundIsPlaying.Type.video:
-                    videoCourseware.SetRound(round);
-                    playlist.round = round;
-                    break;
-            }
-
-
-            //SceneManager.LoadScene("Realm");
-            return;
         }
-        PlayCourseware(cp);
 
+
+    remake:
+        Next();
+        return;
+
+    exit:
+        Exit();
+        return;
+
+    play:
+        PlayCourseware(cp);
+        return;
+    }
+
+    /// <summary>
+    /// 退出
+    /// </summary>
+    void Exit()
+    {
+        SceneManager.LoadScene("Realm");
     }
 
     public void PlayCourseware(CoursewarePlayer_SO cp)
@@ -183,7 +202,7 @@ public class CoursewareManager : MonoBehaviour
 
         if (roundlist.currentRound.type == RoundIsPlaying.Type.video)
         {
-            if (!videoCourseware.Continue())
+            if (!videoPlaylist.Continue())
             {
                 Next();
             }
