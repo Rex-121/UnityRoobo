@@ -5,28 +5,10 @@ using Sirenix.OdinInspector;
 using UniRx;
 using System.Linq;
 
-public class CoursewarePlaylist : SerializedMonoBehaviour
+public class CoursewarePlaylist : CoursewareBasicPlaylist
 {
 
-    RoundIsPlaying _Round;
-
-    [HideInInspector]
-    public RoundIsPlaying round
-    {
-        set
-        {
-            _Round = value;
-
-            SS();
-        }
-        get
-        {
-            return _Round;
-        }
-    }
-
-
-    public void SS()
+    public override void RoundDidChanged()
     {
 
         if (round == null) return;
@@ -54,16 +36,16 @@ public class CoursewarePlaylist : SerializedMonoBehaviour
 
     }
 
-    [LabelText("课件列表")]
+
+    int index = -1;
+
+    public override string description => courseware != null ? "正在播放第" + (index + 1) + "个" : "无播放课件";
+
+    [Title("列表", "$description"), LabelText("课件列表"), PropertySpace(SpaceAfter = 30)]
     public List<CoursewarePlayer_SO> playlist = new List<CoursewarePlayer_SO>();
 
 
-    //[SerializeField]
-    [ReadOnly]
-    public int index = -1;
-
     [LabelText("还有需要播放的课件")]
-    [ShowInInspector]
     bool playable
     {
         get
@@ -74,7 +56,6 @@ public class CoursewarePlaylist : SerializedMonoBehaviour
     }
 
     [LabelText("最后一个课件")]
-    [ShowInInspector]
     bool last
     {
         get
@@ -85,7 +66,6 @@ public class CoursewarePlaylist : SerializedMonoBehaviour
     }
 
     [LabelText("第一个课件")]
-    [ShowInInspector]
     bool first
     {
         get
@@ -96,10 +76,6 @@ public class CoursewarePlaylist : SerializedMonoBehaviour
     }
 
 
-    [LabelText("正在播放的课件")]
-    [ReadOnly]
-    [SerializeField]
-    CoursewarePlayer_SO courseware;
 
     public CoursewarePlayer_SO Next()
     {

@@ -39,11 +39,17 @@ public class RoundQueueParse
 
         try
         {
+           
 
 
             foreach (var p in process)
             {
                 list.Add(ARound.Picture(p.src, new List<CW_OriginContent>() { p.cw_OriginContent() }));
+            }
+
+            foreach (var round in list)
+            {
+
             }
 
         }

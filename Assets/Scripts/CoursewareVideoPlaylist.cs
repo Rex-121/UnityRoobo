@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using RenderHeads.Media.AVProVideo;
@@ -8,12 +7,8 @@ using Sirenix.OdinInspector;
 
 using UniRx;
 
-public class VideoCourseware : SerializedMonoBehaviour
+public class CoursewareVideoPlaylist : CoursewareBasicPlaylist
 {
-
-
-    //public 
-
     [System.Serializable]
     public class Range
     {
@@ -28,8 +23,6 @@ public class VideoCourseware : SerializedMonoBehaviour
 
         public bool Check(double at)
         {
-
-
             if (start >= at)
             {
                 if (end < at)
@@ -43,31 +36,36 @@ public class VideoCourseware : SerializedMonoBehaviour
 
     }
 
-
+    [PropertyOrder(100)]
     public GameObject videoUI;
 
 
-    [LabelText("课件列表")]
+
+    public override string description => currentJoint != null ? "正在播放第" + currentJoint.Value.at + "秒" : "无播放课件";
+
+    [Title("列表", "$description"), LabelText("课件列表"), PropertySpace(SpaceAfter = 30)]
     public List<CW_OriginContent> playlist = new List<CW_OriginContent>();
 
-
+    [PropertyOrder(101)]
     public MediaPlayer videoPlayer;
 
-    public CoursewareManager cwManager;
+
+
+    CW_OriginContent.Joint? currentJoint;
 
     [ShowInInspector, ReadOnly, ListDrawerSettings(Expanded = true)]
     public List<CW_OriginContent.Joint> joints = new List<CW_OriginContent.Joint>();
 
 
-    public CoursewareSupportList supportsList;
+    //public CoursewareSupportList supportsList;
 
     [ShowInInspector]
     public Range vv = new Range();
 
 
-    public void SetRound(RoundIsPlaying round)
+    public override void RoundDidChanged()
     {
-        gameObject.SetActive(true);
+        videoPlayer.gameObject.SetActive(true);
 
         videoPlayer.OpenMedia(new MediaPath(round.src, MediaPathType.AbsolutePathOrURL), autoPlay: true);
         //videoPlayer.MediaSource
@@ -77,12 +75,12 @@ public class VideoCourseware : SerializedMonoBehaviour
         joints.AddRange(round.process.Select(v => v.joint));
 
 
-        var supports = supportsList.supports;
-
         playlist.Clear();
         playlist.AddRange(round.process);
 
     }
+
+
 
     public bool Continue()
     {
@@ -100,10 +98,12 @@ public class VideoCourseware : SerializedMonoBehaviour
     void Update()
     {
 
+        if (videoPlayer.Control == null) return;
+
         if (videoPlayer.Control.IsFinished())
         {
             videoPlayer.CloseMedia();
-            gameObject.SetActive(false);
+            videoPlayer.gameObject.SetActive(false);
             cwManager.NextRound();
             return;
         }
@@ -119,7 +119,7 @@ public class VideoCourseware : SerializedMonoBehaviour
             if (vv.Check(list.joint.at))
             {
 
-                var so = supportsList.suppoting(list.type);
+                var so = supports.suppoting(list.type);
 
                 if (so != null)
                 {
@@ -127,11 +127,20 @@ public class VideoCourseware : SerializedMonoBehaviour
 
                     videoUI.SetActive(false);
 
-                    var newSo = so.ParseData(list.content);
-                    cwManager.PlayCourseware(newSo);
+                    currentJoint = list.joint;
+
+                    courseware = so.ParseData(list.content);
+                    cwManager.PlayCourseware(courseware);
 
                 }
+
+
             }
+            else
+            {
+                courseware = null;
+            }
+
         }
 
     }
