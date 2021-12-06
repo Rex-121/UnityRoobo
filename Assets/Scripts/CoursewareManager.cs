@@ -4,20 +4,26 @@ using UniRx;
 using System.Diagnostics;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(CoursewareCredit))]
+[RequireComponent(typeof(CoursewareCredit), typeof(CoursewarePlaylist), typeof(CoursewareRoundingList))]
+[RequireComponent(typeof(CoursewareVideoPlaylist))]
 public class CoursewareManager : MonoBehaviour
 {
 
-    [LabelText("课件列表")]
+    [HideInInspector]
     public CoursewarePlaylist playlist;
 
-    [LabelText("课件列表")]
+    [HideInInspector]
     public CoursewareRoundingList roundlist;
 
 
     [ShowInInspector]
     [LabelText("课件画布")]
     public GameObject cwCanvas;
+
+
+    [LabelText("视频播放器")]
+    public CoursewareVideoPlaylist videoPlaylist;
+
 
 
     void EveryThingReady()
@@ -34,6 +40,9 @@ public class CoursewareManager : MonoBehaviour
 
     void Start()
     {
+
+
+        FPS.Shared.LockFrame();
 
         API.GetCoursePlayInfo()
             .Subscribe(GetAllRoundList, (e) =>
@@ -56,6 +65,31 @@ public class CoursewareManager : MonoBehaviour
         Play();
     }
 
+
+    public void NextRound()
+    {
+
+        var round = roundlist.GetRound();
+
+        if (round == null)
+        {
+            SceneManager.LoadScene("Realm");
+            return;
+        }
+
+        switch (round.type)
+        {
+            case RoundIsPlaying.Type.picture:
+                playlist.round = round;
+                Next();
+                break;
+            case RoundIsPlaying.Type.video:
+                videoPlaylist.round = round;
+                break;
+        }
+
+    }
+
     /// <summary>
     /// 准备开始下一课件
     /// </summary>
@@ -64,30 +98,59 @@ public class CoursewareManager : MonoBehaviour
 
         var cp = playlist.Next();
 
-        if (cp == null)
+        /// 如果还有课件，直接播放
+        if (cp != null) goto play;
+
+        /// 重新分配round
+        var round = roundlist.GetRound();
+
+        /// 如果没有round，返回首页
+        if (round == null) goto exit;
+
+
+        //playlist.round = round;
+
+
+        switch (round.type)
         {
+            case RoundIsPlaying.Type.picture:
+                playlist.round = round;
+                goto remake;
 
-            var round = roundlist.GetRound();
-
-            if (round == null)
-            {
-                SceneManager.LoadScene("Realm");
+            case RoundIsPlaying.Type.video:
+                videoPlaylist.round = round;
+                //playlist.round = round;
                 return;
-            }
-
-
-            playlist.round = round;
-
-            Next();
-            //SceneManager.LoadScene("Realm");
-            return;
         }
 
+
+    remake:
+        Next();
+        return;
+
+    exit:
+        Exit();
+        return;
+
+    play:
+        PlayCourseware(cp);
+        return;
+    }
+
+    /// <summary>
+    /// 退出
+    /// </summary>
+    void Exit()
+    {
+        SceneManager.LoadScene("Realm");
+    }
+
+    public void PlayCourseware(CoursewarePlayer_SO cp)
+    {
         Stopwatch sw = new Stopwatch();
         sw.Start();
 
         playingCW = Instantiate(cp.coursewarePlayer, transform);
-
 
         sw.Stop();
         Logging.Log("生产资源" + sw.ElapsedMilliseconds);
@@ -108,6 +171,7 @@ public class CoursewareManager : MonoBehaviour
 
         player.Play();
     }
+
 
     [ReadOnly]
     [LabelText("正在播放的课件")]
@@ -132,6 +196,22 @@ public class CoursewareManager : MonoBehaviour
     {
         ClearStage();
         Logging.Log(player + " End");
-        Next();
+
+
+
+
+        if (roundlist.currentRound.type == RoundIsPlaying.Type.video)
+        {
+            if (!videoPlaylist.Continue())
+            {
+                Next();
+            }
+        }
+        else
+        {
+            Next();
+        }
+
+
     }
 }

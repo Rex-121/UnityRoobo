@@ -39,11 +39,17 @@ public class RoundQueueParse
 
         try
         {
+           
 
 
             foreach (var p in process)
             {
-                list.Add(new PictureRound(p.src, new List<CW_OriginContent>() { p.cw_OriginContent() }));
+                list.Add(ARound.Picture(p.src, new List<CW_OriginContent>() { p.cw_OriginContent() }));
+            }
+
+            foreach (var round in list)
+            {
+
             }
 
         }
@@ -64,7 +70,7 @@ public class RoundQueueParse
         var ss = process.stopPoints.Select(v => v.cw_OriginContent()).ToList();
         List<RoundIsPlaying> list = new List<RoundIsPlaying>();
 
-        list.Add(new PictureRound(process.video, ss));
+        list.Add(ARound.Video(process.video, ss));
 
         return list;
     }
@@ -79,55 +85,55 @@ public struct EmptyRound : RoundIsPlaying
 
     public List<CW_OriginContent> process { get; set; }
 
-
-    public string des
-    {
-        get
-        {
-            return "空转-> ";
-        }
-    }
-
+    public RoundIsPlaying.Type type => RoundIsPlaying.Type.empty;
 }
 
 
 public interface RoundIsPlaying
 {
-    public string src { get; set; }
-
-    [ShowInInspector]
-    public string des { get; }
+    public string src { get; }
 
     public List<CW_OriginContent> process { get; set; }
+
+    public Type type { get; }
+
+    public enum Type
+    {
+        video, picture, empty, highFive
+    }
 }
 
-public struct PictureRound : RoundIsPlaying
+public struct ARound : RoundIsPlaying
 {
-    [ShowInInspector, LabelText("$des"), LabelWidth(50)]
+    [ShowInInspector, LabelText("$type"), LabelWidth(50)]
     public string src { get; set; }
 
-    public string des => "图片";
+    public RoundIsPlaying.Type type => _type;
 
-
-
+    RoundIsPlaying.Type _type;
 
     [ShowInInspector, HideLabel]
-    List<CoursewareType> types
-    {
-        get
-        {
-            return process.Select(v => v.type).ToList();
-        }
-    }
+    List<CoursewareType> types => process.Select(v => v.type).ToList();
 
 
     public List<CW_OriginContent> process { get; set; }
 
-    public PictureRound(string s, List<CW_OriginContent> p)
+    ARound(string s, List<CW_OriginContent> p, RoundIsPlaying.Type _type)
     {
         src = s;
         process = p;
+        this._type = _type;
     }
 
+
+    public static RoundIsPlaying Picture(string s, List<CW_OriginContent> p)
+    {
+        return new ARound(s, p, RoundIsPlaying.Type.picture);
+    }
+
+    public static RoundIsPlaying Video(string s, List<CW_OriginContent> p)
+    {
+        return new ARound(s, p, RoundIsPlaying.Type.video);
+    }
 }
 
