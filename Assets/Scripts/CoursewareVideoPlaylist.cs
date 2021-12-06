@@ -98,6 +98,8 @@ public class CoursewareVideoPlaylist : CoursewareBasicPlaylist
     void Update()
     {
 
+        if (videoPlayer.Control == null) return;
+
         if (videoPlayer.Control.IsFinished())
         {
             videoPlayer.CloseMedia();
