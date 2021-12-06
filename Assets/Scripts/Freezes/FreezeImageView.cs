@@ -1,10 +1,8 @@
 using DG.Tweening;
 using Sirenix.OdinInspector;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UniRx;
 
 public class FreezeImageView : MonoBehaviour
 {
@@ -24,17 +22,6 @@ public class FreezeImageView : MonoBehaviour
     public Transform mShadow;
 
     public GameObject prefabImage;
-    // Start is called before the first frame update
-    void Start()
-    {
-      
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     /// <summary>
     /// 初始化显示内容
@@ -126,7 +113,7 @@ public class FreezeImageView : MonoBehaviour
         WebReqeust.GetTexture(url, (texture2d) =>
         {
             Sprite tempSprite = Sprite.Create(texture2d, new Rect(0, 0, texture2d.width, texture2d.height), new Vector2(0.5f, 0.5f));
-            asps[1].sprite = tempSprite;
+            asps[0].sprite = tempSprite;
            
         }, (e) =>
         {
@@ -134,37 +121,16 @@ public class FreezeImageView : MonoBehaviour
         });
     }
 
-    private bool isCenter = false;
-    private Vector3 localPos;
     private Vector3 worldPos;
     public void OnClickToMoteScale(GameObject gb)
     {
-        
-        //gameObject = new GameObject("遮罩容器");
-        //Image image = gameObject.AddComponent<Image>();
-        //Button button = gameObject.AddComponent<Button>();
-
-        //button.OnClickAsObservable().Take(1).Subscribe((_)=>
-        //{
-        //    Destroy(gameObject);
-        //}).AddTo(this);
-
-        //image.color = new Color(0, 0, 0, 0.7f);
-        //gameObject.transform.localPosition = new Vector3(640, 400);
-        //RectTransform rectTransform = gameObject.GetComponent<RectTransform>();
-        //rectTransform.sizeDelta = new Vector2(1280, 800);
-
-
-
         var outerPrafeb = Instantiate(gb, mShadow.transform);
         outerPrafeb.GetComponent<Button>().enabled = false;
         outerPrafeb.transform.localPosition = worldPos;
-        outerPrafeb.transform.DOMove(new Vector3(640, 400, 1000), 0.3f);
-        outerPrafeb.transform.DOScale(new Vector3(2, 2, 1000), 0.3f);
+        var aa=outerPrafeb.transform.DOMove(new Vector3(640, 400, 1000), 0.3f);
+        var bb=outerPrafeb.transform.DOScale(new Vector3(2, 2, 1000), 0.3f);
         mShadow.gameObject.SetActive(true);
-
+        aa.Complete();
+        bb.Complete();
     }
-
-    
-
 }
