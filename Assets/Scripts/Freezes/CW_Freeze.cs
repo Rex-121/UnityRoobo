@@ -1,6 +1,4 @@
 using Sirenix.OdinInspector;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,22 +6,20 @@ public class CW_Freeze : CoursewarePlayer
 {
 
     public GameObject prefabImage;
+    public GameObject prefabVideo;
 
     [ShowInInspector]
     [LabelText("定格内容容器")]
     public GameObject freezeContainer;
 
-    [LabelText("遮罩")]
+    [LabelText("图片遮罩")]
     public Transform mShadow;
+
+    [LabelText("视频遮罩")]
+    public Transform mShadowVideo;
 
     [LabelText("下一环节")]
     public Image mNextStep;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
 
     public void InitGridAndData(CW_Freeze_SO.FreezeEntity freezeEntity)
     {
@@ -41,12 +37,19 @@ public class CW_Freeze : CoursewarePlayer
                     break;
                 case CW_Freeze_SO.FreezeEntity.Type.noDisplay:
                     break;
+                case CW_Freeze_SO.FreezeEntity.Type.video:
+                    var gameVideo = Instantiate(prefabVideo, freezeContainer.transform);
+                    var videoView = gameVideo.GetComponent<FreezeVideoView>();
+                    videoView.mShadow = mShadowVideo;
+                    videoView.showRepeat = freezeEntity.isRepeat;
+                    videoView.InitGrids(freezeEntity.videoList);
+                    break;
             }
         }
     }
 
     /// <summary>
-    /// 遮罩点击隐藏
+    /// 遮罩图片点击隐藏
     /// </summary>
     public void OnOffActiveShadow()
     {
@@ -56,5 +59,18 @@ public class CW_Freeze : CoursewarePlayer
             Destroy(mShadow.GetChild(i).gameObject);
         }
         mShadow.gameObject.SetActive(false);
+    }
+
+    /// <summary>
+    /// 遮罩视频点击隐藏
+    /// </summary>
+    public void OnOffActiveVideoShadow()
+    {
+        Debug.Log("OnClickToMoteScale OnOffActiveVideoShadow");
+        for (int i = 0; i < mShadowVideo.childCount; i++)
+        {
+            Destroy(mShadowVideo.GetChild(i).gameObject);
+        }
+        mShadowVideo.gameObject.SetActive(false);
     }
 }
