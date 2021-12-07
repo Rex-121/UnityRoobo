@@ -177,6 +177,8 @@ public class PoemManager : CoursewarePlayer
             Logging.Log("poem end!!!");
             DidEndCourseware(this);
         }).AddTo(this);
+
+        DidEndCourseware(this);
     }
 
     private DOTweenAnimation getCloseAnim(DOTweenAnimation[] anims)

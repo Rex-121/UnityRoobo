@@ -186,6 +186,7 @@ public struct Round
 
         type = round.type;
 
+        pauseImage = round.stopImage;
 
         playlist = new List<RoundIsPlaying>();
 
@@ -196,7 +197,7 @@ public struct Round
 
     public List<RoundIsPlaying> playlist;
 
-
+    public string pauseImage;
 
     struct Picture
     {

@@ -20,7 +20,7 @@ public class CoursewareRoundingList : SerializedMonoBehaviour
 
     public void Next()
     {
-        Logging.Log("请求下一个round");
+        Logging.Log("请求下一个round ->>" + rounding.next.type);
         round.OnNext(rounding.next);
     }
 

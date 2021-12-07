@@ -9,7 +9,7 @@ using UniRx;
 using System;
 
 public class CoursewareVideoPlaylist : CoursewareBasicPlaylist
-{
+{ 
 
 
     public override bool SupportRountType(RoundIsPlaying.Type roundType) { return roundType == RoundIsPlaying.Type.video; }
