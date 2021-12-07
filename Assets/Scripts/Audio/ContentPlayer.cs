@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 enum PlayerEvent
 {
-    finish
+    start, pause, resume, stop, interrupt, finish
 }
 
 [RequireComponent(typeof(AudioSource))]
@@ -85,12 +85,21 @@ public class ContentPlayer: MonoBehaviour
 
     public void PlayParcel(Parcel parcel)
     {
+        if (isPlaying)
+        {
+            player.Stop();
+            isPlaying = false;
+            callback?.Invoke(PlayerEvent.interrupt);
+            Logging.Log("play interrupt!");
+        }
+
+
         HttpRx.GetAudio(parcel.truePath).Take(1).Subscribe(c =>
         {
             player.clip = c;
             player.Play();
             isPlaying = true;
-            Logging.Log("playing: " + parcel.truePath);
+            Logging.Log("play start: " + parcel.truePath);
         }, (e) =>
         {
             Logging.Log("play error:" + e);
@@ -99,12 +108,36 @@ public class ContentPlayer: MonoBehaviour
 
     public void Stop()
     {
-        player.Stop();
+        if (isPlaying)
+        {
+            player.Stop();
+            isPlaying = false;
+            callback?.Invoke(PlayerEvent.stop);
+            Logging.Log("play stop!");
+        }
     }
 
     public void Pause()
     {
-        player.Pause();
+        if (isPlaying)
+        {
+            player.Pause();
+            isPlaying = false;
+            callback?.Invoke(PlayerEvent.pause);
+            Logging.Log("play pause!");
+        }
+
+    }
+
+    public void Resume()
+    {
+        if (!isPlaying && player.clip != null)
+        {
+            player.Play();
+            isPlaying = true;
+            callback?.Invoke(PlayerEvent.resume);
+            Logging.Log("play resume!");
+        }
     }
 
 
@@ -112,9 +145,9 @@ public class ContentPlayer: MonoBehaviour
     {
         if (isPlaying == true && player.isPlaying == false)
         {
-            Logging.Log("play finish!");
             isPlaying = false;
             callback?.Invoke(PlayerEvent.finish);
+            Logging.Log("play finish!");
         }
     }
 
