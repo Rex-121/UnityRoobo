@@ -97,6 +97,16 @@ public class ContentPlayer: MonoBehaviour
         }).AddTo(this);
     }
 
+    public void Stop()
+    {
+        player.Stop();
+    }
+
+    public void Pause()
+    {
+        player.Pause();
+    }
+
 
     void UpdatePlayerStatus()
     {
@@ -107,7 +117,5 @@ public class ContentPlayer: MonoBehaviour
             callback?.Invoke(PlayerEvent.finish);
         }
     }
-
-
 
 }
