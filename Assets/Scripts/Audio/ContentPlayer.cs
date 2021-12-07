@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public enum PlayerEvent
 {
-    start, pause, resume, stop, interrupt, finish
+    start, pause, resume, stop, interrupt, finish, none
 }
 
 [RequireComponent(typeof(AudioSource))]
@@ -50,9 +50,9 @@ public class ContentPlayer: MonoBehaviour
 
     public void PlayContentByType(string content, string type)
     {
-        if(content == null || content.Length == 0 || type == null || type.Length == 0 || type == "type")
+        if(content == null || content.Length == 0 || type == null || type.Length == 0 || type == "none")
         {
-            status.Value = PlayerEvent.finish;
+            status.Value = PlayerEvent.none;
             return;
         }
         if ("tts" == type)
@@ -90,16 +90,17 @@ public class ContentPlayer: MonoBehaviour
         {
             player.Stop();
             isPlaying = false;
-            disposable.Dispose();
+            disposable?.Dispose();
             status.Value = PlayerEvent.interrupt;
             Logging.Log("play interrupt!");
         }
 
-        isPlaying = true;
         disposable = HttpRx.GetAudio(parcel.truePath).Take(1).Subscribe(c =>
         {
             player.clip = c;
             player.Play();
+            isPlaying = true;
+            status.Value = PlayerEvent.start;
             Logging.Log("play start: " + parcel.truePath);
         }, (e) =>
         {
