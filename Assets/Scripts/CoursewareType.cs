@@ -25,8 +25,16 @@ public enum CoursewareType
 
     // 定格
     [LabelText("定格")]
-    freeze
+    freeze,
 
+
+    // 跟读点读（诗词）
+    [LabelText("跟读点读（诗词）")]
+    follow,
+
+    // 圈图点读
+    [LabelText("圈图点读")]
+    circles,
 }
 
 

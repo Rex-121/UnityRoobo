@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14df69374a7d549e58c131a5c919c7d2, type: 3}
+  m_Name: "\u8DDF\u8BFB\u70B9\u8BFB\uFF08\u8BD7\u8BCD\uFF09Player"
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: item
+      Entry: 7
+      Data: PuzzleManager+Data, Assembly-CSharp
+    - Name: board
+      Entry: 7
+      Data: PuzzleManager+DragItemBean, Assembly-CSharp
+    - Name: id
+      Entry: 6
+      Data: 
+    - Name: imageUrl
+      Entry: 6
+      Data: 
+    - Name: widthRatio
+      Entry: 4
+      Data: 0
+    - Name: heightRatio
+      Entry: 4
+      Data: 0
+    - Name: leftRatio
+      Entry: 4
+      Data: 0
+    - Name: topRatio
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: list
+      Entry: 6
+      Data: 
+    - Name: height
+      Entry: 4
+      Data: 0
+    - Name: width
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+  coursewarePlayer: {fileID: 5038265417577348879, guid: 17fc52756c2f3433597544aae4991750, type: 3}
