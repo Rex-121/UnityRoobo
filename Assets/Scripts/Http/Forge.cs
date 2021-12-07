@@ -259,7 +259,7 @@ public static class RoundExtensions
 /// <summary>
 /// 原始数据
 /// </summary>
-public struct CW_OriginContent
+public class CW_OriginContent
 {
 
     public JToken content;
@@ -290,5 +290,25 @@ public struct CW_OriginContent
         this.type = type;
         this.joint = joint;
         content = token;
+    }
+
+
+    public CW_OriginContent next;
+    public CW_OriginContent previous;
+
+
+    public static CW_OriginContent Empty()
+    {
+        return new CW_OriginContent(CoursewareType.unknow, null, Joint.Empty());
+    }
+
+
+    public CW_OriginContent FindAt(int at)
+    {
+        if (at == joint.at) return this;
+
+        if (next != null) return next.FindAt(at);
+
+        return null;
     }
 }

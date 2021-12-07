@@ -2,78 +2,65 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using UniRx;
-using System.Linq;
+using System;
 
 public class CoursewareRoundingList : SerializedMonoBehaviour
 {
     [HideInInspector]
     public List<RoundIsPlaying> roundList = new List<RoundIsPlaying>();
 
-    public void SetRoundList(List<RoundIsPlaying> list)
-    {
-       
-        roundList.AddRange(list);
-
-        pin = Pin.Start();
-        pin.max = roundList.Count;
-    }
 
     [HideInInspector]
-    public RoundIsPlaying currentRound;
+    public BehaviorSubject<RoundIsPlaying> round;
 
-
-    public RoundIsPlaying GetRound()
+    public void SetRoundList(List<RoundIsPlaying> list)
     {
-
-        pin.Increase();
-
-        if (pin.end) return null;
-
-        currentRound = roundList[pin.index];
-
-        return currentRound;
+        roundList.AddRange(list);
     }
 
-    [ShowInInspector, LabelText("RoundIsPlaying.List<CW_OriginContent>")]
-    public List<List<CW_OriginContent>> theListxxx
+    public void Next()
     {
-        get
+        Logging.Log("请求下一个round");
+        round.OnNext(rounding.next);
+    }
+
+    private void Awake()
+    {
+        round = new BehaviorSubject<RoundIsPlaying>(null);
+    }
+
+    public void Merge()
+    {
+
+        LeadingRound leading = new LeadingRound();
+
+
+        RoundIsPlaying start = leading;
+
+        foreach (RoundIsPlaying roundIsPlaying in roundList)
         {
-            var f = roundList.Select(v => v.process.Select(vv => vv).ToList()).ToList();
-            return f;
+            roundIsPlaying.previous = start;
+            start.next = roundIsPlaying;
+
+            start = roundIsPlaying;
         }
-    }
-    [ShowInInspector, Title("当前Round"), HideLabel, PropertySpace(SpaceAfter = 30), PropertyOrder(-20)]
-    public RoundIsPlaying RoundLoaded
-    {
-        get
+
+        
+
+        try
         {
-            return currentRound;
+            round.OnNext(leading.RemoveSelf());
         }
-    }
-
-    [InlineProperty, PropertyOrder(-10)]
-    public Pin pin = new Pin(-1, 0);
-    //[Button]
-
-    public struct Pin
-    {
-        [ReadOnly]
-        public int index;
-
-        public Pin(int i, int m) { index = i; max = m; }
-
-        public static Pin Start() => new Pin(-1, 0);
-        [ReadOnly]
-        public int max;
-
-        [ShowInInspector]
-        public bool end => index >= max;
-
-        public void Increase()
+        catch (Exception e)
         {
-            index += 1;
+            Logging.Log(e.Message);
         }
 
     }
+
+
+
+
+    [ShowInInspector]
+    private RoundIsPlaying rounding => round != null ? round.Value : null;
 }

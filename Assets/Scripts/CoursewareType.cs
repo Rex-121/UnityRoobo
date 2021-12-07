@@ -1,7 +1,11 @@
+using System;
+using Newtonsoft.Json;
 using Sirenix.OdinInspector;
 
 public enum CoursewareType
 {
+    [LabelText("未知")]
+    unknow,
 
     // 拼图
     [LabelText("拼图")]
@@ -23,4 +27,42 @@ public enum CoursewareType
     [LabelText("定格")]
     freeze
 
+}
+
+
+
+class CoursewareTypeJSONTranslate : JsonConverter
+{
+    public override bool CanConvert(Type objectType)
+    {
+        return true;
+    }
+
+    public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+    {
+
+        if (reader.TokenType == JsonToken.String)
+        {
+            try
+            {
+                return serializer.Deserialize<CoursewareType>(reader);
+            }
+            catch (Exception e)
+            {
+                Logging.Log("发现不支持的题型---->");
+                Logging.Log("题型为 ->>! " + reader.Value.ToString() + " !<<--");
+                Logging.Log(e.Message);
+                Logging.Log("<----发现不支持的题型");
+                return CoursewareType.unknow;
+            }
+
+
+        }
+        return CoursewareType.unknow;
+    }
+
+    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    {
+        throw new NotImplementedException();
+    }
 }
