@@ -17,6 +17,7 @@ public enum PoemTextStatus
     LOWLIGHT,
 }
 
+[RequireComponent(typeof(ContentPlayer))]
 public class PoemManager : CoursewarePlayer
 {
     public struct Data
@@ -51,10 +52,11 @@ public class PoemManager : CoursewarePlayer
     public Image cursor;
     [Required]
     public MicrophoneController microphoneController;
-    private BehaviorSubject<MicrophoneState> microphoneStateStream = new BehaviorSubject<MicrophoneState>(MicrophoneState.HIDE);
+    private BehaviorSubject<MicrophoneState> microphoneStateStream = new BehaviorSubject<MicrophoneState>(MicrophoneState.DISABLE);
     private BehaviorSubject<PoemBean> poemTextStream = new BehaviorSubject<PoemBean>(null);
     private IDisposable poemTextStatusDisposable;
     private IDisposable microphoneStatusDisposable;
+    private ContentPlayer contentPlayer;
 
     public void setData(Data data)
     {
@@ -88,6 +90,7 @@ public class PoemManager : CoursewarePlayer
     // Start is called before the first frame update
     void Start()
     {
+        contentPlayer = GetComponent<ContentPlayer>();
         FPS.Shared.LockFrame();
         CreatePoemClickEvents();
     }
@@ -117,9 +120,15 @@ public class PoemManager : CoursewarePlayer
         if (pointerEventData.pointerCurrentRaycast.gameObject.name.Equals("next"))
         {
             closeScroll();
-            return;
         }
-        onPoemClick(pointerEventData);
+        else if (pointerEventData.pointerCurrentRaycast.gameObject.name.Equals("audio"))
+        {
+
+        }
+        else
+        {
+            onPoemClick(pointerEventData);
+        }
     }
 
     private void onPoemClick(PointerEventData pointerEventData)
@@ -156,7 +165,9 @@ public class PoemManager : CoursewarePlayer
     }
 
     private void playPoem(int index,Action then) {
-       microphoneStatusDisposable= Observable.Timer(TimeSpan.FromSeconds(3)).Subscribe((_)=> {
+        contentPlayer.PlayContentByType(data.list[index].audio,"audio");
+
+        microphoneStatusDisposable = Observable.Timer(TimeSpan.FromSeconds(3)).Subscribe((_)=> {
            //麦克风录音动画
            microphoneController.recordDuration = data.list[index].waiting;
            microphoneStateStream.OnNext(MicrophoneState.RECORDING);
