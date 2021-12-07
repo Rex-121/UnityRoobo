@@ -34,6 +34,8 @@ public class ForgeData
 
         public string icon { get; set; }
 
+        public string stopImage { get; set; }
+
         public enum Type
         {
             Video, Picture, PicBook, WordFuns, Dubbing
