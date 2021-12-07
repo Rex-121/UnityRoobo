@@ -1,3 +1,4 @@
+using RenderHeads.Media.AVProVideo;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,6 +18,13 @@ public class CW_Freeze : CoursewarePlayer
 
     [LabelText("视频遮罩")]
     public Transform mShadowVideo;
+
+    [LabelText("视频播放器")]
+    public MediaPlayer mShadowPlayer;
+
+    [LabelText("视频重播按钮")]
+    public Button mShadowReplayButton;
+
 
     [LabelText("下一环节")]
     public Image mNextStep;
@@ -41,6 +49,8 @@ public class CW_Freeze : CoursewarePlayer
                     var gameVideo = Instantiate(prefabVideo, freezeContainer.transform);
                     var videoView = gameVideo.GetComponent<FreezeVideoView>();
                     videoView.mShadow = mShadowVideo;
+                    videoView.mShadowPlayer = mShadowPlayer;
+                    videoView.mShadowReplayButton = mShadowReplayButton;
                     videoView.showRepeat = freezeEntity.isRepeat;
                     videoView.InitGrids(freezeEntity.videoList);
                     break;
@@ -67,10 +77,12 @@ public class CW_Freeze : CoursewarePlayer
     public void OnOffActiveVideoShadow()
     {
         Debug.Log("OnClickToMoteScale OnOffActiveVideoShadow");
-        for (int i = 0; i < mShadowVideo.childCount; i++)
-        {
-            Destroy(mShadowVideo.GetChild(i).gameObject);
-        }
+        //for (int i = 0; i < mShadowVideo.childCount; i++)
+        //{
+        //    Destroy(mShadowVideo.GetChild(i).gameObject);
+        //}
+        //释放播放器资源
+        mShadowPlayer.Control.CloseMedia();
         mShadowVideo.gameObject.SetActive(false);
     }
 }

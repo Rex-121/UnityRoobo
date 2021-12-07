@@ -156,7 +156,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -22, y: -22}
+  m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7289418251276945431
 CanvasRenderer:
@@ -519,7 +519,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13f985e09ebf30645875bf9a92cc8117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  videoUrl: 
   mReplayButton: {fileID: 1415401412567268131}
+  mPlayer: {fileID: 7289418251276945430}
 --- !u!1 &7289418252028867154
 GameObject:
   m_ObjectHideFlags: 0
