@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using Sirenix.Utilities;
 
 public class RoundQueueParse
 {
@@ -39,7 +40,7 @@ public class RoundQueueParse
 
         try
         {
-           
+
 
 
             foreach (var p in process)
@@ -79,13 +80,45 @@ public class RoundQueueParse
 }
 
 
-public struct EmptyRound : RoundIsPlaying
+public class LeadingRound : RoundIsPlaying
 {
     public string src { get; set; }
 
     public List<CW_OriginContent> process { get; set; }
 
-    public RoundIsPlaying.Type type => RoundIsPlaying.Type.empty;
+    [ShowInInspector]
+    public RoundIsPlaying.Type type => RoundIsPlaying.Type.picture;
+
+    public RoundIsPlaying next { get; set; }
+
+    public RoundIsPlaying previous { get; set; }
+
+
+    public RoundIsPlaying RemoveSelf()
+    {
+        var v = next;
+        next.previous = null;
+        return next;
+    }
+    
+    public int count
+    {
+        get
+        {
+            if (next == null) return 1;
+            return 1 + next.count;
+        }
+    }
+
+    public string des
+    {
+        get
+        {
+            if (next == null) return type.ToString();
+            return type.ToString() + next.des;
+        }
+    }
+
 }
 
 
@@ -99,11 +132,20 @@ public interface RoundIsPlaying
 
     public enum Type
     {
-        video, picture, empty, highFive
+        video, picture, pop
     }
+
+    public RoundIsPlaying next { get; set; }
+
+    public RoundIsPlaying previous { get; set; }
+
+    public int count { get; }
+
+    
+    public string des { get; }
 }
 
-public struct ARound : RoundIsPlaying
+public class ARound : RoundIsPlaying
 {
     [ShowInInspector, LabelText("$type"), LabelWidth(50)]
     public string src { get; set; }
@@ -115,7 +157,39 @@ public struct ARound : RoundIsPlaying
     [ShowInInspector, HideLabel]
     List<CoursewareType> types => process.Select(v => v.type).ToList();
 
+    [ShowInInspector]
+    public int count
+    {
+        get
+        {
+            if (next == null) return 1;
+            return 1 + next.count;
+        }
+    }
 
+    [ShowInInspector]
+    public string des
+    {
+        get
+        {
+            var types = process.Select(v => v.type.ToString());
+
+            var i = "";
+
+            types.ForEach(v =>
+            {
+                i += (v + "->");
+            });
+
+            var value = "|-------" + type.ToString() + " (" + i + ") " + "-------|\n";
+
+            if (next == null) return value;
+            return value + next.des;
+        }
+    }
+
+
+    [ShowInInspector, ReadOnly]
     public List<CW_OriginContent> process { get; set; }
 
     ARound(string s, List<CW_OriginContent> p, RoundIsPlaying.Type _type)
@@ -123,8 +197,15 @@ public struct ARound : RoundIsPlaying
         src = s;
         process = p;
         this._type = _type;
+        next = null;
+        previous = null;
     }
 
+    [ShowInInspector, ReadOnly]
+    public RoundIsPlaying next { get; set; }
+
+    [ShowInInspector, ReadOnly]
+    public RoundIsPlaying previous { get; set; }
 
     public static RoundIsPlaying Picture(string s, List<CW_OriginContent> p)
     {

@@ -25,6 +25,10 @@ public class CoursewarePlayer_SO : SerializedScriptableObject
 
     public virtual CoursewarePlayer_SO ParseData(JToken content)
     {
+
+        //var a = ScriptableObject.CreateInstance<CoursewarePlayer_SO<T>>();
+
+
         return null;
     }
 }

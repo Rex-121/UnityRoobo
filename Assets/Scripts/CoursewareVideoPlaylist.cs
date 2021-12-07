@@ -6,78 +6,35 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 
 using UniRx;
+using System;
 
 public class CoursewareVideoPlaylist : CoursewareBasicPlaylist
 {
-    [System.Serializable]
-    public class Range
-    {
-        public double start = 0;
 
 
-        public double end = 0;
+    public override bool SupportRountType(RoundIsPlaying.Type roundType) { return roundType == RoundIsPlaying.Type.video; }
 
 
-        public static Range Empty() => new Range();
-
-
-        public bool Check(double at)
-        {
-            if (start >= at)
-            {
-                if (end < at)
-                {
-                    end = at;
-                    return true;
-                }
-            }
-            return false;
-        }
-
-    }
 
     [PropertyOrder(100)]
     public GameObject videoUI;
 
 
 
-    public override string description => currentJoint != null ? "正在播放第" + currentJoint.Value.at + "秒" : "无播放课件";
+    public override string description => passed.Count != 0 ? "正在播放第" + passed.Last() + "秒" : "无播放课件";
 
-    [Title("列表", "$description"), LabelText("课件列表"), PropertySpace(SpaceAfter = 30)]
-    public List<CW_OriginContent> playlist = new List<CW_OriginContent>();
 
     [PropertyOrder(101)]
     public MediaPlayer videoPlayer;
 
 
-
-    CW_OriginContent.Joint? currentJoint;
-
-    [ShowInInspector, ReadOnly, ListDrawerSettings(Expanded = true)]
-    public List<CW_OriginContent.Joint> joints = new List<CW_OriginContent.Joint>();
-
-
-    //public CoursewareSupportList supportsList;
-
-    [ShowInInspector]
-    public Range vv = new Range();
-
-
-    public override void RoundDidChanged()
+    public override void RoundDidLoaded(RoundIsPlaying round)
     {
+        passed.Clear();
+
         videoPlayer.gameObject.SetActive(true);
 
         videoPlayer.OpenMedia(new MediaPath(round.src, MediaPathType.AbsolutePathOrURL), autoPlay: true);
-        //videoPlayer.MediaSource
-
-        joints.Clear();
-
-        joints.AddRange(round.process.Select(v => v.joint));
-
-
-        playlist.Clear();
-        playlist.AddRange(round.process);
-
     }
 
 
@@ -94,6 +51,10 @@ public class CoursewareVideoPlaylist : CoursewareBasicPlaylist
         return true;
     }
 
+    public override void Next()
+    {
+        videoPlayer.Play();
+    }
 
     void Update()
     {
@@ -104,7 +65,7 @@ public class CoursewareVideoPlaylist : CoursewareBasicPlaylist
         {
             videoPlayer.CloseMedia();
             videoPlayer.gameObject.SetActive(false);
-            cwManager.NextRound();
+            NextRound();
             return;
         }
 
@@ -112,36 +73,47 @@ public class CoursewareVideoPlaylist : CoursewareBasicPlaylist
         if (videoPlayer.Control.IsPaused()) return;
 
 
-        vv.start = videoPlayer.Control.GetCurrentTime();
+        var time = (int)Math.Floor(videoPlayer.Control.GetCurrentTime());
 
-        foreach (var list in playlist)
-        {
-            if (vv.Check(list.joint.at))
-            {
+        var pass = passed.Contains(time);
 
-                var so = supports.suppoting(list.type);
-
-                if (so != null)
-                {
-                    videoPlayer.Pause();
-
-                    videoUI.SetActive(false);
-
-                    currentJoint = list.joint;
-
-                    courseware = so.ParseData(list.content);
-                    cwManager.PlayCourseware(courseware);
-
-                }
+        if (pass) return;
 
 
-            }
-            else
-            {
-                courseware = null;
-            }
+        var find = playlist.FindAt(time);
 
-        }
+        if (find == null) return;
+
+        PlayCourseware(find);
 
     }
+
+    [ReadOnly]
+    public HashSet<int> passed = new HashSet<int>();
+
+
+    public override void PlayCoursewareAutomatic(CW_OriginContent pl)
+    {
+
+    }
+
+    public override bool PlayCourseware(CW_OriginContent pl)
+    {
+
+        var so = ReMakeSO(pl);
+
+        if (so != null)
+        {
+            coursewareRx.OnNext(so);
+
+            passed.Add(pl.joint.at);
+
+            videoPlayer.Pause();
+
+            return true;
+        }
+
+        return false;
+    }
+
 }
