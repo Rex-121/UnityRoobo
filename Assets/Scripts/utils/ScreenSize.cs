@@ -25,6 +25,7 @@ public class ScreenSize
     public static float getScreenHeightInUnit()
     {
         float cameraSize = Camera.main.orthographicSize;
+        Logging.Log("height in unit:" + (cameraSize*2));
         return cameraSize * 2;
     }
 

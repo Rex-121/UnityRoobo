@@ -5,7 +5,6 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class UISpriteLoader : MonoBehaviour
 {
-    [Required]
     public string url;
     [LabelText("图片尺寸类型")]
     public LoadImageSizeType loadImageSizeType = LoadImageSizeType.GameObjectSize;
@@ -19,6 +18,17 @@ public class UISpriteLoader : MonoBehaviour
 
     void Start()
     {
+        if (url != null && url != "") {
+            loadImage();
+        }
+    }
+
+    public void setURL(string url) {
+        this.url = url;
+        loadImage();
+    }
+
+    private void loadImage() {
         Image image = GetComponent<Image>();
         SpriteUtil.loadImageToUIImage(url, image, loadImageSizeType, width, height, anchor, animDuration, null);
     }

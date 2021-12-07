@@ -10,8 +10,34 @@ using Newtonsoft.Json.Linq;
 using UnityEngine.EventSystems;
 using System;
 
-public class PoemManager : MonoBehaviour
+public enum PoemTextStatus
 {
+    NORMAL,
+    HIGHTLIGHT,
+    LOWLIGHT,
+}
+
+[RequireComponent(typeof(ContentPlayer))]
+public class PoemManager : CoursewarePlayer
+{
+    public struct Data
+    {
+        public string image;
+        public List<PoemBean> list;
+    }
+
+    public class PoemBean
+    {
+        public int id;
+        public PoemTextStatus poemTextStatus = PoemTextStatus.NORMAL;
+        public string audio;
+        public string text;
+        public string type;
+        public int waiting;
+    }
+
+    private Data data;
+
     [Required]
     public Canvas canvas;
     [Required]
@@ -19,23 +45,54 @@ public class PoemManager : MonoBehaviour
     [Required]
     public GameObject scrollBg;
     [Required]
+    public Image image;
+    [Required]
     public List<Text> poemTexts;
     [Required]
     public Image cursor;
     [Required]
     public MicrophoneController microphoneController;
-    private BehaviorSubject<MicrophoneState> microphoneStateStream = new BehaviorSubject<MicrophoneState>(MicrophoneState.HIDE);
-    // Start is called before the first frame update
-    void Start()
-    {
-        FPS.Shared.LockFrame();
-        CreatePoemClickEvents();
+    private BehaviorSubject<MicrophoneState> microphoneStateStream = new BehaviorSubject<MicrophoneState>(MicrophoneState.DISABLE);
+    private BehaviorSubject<PoemBean> poemTextStream = new BehaviorSubject<PoemBean>(null);
+    private IDisposable poemTextStatusDisposable;
+    private IDisposable microphoneStatusDisposable;
+    private ContentPlayer contentPlayer;
 
+    public void setData(Data data)
+    {
+        this.data = data;
+
+        setupPoem();
+        setupMicrophone();
+    }
+
+    private void setupPoem()
+    {
+        for (int i = 0; i < Math.Min(data.list.Count, 11); i++)
+        {
+            data.list[i].id = i;
+            poemTexts[i].gameObject.GetComponent<PoemTextController>().setup(data.list[i],poemTextStream);
+        }
+        if (data.list.Count < 11)
+        {
+            for (int i = 10; i > data.list.Count - 1; i--)
+            {
+                poemTexts[i].gameObject.SetActive(false);
+            }
+        }
+        image.GetComponent<UISpriteLoader>().setURL(data.image);
         Observable.EveryEndOfFrame().Take(1).Subscribe(_ =>
         {
             cursorMoveTo(0, false);
         }).AddTo(this);
-        setupMicrophone();
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        contentPlayer = GetComponent<ContentPlayer>();
+        FPS.Shared.LockFrame();
+        CreatePoemClickEvents();
     }
 
     private void setupMicrophone()
@@ -50,9 +107,6 @@ public class PoemManager : MonoBehaviour
         if (trigger != null)
         {
             EventTrigger.Entry entry = new EventTrigger.Entry();
-            entry.eventID = EventTriggerType.PointerDown;
-            entry.callback.AddListener((data) => { onPoemDown((PointerEventData)data); });
-            trigger.triggers.Add(entry);
 
             entry = new EventTrigger.Entry();
             entry.eventID = EventTriggerType.PointerUp;
@@ -61,20 +115,64 @@ public class PoemManager : MonoBehaviour
         }
     }
 
-    private void onPoemDown(PointerEventData data)
+    private void onPoemUp(PointerEventData pointerEventData)
     {
-
-    }
-
-    private void onPoemUp(PointerEventData data)
-    {
-        if (data.pointerCurrentRaycast.gameObject.name.Equals("next"))
+        if (pointerEventData.pointerCurrentRaycast.gameObject.name.Equals("next"))
         {
             closeScroll();
+        }
+        else if (pointerEventData.pointerCurrentRaycast.gameObject.name.Equals("audio"))
+        {
+
+        }
+        else
+        {
+            onPoemClick(pointerEventData);
+        }
+    }
+
+    private void onPoemClick(PointerEventData pointerEventData)
+    {
+        int clickIndex = getIndexByName(pointerEventData.pointerCurrentRaycast.gameObject.name);
+        if (clickIndex == -1 || clickIndex > poemTexts.Count - 1)
+        {
             return;
         }
-        int clickIndex = getIndexByName(data.pointerCurrentRaycast.gameObject.name);
+        //麦克风录音动画
+        microphoneStateStream.OnNext(MicrophoneState.DISABLE);
+        //诗句动画
+        data.list[clickIndex].poemTextStatus = PoemTextStatus.LOWLIGHT;
+        poemTextStream.OnNext(data.list[clickIndex]);
         cursorMoveTo(clickIndex, true);
+        if (null != poemTextStatusDisposable)
+        {
+            poemTextStatusDisposable.Dispose();
+        }
+        if (null != microphoneStatusDisposable)
+        {
+            microphoneStatusDisposable.Dispose();
+        }
+
+        playPoem(clickIndex, () => {
+            poemTextStatusDisposable = Observable.Timer(TimeSpan.FromSeconds(data.list[clickIndex].waiting)).Subscribe((_) =>
+            {
+             
+                //诗句动画
+                data.list[clickIndex].poemTextStatus = PoemTextStatus.NORMAL;
+                poemTextStream.OnNext(data.list[clickIndex]);
+            }).AddTo(this);
+        });
+    }
+
+    private void playPoem(int index,Action then) {
+        contentPlayer.PlayContentByType(data.list[index].audio,"audio");
+
+        microphoneStatusDisposable = Observable.Timer(TimeSpan.FromSeconds(3)).Subscribe((_)=> {
+           //麦克风录音动画
+           microphoneController.recordDuration = data.list[index].waiting;
+           microphoneStateStream.OnNext(MicrophoneState.RECORDING);
+           then();
+        }).AddTo(this);
     }
 
     private void closeScroll()
@@ -85,6 +183,13 @@ public class PoemManager : MonoBehaviour
         if (null != rightScrollAnim) { rightScrollAnim.DOPlay(); }
         DOTweenAnimation scrollBgAnim = getCloseAnim(scrollBg.GetComponents<DOTweenAnimation>());
         if (null != scrollBgAnim) { scrollBgAnim.DOPlay(); }
+        Observable.Timer(TimeSpan.FromSeconds(3)).Take(1).Subscribe((_) =>
+        {
+            Logging.Log("poem end!!!");
+            DidEndCourseware(this);
+        }).AddTo(this);
+
+        DidEndCourseware(this);
     }
 
     private DOTweenAnimation getCloseAnim(DOTweenAnimation[] anims)
@@ -129,10 +234,6 @@ public class PoemManager : MonoBehaviour
         if (index == -1 || index > poemTexts.Count - 1)
         {
             return;
-        }
-        if (withAnim)
-        {
-            microphoneStateStream.OnNext(MicrophoneState.RECORDING);
         }
         Vector3 end = new Vector3(poemTexts[index].rectTransform.position.x - poemTexts[index].rectTransform.sizeDelta.x / 2 * canvas.transform.localScale.x,
             poemTexts[index].rectTransform.position.y, cursor.transform.position.z);

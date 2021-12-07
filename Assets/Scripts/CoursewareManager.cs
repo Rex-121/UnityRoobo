@@ -1,13 +1,15 @@
 using UnityEngine;
 using Sirenix.OdinInspector;
-using UniRx;
-using System.Diagnostics;
 using UnityEngine.SceneManagement;
+using System.Linq;
+using UniRx;
 
 [RequireComponent(typeof(CoursewareCredit), typeof(CoursewarePlaylist), typeof(CoursewareRoundingList))]
 [RequireComponent(typeof(CoursewareVideoPlaylist))]
 public class CoursewareManager : MonoBehaviour
 {
+    [HideInInspector]
+    public CoursewareRoundingList rounding;
 
     [HideInInspector]
     public CoursewarePlaylist playlist;
@@ -24,13 +26,14 @@ public class CoursewareManager : MonoBehaviour
     [LabelText("视频播放器")]
     public CoursewareVideoPlaylist videoPlaylist;
 
-
+    private void Awake()
+    {
+        rounding = GetComponent<CoursewareRoundingList>();
+    }
 
     void EveryThingReady()
     {
         ClearStage();
-
-        Next();
     }
 
     public void Play()
@@ -44,11 +47,18 @@ public class CoursewareManager : MonoBehaviour
 
         FPS.Shared.LockFrame();
 
+        playlist.coursewareRx.Merge(videoPlaylist.coursewareRx).Where(v => v != null).Subscribe(so =>
+         {
+             Logging.Log("需要播放课程" + so);
+             PlayCourseware(so);
+         }).AddTo(this);
+
         API.GetCoursePlayInfo()
-            .Subscribe(GetAllRoundList, (e) =>
+            .Subscribe(v => GetAllRoundList(v), (e) =>
         {
             Logging.Log((e as HttpError).message);
         }).AddTo(this);
+
 
 
         Observable.EveryEndOfFrame().Take(1)
@@ -62,80 +72,10 @@ public class CoursewareManager : MonoBehaviour
         {
             GetComponent<CoursewareRoundingList>().SetRoundList(r.playlist);
         }
-        Play();
+
+        GetComponent<CoursewareRoundingList>().Merge();
     }
 
-
-    public void NextRound()
-    {
-
-        var round = roundlist.GetRound();
-
-        if (round == null)
-        {
-            SceneManager.LoadScene("Realm");
-            return;
-        }
-
-        switch (round.type)
-        {
-            case RoundIsPlaying.Type.picture:
-                playlist.round = round;
-                Next();
-                break;
-            case RoundIsPlaying.Type.video:
-                videoPlaylist.round = round;
-                break;
-        }
-
-    }
-
-    /// <summary>
-    /// 准备开始下一课件
-    /// </summary>
-    void Next()
-    {
-
-        var cp = playlist.Next();
-
-        /// 如果还有课件，直接播放
-        if (cp != null) goto play;
-
-        /// 重新分配round
-        var round = roundlist.GetRound();
-
-        /// 如果没有round，返回首页
-        if (round == null) goto exit;
-
-
-        //playlist.round = round;
-
-
-        switch (round.type)
-        {
-            case RoundIsPlaying.Type.picture:
-                playlist.round = round;
-                goto remake;
-
-            case RoundIsPlaying.Type.video:
-                videoPlaylist.round = round;
-                //playlist.round = round;
-                return;
-        }
-
-
-    remake:
-        Next();
-        return;
-
-    exit:
-        Exit();
-        return;
-
-    play:
-        PlayCourseware(cp);
-        return;
-    }
 
     /// <summary>
     /// 退出
@@ -147,29 +87,31 @@ public class CoursewareManager : MonoBehaviour
 
     public void PlayCourseware(CoursewarePlayer_SO cp)
     {
-        Stopwatch sw = new Stopwatch();
-        sw.Start();
 
-        playingCW = Instantiate(cp.coursewarePlayer, transform);
+        try
+        {
+            playingCW = Instantiate(cp.coursewarePlayer, transform);
 
-        sw.Stop();
-        Logging.Log("生产资源" + sw.ElapsedMilliseconds);
+            /// 初始化数据
+            cp.MakeData(playingCW);
 
-        /// 初始化数据
-        cp.MakeData(playingCW);
+            CoursewarePlayer player = playingCW.GetComponent<CoursewarePlayer>();
 
-        CoursewarePlayer player = playingCW.GetComponent<CoursewarePlayer>();
+            if (player == null) { DidEndACourseware(player); return; }
 
-        if (player == null) Next();
+            //player.cwCanvas = cwCanvas;
+            player.lifetimeDelegate = new CoursewareLifetimeListener((c) => { }, (c) => { }, (c) => { }, end: DidEndACourseware);
 
-        player.cwCanvas = cwCanvas;
-        player.lifetimeDelegate = new CoursewareLifetimeListener((c) => { }, (c) => { }, (c) => { }, end: DidEndACourseware);
+            /// 绑定得分事件
+            player.creditDelegate = GetComponent<CoursewareCredit>();
 
-        /// 绑定得分事件
-        player.creditDelegate = GetComponent<CoursewareCredit>();
+            player.Play();
+        }
+        catch
+        {
+            DidEndACourseware(null);
+        }
 
-
-        player.Play();
     }
 
 
@@ -195,23 +137,22 @@ public class CoursewareManager : MonoBehaviour
     void DidEndACourseware(CoursewarePlayer player)
     {
         ClearStage();
-        Logging.Log(player + " End");
-
-
-
-
-        if (roundlist.currentRound.type == RoundIsPlaying.Type.video)
+        if (player == null)
         {
-            if (!videoPlaylist.Continue())
-            {
-                Next();
-            }
+            Logging.Log("课件意外关闭");
         }
-        else
+        else { Logging.Log(player + " End"); }
+
+
+        switch (rounding.round.Value.type)
         {
-            Next();
+            case RoundIsPlaying.Type.picture:
+            case RoundIsPlaying.Type.pause:
+                playlist.Next();
+                break;
+            case RoundIsPlaying.Type.video:
+                videoPlaylist.Next();
+                break;
         }
-
-
     }
 }

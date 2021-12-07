@@ -34,6 +34,8 @@ public class ForgeData
 
         public string icon { get; set; }
 
+        public string stopImage { get; set; }
+
         public enum Type
         {
             Video, Picture, PicBook, WordFuns, Dubbing
@@ -80,21 +82,25 @@ public class ForgeData
 
                 var list = new List<RoundProcess>();
 
-                Logging.Log("Before typpeeeee " + type);
-
-
                 if (content == null) goto exit;
-
-
-                Logging.Log("typpeeeee " + type);
 
                 switch (type)
                 {
                     case Type.Picture:
+
+                        Logging.Log(content);
+
                         list.AddRange(content.ToObject<List<RoundProcess>>());
+
+
+                        foreach (var l in list)
+                        {
+                            Logging.Log(l.process.type);
+                        }
+
                         break;
                     case Type.PicBook:
-                        Logging.Log("typpeeeee " + content);
+                        Logging.Log(content);
                         list.Add(new RoundProcess("", new RoundProcess.Process(CoursewareType.cartoonBooks, content), 0));
                         break;
                 }
@@ -124,7 +130,7 @@ public class ForgeData
     }
 
 
-
+    // 原始的RoundProcess数据
     public struct RoundProcess
     {
         public string src;
@@ -135,6 +141,7 @@ public class ForgeData
 
         public struct Process
         {
+            [JsonConverter(typeof(CoursewareTypeJSONTranslate))]
             public CoursewareType type;
 
             public JToken content;

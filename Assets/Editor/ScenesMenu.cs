@@ -4,6 +4,8 @@ public static class ScenesMenu
 {
     [MenuItem("切换场景/AIDrawScene", priority = 10)]
     public static void Assets_Scenes_AIDrawScene_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/AIDrawScene.unity"); }
+    [MenuItem("切换场景/ContentPlayerDemo", priority = 10)]
+    public static void Assets_Scenes_ContentPlayerDemo_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/ContentPlayerDemo.unity"); }
     [MenuItem("切换场景/Courseware", priority = 10)]
     public static void Assets_Scenes_Courseware_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/Courseware.unity"); }
     [MenuItem("切换场景/EmptyScene", priority = 10)]
