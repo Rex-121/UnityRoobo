@@ -35,6 +35,7 @@ public class CoordinateTransform
         float height;
         float bgRatio = bgWidth / bgHeight;
         float screenRatio = ScreenSize.getScreenWidthInUnit() / ScreenSize.getScreenHeightInUnit();
+        Logging.Log("screen ratio:"+screenRatio+" ,bg ratio:"+bgRatio);
         if (screenRatio > bgRatio)
         {
             float heightRatio = screenRatio / bgRatio; //背景图与屏幕高比
