@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 736742715566363892}
   - component: {fileID: 736742715566363895}
   - component: {fileID: 736742715566363893}
+  - component: {fileID: 1205791909434874528}
   m_Layer: 0
   m_Name: microphone_disable
   m_TagString: Untagged
@@ -70,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 650955435
-  m_SortingLayer: 5
+  m_SortingLayerID: -1266823911
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 65c3aad709cde40fca77fa89783c60eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -100,6 +101,17 @@ MonoBehaviour:
   enabledSprite: {fileID: 21300000, guid: 8befa4c2a46db49008ee6fd55897e1ba, type: 3}
   recordDuration: 3
   progressRenderer: {fileID: 736742716259439259}
+--- !u!210 &1205791909434874528
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736742715566363889}
+  m_Enabled: 1
+  m_SortingLayerID: -1266823911
+  m_SortingLayer: 6
+  m_SortingOrder: 0
 --- !u!1 &736742716259439258
 GameObject:
   m_ObjectHideFlags: 0

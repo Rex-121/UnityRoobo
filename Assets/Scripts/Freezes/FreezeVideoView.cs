@@ -22,6 +22,12 @@ public class FreezeVideoView : MonoBehaviour
     [LabelText("视频遮罩")]
     public Transform mShadow;
 
+    [LabelText("视频播放器")]
+    public MediaPlayer mShadowPlayer;
+
+    [LabelText("视频重播按钮")]
+    public Button mShadowReplayButton;
+
     public GameObject prefabVideo;
 
     public bool showRepeat;
@@ -107,6 +113,7 @@ public class FreezeVideoView : MonoBehaviour
         Debug.Log("StartLoadVideo" + grid + " " + grid.name+" path:"+url);
         GameObject prefab = Instantiate(prefabVideo, grid.transform);
         prefab.GetComponent<VideoAspectScript>().onClick += OnClickToMoteScale;
+        prefab.GetComponent<VideoAspectScript>().videoUrl = url;
         var player = prefab.GetComponentInChildren<MediaPlayer>();
         MediaPath path = new MediaPath(url,MediaPathType.AbsolutePathOrURL);
         player.OpenMedia(path, false);
@@ -119,8 +126,8 @@ public class FreezeVideoView : MonoBehaviour
         var outerPrafeb = Instantiate(gb, mShadow.transform);
         outerPrafeb.GetComponent<Button>().enabled = false;
         outerPrafeb.transform.localPosition = worldPos;
-        AspectRatioFitter fitter= outerPrafeb.GetComponent<AspectRatioFitter>();
-        fitter.aspectMode=AspectRatioFitter.AspectMode.FitInParent;
+        AspectRatioFitter fitter = outerPrafeb.GetComponent<AspectRatioFitter>();
+        fitter.aspectMode = AspectRatioFitter.AspectMode.FitInParent;
         var player = outerPrafeb.GetComponentInChildren<MediaPlayer>();
         player.Play();
         player.Events.AddListener(OnMediaPlayerEvent);
@@ -134,11 +141,60 @@ public class FreezeVideoView : MonoBehaviour
         mShadow.gameObject.SetActive(true);
     }
 
+    //private Vector3 worldPos;
+    //private Button mReplayButton;
+    //VideoAspectScript videoScript;
+    //public void OnClickToMoteScale(GameObject gb)
+    //{
+    //    var outerPrafeb = Instantiate(gb, mShadow.transform);
+    //    outerPrafeb.GetComponent<Button>().enabled = false;
+    //    outerPrafeb.transform.localPosition = worldPos;
+
+    //    videoScript = outerPrafeb.GetComponent<VideoAspectScript>();
+    //    //MediaPath path = new MediaPath(videoScript.videoUrl, MediaPathType.AbsolutePathOrURL);
+    //    //videoScript.mPlayer.OpenMedia(path, true);
+
+
+    //    videoScript.mPlayer.Events.AddListener(OnMediaPlayerEvent);
+    //    //AspectRatioFitter fitter= outerPrafeb.GetComponent<AspectRatioFitter>();
+    //    //fitter.aspectMode=AspectRatioFitter.AspectMode.FitInParent;
+    //    //var player = outerPrafeb.GetComponentInChildren<MediaPlayer>();
+    //    //player.Play();
+    //    //player.Events.AddListener(OnMediaPlayerEvent);
+    //    //mReplayButton = outerPrafeb.GetComponent<VideoAspectScript>().mReplayButton;
+
+    //    videoScript.mReplayButton.OnClickAsObservable().ThrottleFirst(new System.TimeSpan(5000)).Subscribe(v =>
+    //    {
+    //        Debug.Log("OnClickToMoteScale OnClickAsObservable");
+    //        videoScript.mPlayer.Rewind(false);
+    //    }).AddTo(this);
+    //    videoScript.mPlayer.Play();
+    //    mShadow.gameObject.SetActive(true);
+    //}
+
+
+    public void OnClickToMoteScale(string url)
+    {
+        mShadow.gameObject.SetActive(true);
+        mShadowReplayButton.gameObject.SetActive(false);
+
+        mShadowPlayer.Events.AddListener(OnMediaPlayerEvent);
+        mShadowReplayButton.OnClickAsObservable().Subscribe(v =>
+        {
+            Debug.Log("OnClickToMoteScale OnClickAsObservable");
+            mShadowPlayer.Rewind(true);
+            mShadowPlayer.Play();
+        }).AddTo(this);
+        MediaPath path = new MediaPath(url, MediaPathType.AbsolutePathOrURL);
+        mShadowPlayer.OpenMedia(path, true);
+    }
+
     public void OnMediaPlayerEvent(MediaPlayer mp, MediaPlayerEvent.EventType et, ErrorCode errorCode)
     {
         switch (et)
         {
             case MediaPlayerEvent.EventType.ReadyToPlay:
+                Debug.Log("Player ReadyToPlay触发");
                 break;
             case MediaPlayerEvent.EventType.Started:
                 Debug.Log("Player开始事件触发");
@@ -147,6 +203,8 @@ public class FreezeVideoView : MonoBehaviour
             case MediaPlayerEvent.EventType.FinishedPlaying:
                 Debug.Log("Player结束事件触发");
                 mReplayButton.gameObject.SetActive(showRepeat);
+                mShadowReplayButton.gameObject.SetActive(showRepeat);
+                mShadowPlayer.Control.Stop();
                 break;
         }
     }
