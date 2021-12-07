@@ -5,6 +5,8 @@ using System.Linq;
 using UnityEngine;
 using Sirenix.OdinInspector;
 using Sirenix.Utilities;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 public class RoundQueueParse
 {
@@ -13,23 +15,54 @@ public class RoundQueueParse
 
     public static List<RoundIsPlaying> ParseQueue(Round round, ForgeData.Rounds originRound)
     {
+
+        var list = new List<RoundIsPlaying>();
         try
         {
             switch (round.type)
             {
                 case ForgeData.Rounds.Type.Picture:
                 case ForgeData.Rounds.Type.PicBook:
-                    return Picture(originRound.processList);
+                    list.AddRange(Picture(originRound.processList));
+                    break;
                 case ForgeData.Rounds.Type.Video:
-                    return Video(originRound);
+                    list.AddRange(Video(originRound));
+                    break;
             }
+
+
+
         }
         catch (Exception e)
         {
             Logging.Log(e.Message);
         }
 
-        return new List<RoundIsPlaying>();
+        try
+        {
+            switch (round.pipeline)
+            {
+                case ForgeData.Rounds.Pipeline.pause:
+
+                    var image = new CW_JustPause_SO.Image(round.pauseImage);
+
+                    JToken aka = JsonConvert.DeserializeObject<JToken>(JsonConvert.SerializeObject(image));
+
+                    CW_OriginContent con = new CW_OriginContent(CoursewareType.justPause, aka, CW_OriginContent.Joint.Empty());
+
+                    var pauseRound = new PauseRound(new List<CW_OriginContent> { con });
+
+                    list.Add(pauseRound);
+                    break;
+            }
+
+        }
+        catch
+        {
+            return list;
+        }
+
+        return list;
     }
 
 
@@ -82,25 +115,93 @@ public class RoundQueueParse
 
 public class LeadingRound : RoundIsPlaying
 {
-    public string src { get; set; }
+    //public string src { get; set; }
 
-    public List<CW_OriginContent> process { get; set; }
+    //public List<CW_OriginContent> process { get; set; }
 
     [ShowInInspector]
-    public RoundIsPlaying.Type type => RoundIsPlaying.Type.picture;
+    public override RoundIsPlaying.Type type => RoundIsPlaying.Type.empty;
 
-    public RoundIsPlaying next { get; set; }
+    //public RoundIsPlaying next { get; set; }
 
-    public RoundIsPlaying previous { get; set; }
+    //public RoundIsPlaying previous { get; set; }
 
 
     public RoundIsPlaying RemoveSelf()
     {
-        var v = next;
         next.previous = null;
         return next;
     }
-    
+
+    //public int count
+    //{
+    //    get
+    //    {
+    //        if (next == null) return 1;
+    //        return 1 + next.count;
+    //    }
+    //}
+
+    //public string des
+    //{
+    //    get
+    //    {
+    //        if (next == null) return type.ToString();
+    //        return type.ToString() + next.des;
+    //    }
+    //}
+
+}
+
+
+public class PauseRound : RoundIsPlaying
+{
+    //public string src { get; set; }
+
+    //public List<CW_OriginContent> process { get; set; }
+    //[ShowInInspector]
+    //public override List<CW_OriginContent> process;
+
+    [ShowInInspector]
+    public override RoundIsPlaying.Type type => RoundIsPlaying.Type.pause;
+
+
+    public PauseRound(List<CW_OriginContent> p)
+    {
+        src = "";
+        process = p;
+
+        Logging.Log(process.Count);
+        next = null;
+        previous = null;
+    }
+
+}
+
+
+
+
+public class RoundIsPlaying
+{
+    //public string src;
+
+    [ShowInInspector]
+    public List<CW_OriginContent> process = new List<CW_OriginContent>();
+
+    public virtual Type type { get; }
+
+    public enum Type
+    {
+        video, picture, pop, pause, empty
+    }
+
+    [ShowInInspector]
+    public RoundIsPlaying next { get; set; }
+
+    [ShowInInspector]
+    public RoundIsPlaying previous { get; set; }
+
+    [ShowInInspector]
     public int count
     {
         get
@@ -110,6 +211,8 @@ public class LeadingRound : RoundIsPlaying
         }
     }
 
+
+    [ShowInInspector]
     public string des
     {
         get
@@ -119,78 +222,56 @@ public class LeadingRound : RoundIsPlaying
         }
     }
 
-}
-
-
-public interface RoundIsPlaying
-{
-    public string src { get; }
-
-    public List<CW_OriginContent> process { get; set; }
-
-    public Type type { get; }
-
-    public enum Type
-    {
-        video, picture, pop
-    }
-
-    public RoundIsPlaying next { get; set; }
-
-    public RoundIsPlaying previous { get; set; }
-
-    public int count { get; }
-
-    
-    public string des { get; }
+    [ShowInInspector, LabelText("$type"), LabelWidth(50)]
+    public string src { get; set; }
 }
 
 public class ARound : RoundIsPlaying
 {
-    [ShowInInspector, LabelText("$type"), LabelWidth(50)]
-    public string src { get; set; }
 
-    public RoundIsPlaying.Type type => _type;
 
-    RoundIsPlaying.Type _type;
+    public override Type type => _type;
+
 
     [ShowInInspector, HideLabel]
     List<CoursewareType> types => process.Select(v => v.type).ToList();
 
-    [ShowInInspector]
-    public int count
-    {
-        get
-        {
-            if (next == null) return 1;
-            return 1 + next.count;
-        }
-    }
 
-    [ShowInInspector]
-    public string des
-    {
-        get
-        {
-            var types = process.Select(v => v.type.ToString());
+    protected Type _type;
+    //[ShowInInspector]
+    //public int count
+    //{
+    //    get
+    //    {
+    //        if (next == null) return 1;
+    //        return 1 + next.count;
+    //    }
+    //}
 
-            var i = "";
+    //[ShowInInspector]
+    //public string des
+    //{
+    //    get
+    //    {
+    //        var types = process.Select(v => v.type.ToString());
 
-            types.ForEach(v =>
-            {
-                i += (v + "->");
-            });
+    //        var i = "";
 
-            var value = "|-------" + type.ToString() + " (" + i + ") " + "-------|\n";
+    //        types.ForEach(v =>
+    //        {
+    //            i += (v + "->");
+    //        });
 
-            if (next == null) return value;
-            return value + next.des;
-        }
-    }
+    //        var value = "|-------" + type.ToString() + " (" + i + ") " + "-------|\n";
+
+    //        if (next == null) return value;
+    //        return value + next.des;
+    //    }
+    //}
 
 
-    [ShowInInspector, ReadOnly]
-    public List<CW_OriginContent> process { get; set; }
+    //[ShowInInspector, ReadOnly]
+    //public List<CW_OriginContent> process { get; set; }
 
     ARound(string s, List<CW_OriginContent> p, RoundIsPlaying.Type _type)
     {
@@ -201,11 +282,11 @@ public class ARound : RoundIsPlaying
         previous = null;
     }
 
-    [ShowInInspector, ReadOnly]
-    public RoundIsPlaying next { get; set; }
+    //[ShowInInspector, ReadOnly]
+    //public RoundIsPlaying next { get; set; }
 
-    [ShowInInspector, ReadOnly]
-    public RoundIsPlaying previous { get; set; }
+    //[ShowInInspector, ReadOnly]
+    //public RoundIsPlaying previous { get; set; }
 
     public static RoundIsPlaying Picture(string s, List<CW_OriginContent> p)
     {

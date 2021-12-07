@@ -79,13 +79,13 @@ public class CoursewareBasicPlaylist : SerializedMonoBehaviour
         var all = round.process;
 
         /// 移除所有不支持的题型
-        all.RemoveAll(v => !supports.supports.ContainsKey(v.type));
+        //all.RemoveAll(v => !supports.supports.ContainsKey(v.type));
 
-        if (all.Count == 0)
-        {
-            NextRound();
-            return;
-        }
+        //if (all.Count == 0)
+        //{
+        //    NextRound();
+        //    return;
+        //}
 
         /// 将题型组装
         var leading = MergeRoundProcess(all);
@@ -94,7 +94,7 @@ public class CoursewareBasicPlaylist : SerializedMonoBehaviour
 
         playlist = leading.next;
 
-        playlist.previous = null;
+        //playlist.previous = null;
 
     }
 
@@ -124,8 +124,6 @@ public class CoursewareBasicPlaylist : SerializedMonoBehaviour
             start.next = content;
 
             start = content;
-
-            Logging.Log("fasgasdf---zzz" + content.type);
         });
 
         return leading;
@@ -139,7 +137,9 @@ public class CoursewareBasicPlaylist : SerializedMonoBehaviour
     {
 
 
-        Logging.Log(content.type); Logging.Log(content.type); Logging.Log(content.type); Logging.Log(content.type);
+        Logging.Log("ReMakeSO -->" + content.type);
+
+        if (!supports.supports.ContainsKey(content.type)) return null;
 
         var data = content.content;
 
@@ -169,7 +169,7 @@ public class CoursewareBasicPlaylist : SerializedMonoBehaviour
 
     CW_OriginContent _playlist;
 
-    [Title("列表", "$description"), LabelText("课件列表"), PropertySpace(SpaceAfter = 30), ShowInInspector, HideDuplicateReferenceBox]
+    [Title("列表", "$description"), LabelText("课件列表"), PropertySpace(SpaceAfter = 30), ShowInInspector, ReadOnly]
     public CW_OriginContent playlist
     {
         get => _playlist;

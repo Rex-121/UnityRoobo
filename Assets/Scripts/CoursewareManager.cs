@@ -88,22 +88,30 @@ public class CoursewareManager : MonoBehaviour
     public void PlayCourseware(CoursewarePlayer_SO cp)
     {
 
-        playingCW = Instantiate(cp.coursewarePlayer, transform);
+        try
+        {
+            playingCW = Instantiate(cp.coursewarePlayer, transform);
 
-        /// 初始化数据
-        cp.MakeData(playingCW);
+            /// 初始化数据
+            cp.MakeData(playingCW);
 
-        CoursewarePlayer player = playingCW.GetComponent<CoursewarePlayer>();
+            CoursewarePlayer player = playingCW.GetComponent<CoursewarePlayer>();
 
-        if (player == null) { DidEndACourseware(player); return; }
+            if (player == null) { DidEndACourseware(player); return; }
 
-        player.cwCanvas = cwCanvas;
-        player.lifetimeDelegate = new CoursewareLifetimeListener((c) => { }, (c) => { }, (c) => { }, end: DidEndACourseware);
+            //player.cwCanvas = cwCanvas;
+            player.lifetimeDelegate = new CoursewareLifetimeListener((c) => { }, (c) => { }, (c) => { }, end: DidEndACourseware);
 
-        /// 绑定得分事件
-        player.creditDelegate = GetComponent<CoursewareCredit>();
+            /// 绑定得分事件
+            player.creditDelegate = GetComponent<CoursewareCredit>();
 
-        player.Play();
+            player.Play();
+        }
+        catch
+        {
+            DidEndACourseware(null);
+        }
+
     }
 
 
@@ -129,11 +137,17 @@ public class CoursewareManager : MonoBehaviour
     void DidEndACourseware(CoursewarePlayer player)
     {
         ClearStage();
-        Logging.Log(player + " End");
+        if (player == null)
+        {
+            Logging.Log("课件意外关闭");
+        }
+        else { Logging.Log(player + " End"); }
+
 
         switch (rounding.round.Value.type)
         {
             case RoundIsPlaying.Type.picture:
+            case RoundIsPlaying.Type.pause:
                 playlist.Next();
                 break;
             case RoundIsPlaying.Type.video:

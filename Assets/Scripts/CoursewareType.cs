@@ -35,6 +35,11 @@ public enum CoursewareType
     // 圈图点读
     [LabelText("圈图点读")]
     circles,
+
+
+    // 圈图点读
+    [LabelText("暂停（Round）")]
+    justPause,
 }
 
 
