@@ -4,6 +4,7 @@ using Sirenix.OdinInspector;
 using UnityEngine;
 using DG.Tweening;
 using UniRx;
+using System;
 
 public enum MicrophoneState
 {
@@ -28,8 +29,13 @@ public class MicrophoneController : MonoBehaviour
     public void setStateStream(BehaviorSubject<MicrophoneState> stateStream)
     {
         this.stateStream = stateStream;
-        this.stateStream.Subscribe(state=> {
-            switch (state) {
+        Logging.Log("microphone set state stream!!!");
+
+        this.stateStream.Subscribe(state =>
+        {
+            Logging.Log("microphone subscribe!!!");
+            switch (state)
+            {
                 case MicrophoneState.ENABLE:
                     spriteRenderer.enabled = true;
                     progressRenderer.enabled = false;
@@ -53,23 +59,26 @@ public class MicrophoneController : MonoBehaviour
                     progressRenderer.enabled = false;
                     break;
             }
-        });
+        }).AddTo(this);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void startRecording() {
-      progressTween=  DOTween.To(() => progressRenderer.material.GetFloat("_progress"),
-            x => progressRenderer.material.SetFloat("_progress", x), 1, recordDuration)
-            .SetEase(Ease.Linear)
-            .OnComplete(()=> {
-                if (null != stateStream) {
-                    stateStream.OnNext(MicrophoneState.DISABLE);
-                }
-            });
+
+    private void startRecording()
+    {
+        progressTween = DOTween.To(() => progressRenderer.material.GetFloat("_progress"),
+              x => progressRenderer.material.SetFloat("_progress", x), 1, recordDuration)
+              .SetEase(Ease.Linear)
+              .OnComplete(() =>
+              {
+                  if (null != stateStream)
+                  {
+                      stateStream.OnNext(MicrophoneState.DISABLE);
+                  }
+              });
     }
 }
