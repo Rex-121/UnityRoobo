@@ -90,16 +90,16 @@ public class ContentPlayer: MonoBehaviour
         {
             player.Stop();
             isPlaying = false;
-            disposable.Dispose();
+            disposable?.Dispose();
             status.Value = PlayerEvent.interrupt;
             Logging.Log("play interrupt!");
         }
 
-        isPlaying = true;
         disposable = HttpRx.GetAudio(parcel.truePath).Take(1).Subscribe(c =>
         {
             player.clip = c;
             player.Play();
+            isPlaying = true;
             Logging.Log("play start: " + parcel.truePath);
         }, (e) =>
         {
