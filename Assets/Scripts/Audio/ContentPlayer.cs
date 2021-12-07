@@ -3,7 +3,7 @@ using UniRx;
 using UnityEngine;
 using UnityEngine.Events;
 
-enum PlayerEvent
+public enum PlayerEvent
 {
     start, pause, resume, stop, interrupt, finish
 }
@@ -11,9 +11,10 @@ enum PlayerEvent
 [RequireComponent(typeof(AudioSource))]
 public class ContentPlayer: MonoBehaviour
 {
-    UnityAction<PlayerEvent> callback;
+    public ReactiveProperty<PlayerEvent> status = new ReactiveProperty<PlayerEvent>();
 
     AudioSource player;
+    System.IDisposable disposable;
     bool isPlaying = false;
 
     public void Start()
@@ -51,7 +52,7 @@ public class ContentPlayer: MonoBehaviour
     {
         if(content == null || content.Length == 0 || type == null || type.Length == 0 || type == "type")
         {
-            callback?.Invoke(PlayerEvent.finish);
+            status.Value = PlayerEvent.finish;
             return;
         }
         if ("tts" == type)
@@ -89,16 +90,16 @@ public class ContentPlayer: MonoBehaviour
         {
             player.Stop();
             isPlaying = false;
-            callback?.Invoke(PlayerEvent.interrupt);
+            disposable.Dispose();
+            status.Value = PlayerEvent.interrupt;
             Logging.Log("play interrupt!");
         }
 
-
-        HttpRx.GetAudio(parcel.truePath).Take(1).Subscribe(c =>
+        isPlaying = true;
+        disposable = HttpRx.GetAudio(parcel.truePath).Take(1).Subscribe(c =>
         {
             player.clip = c;
             player.Play();
-            isPlaying = true;
             Logging.Log("play start: " + parcel.truePath);
         }, (e) =>
         {
@@ -112,7 +113,7 @@ public class ContentPlayer: MonoBehaviour
         {
             player.Stop();
             isPlaying = false;
-            callback?.Invoke(PlayerEvent.stop);
+            status.Value = PlayerEvent.stop;
             Logging.Log("play stop!");
         }
     }
@@ -123,7 +124,7 @@ public class ContentPlayer: MonoBehaviour
         {
             player.Pause();
             isPlaying = false;
-            callback?.Invoke(PlayerEvent.pause);
+            status.Value = PlayerEvent.pause;
             Logging.Log("play pause!");
         }
 
@@ -135,7 +136,7 @@ public class ContentPlayer: MonoBehaviour
         {
             player.Play();
             isPlaying = true;
-            callback?.Invoke(PlayerEvent.resume);
+            status.Value = PlayerEvent.resume;
             Logging.Log("play resume!");
         }
     }
@@ -146,7 +147,7 @@ public class ContentPlayer: MonoBehaviour
         if (isPlaying == true && player.isPlaying == false)
         {
             isPlaying = false;
-            callback?.Invoke(PlayerEvent.finish);
+            status.Value = PlayerEvent.finish;
             Logging.Log("play finish!");
         }
     }
