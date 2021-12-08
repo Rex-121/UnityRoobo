@@ -43,7 +43,7 @@ public enum CoursewareType
 
     // 圈图点读
     [LabelText("画板选择题")]
-    pictureChoice,
+    choice,
 }
 
 
