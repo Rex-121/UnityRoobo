@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ContentPlayerDemo.unity
     guid: 4dbadc50e9bdc4cbc96f57c38bb79bdc
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Courseware.unity
     guid: c54827988307145b8bfdbeeb7dff82d1
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Realm.unity
     guid: 4186f6d31a89149c5bd1ddbf25449de8
   - enabled: 0

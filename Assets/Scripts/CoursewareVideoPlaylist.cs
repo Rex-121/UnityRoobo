@@ -53,7 +53,15 @@ public class CoursewareVideoPlaylist : CoursewareBasicPlaylist
 
     public override void Next()
     {
-        videoPlayer.Play();
+        Logging.Log(videoPlayer.Control.IsPaused());
+
+        Logging.Log("replay");
+
+        Observable.EveryEndOfFrame().Take(1).Subscribe(_ => videoPlayer.Play());
+
+        //videoPlayer.Play();
+
+        //Observable.EveryLateUpdate().Take(1).Subscribe(_ => videoPlayer.Play()).AddTo(this);
     }
 
     void Update()

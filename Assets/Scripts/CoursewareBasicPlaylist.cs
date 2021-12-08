@@ -90,10 +90,11 @@ public class CoursewareBasicPlaylist : SerializedMonoBehaviour
         /// 将题型组装
         var leading = MergeRoundProcess(all);
 
-        RoundDidLoaded(round);
+        
 
         playlist = leading.next;
 
+        RoundDidLoaded(round);
         //playlist.previous = null;
 
     }
