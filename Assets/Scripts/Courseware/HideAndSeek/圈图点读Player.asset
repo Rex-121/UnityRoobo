@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba7b58f8206e40d2a09b21d469f2913, type: 3}
+  m_Name: "\u5708\u56FE\u70B9\u8BFBPlayer"
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: item
+      Entry: 7
+      Data: SeekManager+Data, Assembly-CSharp
+    - Name: videoWidth
+      Entry: 3
+      Data: 0
+    - Name: videoHeight
+      Entry: 3
+      Data: 0
+    - Name: items
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+  coursewarePlayer: {fileID: 9074624919282439588, guid: fcddc05f54fe14985a1574fa97d482a8, type: 3}

@@ -14,7 +14,6 @@ public class PoemTextController : MonoBehaviour
 
     public void setup(PoemManager.PoemBean poemBean, BehaviorSubject<PoemManager.PoemBean> stream)
     {
-        Logging.Log("uirdfogdosgfdoafjdo");
         this.poemBean = poemBean;
         this.stream = stream;
         if (null == text) {
