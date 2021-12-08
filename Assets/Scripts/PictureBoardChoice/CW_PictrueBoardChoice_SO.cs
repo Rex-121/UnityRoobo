@@ -7,6 +7,7 @@ using UnityEngine;
 public class CW_PictrueBoardChoice_SO : CoursewarePlayer_SO
 {
 
+
     public override bool MakeData(GameObject player)
     {
         player.GetComponent<CW_PictureBoardChoice>().InitGridAndData(item);

@@ -119,28 +119,6 @@ public class FreezeVideoView : MonoBehaviour
         player.OpenMedia(path, false);
     }
 
-    private Vector3 worldPos;
-    private Button mReplayButton;
-    public void OnClickToMoteScale(GameObject gb)
-    {
-        var outerPrafeb = Instantiate(gb, mShadow.transform);
-        outerPrafeb.GetComponent<Button>().enabled = false;
-        outerPrafeb.transform.localPosition = worldPos;
-        AspectRatioFitter fitter = outerPrafeb.GetComponent<AspectRatioFitter>();
-        fitter.aspectMode = AspectRatioFitter.AspectMode.FitInParent;
-        var player = outerPrafeb.GetComponentInChildren<MediaPlayer>();
-        player.Play();
-        player.Events.AddListener(OnMediaPlayerEvent);
-        mReplayButton = outerPrafeb.GetComponent<VideoAspectScript>().mReplayButton;
-
-        mReplayButton.OnClickAsObservable().ThrottleFirst(new System.TimeSpan(5000)).Subscribe(v =>
-        {
-            Debug.Log("OnClickToMoteScale OnClickAsObservable");
-            player.Rewind(false);
-        }).AddTo(this);
-        mShadow.gameObject.SetActive(true);
-    }
-
     //private Vector3 worldPos;
     //private Button mReplayButton;
     //VideoAspectScript videoScript;
@@ -175,6 +153,7 @@ public class FreezeVideoView : MonoBehaviour
 
     public void OnClickToMoteScale(string url)
     {
+        Debug.Log("OnClickToMoteScale "+url);
         mShadow.gameObject.SetActive(true);
         mShadowReplayButton.gameObject.SetActive(false);
 
@@ -202,7 +181,6 @@ public class FreezeVideoView : MonoBehaviour
                 break;
             case MediaPlayerEvent.EventType.FinishedPlaying:
                 Debug.Log("Player结束事件触发");
-                mReplayButton.gameObject.SetActive(showRepeat);
                 mShadowReplayButton.gameObject.SetActive(showRepeat);
                 mShadowPlayer.Control.Stop();
                 break;

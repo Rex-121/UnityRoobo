@@ -29,12 +29,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-<<<<<<< HEAD
-  m_Children: []
-=======
   m_Children:
   - {fileID: 1514793969605323799}
->>>>>>> develop
   m_Father: {fileID: 2026726278853729787}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -276,11 +272,8 @@ MonoBehaviour:
   freezeContainer: {fileID: 6713921474735476282}
   mShadow: {fileID: 7135162849499220274}
   mShadowVideo: {fileID: 3578302778972141612}
-<<<<<<< HEAD
-=======
   mShadowPlayer: {fileID: 8146667670138346699}
   mShadowReplayButton: {fileID: 4089575653626088191}
->>>>>>> develop
   mNextStep: {fileID: 2026726280149877705}
 --- !u!1 &2026726279423703232
 GameObject:
@@ -1136,7 +1129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 638c870cac4da414fba921606d504407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mediaSource: 0
+  _mediaSource: 1
   _mediaReference: {fileID: 0}
   _mediaPath:
     _pathType: 2
