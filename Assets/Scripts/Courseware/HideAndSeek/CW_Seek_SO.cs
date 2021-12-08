@@ -15,12 +15,12 @@ public class CW_Seek_SO : CoursewarePlayer_SO
     /// <returns>是否可以播放</returns>
     public override bool MakeData(GameObject player)
     {
-        //player.GetComponent<PoemManager>().setData(item);
+        player.GetComponent<SeekManager>().setData(item);
         return true;
     }
 
 
-    public PoemManager.Data item;
+    public SeekManager.Data item;
 
 
 
@@ -32,7 +32,7 @@ public class CW_Seek_SO : CoursewarePlayer_SO
 
         try
         {
-            value.item = content.ToObject<PoemManager.Data>();
+            value.item = content.ToObject<SeekManager.Data>();
         }
         catch (System.Exception e)
         {

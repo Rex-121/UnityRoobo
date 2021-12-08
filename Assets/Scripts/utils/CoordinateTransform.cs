@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//仅适用于某一种适配（图片或视频）规则，该规则，图宽缩高，图高缩宽,以高度适配
 public class CoordinateTransform
 {
     ///areaWidthRatio:区域相对于图片宽度的比例 40%直接传40
@@ -12,11 +13,10 @@ public class CoordinateTransform
         float width;
         float bgRatio = bgWidth / bgHeight;
         float screenRatio = ScreenSize.getScreenWidthInUnit() / ScreenSize.getScreenHeightInUnit();
-        if (screenRatio < bgRatio)
+        if (screenRatio > bgRatio)
         {
-            float widthRatio = bgRatio / screenRatio; //背景图与屏幕宽比
-            Debug.Log("areaWidthRatio:"+areaWidthRatio+" ,widthRatio:"+widthRatio);
-            width = areaWidthRatio * widthRatio * ScreenSize.getScreenWidthInUnit();
+            float acturalBgWidth = ScreenSize.getScreenHeightInUnit() * bgRatio;//=SH/BH*BW=SH*BW/BH=SH*BR
+            width = areaWidthRatio *acturalBgWidth;
         }
         else
         {
@@ -36,10 +36,10 @@ public class CoordinateTransform
         float bgRatio = bgWidth / bgHeight;
         float screenRatio = ScreenSize.getScreenWidthInUnit() / ScreenSize.getScreenHeightInUnit();
         Logging.Log("screen ratio:"+screenRatio+" ,bg ratio:"+bgRatio);
-        if (screenRatio > bgRatio)
+        if (screenRatio < bgRatio)
         {
-            float heightRatio = screenRatio / bgRatio; //背景图与屏幕高比
-            height = areaHeightRatio * heightRatio * ScreenSize.getScreenHeightInUnit();
+            float actrualBgHeight = ScreenSize.getScreenWidthInUnit() / bgRatio;
+            height = areaHeightRatio *actrualBgHeight;
         }
         else
         {
@@ -57,9 +57,9 @@ public class CoordinateTransform
         float left;
         float bgRatio = bgWidth / bgHeight;
         float screenRatio = ScreenSize.getScreenWidthInUnit() / ScreenSize.getScreenHeightInUnit();
-        if (screenRatio < bgRatio)
+        if (screenRatio > bgRatio)
         {
-            float widthRatio = bgRatio / screenRatio; //背景图与屏幕宽比
+            float widthRatio = bgRatio / screenRatio; //背景图与屏幕宽比=sh/bh*bw/sw=br/sr
             float emptyLeftRatio = (1 - widthRatio) / 2; //左侧空白占屏幕比例(负值)
             Debug.Log(
                 "widthRatio:"+widthRatio+" ,emptyLeftRatio:"+emptyLeftRatio+" ,centerRatioLeft:"+centerRatioLeft);
@@ -81,7 +81,7 @@ public class CoordinateTransform
         float top;
         float bgRatio = bgWidth / bgHeight;
         float screenRatio = ScreenSize.getScreenWidthInUnit() / ScreenSize.getScreenHeightInUnit();
-        if (screenRatio > bgRatio)
+        if (screenRatio < bgRatio)
         {
             float heightRatio = screenRatio / bgRatio; //背景图与屏幕高比
             float emptyTopRatio = (1 - heightRatio) / 2;
