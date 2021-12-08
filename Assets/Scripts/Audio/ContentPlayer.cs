@@ -1,11 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using UniRx;
 using UnityEngine;
 using UnityEngine.Events;
 
 public enum PlayerEvent
 {
-    start, pause, resume, stop, interrupt, finish, none
+    def, loading, playing, pause, resume, stop, interrupt, finish, none
 }
 
 [RequireComponent(typeof(AudioSource))]
@@ -67,9 +67,11 @@ public class ContentPlayer: MonoBehaviour
 
     public void PlayTTS(string tts)
     {
+        status.Value = PlayerEvent.loading;
         SvuiBridge.Shared.tts(tts, SvuiBridge.Language.ENG).TakeLast(1)
           .DoOnError(e =>
           {
+              status.Value = PlayerEvent.none;
               Logging.Log("TTS error:" + e.Message);
           })
             .Subscribe(result =>
@@ -94,16 +96,17 @@ public class ContentPlayer: MonoBehaviour
             status.Value = PlayerEvent.interrupt;
             Logging.Log("play interrupt!");
         }
-
+        status.Value = PlayerEvent.loading;
         disposable = HttpRx.GetAudio(parcel.truePath).Take(1).Subscribe(c =>
         {
             player.clip = c;
             player.Play();
             isPlaying = true;
-            status.Value = PlayerEvent.start;
+            status.Value = PlayerEvent.playing;
             Logging.Log("play start: " + parcel.truePath);
         }, (e) =>
         {
+            status.Value = PlayerEvent.none;
             Logging.Log("play error:" + e);
         }).AddTo(this);
     }
