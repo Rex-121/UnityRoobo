@@ -15,26 +15,55 @@ public class CoursewarePlaylist : CoursewareBasicPlaylist
 
     IDisposable d;
 
+
+    //private void Start()
+    //{
+
+    //    //roundControl.round.Where(v => v != null).Where(v => v.type != RoundIsPlaying.Type.picture).Subscribe(_ => ClearStage()).AddTo(this);
+    //}
+
     public override void RoundDidChanged()
     {
         base.RoundDidChanged();
 
+        Logging.Log("房间里嘎多------f" + round.type);
+
         spriteRendener.gameObject.SetActive(true);
 
         d?.Dispose();
-        d = Storage.GetTexture(new Parcel(round.src)).Subscribe((texture2d) =>
-        {
-            Sprite tempSprite = Sprite.Create(texture2d, new Rect(0, 0, texture2d.width, texture2d.height), new Vector2(0.5f, 0.5f));
-            spriteRendener.sprite = tempSprite;
 
-        }, e => { }).AddTo(this);
+        if (string.IsNullOrEmpty(round.src))
+        {
+            spriteRendener.sprite = null;
+        }
+        else
+        {
+            d = Storage.GetTexture(new Parcel(round.src)).Subscribe((texture2d) =>
+            {
+                Sprite tempSprite = Sprite.Create(texture2d, new Rect(0, 0, texture2d.width, texture2d.height), new Vector2(0.5f, 0.5f));
+                spriteRendener.sprite = tempSprite;
+
+            }, e => { }).AddTo(this);
+        }
+
+    }
+
+
+    public override void Next()
+    {
+        base.Next();
+
+        spriteRendener.gameObject.SetActive(false);
     }
 
     public override void ClearStage()
     {
-        base.ClearStage();
+
+        Logging.Log("房间里嘎多");
 
         spriteRendener.gameObject.SetActive(false);
+        Logging.Log("房间里嘎多ffff");
+        base.ClearStage();
     }
 
 }
