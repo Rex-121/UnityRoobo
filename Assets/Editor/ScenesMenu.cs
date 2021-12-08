@@ -16,6 +16,8 @@ public static class ScenesMenu
     public static void Assets_Scenes_LessonDetails_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/LessonDetails.unity"); }
     [MenuItem("切换场景/LoginScence", priority = 10)]
     public static void Assets_Scenes_LoginScence_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/LoginScence.unity"); }
+    [MenuItem("切换场景/PicBoardScene", priority = 10)]
+    public static void Assets_Scenes_PicBoardScene_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/PicBoardScene.unity"); }
     [MenuItem("切换场景/Poem", priority = 10)]
     public static void Assets_Scenes_Poem_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/Poem.unity"); }
     [MenuItem("切换场景/Puzzle", priority = 10)]
@@ -26,6 +28,8 @@ public static class ScenesMenu
     public static void Assets_Scenes_RooboAvatar_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/RooboAvatar.unity"); }
     [MenuItem("切换场景/SampleScene", priority = 10)]
     public static void Assets_Scenes_SampleScene_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/SampleScene.unity"); }
+    [MenuItem("切换场景/Seek", priority = 10)]
+    public static void Assets_Scenes_Seek_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/Seek.unity"); }
     [MenuItem("切换场景/SettingScene", priority = 10)]
     public static void Assets_Scenes_SettingScene_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/SettingScene.unity"); }
     [MenuItem("切换场景/SvuiDemo", priority = 10)]

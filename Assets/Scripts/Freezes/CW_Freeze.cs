@@ -28,6 +28,17 @@ public class CW_Freeze : CoursewarePlayer
     [LabelText("下一环节")]
     public Image mNextStep;
 
+    [LabelText("音频播放控制器")]
+    public GameObject mAudioControl;
+
+    [LabelText("Pudding动画")]
+    public Pudding mPudding;
+
+    private void Start()
+    {
+        GetComponent<Canvas>().worldCamera = Camera.main;
+    }
+
     public void InitGridAndData(CW_Freeze_SO.FreezeEntity freezeEntity)
     {
         if (freezeEntity != null) {
@@ -35,8 +46,15 @@ public class CW_Freeze : CoursewarePlayer
             switch (freezeEntity.type)
             {
                 case CW_Freeze_SO.FreezeEntity.Type.audio:
+                    mAudioControl.gameObject.SetActive(true);
+                    AudioControlScript audioControlScript =mAudioControl.GetComponent<AudioControlScript>();
+                    audioControlScript.InitAudioAndPlayType(freezeEntity);
                     break;
                 case CW_Freeze_SO.FreezeEntity.Type.audioAndImage:
+                    mAudioControl.gameObject.SetActive(true);
+                    AudioControlScript audioControlWithImage = mAudioControl.GetComponent<AudioControlScript>();
+                    audioControlWithImage.InitAudioAndPlayType(freezeEntity);
+
                     var gameObject = Instantiate(prefabImage, freezeContainer.transform);
                     var comp = gameObject.GetComponent<FreezeImageView>();
                     comp.mShadow = mShadow;
@@ -52,6 +70,15 @@ public class CW_Freeze : CoursewarePlayer
                     videoView.mShadowReplayButton = mShadowReplayButton;
                     videoView.showRepeat = freezeEntity.isRepeat;
                     videoView.InitGrids(freezeEntity.videoList);
+                    break;
+                case CW_Freeze_SO.FreezeEntity.Type.audioAndDynamic:
+                    mAudioControl.gameObject.SetActive(true);
+                    AudioControlScript audioControlWithDynamic = mAudioControl.GetComponent<AudioControlScript>();
+                    audioControlWithDynamic.InitAudioAndPlayType(freezeEntity);
+
+                    mPudding.Do(PuddingAction.speak);
+
+
                     break;
             }
         }
