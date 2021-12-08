@@ -6,7 +6,7 @@ using UniRx;
 
 public enum PuddingAction
 {
-    idle, hello, speak, unhappy, bubble, starHappy, starMagic, starSpeak
+    idle, hello, unhappy, bubble, starHappy, starMagic, starSpeak
 }
 
 
@@ -33,10 +33,10 @@ public class Pudding : MonoBehaviour
             {
                 case PlayerEvent.playing:
                 case PlayerEvent.resume:
-                    Do(PuddingAction.speak);
+                    animator.SetBool("speak", true);
                     break;
                 default:
-                    Do(PuddingAction.idle);
+                    animator.SetBool("speak", false);
                     break;
             }
             speakStatus.Value = status;
@@ -52,12 +52,17 @@ public class Pudding : MonoBehaviour
     public void Do(PuddingAction action)
     {
         animator.SetTrigger(action.ToString());
-
     }
+
+
 
     public void Speak(string content, string type)
     {
         player.PlayContentByType(content, type);
     }
  
+    public void ddd()
+    {
+        Speak("https://roobo-test.oss-cn-beijing.aliyuncs.com/appcourse/manager/2021-12-08/c6o7tnt7heu83afi10eg.wav", "audio");
+    }
 }

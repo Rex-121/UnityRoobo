@@ -76,7 +76,7 @@ public class CW_Freeze : CoursewarePlayer
                     AudioControlScript audioControlWithDynamic = mAudioControl.GetComponent<AudioControlScript>();
                     audioControlWithDynamic.InitAudioAndPlayType(freezeEntity);
 
-                    mPudding.Do(PuddingAction.speak);
+                    //mPudding.Do(PuddingAction.speak);
 
 
                     break;
