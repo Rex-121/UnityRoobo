@@ -31,7 +31,13 @@ public class Pudding : MonoBehaviour
         {
             switch (status)
             {
-
+                case PlayerEvent.playing:
+                case PlayerEvent.resume:
+                    Do(PuddingAction.speak);
+                    break;
+                default:
+                    Do(PuddingAction.idle);
+                    break;
             }
             speakStatus.Value = status;
         });
@@ -54,5 +60,4 @@ public class Pudding : MonoBehaviour
         player.PlayContentByType(content, type);
     }
  
-    
 }
