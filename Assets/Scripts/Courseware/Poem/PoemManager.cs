@@ -55,7 +55,7 @@ public class PoemManager : CoursewarePlayer
     private BehaviorSubject<MicrophoneState> microphoneStateStream = new BehaviorSubject<MicrophoneState>(MicrophoneState.DISABLE);
     private BehaviorSubject<PoemBean> poemTextStream = new BehaviorSubject<PoemBean>(null);
     private IDisposable poemTextStatusDisposable;
-    private IDisposable microphoneStatusDisposable;
+    private IDisposable poemPlayDisposable;
     private ContentPlayer contentPlayer;
 
     public void setData(Data data)
@@ -71,7 +71,7 @@ public class PoemManager : CoursewarePlayer
         for (int i = 0; i < Math.Min(data.list.Count, 11); i++)
         {
             data.list[i].id = i;
-            poemTexts[i].gameObject.GetComponent<PoemTextController>().setup(data.list[i],poemTextStream);
+            poemTexts[i].gameObject.GetComponent<PoemTextController>().setup(data.list[i], poemTextStream);
         }
         if (data.list.Count < 11)
         {
@@ -123,7 +123,7 @@ public class PoemManager : CoursewarePlayer
         }
         else if (pointerEventData.pointerCurrentRaycast.gameObject.name.Equals("audio"))
         {
-
+            playPoem(0);
         }
         else
         {
@@ -148,35 +148,66 @@ public class PoemManager : CoursewarePlayer
         {
             poemTextStatusDisposable.Dispose();
         }
-        if (null != microphoneStatusDisposable)
-        {
-            microphoneStatusDisposable.Dispose();
-        }
 
-        playPoem(clickIndex, () => {
-            poemTextStatusDisposable = Observable.Timer(TimeSpan.FromSeconds(data.list[clickIndex].waiting)).Subscribe((_) =>
+        playPoem(clickIndex, (index) =>
+        {
+            //麦克风录音动画
+            microphoneController.recordDuration = data.list[index].waiting;
+            microphoneStateStream.OnNext(MicrophoneState.RECORDING);
+            
+            poemTextStatusDisposable = Observable.Timer(TimeSpan.FromSeconds(data.list[index].waiting)).Subscribe((_) =>
             {
-             
+
                 //诗句动画
-                data.list[clickIndex].poemTextStatus = PoemTextStatus.NORMAL;
-                poemTextStream.OnNext(data.list[clickIndex]);
+                data.list[index].poemTextStatus = PoemTextStatus.NORMAL;
+                poemTextStream.OnNext(data.list[index]);
             }).AddTo(this);
         });
     }
 
-    private void playPoem(int index,Action then) {
-        contentPlayer.PlayContentByType(data.list[index].audio,"audio");
+    //播放整诗
+    private void playPoem(int start)
+    {
+        if (start >= data.list.Count) {
+            Logging.Log("whole poem play finish~");
+            //诗句动画
+            data.list[0].poemTextStatus = PoemTextStatus.NORMAL;
+            poemTextStream.OnNext(data.list[0]);
+            cursorMoveTo(0, true);
+            return;
+        }
 
-        microphoneStatusDisposable = Observable.Timer(TimeSpan.FromSeconds(3)).Subscribe((_)=> {
-           //麦克风录音动画
-           microphoneController.recordDuration = data.list[index].waiting;
-           microphoneStateStream.OnNext(MicrophoneState.RECORDING);
-           then();
+        //麦克风录音动画
+        microphoneStateStream.OnNext(MicrophoneState.DISABLE);
+        //诗句动画
+        data.list[start].poemTextStatus = PoemTextStatus.HIGHTLIGHT;
+        poemTextStream.OnNext(data.list[start]);
+        cursorMoveTo(start, true);
+
+        playPoem(start, (index)=> {
+            playPoem(index+1);
+        });
+    }
+
+    private void playPoem(int index, Action<int> then)
+    {
+        contentPlayer.PlayContentByType(data.list[index].audio, "audio");
+
+        poemPlayDisposable?.Dispose();
+        contentPlayer.status = new ReactiveProperty<PlayerEvent>();
+        poemPlayDisposable=contentPlayer.status.Subscribe((status) =>
+        {
+            Logging.Log("content player status:" + status);
+            if (status == PlayerEvent.finish)
+            {
+                then(index);
+            }
         }).AddTo(this);
     }
 
     private void closeScroll()
     {
+        stopAll();
         DOTweenAnimation leftScrollAnim = getCloseAnim(leftScroll.GetComponents<DOTweenAnimation>());
         if (null != leftScrollAnim) { leftScrollAnim.DOPlay(); }
         DOTweenAnimation rightScrollAnim = getCloseAnim(rightScroll.GetComponents<DOTweenAnimation>());
@@ -188,8 +219,20 @@ public class PoemManager : CoursewarePlayer
             Logging.Log("poem end!!!");
             DidEndCourseware(this);
         }).AddTo(this);
+    }
 
-        DidEndCourseware(this);
+     void OnDestroy()
+    {
+        stopAll();
+    }
+
+    private void stopAll() {
+        //麦克风录音动画
+        microphoneStateStream.OnNext(MicrophoneState.DISABLE);
+
+        contentPlayer?.Stop();
+        poemPlayDisposable?.Dispose();
+        poemTextStatusDisposable?.Dispose();
     }
 
     private DOTweenAnimation getCloseAnim(DOTweenAnimation[] anims)
