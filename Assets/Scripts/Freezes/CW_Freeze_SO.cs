@@ -33,8 +33,8 @@ public class CW_Freeze_SO : CoursewarePlayer_SO
         public bool isLoop;//是否循环播放
         public List<Video> videoList;//视频
         //可能返回空 
-        //public PudImage pudImage;//布丁形象
-        //public PudDynamic pudDynamic;//布丁动效
+        public string pudImage;//布丁形象
+        public string pudDynamic;//布丁动效
 
         public enum Type
         {

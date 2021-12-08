@@ -31,6 +31,14 @@ public class CW_Freeze : CoursewarePlayer
     [LabelText("音频播放控制器")]
     public GameObject mAudioControl;
 
+    [LabelText("Pudding动画")]
+    public Pudding mPudding;
+
+    private void Start()
+    {
+        GetComponent<Canvas>().worldCamera = Camera.main;
+    }
+
     public void InitGridAndData(CW_Freeze_SO.FreezeEntity freezeEntity)
     {
         if (freezeEntity != null) {
@@ -62,6 +70,15 @@ public class CW_Freeze : CoursewarePlayer
                     videoView.mShadowReplayButton = mShadowReplayButton;
                     videoView.showRepeat = freezeEntity.isRepeat;
                     videoView.InitGrids(freezeEntity.videoList);
+                    break;
+                case CW_Freeze_SO.FreezeEntity.Type.audioAndDynamic:
+                    mAudioControl.gameObject.SetActive(true);
+                    AudioControlScript audioControlWithDynamic = mAudioControl.GetComponent<AudioControlScript>();
+                    audioControlWithDynamic.InitAudioAndPlayType(freezeEntity);
+
+                    mPudding.Do(PuddingAction.speak);
+
+
                     break;
             }
         }
