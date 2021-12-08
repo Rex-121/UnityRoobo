@@ -29,11 +29,9 @@ public class MicrophoneController : MonoBehaviour
     public void setStateStream(BehaviorSubject<MicrophoneState> stateStream)
     {
         this.stateStream = stateStream;
-        Logging.Log("microphone set state stream!!!");
 
         this.stateStream.Subscribe(state =>
         {
-            Logging.Log("microphone subscribe!!!");
             switch (state)
             {
                 case MicrophoneState.ENABLE:
