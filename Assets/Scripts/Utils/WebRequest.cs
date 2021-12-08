@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
 using System;
+using System.IO;
 
 public static class WebReqeust
 {
@@ -85,8 +86,16 @@ public static class WebReqeust
 
     private static IEnumerator GetAudioCoroutine(string url, Action<AudioClip> onSuccess, Action<string> onError)
     {
+        var ex = Path.GetExtension(url);
+        AudioType type = AudioType.UNKNOWN ;
+        if (ex == ".mp3") {
+            type = AudioType.MPEG;
+        }else if (ex == ".wav")
+        {
+            type = AudioType.WAV;
+        }
 
-        using (UnityWebRequest unityWebRequest = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.MPEG))
+        using (UnityWebRequest unityWebRequest = UnityWebRequestMultimedia.GetAudioClip(url, type))
         {
             yield return unityWebRequest.SendWebRequest();
 
