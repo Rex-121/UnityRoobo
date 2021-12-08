@@ -3,6 +3,7 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using UniRx;
 using System;
+using UnityEngine.SceneManagement;
 
 public class CoursewareRoundingList : SerializedMonoBehaviour
 {
@@ -20,6 +21,12 @@ public class CoursewareRoundingList : SerializedMonoBehaviour
 
     public void Next()
     {
+        if (rounding.next == null)
+        {
+            SceneManager.LoadScene("Realm");
+            return;
+        }
+
         Logging.Log("请求下一个round ->>" + rounding.next.type);
         round.OnNext(rounding.next);
     }

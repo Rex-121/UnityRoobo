@@ -30,25 +30,54 @@ public class RealmThird : MonoBehaviour
         {
 
             Logging.Log("现在等级" + lev.value);
-        });
+        }).AddTo(this);
 
-        Navigation.Shared.classType.Where(v => v != null).Subscribe(v =>
-         {
-             for (int i = 0; i < 12; i++)
-             {
+        //Navigation.Shared.classType.Where(v => v != null).Subscribe(v =>
+        // {
+        //     for (int i = 0; i < 12; i++)
+        //     {
 
-                 var item = Instantiate(itemPrefab, list);
+        //         var item = Instantiate(itemPrefab, list);
 
 
-                 var itemSc = item.GetComponent<RealmLevelListItem>();
-                 var stir = @"{'icon': 'afsa', 'name': 'vvv', 'locked': true}";
-                 var itemValue = new RealmLevelListItem.IndexedItem(i, Navigation.Shared.currentSubject.theme, JsonConvert.DeserializeObject<RealmLevelListItem.Item>(stir));
+        //         var itemSc = item.GetComponent<RealmLevelListItem>();
+        //         var stir = @"{'icon': 'afsa', 'name': 'vvv', 'locked': true}";
+        //         var itemValue = new RealmLevelListItem.IndexedItem(i, Navigation.Shared.currentSubject.theme, JsonConvert.DeserializeObject<RealmLevelListItem.Item>(stir));
 
-                 itemSc.SetItem(itemValue);
+        //         itemSc.SetItem(itemValue);
 
-             }
-         });
+        //     }
+        // });
 
     }
 
+    List<GameObject> itemList = new List<GameObject>();
+
+    private void OnEnable()
+    {
+        for (int i = 0; i < 12; i++)
+        {
+
+            var item = Instantiate(itemPrefab, list);
+
+
+            var itemSc = item.GetComponent<RealmLevelListItem>();
+            var stir = @"{'icon': 'afsa', 'name': 'vvv', 'locked': true}";
+            var itemValue = new RealmLevelListItem.IndexedItem(i, Navigation.Shared.currentSubject.theme, JsonConvert.DeserializeObject<RealmLevelListItem.Item>(stir));
+
+            itemSc.SetItem(itemValue);
+
+            itemList.Add(item);
+        }
+    }
+
+    private void OnDisable()
+    {
+
+        
+        itemList.ForEach(v => Destroy(v));
+
+        itemList.Clear();
+        //var itemSc = item.GetComponent<RealmLevelListItem>();
+    }
 }
