@@ -40,7 +40,7 @@ public class AudioControlScript : MonoBehaviour
     /// 初始化音频播放信息
     /// </summary>
     /// <param name="freezeEntity"></param>
-    public void InitAudioAndPlayType(CW_Freeze_SO.FreezeEntity freezeEntity)
+    public void InitAudioAndPlayType(CW_Freeze_SO.FreezeEntity freezeEntity,System.Action<PlayerEvent> callback=null)
     {
         var showHidePlay = freezeEntity.isRepeat;
         mPlayPauseImage.gameObject.SetActive(showHidePlay);
@@ -96,6 +96,9 @@ public class AudioControlScript : MonoBehaviour
             else
             {
                 InitPlayPauseImage(true);
+            }
+            if (callback!=null) {
+                callback(v);
             }
         }).AddTo(this);
     }

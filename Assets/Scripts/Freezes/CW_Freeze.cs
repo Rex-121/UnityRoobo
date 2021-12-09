@@ -2,6 +2,7 @@ using RenderHeads.Media.AVProVideo;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
+using UniRx;
 
 public class CW_Freeze : CoursewarePlayer
 {
@@ -72,11 +73,43 @@ public class CW_Freeze : CoursewarePlayer
                     videoView.InitGrids(freezeEntity.videoList);
                     break;
                 case CW_Freeze_SO.FreezeEntity.Type.audioAndDynamic:
+                    mPudding.gameObject.SetActive(true);
                     mAudioControl.gameObject.SetActive(true);
                     AudioControlScript audioControlWithDynamic = mAudioControl.GetComponent<AudioControlScript>();
-                    audioControlWithDynamic.InitAudioAndPlayType(freezeEntity);
+                    audioControlWithDynamic.InitAudioAndPlayType(freezeEntity, status =>
+                    {
+                        bool isPlay = false;
+                        switch (status)
+                        {
+                            case PlayerEvent.def:
+                                isPlay = false;
+                                break;
+                            case PlayerEvent.playing:
+                                isPlay = true;
+                                break;
+                            case PlayerEvent.pause:
+                                isPlay = false;
+                                break;
+                            case PlayerEvent.resume:
+                                isPlay = true;
+                                break;
+                            case PlayerEvent.stop:
+                                break;
+                            case PlayerEvent.interrupt:
+                                break;
+                            case PlayerEvent.finish:
+                                isPlay = false;
+                                if (freezeEntity.isLoop)
+                                {
 
-                    //mPudding.Do(PuddingAction.speak);
+                                }
+                                break;
+                            case PlayerEvent.none:
+                                isPlay = false;
+                                break;
+                        }
+                    });
+
 
 
                     break;
