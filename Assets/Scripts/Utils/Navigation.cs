@@ -14,20 +14,20 @@ public class Navigation : SingletonSO<Navigation>
 
     private ClassSubject _currentType;
 
-    [LabelText("课程")]
+    [LabelText("课程"), ShowInInspector]
     public ClassCategory classCategory
     {
         set
         {
             _classCategory = value;
-            if (_classCategory == null)
-            {
-                menu.Value = Menu.secondary;
-            }
-            else
-            {
-                menu.Value = Menu.third;
-            }
+            //if (_classCategory == null)
+            //{
+            //    menu.Value = Menu.secondary;
+            //}
+            //else
+            //{
+            //    menu.Value = Menu.third;
+            //}
         }
 
         get { return _classCategory; }
@@ -47,7 +47,7 @@ public class Navigation : SingletonSO<Navigation>
             }
             else
             {
-                menu.Value = Menu.secondary;
+                
                 classType.Value = _currentType.type;
             }
         }
@@ -61,6 +61,11 @@ public class Navigation : SingletonSO<Navigation>
         index, secondary, third
     }
 
+
+    public void 选择菜单(Menu menu)
+    {
+        this.menu.Value = menu;
+    }
 
     public void 选择延时课()
     {
@@ -81,6 +86,7 @@ public class Navigation : SingletonSO<Navigation>
     public void Start()
     {
         //classType = new ReactiveProperty<ClassSubject.Type?>();
+        classCategory = null;
         currentSubject = null;
     }
 

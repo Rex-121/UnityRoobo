@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: "\u8BED\u8A00"
   m_EditorClassIdentifier: 
   theme: {r: 1, g: 0.39607844, b: 0.7372549, a: 1}
+  NetRepresent: 1111444

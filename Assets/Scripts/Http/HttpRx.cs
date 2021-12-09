@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using BestHTTP;
 
 public class HttpRx
 {
@@ -280,7 +281,35 @@ public class HttpRx
       });
     }
 
+    public static IObservable<Texture2D> GetTexture2D(string path)
+    {
 
+        return Observable.Create<Texture2D>((ob) =>
+        {
+            HttpRaw.GetResource(path, (r) =>
+            {
+                try
+                {
+
+                    ob.OnNext(r.DataAsTexture2D);
+
+                }
+                catch
+                {
+                    ob.OnError(HttpError.ParseError);
+                }
+                finally
+                {
+                    ob.OnCompleted();
+                }
+            }, (e) =>
+            {
+                ob.OnError(e);
+            });
+
+            return null;
+        });
+    }
 
 }
 

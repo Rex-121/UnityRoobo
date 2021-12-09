@@ -15,13 +15,7 @@ public class Storage
 
     public static System.IObservable<Texture2D> GetTexture(Parcel parcel)
     {
-        return HttpRx.GetResource(parcel.truePath)
-            .Select(data =>
-            {
-                var d = new Texture2D(0, 0);
-                d.LoadImage(data);
-                return d;
-            });
+        return HttpRx.GetTexture2D(parcel.truePath);
     }
 
 

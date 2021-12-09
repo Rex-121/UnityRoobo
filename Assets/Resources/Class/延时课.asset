@@ -22,3 +22,4 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   subject: {fileID: 11400000, guid: 324bce62f838b4fcc834b6f4f2eb9d9f, type: 2}
+  NetRepresent: sync

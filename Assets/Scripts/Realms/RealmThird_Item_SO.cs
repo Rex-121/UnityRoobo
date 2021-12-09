@@ -11,6 +11,8 @@ public class RealmThird_Item_SO : SerializedScriptableObject
     public struct Item
     {
         public Color tintColor;
+
+        public Sprite backgroundBG;
     }
 
 
