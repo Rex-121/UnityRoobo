@@ -71,6 +71,8 @@ public class RealmsEntrance : MonoBehaviour
         }
 
         Navigation.Shared.切换学科(classType);
+
+        Navigation.Shared.选择菜单(Navigation.Menu.secondary);
     }
 
     public void LoadCWScene()

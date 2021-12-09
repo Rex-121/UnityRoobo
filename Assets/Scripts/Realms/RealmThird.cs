@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Sirenix.OdinInspector;
 using UniRx;
 using Newtonsoft.Json;
@@ -19,65 +20,16 @@ public class RealmThird : MonoBehaviour
     public ClassLevels levels;
 
 
+    public Image listBg;
+
+
+    public RealmLevelsList listing;
     public RealmThird_Item_SO theme;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-        
-        levels.level.Subscribe(lev =>
-        {
-
-            Logging.Log("现在等级" + lev.value);
-        }).AddTo(this);
-
-        //Navigation.Shared.classType.Where(v => v != null).Subscribe(v =>
-        // {
-        //     for (int i = 0; i < 12; i++)
-        //     {
-
-        //         var item = Instantiate(itemPrefab, list);
-
-
-        //         var itemSc = item.GetComponent<RealmLevelListItem>();
-        //         var stir = @"{'icon': 'afsa', 'name': 'vvv', 'locked': true}";
-        //         var itemValue = new RealmLevelListItem.IndexedItem(i, Navigation.Shared.currentSubject.theme, JsonConvert.DeserializeObject<RealmLevelListItem.Item>(stir));
-
-        //         itemSc.SetItem(itemValue);
-
-        //     }
-        // });
-
-    }
-
-    List<GameObject> itemList = new List<GameObject>();
 
     private void OnEnable()
     {
-        for (int i = 0; i < 12; i++)
-        {
+        listBg.sprite = theme.itemTheme[Navigation.Shared.classCategory.subject.type].backgroundBG;
 
-            var item = Instantiate(itemPrefab, list);
-
-
-            var itemSc = item.GetComponent<RealmLevelListItem>();
-            var stir = @"{'icon': 'afsa', 'name': 'vvv', 'locked': true}";
-            var itemValue = new RealmLevelListItem.IndexedItem(i, Navigation.Shared.currentSubject.theme, JsonConvert.DeserializeObject<RealmLevelListItem.Item>(stir));
-
-            itemSc.SetItem(itemValue);
-
-            itemList.Add(item);
-        }
     }
 
-    private void OnDisable()
-    {
-
-        
-        itemList.ForEach(v => Destroy(v));
-
-        itemList.Clear();
-        //var itemSc = item.GetComponent<RealmLevelListItem>();
-    }
 }
