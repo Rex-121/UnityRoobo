@@ -22,6 +22,8 @@ public static class ScenesMenu
     public static void Assets_Scenes_PicBoardScene_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/PicBoardScene.unity"); }
     [MenuItem("切换场景/Poem", priority = 10)]
     public static void Assets_Scenes_Poem_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/Poem.unity"); }
+    [MenuItem("切换场景/PuddingDemo", priority = 10)]
+    public static void Assets_Scenes_PuddingDemo_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/PuddingDemo.unity"); }
     [MenuItem("切换场景/Puzzle", priority = 10)]
     public static void Assets_Scenes_Puzzle_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/Puzzle.unity"); }
     [MenuItem("切换场景/Realm", priority = 10)]
