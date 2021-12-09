@@ -9,7 +9,7 @@ public enum PuddingAction
     idle, hello, unhappy, bubble, starHappy, starMagic, starSpeak
 }
 
-
+[RequireComponent(typeof(ContentPlayer))]
 public class Pudding : MonoBehaviour
 {
 
@@ -21,12 +21,15 @@ public class Pudding : MonoBehaviour
         get { return player.status; }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         player = GetComponent<ContentPlayer>();
         animator = GetComponent<Animator>();
+    }
 
+    // Start is called before the first frame update
+    void Start()
+    {
         player.status.Subscribe(status =>
         {
             switch (status)
@@ -60,8 +63,18 @@ public class Pudding : MonoBehaviour
     {
         player.PlayContentByType(content, type);
     }
- 
-    public void ddd()
+
+    public void StopSpeaking()
+    {
+        player.Stop();
+    }
+
+    public void DoSth()
+    {
+        Do(PuddingAction.starMagic);
+    }
+
+    public void SpeakSth()
     {
         Speak("https://roobo-test.oss-cn-beijing.aliyuncs.com/appcourse/manager/2021-12-08/c6o7tnt7heu83afi10eg.wav", "audio");
     }
