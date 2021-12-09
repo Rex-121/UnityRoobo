@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5aafa54ea26d4ca39ae89a4e2161d5c, type: 3}
-  m_Name: "\u97F3\u4E50"
+  m_Script: {fileID: 11500000, guid: d69008ab0992c4608902a4ad489dbba3, type: 3}
+  m_Name: "\u82F1\u8BED"
   m_EditorClassIdentifier: 
-  theme: {r: 0.50980395, g: 0.3372549, b: 0.88235295, a: 1}
-  NetRepresent: 12
+  theme: {r: 1, g: 0.39607844, b: 0.7372549, a: 1}
+  NetRepresent: 1

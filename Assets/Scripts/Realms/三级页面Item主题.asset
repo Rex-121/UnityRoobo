@@ -15,7 +15,10 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 21300000, guid: 2d9e64e2c11d14b488ba972d6ec15313, type: 3}
+    - {fileID: 21300000, guid: 5088ca2ee20c2409185eabcc2d6d448d, type: 3}
+    - {fileID: 21300000, guid: 77937ae3e2ab444f5aa484f0077edb13, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
@@ -23,12 +26,12 @@ MonoBehaviour:
     SerializationNodes:
     - Name: itemTheme
       Entry: 7
-      Data: "0|System.Collections.Generic.Dictionary`2[[\u5B66\u79D1+\u7C7B\u578B,
-        ClassDefine],[RealmThird_Item_SO+Item, Assembly-CSharp]], mscorlib"
+      Data: 0|System.Collections.Generic.Dictionary`2[[ClassSubjectType, ClassDefine],[RealmThird_Item_SO+Item,
+        Assembly-CSharp]], mscorlib
     - Name: comparer
       Entry: 7
-      Data: "1|System.Collections.Generic.EnumEqualityComparer`1[[\u5B66\u79D1+\u7C7B\u578B,
-        ClassDefine]], mscorlib"
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[ClassSubjectType,
+        ClassDefine]], mscorlib
     - Name: 
       Entry: 12
       Data: 0
@@ -40,7 +43,7 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
-      Data: 3
+      Data: 5
     - Name: 
       Entry: 7
       Data: 
@@ -68,6 +71,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: backgroundBG
+      Entry: 10
+      Data: 0
     - Name: 
       Entry: 8
       Data: 
@@ -101,6 +107,9 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: backgroundBG
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -134,6 +143,81 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
+    - Name: backgroundBG
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: RealmThird_Item_SO+Item, Assembly-CSharp
+    - Name: tintColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.396078438
+    - Name: 
+      Entry: 4
+      Data: 0.7372549
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: backgroundBG
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 7
+      Data: RealmThird_Item_SO+Item, Assembly-CSharp
+    - Name: tintColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.396078438
+    - Name: 
+      Entry: 4
+      Data: 0.7372549
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: backgroundBG
+      Entry: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
