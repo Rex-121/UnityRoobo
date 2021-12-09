@@ -34,8 +34,8 @@ public class SeekManager : CoursewarePlayer
             float height = CoordinateTransform.getAreaHeightByHeightRatio(item.height, data.videoWidth, data.videoHeight);
             seekTarget.transform.localScale = new Vector3(width/1,height/1,seekTarget.transform.localScale.z);
             //设置位置
-            float x = CoordinateTransform.getXByCenterRatio(item.left,data.videoWidth,data.videoHeight);
-            float y = CoordinateTransform.getYByCenterRatio(item.top,data.videoWidth,data.videoHeight);
+            float x = CoordinateTransform.getXByCenterRatio(item.left,data.videoWidth,data.videoHeight)+width/2;
+            float y = CoordinateTransform.getYByCenterRatio(item.top,data.videoWidth,data.videoHeight)-height/2;
             seekTarget.transform.position = new Vector3(x,y,seekTarget.transform.position.z);
 
             SeekTarget seek = seekTarget.GetComponent<SeekTarget>();
