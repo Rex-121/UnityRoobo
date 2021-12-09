@@ -21,4 +21,5 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  subject: {fileID: 11400000, guid: 324bce62f838b4fcc834b6f4f2eb9d9f, type: 2}
+  subject: {fileID: 11400000, guid: 346497d5302d2463abb3f36c6b6785f4, type: 2}
+  NetRepresent: sync

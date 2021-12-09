@@ -35,7 +35,7 @@ public class NativeCalls : SingletonSO<NativeCalls>
     /// </summary>
     public void PushSettingMenus()
     {
-
+        Debug.Log("PushSettingMenus");
 
 #if UNITY_IOS
         Debug.Log("iOS PushSettingMenus");

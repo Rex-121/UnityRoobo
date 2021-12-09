@@ -104,6 +104,8 @@ public class HttpRaw
             SelectData(r, re, success, error);
         });
 
+        requestx.DisableCache = false;
+
         requestx.Send();
     }
 

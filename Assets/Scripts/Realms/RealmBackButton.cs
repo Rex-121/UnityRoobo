@@ -36,10 +36,13 @@ public class RealmBackButton : MonoBehaviour
         if (Navigation.Shared.classCategory != null)
         {
             Navigation.Shared.classCategory = null;
+            Navigation.Shared.选择菜单(Navigation.Menu.secondary);
+
         }
         else
         {
             Navigation.Shared.切换学科(null);
+            Navigation.Shared.选择菜单(Navigation.Menu.index);
         }
 
     }

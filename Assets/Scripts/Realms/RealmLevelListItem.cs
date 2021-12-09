@@ -4,28 +4,30 @@ using UnityEngine;
 using UnityEngine.UI;
 using Sirenix.OdinInspector;
 
+using UniRx;
+using System;
 public class RealmLevelListItem : MonoBehaviour
 {
 
-    public struct Item
-    {
-        public string icon;
+    //public struct Item
+    //{
+    //    public string icon;
 
-        public string name;
+    //    public string name;
 
-        public bool locked;
-    }
+    //    public bool locked;
+    //}
 
-    
+
     public struct IndexedItem
     {
-        public Item item;
+        public CourseLevels_Net.Lesson item;
 
         public int index;
 
         public Color theme;
 
-        public IndexedItem(int i, Color t, Item it)
+        public IndexedItem(int i, Color t, CourseLevels_Net.Lesson it)
         {
             index = i;
             item = it;
@@ -35,6 +37,14 @@ public class RealmLevelListItem : MonoBehaviour
 
     [ShowInInspector]
     public IndexedItem item;
+
+
+
+    public void FourthMenu()
+    {
+        Navigation.Shared.menu.Value = Navigation.Menu.forth;
+    }
+
 
     public void SetItem(IndexedItem i)
     {
@@ -47,7 +57,35 @@ public class RealmLevelListItem : MonoBehaviour
         indexLabel.text = item.index.ToString();
 
         nameLabel.text = item.item.name;
+
+        if (!item.item.locked)
+        {
+
+
+            Storage.GetImage(new Parcel(item.item.icon)).Subscribe(v =>
+                  {
+
+                      try
+                      {
+                          iconImage.sprite = v;
+                      }
+                      catch (Exception e)
+                      {
+                          Logging.Log(e.Message);
+                      }
+                  }).AddTo(this);
+
+
+
+        }
+
+        rounding = item.item.Merge();
+
     }
+
+
+    [ShowInInspector]
+    public RoundIsPlaying rounding;
 
 
     //public Color themeColor;
@@ -55,6 +93,8 @@ public class RealmLevelListItem : MonoBehaviour
 
     public Image badge;
 
+
+    public Image iconImage;
 
     public Text indexLabel;
 

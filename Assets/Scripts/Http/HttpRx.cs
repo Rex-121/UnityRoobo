@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using BestHTTP;
 
 public class HttpRx
 {
@@ -123,14 +124,25 @@ public class HttpRx
         {
             if (typeof(T) == typeof(Ignore))
             {
-                Logging.Log("ignal");
                 object v = new Ignore();
 
                 ob.OnNext((T)v);
             }
             else
             {
-                ob.OnNext(data.data.ToObject<T>());
+                try
+                {
+                    var parsed = data.data.ToObject<T>();
+                    ob.OnNext(data.data.ToObject<T>());
+                }
+                catch (Exception e)
+                {
+                    Logging.Log(e.Message);
+                }
+
+
+
+
             }
 
         }
@@ -280,7 +292,35 @@ public class HttpRx
       });
     }
 
+    public static IObservable<Texture2D> GetTexture2D(string path)
+    {
 
+        return Observable.Create<Texture2D>((ob) =>
+        {
+            HttpRaw.GetResource(path, (r) =>
+            {
+                try
+                {
+
+                    ob.OnNext(r.DataAsTexture2D);
+
+                }
+                catch
+                {
+                    ob.OnError(HttpError.ParseError);
+                }
+                finally
+                {
+                    ob.OnCompleted();
+                }
+            }, (e) =>
+            {
+                ob.OnError(e);
+            });
+
+            return null;
+        });
+    }
 
 }
 
