@@ -25,6 +25,7 @@ public class MicrophoneController : MonoBehaviour
     public SpriteRenderer progressRenderer;
     private BehaviorSubject<MicrophoneState> stateStream;
     private Tween progressTween;
+    public GameObject starBombPrefab;
 
     public void setStateStream(BehaviorSubject<MicrophoneState> stateStream)
     {
@@ -73,10 +74,22 @@ public class MicrophoneController : MonoBehaviour
               .SetEase(Ease.Linear)
               .OnComplete(() =>
               {
+                  bomb();
                   if (null != stateStream)
                   {
                       stateStream.OnNext(MicrophoneState.DISABLE);
                   }
               });
+    }
+
+    private void bomb()
+    {
+        if (null != starBombPrefab)
+        {
+            GameObject starBomb = Instantiate(starBombPrefab, transform);
+            Observable.Timer(TimeSpan.FromSeconds(2)).Subscribe((l)=> {
+                Destroy(starBomb);
+            });
+        }
     }
 }
