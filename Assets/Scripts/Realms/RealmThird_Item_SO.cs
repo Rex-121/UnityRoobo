@@ -12,7 +12,12 @@ public class RealmThird_Item_SO : SerializedScriptableObject
     {
         public Color tintColor;
 
+        [PreviewField(Height = 100)]
         public Sprite backgroundBG;
+
+
+        [PreviewField(Height = 100)]
+        public Sprite bookBackGround;
     }
 
 

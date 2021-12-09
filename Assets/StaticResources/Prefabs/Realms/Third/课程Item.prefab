@@ -428,7 +428,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3816581372819309533}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7284366553924544089}
+        m_TargetAssemblyTypeName: RealmLevelListItem, Assembly-CSharp
+        m_MethodName: FourthMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7284366553924544089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -604,7 +616,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\u6D77\u5E95\u5927\u4E16\u754C"
+  m_Text: --
 --- !u!1 &8913201941638117045
 GameObject:
   m_ObjectHideFlags: 0

@@ -124,14 +124,25 @@ public class HttpRx
         {
             if (typeof(T) == typeof(Ignore))
             {
-                Logging.Log("ignal");
                 object v = new Ignore();
 
                 ob.OnNext((T)v);
             }
             else
             {
-                ob.OnNext(data.data.ToObject<T>());
+                try
+                {
+                    var parsed = data.data.ToObject<T>();
+                    ob.OnNext(data.data.ToObject<T>());
+                }
+                catch (Exception e)
+                {
+                    Logging.Log(e.Message);
+                }
+
+
+
+
             }
 
         }

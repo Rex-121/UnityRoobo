@@ -1314,9 +1314,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1396498493}
         m_TargetAssemblyTypeName: RealmsEntrance, Assembly-CSharp
-        m_MethodName: PushSettingPage
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3011,7 +3011,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1396498498}
         m_TargetAssemblyTypeName: RealmsEntrance, Assembly-CSharp
         m_MethodName: PushSettingPage
         m_Mode: 1
@@ -5200,6 +5200,7 @@ MonoBehaviour:
   index: {fileID: 482940630}
   sencondry: {fileID: 81739984}
   third: {fileID: 97643359}
+  forth: {fileID: 304220716}
 --- !u!1 &1398683672
 GameObject:
   m_ObjectHideFlags: 0
@@ -6390,7 +6391,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 31d98158e44e54c108b343e6578657e4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 43f2b3e66fe894afb97dbf6c0e47d465, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
