@@ -26,10 +26,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/AIDrawScene.unity
     guid: 91744f7e3537a11478710e34ce80a1bf
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FreezeScene.unity
     guid: f8f262a678979684eac838b15914e7d9
   - enabled: 0
     path: Assets/Scenes/SvuiDemo.unity
     guid: 548a20288a21645008015c3c5e806c60
+  - enabled: 0
+    path: Assets/Scenes/PicBoardScene.unity
+    guid: 9cbaf470397277e4b9a33fcead3a3377
   m_configObjects: {}

@@ -138,6 +138,7 @@ public class AudioControlScript : MonoBehaviour
     /// </summary>
     public void OnPlayPauseClick()
     {
+        Debug.Log("AudioControlScript OnPlayPauseClick=" + mContentPlayer.status.Value);
         var v = mContentPlayer.status.Value;
         switch (v)
         {
@@ -146,14 +147,13 @@ public class AudioControlScript : MonoBehaviour
                 break;
             case PlayerEvent.loading:
             case PlayerEvent.playing:
+            case PlayerEvent.resume:
                 mContentPlayer.Pause();
                 break;
             case PlayerEvent.pause:
                 mContentPlayer.Resume();
                 break;
             case PlayerEvent.stop:
-                break;
-            case PlayerEvent.resume:
                 break;
             case PlayerEvent.interrupt:
                 break;

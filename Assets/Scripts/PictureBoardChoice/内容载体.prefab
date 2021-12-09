@@ -60,8 +60,8 @@ MonoBehaviour:
   m_ChildAlignment: 7
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 172, y: 212}
-  m_Spacing: {x: 137, y: 0}
+  m_CellSize: {x: 240, y: 283}
+  m_Spacing: {x: 70, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
 --- !u!114 &3956139585520353884
@@ -299,6 +299,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5082955183662973298, guid: 5829989246efc6941af0de7fa87f930c, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5082955183849060490, guid: 5829989246efc6941af0de7fa87f930c, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5082955184806947184, guid: 5829989246efc6941af0de7fa87f930c, type: 3}
