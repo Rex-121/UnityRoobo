@@ -42,7 +42,7 @@ public class RealmLevelListItem : MonoBehaviour
 
     public void FourthMenu()
     {
-
+        Navigation.Shared.menu.Value = Navigation.Menu.forth;
     }
 
 
@@ -62,25 +62,30 @@ public class RealmLevelListItem : MonoBehaviour
         {
 
 
-      Storage.GetImage(new Parcel(item.item.icon)).Subscribe(v =>
-            {
-               
-                try
-                {
-                    iconImage.sprite = v;
-                }
-                catch (Exception e)
-                {
-                    Logging.Log(e.Message);
-                }
-            }).AddTo(this);
-           
+            Storage.GetImage(new Parcel(item.item.icon)).Subscribe(v =>
+                  {
+
+                      try
+                      {
+                          iconImage.sprite = v;
+                      }
+                      catch (Exception e)
+                      {
+                          Logging.Log(e.Message);
+                      }
+                  }).AddTo(this);
+
 
 
         }
 
+        rounding = item.item.Merge();
+
     }
 
+
+    [ShowInInspector]
+    public RoundIsPlaying rounding;
 
 
     //public Color themeColor;

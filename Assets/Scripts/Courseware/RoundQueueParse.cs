@@ -115,16 +115,9 @@ public class RoundQueueParse
 
 public class LeadingRound : RoundIsPlaying
 {
-    //public string src { get; set; }
-
-    //public List<CW_OriginContent> process { get; set; }
 
     [ShowInInspector]
     public override RoundIsPlaying.Type type => RoundIsPlaying.Type.empty;
-
-    //public RoundIsPlaying next { get; set; }
-
-    //public RoundIsPlaying previous { get; set; }
 
 
     public RoundIsPlaying RemoveSelf()
@@ -133,34 +126,11 @@ public class LeadingRound : RoundIsPlaying
         return next;
     }
 
-    //public int count
-    //{
-    //    get
-    //    {
-    //        if (next == null) return 1;
-    //        return 1 + next.count;
-    //    }
-    //}
-
-    //public string des
-    //{
-    //    get
-    //    {
-    //        if (next == null) return type.ToString();
-    //        return type.ToString() + next.des;
-    //    }
-    //}
-
 }
 
 
 public class PauseRound : RoundIsPlaying
 {
-    //public string src { get; set; }
-
-    //public List<CW_OriginContent> process { get; set; }
-    //[ShowInInspector]
-    //public override List<CW_OriginContent> process;
 
     [ShowInInspector]
     public override RoundIsPlaying.Type type => RoundIsPlaying.Type.pause;
@@ -180,7 +150,7 @@ public class PauseRound : RoundIsPlaying
 
 
 
-
+[System.Serializable]
 public class RoundIsPlaying
 {
     //public string src;
@@ -195,10 +165,10 @@ public class RoundIsPlaying
         video, picture, pop, pause, empty
     }
 
-    [ShowInInspector]
+    [ShowInInspector, PropertyOrder(100)]
     public RoundIsPlaying next { get; set; }
 
-    [ShowInInspector]
+    [ShowInInspector, PropertyOrder(101)]
     public RoundIsPlaying previous { get; set; }
 
     [ShowInInspector]
@@ -212,15 +182,40 @@ public class RoundIsPlaying
     }
 
 
-    [ShowInInspector]
-    public string des
+    string RoundInLineInInspector
     {
         get
         {
-            if (next == null) return type.ToString();
-            return type.ToString() + next.des;
+            Debug.Log(next == null);
+            if (next == null) return ProcessDebugDescription;
+            return ProcessDebugDescription + next.RoundInLineInInspector;
         }
     }
+
+
+    [Button("LogQueue")]
+    private void LogQueue()
+    {
+        Debug.Log(RoundInLineInInspector);
+    }
+
+    string ProcessDebugDescription
+    {
+
+        get
+        {
+            string processType = "";
+            foreach (var i in process)
+            {
+                processType += "->";
+                processType += i.type;
+            }
+
+            var value = type.ToString() + "-(-" + processType + "-)-";
+            return value;
+        }
+    }
+
 
     [ShowInInspector, LabelText("$type"), LabelWidth(50)]
     public string src { get; set; }
@@ -238,40 +233,6 @@ public class ARound : RoundIsPlaying
 
 
     protected Type _type;
-    //[ShowInInspector]
-    //public int count
-    //{
-    //    get
-    //    {
-    //        if (next == null) return 1;
-    //        return 1 + next.count;
-    //    }
-    //}
-
-    //[ShowInInspector]
-    //public string des
-    //{
-    //    get
-    //    {
-    //        var types = process.Select(v => v.type.ToString());
-
-    //        var i = "";
-
-    //        types.ForEach(v =>
-    //        {
-    //            i += (v + "->");
-    //        });
-
-    //        var value = "|-------" + type.ToString() + " (" + i + ") " + "-------|\n";
-
-    //        if (next == null) return value;
-    //        return value + next.des;
-    //    }
-    //}
-
-
-    //[ShowInInspector, ReadOnly]
-    //public List<CW_OriginContent> process { get; set; }
 
     ARound(string s, List<CW_OriginContent> p, RoundIsPlaying.Type _type)
     {
@@ -281,13 +242,6 @@ public class ARound : RoundIsPlaying
         next = null;
         previous = null;
     }
-
-    //[ShowInInspector, ReadOnly]
-    //public RoundIsPlaying next { get; set; }
-
-    //[ShowInInspector, ReadOnly]
-    //public RoundIsPlaying previous { get; set; }
-
     public static RoundIsPlaying Picture(string s, List<CW_OriginContent> p)
     {
         return new ARound(s, p, RoundIsPlaying.Type.picture);
