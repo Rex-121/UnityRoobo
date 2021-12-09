@@ -236,6 +236,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starBomb: {fileID: 8723336485016867738}
+  effectsScaler: 0.07
+  effectsMinScale: 0.1
 --- !u!1 &8723336485016867738
 GameObject:
   m_ObjectHideFlags: 0

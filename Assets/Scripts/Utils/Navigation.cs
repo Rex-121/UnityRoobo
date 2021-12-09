@@ -58,7 +58,7 @@ public class Navigation : SingletonSO<Navigation>
     [System.Serializable]
     public enum Menu
     {
-        index, secondary, third
+        index, secondary, third, forth
     }
 
 

@@ -23,6 +23,8 @@ public class RealmsEntrance : MonoBehaviour
     [LabelText("三级页面")]
     public Transform third;
 
+    [LabelText("四级页面")]
+    public Transform forth;
 
     private void Start()
     {
@@ -45,6 +47,7 @@ public class RealmsEntrance : MonoBehaviour
             index.gameObject.SetActive(menu == Navigation.Menu.index);
             sencondry.gameObject.SetActive(menu == Navigation.Menu.secondary);
             third.gameObject.SetActive(menu == Navigation.Menu.third);
+            forth.gameObject.SetActive(menu == Navigation.Menu.forth);
         }).AddTo(this);
 
     }

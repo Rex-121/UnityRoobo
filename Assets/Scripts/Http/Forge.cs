@@ -154,10 +154,11 @@ public class RoundQueue
         rounds = r;
     }
 
+    public Round round;
 }
 
 
-public struct Round
+public class Round
 {
 
     /// <summary>
@@ -205,6 +206,9 @@ public struct Round
 
         public ForgeData.RoundProcess.Process process;
     }
+
+
+    public Round next;
 
 }
 
