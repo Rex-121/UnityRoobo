@@ -26,6 +26,7 @@ public class MicrophoneController : MonoBehaviour
     private BehaviorSubject<MicrophoneState> stateStream;
     private Tween progressTween;
     public GameObject starBombPrefab;
+    private Action onRecordingEnd;
 
     public void setStateStream(BehaviorSubject<MicrophoneState> stateStream)
     {
@@ -39,11 +40,13 @@ public class MicrophoneController : MonoBehaviour
                     spriteRenderer.enabled = true;
                     progressRenderer.enabled = false;
                     spriteRenderer.sprite = enabledSprite;
+                    progressTween?.Kill();
                     break;
                 case MicrophoneState.DISABLE:
                     spriteRenderer.enabled = true;
                     progressRenderer.enabled = false;
                     spriteRenderer.sprite = disabledSprite;
+                    progressTween?.Kill();
                     break;
                 case MicrophoneState.RECORDING:
                     progressRenderer.enabled = true;
@@ -56,10 +59,13 @@ public class MicrophoneController : MonoBehaviour
                 case MicrophoneState.HIDE:
                     spriteRenderer.enabled = false;
                     progressRenderer.enabled = false;
+                    progressTween?.Kill();
                     break;
             }
         }).AddTo(this);
     }
+
+    public void setOnRecordingEnd(Action onRecordingEnd) { this.onRecordingEnd = onRecordingEnd; }
 
     void Awake()
     {
@@ -74,6 +80,10 @@ public class MicrophoneController : MonoBehaviour
               .SetEase(Ease.Linear)
               .OnComplete(() =>
               {
+                  if (null != onRecordingEnd)
+                  {
+                      onRecordingEnd();
+                  }
                   bomb();
                   if (null != stateStream)
                   {
