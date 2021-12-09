@@ -39,9 +39,11 @@ public class RealmLevelListItem : MonoBehaviour
     public IndexedItem item;
 
 
+    public RealmForthDataConnect_SO dataSO;
 
     public void FourthMenu()
     {
+        dataSO.queue = item.item.queue;
         Navigation.Shared.menu.Value = Navigation.Menu.forth;
     }
 
@@ -64,7 +66,7 @@ public class RealmLevelListItem : MonoBehaviour
 
             Storage.GetImage(new Parcel(item.item.icon)).Subscribe(v =>
                   {
-
+                      if (iconImage == null) return;
                       try
                       {
                           iconImage.sprite = v;

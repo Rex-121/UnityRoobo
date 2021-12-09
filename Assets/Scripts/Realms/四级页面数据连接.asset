@@ -1,0 +1,5707 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dc3b55d28e5044dfada7308bf1d2e04, type: 3}
+  m_Name: "\u56DB\u7EA7\u9875\u9762\u6570\u636E\u8FDE\u63A5"
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: queue
+      Entry: 7
+      Data: 0|RoundQueue, Assembly-CSharp
+    - Name: rounds
+      Entry: 7
+      Data: 1|System.Collections.Generic.List`1[[Round, Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 23
+    - Name: 
+      Entry: 7
+      Data: 2|Round, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: "\u6233\u6CE1\u6CE1"
+    - Name: icon
+      Entry: 1
+      Data: 
+    - Name: id
+      Entry: 3
+      Data: 10415
+    - Name: displayMode
+      Entry: 3
+      Data: 2
+    - Name: pipeline
+      Entry: 3
+      Data: 2
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: playlist
+      Entry: 7
+      Data: 3|System.Collections.Generic.List`1[[RoundIsPlaying, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 7
+    - Name: 
+      Entry: 7
+      Data: 4|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 5|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 6|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 7|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 12
+    - Name: 
+      Entry: 7
+      Data: 8|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 9|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 10|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 11|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 12|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 13|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 14|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 15|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 16|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 17|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 18|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 19|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 8
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 20|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 21|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 22|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 23|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 12
+    - Name: 
+      Entry: 7
+      Data: 24|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 25|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 26|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 27|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 28|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 29|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 30|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 31|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 32|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 33|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 34|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 35|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 8
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 36|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 37|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 38|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 39|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 12
+    - Name: 
+      Entry: 7
+      Data: 40|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 41|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 42|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 43|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 44|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 45|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 46|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 47|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 48|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 49|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 50|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 51|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 8
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 52|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 53|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 54|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 55|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 12
+    - Name: 
+      Entry: 7
+      Data: 56|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 57|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 58|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 59|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 60|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 61|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 62|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 63|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 64|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 65|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 66|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 67|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 8
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 68|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 69|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 70|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 71|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 12
+    - Name: 
+      Entry: 7
+      Data: 72|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 73|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 74|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 75|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 76|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 77|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 78|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 79|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 80|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 81|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 82|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 83|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 8
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 84|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 85|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 86|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 87|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 12
+    - Name: 
+      Entry: 7
+      Data: 88|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 89|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 90|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 91|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 92|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 93|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 94|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 95|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 96|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 97|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 98|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 99|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 8
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 100|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 101|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 102|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 103|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 12
+    - Name: 
+      Entry: 7
+      Data: 104|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 105|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 106|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 107|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 108|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 109|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 110|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 111|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 112|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 113|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 114|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 115|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 8
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: pauseImage
+      Entry: 1
+      Data: https://roobo-test.oss-cn-beijing.aliyuncs.com/appcourse/manager/2021-11-18/c6b23cpc022lajeuu4r0.png
+    - Name: next
+      Entry: 7
+      Data: 116|Round, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: "\u9009\u62E9\u9898x3"
+    - Name: icon
+      Entry: 1
+      Data: https://roobo-test.oss-cn-beijing.aliyuncs.com/appcourse/manager/2021-09-14/c50579fs7bn07cn3usp0.png
+    - Name: id
+      Entry: 3
+      Data: 9487
+    - Name: displayMode
+      Entry: 3
+      Data: 2
+    - Name: pipeline
+      Entry: 3
+      Data: 1
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: playlist
+      Entry: 7
+      Data: 117|System.Collections.Generic.List`1[[RoundIsPlaying, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 9
+    - Name: 
+      Entry: 7
+      Data: 118|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 119|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 120|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 121|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 7
+      Data: 122|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 123|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 124|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 125|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 126|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 127|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 128|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 129|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 4
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 130|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 131|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 132|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 133|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 7
+      Data: 134|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 135|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 136|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 137|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 138|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 139|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 140|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 141|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 4
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 142|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 143|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 144|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 145|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 7
+      Data: 146|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 147|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 148|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 149|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 150|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 151|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 152|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 153|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 4
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 154|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 155|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 156|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 157|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 7
+      Data: 158|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 159|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 160|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 161|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 162|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 163|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 164|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 165|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 4
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 166|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 167|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 168|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 169|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 7
+      Data: 170|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 171|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 172|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 173|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 174|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 175|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 176|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 177|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 4
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 178|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 179|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 180|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 181|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 12
+    - Name: 
+      Entry: 7
+      Data: 182|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 183|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 184|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 185|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 186|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 187|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 188|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 189|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 190|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 191|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 192|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 193|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 8
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 194|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 195|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 196|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 197|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 12
+    - Name: 
+      Entry: 7
+      Data: 198|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 199|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 200|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 201|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 202|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 203|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 204|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 205|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 206|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 207|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 208|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 209|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 8
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 210|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 211|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 212|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 213|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 8
+    - Name: 
+      Entry: 7
+      Data: 214|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 215|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 216|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 217|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 218|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 219|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 220|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 221|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 4
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 222|PauseRound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 223|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 224|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 225|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 226|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 7
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: pauseImage
+      Entry: 1
+      Data: https://roobo-test.oss-cn-beijing.aliyuncs.com/appcourse/manager/2021-10-11/c5hu8ub6kbah432llc6g.png
+    - Name: next
+      Entry: 7
+      Data: 227|Round, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: "\u5B9A\u683C"
+    - Name: icon
+      Entry: 1
+      Data: 
+    - Name: id
+      Entry: 3
+      Data: 10860
+    - Name: displayMode
+      Entry: 3
+      Data: 2
+    - Name: pipeline
+      Entry: 3
+      Data: 2
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: playlist
+      Entry: 7
+      Data: 228|System.Collections.Generic.List`1[[RoundIsPlaying, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 229|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 230|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 231|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 232|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 12
+    - Name: 
+      Entry: 7
+      Data: 233|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 234|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 235|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 236|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 237|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 238|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 239|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 240|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 241|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 242|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 243|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 244|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 4
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 40
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: pauseImage
+      Entry: 1
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 9
+      Data: 116
+    - Name: 
+      Entry: 7
+      Data: 245|Round, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: "\u5B9A\u683C_copy"
+    - Name: icon
+      Entry: 1
+      Data: https://roobo-test.oss-cn-beijing.aliyuncs.com/appcourse/manager/2021-11-08/c64e9a7trgk007rnvong.png
+    - Name: id
+      Entry: 3
+      Data: 10476
+    - Name: displayMode
+      Entry: 3
+      Data: 0
+    - Name: pipeline
+      Entry: 3
+      Data: 2
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: playlist
+      Entry: 7
+      Data: 246|System.Collections.Generic.List`1[[RoundIsPlaying, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 247|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 248|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 249|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 250|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 12
+    - Name: 
+      Entry: 7
+      Data: 251|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 252|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 253|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 254|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 255|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 256|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 257|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 258|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 259|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 260|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 261|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 262|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 4
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: pauseImage
+      Entry: 1
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 263|Round, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: "\u62FC\u56FE"
+    - Name: icon
+      Entry: 1
+      Data: https://roobo-test.oss-cn-beijing.aliyuncs.com/appcourse/manager/2021-10-15/c5kjs8opjsa9p75btuvg.png
+    - Name: id
+      Entry: 3
+      Data: 10328
+    - Name: displayMode
+      Entry: 3
+      Data: 2
+    - Name: pipeline
+      Entry: 3
+      Data: 1
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: playlist
+      Entry: 7
+      Data: 264|System.Collections.Generic.List`1[[RoundIsPlaying, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 265|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 266|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 267|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 268|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 7
+    - Name: 
+      Entry: 7
+      Data: 269|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 270|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 271|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 272|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 273|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 274|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 275|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 276|PauseRound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 277|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 278|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 279|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 280|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 7
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: pauseImage
+      Entry: 1
+      Data: https://roobo-test.oss-cn-beijing.aliyuncs.com/appcourse/manager/2021-11-05/c62dq4bi8ddao0d7kn60.png
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 281|Round, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: "\u8FDE\u7EBF"
+    - Name: icon
+      Entry: 1
+      Data: 
+    - Name: id
+      Entry: 3
+      Data: 10291
+    - Name: displayMode
+      Entry: 3
+      Data: 1
+    - Name: pipeline
+      Entry: 3
+      Data: 2
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: playlist
+      Entry: 7
+      Data: 282|System.Collections.Generic.List`1[[RoundIsPlaying, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 283|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 284|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 285|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 286|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 7
+      Data: 287|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 288|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 289|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 290|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 291|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 292|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 3
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 293|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 294|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 295|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 296|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 7
+      Data: 297|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 298|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 299|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 300|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 301|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 302|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 3
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: pauseImage
+      Entry: 1
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 303|Round, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: "\u56FE\u7247\u70B9\u8BFB\u9898"
+    - Name: icon
+      Entry: 1
+      Data: 
+    - Name: id
+      Entry: 3
+      Data: 9462
+    - Name: displayMode
+      Entry: 3
+      Data: 2
+    - Name: pipeline
+      Entry: 3
+      Data: 0
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: playlist
+      Entry: 7
+      Data: 304|System.Collections.Generic.List`1[[RoundIsPlaying, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 305|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 306|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 307|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 308|Newtonsoft.Json.Linq.JArray, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 309|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 310|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 311|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 312|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 313|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 314|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 315|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 316|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 317|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 318|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 319|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 320|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 321|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 322|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 323|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 324|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 325|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 326|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 327|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 328|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 329|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 330|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 331|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 332|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 333|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 334|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 335|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 336|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 337|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 338|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: pauseImage
+      Entry: 1
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 339|Round, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: "\u89C6\u9891\u70B9\u8BFB\u9898_copy"
+    - Name: icon
+      Entry: 1
+      Data: 
+    - Name: id
+      Entry: 3
+      Data: 9660
+    - Name: displayMode
+      Entry: 3
+      Data: 2
+    - Name: pipeline
+      Entry: 3
+      Data: 0
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: playlist
+      Entry: 7
+      Data: 340|System.Collections.Generic.List`1[[RoundIsPlaying, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 341|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 342|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 343|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 344|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 345|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 346|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 347|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 4
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 348|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 349|Newtonsoft.Json.Linq.JArray, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 350|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 351|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 352|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 353|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 354|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 355|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 356|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 357|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 358|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 359|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 360|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 361|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 9
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 362|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 363|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 12
+    - Name: 
+      Entry: 7
+      Data: 364|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 365|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 366|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 367|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 368|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 369|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 370|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 371|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 372|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 373|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 374|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 375|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 8
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 15
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: pauseImage
+      Entry: 1
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 376|Round, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: "\u97F3\u9009\u56FE3\u6837\u677F"
+    - Name: icon
+      Entry: 1
+      Data: 
+    - Name: id
+      Entry: 3
+      Data: 9929
+    - Name: displayMode
+      Entry: 3
+      Data: 2
+    - Name: pipeline
+      Entry: 3
+      Data: 0
+    - Name: type
+      Entry: 3
+      Data: 3
+    - Name: playlist
+      Entry: 7
+      Data: 377|System.Collections.Generic.List`1[[RoundIsPlaying, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: pauseImage
+      Entry: 1
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 378|Round, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: "\u590D\u4E60"
+    - Name: icon
+      Entry: 1
+      Data: 
+    - Name: id
+      Entry: 3
+      Data: 9930
+    - Name: displayMode
+      Entry: 3
+      Data: 2
+    - Name: pipeline
+      Entry: 3
+      Data: 2
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: playlist
+      Entry: 7
+      Data: 379|System.Collections.Generic.List`1[[RoundIsPlaying, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 380|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 381|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 382|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 383|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 384|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 385|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 386|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 387|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 388|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: pauseImage
+      Entry: 1
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 389|Round, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: "\u6CE2\u70B9"
+    - Name: icon
+      Entry: 1
+      Data: 
+    - Name: id
+      Entry: 3
+      Data: 9964
+    - Name: displayMode
+      Entry: 3
+      Data: 2
+    - Name: pipeline
+      Entry: 3
+      Data: 2
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: playlist
+      Entry: 7
+      Data: 390|System.Collections.Generic.List`1[[RoundIsPlaying, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 391|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 392|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 393|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 394|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 6
+    - Name: 
+      Entry: 7
+      Data: 395|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 396|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 397|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 398|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 399|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 400|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: pauseImage
+      Entry: 1
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 401|Round, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: "\u56FE\u7247\u8DDF\u8BFB"
+    - Name: icon
+      Entry: 1
+      Data: 
+    - Name: id
+      Entry: 3
+      Data: 10398
+    - Name: displayMode
+      Entry: 3
+      Data: 2
+    - Name: pipeline
+      Entry: 3
+      Data: 2
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: playlist
+      Entry: 7
+      Data: 402|System.Collections.Generic.List`1[[RoundIsPlaying, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 403|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 404|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 405|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 406|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 407|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 408|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 409|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: pauseImage
+      Entry: 1
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 410|Round, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: "\u6392\u5E8F"
+    - Name: icon
+      Entry: 1
+      Data: 
+    - Name: id
+      Entry: 3
+      Data: 10261
+    - Name: displayMode
+      Entry: 3
+      Data: 1
+    - Name: pipeline
+      Entry: 3
+      Data: 2
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: playlist
+      Entry: 7
+      Data: 411|System.Collections.Generic.List`1[[RoundIsPlaying, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 412|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 413|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 414|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 415|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 7
+    - Name: 
+      Entry: 7
+      Data: 416|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 417|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 418|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 419|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 420|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 421|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 422|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: pauseImage
+      Entry: 1
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 423|Round, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: "\u7F8E\u672F\u542C\u97F3\u9009\u97F3"
+    - Name: icon
+      Entry: 1
+      Data: 
+    - Name: id
+      Entry: 3
+      Data: 10135
+    - Name: displayMode
+      Entry: 3
+      Data: 2
+    - Name: pipeline
+      Entry: 3
+      Data: 2
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: playlist
+      Entry: 7
+      Data: 424|System.Collections.Generic.List`1[[RoundIsPlaying, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 425|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 426|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 427|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 428|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 12
+    - Name: 
+      Entry: 7
+      Data: 429|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 430|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 431|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 432|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 433|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 434|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 435|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 436|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 437|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 438|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 439|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 440|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 8
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: pauseImage
+      Entry: 1
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 441|Round, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: "\u5B9A\u683C"
+    - Name: icon
+      Entry: 1
+      Data: 
+    - Name: id
+      Entry: 3
+      Data: 10438
+    - Name: displayMode
+      Entry: 3
+      Data: 2
+    - Name: pipeline
+      Entry: 3
+      Data: 0
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: playlist
+      Entry: 7
+      Data: 442|System.Collections.Generic.List`1[[RoundIsPlaying, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 443|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 444|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 445|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 446|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 12
+    - Name: 
+      Entry: 7
+      Data: 447|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 448|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 449|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 450|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 451|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 452|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 453|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 454|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 455|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 456|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 457|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 458|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 4
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 7
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: pauseImage
+      Entry: 1
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 459|Round, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: "\u7F8E\u672F\u542C\u97F3\u9009\u56FE"
+    - Name: icon
+      Entry: 1
+      Data: 
+    - Name: id
+      Entry: 3
+      Data: 10142
+    - Name: displayMode
+      Entry: 3
+      Data: 2
+    - Name: pipeline
+      Entry: 3
+      Data: 1
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: playlist
+      Entry: 7
+      Data: 460|System.Collections.Generic.List`1[[RoundIsPlaying, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 461|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 462|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 463|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 464|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 12
+    - Name: 
+      Entry: 7
+      Data: 465|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 466|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 467|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 468|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 469|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 470|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 471|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 472|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 473|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 474|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 475|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 476|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 8
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 477|PauseRound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 478|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 479|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 480|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 481|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 7
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: pauseImage
+      Entry: 1
+      Data: https://roobo-test.oss-cn-beijing.aliyuncs.com/appcourse/manager/2021-11-05/c62dogji8ddao0d7kkog.png
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 482|Round, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: "\u5B9A\u683C\u52A8\u753B2"
+    - Name: icon
+      Entry: 1
+      Data: 
+    - Name: id
+      Entry: 3
+      Data: 10468
+    - Name: displayMode
+      Entry: 3
+      Data: 2
+    - Name: pipeline
+      Entry: 3
+      Data: 2
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: playlist
+      Entry: 7
+      Data: 483|System.Collections.Generic.List`1[[RoundIsPlaying, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 484|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 485|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 486|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 487|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 12
+    - Name: 
+      Entry: 7
+      Data: 488|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 489|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 490|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 491|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 492|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 493|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 494|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 495|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 496|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 497|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 498|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 499|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 4
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: pauseImage
+      Entry: 1
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 500|Round, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: "AI\u63CF\u753B"
+    - Name: icon
+      Entry: 1
+      Data: 
+    - Name: id
+      Entry: 3
+      Data: 10466
+    - Name: displayMode
+      Entry: 3
+      Data: 2
+    - Name: pipeline
+      Entry: 3
+      Data: 2
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: playlist
+      Entry: 7
+      Data: 501|System.Collections.Generic.List`1[[RoundIsPlaying, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 502|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 503|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 504|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 505|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 7
+    - Name: 
+      Entry: 7
+      Data: 506|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 507|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 508|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 509|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 510|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 511|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 512|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: pauseImage
+      Entry: 1
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 513|Round, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: test
+    - Name: icon
+      Entry: 1
+      Data: 
+    - Name: id
+      Entry: 3
+      Data: 10454
+    - Name: displayMode
+      Entry: 3
+      Data: 2
+    - Name: pipeline
+      Entry: 3
+      Data: 2
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: playlist
+      Entry: 7
+      Data: 514|System.Collections.Generic.List`1[[RoundIsPlaying, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 515|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 516|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: pauseImage
+      Entry: 1
+      Data: https://roobo-test.oss-cn-beijing.aliyuncs.com/appcourse/manager/2021-11-05/c62dpfji8ddao0d7klt0.png
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 517|Round, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: test1
+    - Name: icon
+      Entry: 1
+      Data: https://roobo-test.oss-cn-beijing.aliyuncs.com/appcourse/manager/2021-11-05/c62dprbi8ddao0d7km90.png
+    - Name: id
+      Entry: 3
+      Data: 10455
+    - Name: displayMode
+      Entry: 3
+      Data: 2
+    - Name: pipeline
+      Entry: 3
+      Data: 0
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: playlist
+      Entry: 7
+      Data: 518|System.Collections.Generic.List`1[[RoundIsPlaying, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 519|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 520|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: pauseImage
+      Entry: 1
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 521|Round, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: "\u70B9\u8BFB\u8DDF\u8BFB"
+    - Name: icon
+      Entry: 1
+      Data: 
+    - Name: id
+      Entry: 3
+      Data: 10696
+    - Name: displayMode
+      Entry: 3
+      Data: 2
+    - Name: pipeline
+      Entry: 3
+      Data: 2
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: playlist
+      Entry: 7
+      Data: 522|System.Collections.Generic.List`1[[RoundIsPlaying, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 523|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 524|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 525|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 526|Newtonsoft.Json.Linq.JArray, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 527|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 528|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 529|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 530|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 531|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 532|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 533|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 534|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 535|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 536|Newtonsoft.Json.Linq.JArray, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 537|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 538|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 539|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 540|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 541|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 542|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 543|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 544|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 545|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 546|Newtonsoft.Json.Linq.JArray, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 547|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 548|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 549|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 550|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 551|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 552|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 553|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 554|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 555|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 556|Newtonsoft.Json.Linq.JArray, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 557|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 558|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 559|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 560|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 561|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 562|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 0
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: pauseImage
+      Entry: 1
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 563|Round, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: "\u5B9A\u683C\u56FE\u7247"
+    - Name: icon
+      Entry: 1
+      Data: 
+    - Name: id
+      Entry: 3
+      Data: 10719
+    - Name: displayMode
+      Entry: 3
+      Data: 2
+    - Name: pipeline
+      Entry: 3
+      Data: 2
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: playlist
+      Entry: 7
+      Data: 564|System.Collections.Generic.List`1[[RoundIsPlaying, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 565|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 566|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 567|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 568|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 12
+    - Name: 
+      Entry: 7
+      Data: 569|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 570|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 571|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 572|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 573|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 574|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 575|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 576|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 577|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 578|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 579|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 580|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 4
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: pauseImage
+      Entry: 1
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 581|Round, Assembly-CSharp
+    - Name: name
+      Entry: 1
+      Data: "\u82B1\u74E3\u9009\u62E9"
+    - Name: icon
+      Entry: 1
+      Data: 
+    - Name: id
+      Entry: 3
+      Data: 10859
+    - Name: displayMode
+      Entry: 3
+      Data: 2
+    - Name: pipeline
+      Entry: 3
+      Data: 2
+    - Name: type
+      Entry: 3
+      Data: 1
+    - Name: playlist
+      Entry: 7
+      Data: 582|System.Collections.Generic.List`1[[RoundIsPlaying, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 583|ARound, Assembly-CSharp
+    - Name: process
+      Entry: 7
+      Data: 584|System.Collections.Generic.List`1[[CW_OriginContent, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 585|CW_OriginContent, Assembly-CSharp
+    - Name: content
+      Entry: 7
+      Data: 586|Newtonsoft.Json.Linq.JObject, Newtonsoft.Json
+    - Name: 
+      Entry: 12
+      Data: 12
+    - Name: 
+      Entry: 7
+      Data: 587|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 588|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 589|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 590|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 591|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 592|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 593|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 594|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 595|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 596|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 597|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 598|Newtonsoft.Json.Linq.JProperty, Newtonsoft.Json
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: type
+      Entry: 3
+      Data: 8
+    - Name: joint
+      Entry: 7
+      Data: CW_OriginContent+Joint, Assembly-CSharp
+    - Name: at
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: previous
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: pauseImage
+      Entry: 1
+      Data: 
+    - Name: next
+      Entry: 6
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 9
+      Data: 227
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: round
+      Entry: 9
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
