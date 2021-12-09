@@ -52,11 +52,12 @@ public class PoemManager : CoursewarePlayer
     public Image cursor;
     [Required]
     public MicrophoneController microphoneController;
+    [Required]
+    public Pudding pudding;
     private BehaviorSubject<MicrophoneState> microphoneStateStream = new BehaviorSubject<MicrophoneState>(MicrophoneState.DISABLE);
     private BehaviorSubject<PoemBean> poemTextStream = new BehaviorSubject<PoemBean>(null);
     private IDisposable poemTextStatusDisposable;
     private IDisposable poemPlayDisposable;
-    private ContentPlayer contentPlayer;
 
     public void setData(Data data)
     {
@@ -90,14 +91,19 @@ public class PoemManager : CoursewarePlayer
     // Start is called before the first frame update
     void Start()
     {
-        contentPlayer = GetComponent<ContentPlayer>();
         FPS.Shared.LockFrame();
         CreatePoemClickEvents();
+        canvas.worldCamera = Camera.main;
+        pudding.Do(PuddingAction.starMagic);
     }
 
     private void setupMicrophone()
     {
         microphoneController.setStateStream(microphoneStateStream);
+        microphoneController.setOnRecordingEnd(() =>
+        {
+            pudding.Do(PuddingAction.starHappy);
+        });
     }
 
     private void CreatePoemClickEvents()
@@ -154,7 +160,7 @@ public class PoemManager : CoursewarePlayer
             //麦克风录音动画
             microphoneController.recordDuration = data.list[index].waiting;
             microphoneStateStream.OnNext(MicrophoneState.RECORDING);
-            
+
             poemTextStatusDisposable = Observable.Timer(TimeSpan.FromSeconds(data.list[index].waiting)).Subscribe((_) =>
             {
 
@@ -168,7 +174,8 @@ public class PoemManager : CoursewarePlayer
     //播放整诗
     private void playPoem(int start)
     {
-        if (start >= data.list.Count) {
+        if (start >= data.list.Count)
+        {
             Logging.Log("whole poem play finish~");
             //诗句动画
             data.list[0].poemTextStatus = PoemTextStatus.NORMAL;
@@ -184,25 +191,25 @@ public class PoemManager : CoursewarePlayer
         poemTextStream.OnNext(data.list[start]);
         cursorMoveTo(start, true);
 
-        playPoem(start, (index)=> {
-            playPoem(index+1);
+        playPoem(start, (index) =>
+        {
+            playPoem(index + 1);
         });
     }
 
     private void playPoem(int index, Action<int> then)
     {
-        contentPlayer.PlayContentByType(data.list[index].audio, "audio");
+        pudding.Speak(data.list[index].audio, "audio");
 
         poemPlayDisposable?.Dispose();
-        contentPlayer.status = new ReactiveProperty<PlayerEvent>();
-        poemPlayDisposable=contentPlayer.status.Subscribe((status) =>
-        {
-            Logging.Log("content player status:" + status);
-            if (status == PlayerEvent.finish)
-            {
-                then(index);
-            }
-        }).AddTo(this);
+        poemPlayDisposable = pudding.speakStatus.Subscribe((status) =>
+          {
+              Logging.Log("content player status:" + status);
+              if (status == PlayerEvent.finish)
+              {
+                  then(index);
+              }
+          }).AddTo(this);
     }
 
     private void closeScroll()
@@ -221,16 +228,17 @@ public class PoemManager : CoursewarePlayer
         }).AddTo(this);
     }
 
-     void OnDestroy()
+    void OnDestroy()
     {
         stopAll();
     }
 
-    private void stopAll() {
+    private void stopAll()
+    {
         //麦克风录音动画
         microphoneStateStream.OnNext(MicrophoneState.DISABLE);
 
-        contentPlayer?.Stop();
+        pudding?.StopSpeaking();
         poemPlayDisposable?.Dispose();
         poemTextStatusDisposable?.Dispose();
     }

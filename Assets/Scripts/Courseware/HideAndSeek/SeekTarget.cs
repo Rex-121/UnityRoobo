@@ -44,21 +44,35 @@ public class SeekTarget : MonoBehaviour
             starBomb.SetActive(true);
             starBomb.transform.localScale = new Vector3(getStarBombScale(), getStarBombScale(), 1);
         }
+        //Observable
+        //    .Timer(TimeSpan.FromSeconds(audioSource.clip.length))
+        //    .Subscribe((t) =>
+        //    {
+        //        contentPlayer.PlayContentByType(audioUrl, "audio");
+        //        contentPlayer.status.Subscribe((status) =>
+        //        {
+        //            if (status == PlayerEvent.finish)
+        //            {
+        //                if (null != onEnd)
+        //                {
+        //                    onEnd();
+        //                }
+        //            }
+        //        });
+        //    });
         Observable
-            .Timer(TimeSpan.FromSeconds(audioSource.clip.length))
-            .Subscribe((t) =>
-            {
-                contentPlayer.PlayContentByType(audioUrl, "audio");
-                contentPlayer.status.Subscribe((status) =>
-                {
-                    if (status == PlayerEvent.finish)
-                    {
-                        if (null != onEnd)
-                        {
-                            onEnd();
-                        }
-                    }
-                });
-            });
+          .Timer(TimeSpan.FromSeconds(audioSource.clip.length))
+          .Select(_ => { contentPlayer.PlayContentByType(audioUrl, "audio"); return 0; })
+          .ContinueWith(contentPlayer.status)
+          .Subscribe((t) =>
+          {
+              if (t == PlayerEvent.finish)
+              {
+                  if (null != onEnd)
+                  {
+                      onEnd();
+                  }
+              }
+          }).AddTo(this);
     }
 }

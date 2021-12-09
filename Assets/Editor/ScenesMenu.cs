@@ -2,6 +2,8 @@
 using UnityEditor;
 public static class ScenesMenu
 {
+    [MenuItem("切换场景/AdvancedOralEvaluate", priority = 10)]
+    public static void Assets_Scenes_AdvancedOralEvaluate_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/AdvancedOralEvaluate.unity"); }
     [MenuItem("切换场景/AIDrawScene", priority = 10)]
     public static void Assets_Scenes_AIDrawScene_unity() { ScenesMenuBuild.OpenScene("Assets/Scenes/AIDrawScene.unity"); }
     [MenuItem("切换场景/ContentPlayerDemo", priority = 10)]
