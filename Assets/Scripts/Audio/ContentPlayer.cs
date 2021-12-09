@@ -17,7 +17,7 @@ public class ContentPlayer: MonoBehaviour
     System.IDisposable disposable;
     bool isPlaying = false;
 
-    public void Start()
+    private void Awake()
     {
         var bridge = FindObjectOfType<NativeBridgeListener>();
         if (bridge == null)
@@ -28,6 +28,12 @@ public class ContentPlayer: MonoBehaviour
 
         player = GetComponent<AudioSource>();
         //initSvui();
+    }
+
+
+    public void Start()
+    {
+        
     }
 
     public void Update()
