@@ -12,8 +12,6 @@ using UnityEngine.UI;
 public class RealmsEntrance : MonoBehaviour
 {
 
-    ReactiveProperty<float> progress = new ReactiveProperty<float>();
-
     [LabelText("一级页面")]
     public Transform index;
 
@@ -28,19 +26,6 @@ public class RealmsEntrance : MonoBehaviour
 
     private void Start()
     {
-        FPS.Shared.LockFrame();
-
-        progress.Select(v=>v.ToString("0")).Distinct().Subscribe(value =>
-        {
-            Logging.Log("SampleScene 加载 " + value);
-        }).AddTo(this);
-
-        progress.Where(v => v >= 1).Take(1).Subscribe(value =>
-        {
-            Logging.Log("SampleScene 加载完成");
-        }).AddTo(this);
-
-        Observable.EveryEndOfFrame().Take(1).SelectMany(Observable.FromCoroutine(LoadSceneAsync)).Subscribe().AddTo(this);
 
         Navigation.Shared.menu.Subscribe(menu =>
         {
@@ -49,6 +34,8 @@ public class RealmsEntrance : MonoBehaviour
             third.gameObject.SetActive(menu == Navigation.Menu.third);
             forth.gameObject.SetActive(menu == Navigation.Menu.forth);
         }).AddTo(this);
+
+        Navigation.Shared.CurrentScene(Navigation.Scene.Realm);
 
     }
 
@@ -77,37 +64,6 @@ public class RealmsEntrance : MonoBehaviour
 
         Navigation.Shared.选择菜单(Navigation.Menu.secondary);
     }
-
-    public void LoadCWScene()
-    {
-        async.allowSceneActivation = true;
-    }
-
-    AsyncOperation async;
-
-    IEnumerator LoadSceneAsync()
-    {
-        Stopwatch sw = new Stopwatch();
-
-        sw.Start();
-        async = SceneManager.LoadSceneAsync("Courseware", LoadSceneMode.Single);
-
-        async.allowSceneActivation = false;
-
-        while (async.progress < 0.9f)
-        {
-            progress.Value = async.progress;
-            yield return new WaitForEndOfFrame();
-        }
-
-        progress.Value = 1;
-
-        sw.Stop();
-
-        Logging.Log("加载完成 " + sw.ElapsedMilliseconds + "ms");
-    }
-
-
 
     /// <summary>
     /// 打开设置页面

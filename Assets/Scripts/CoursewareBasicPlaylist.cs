@@ -59,15 +59,28 @@ public class CoursewareBasicPlaylist : SerializedMonoBehaviour
     {
         GetComponent<CoursewareRoundingList>().round
             .Where(round => round != null)
-            .Where(round => SupportRountType(round.type))
+            //.Where(round => SupportRountType(round.type))
             .Subscribe(round =>
             {
-                this.round = round;
+                RoundDidNeedChange(round);
+                //this.round = round;
             }).AddTo(this);
     }
 
+    public virtual void RoundDidNeedChange(RoundIsPlaying round)
+    {
 
-    public virtual void RoundDidLoaded(RoundIsPlaying round) { }
+        if (SupportRountType(round.type))
+        {
+            RoundDidLoaded(round);
+        }
+    }
+
+
+    public virtual void RoundDidLoaded(RoundIsPlaying round)
+    {
+        this.round = round;
+    }
 
 
     public virtual bool SupportRountType(RoundIsPlaying.Type roundType) { return false; }
@@ -90,11 +103,11 @@ public class CoursewareBasicPlaylist : SerializedMonoBehaviour
         /// 将题型组装
         var leading = MergeRoundProcess(all);
 
-        
+
 
         playlist = leading.next;
 
-        RoundDidLoaded(round);
+        //RoundDidLoaded(round);
         //playlist.previous = null;
 
     }

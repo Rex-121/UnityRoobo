@@ -22,13 +22,21 @@ public class CoursewarePlaylist : CoursewareBasicPlaylist
     //    //roundControl.round.Where(v => v != null).Where(v => v.type != RoundIsPlaying.Type.picture).Subscribe(_ => ClearStage()).AddTo(this);
     //}
 
+    public override void RoundDidNeedChange(RoundIsPlaying round)
+    {
+
+        Logging.Log("round type--------" + round.type);
+        spriteRendener.gameObject.SetActive(round.type == RoundIsPlaying.Type.picture);
+
+        base.RoundDidNeedChange(round);
+
+    }
+
     public override void RoundDidChanged()
     {
         base.RoundDidChanged();
 
-        Logging.Log("房间里嘎多------f" + round.type);
-
-        spriteRendener.gameObject.SetActive(true);
+        //spriteRendener.gameObject.SetActive(true);
 
         d?.Dispose();
 
@@ -58,11 +66,8 @@ public class CoursewarePlaylist : CoursewareBasicPlaylist
 
     public override void ClearStage()
     {
-
-        Logging.Log("房间里嘎多");
-
         spriteRendener.gameObject.SetActive(false);
-        Logging.Log("房间里嘎多ffff");
+
         base.ClearStage();
     }
 

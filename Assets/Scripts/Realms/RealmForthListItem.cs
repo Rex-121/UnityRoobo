@@ -37,7 +37,7 @@ public class RealmForthListItem : MonoBehaviour
 
     public void EnterCourseware()
     {
-        SceneManager.LoadScene("Courseware");
+        RealmNavigation.instance.LoadCWScene();
     }
 
     private void OnDisable()

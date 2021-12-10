@@ -717,20 +717,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
+    SerializedFormat: 0
+    SerializedBytes: 2d010e000000630072006500640069007400440065006c00650067006100740065002d01100000006c00690066006500740069006d006500440065006c0065006700610074006500
     ReferencedUnityObjects: []
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes:
-    - Name: creditDelegate
-      Entry: 6
-      Data: 
-    - Name: lifetimeDelegate
-      Entry: 6
-      Data: 
+    SerializationNodes: []
   cwCanvas: {fileID: 0}
   canvas: {fileID: 5038265419305979656}
   leftScroll: {fileID: 5038265417480886032}

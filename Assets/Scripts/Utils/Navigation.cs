@@ -1,10 +1,29 @@
 using UnityEngine;
 using UniRx;
 using Sirenix.OdinInspector;
+using System;
 
 [CreateAssetMenu(fileName = "导航", menuName = "单例SO/导航")]
 public class Navigation : SingletonSO<Navigation>
 {
+
+    public enum Scene
+    {
+        Realm, Courseware
+    }
+
+    public void CurrentScene(Scene value)
+    {
+        scene.Value = value;
+    }
+
+    [HideInInspector]
+    ReactiveProperty<Scene> scene = new ReactiveProperty<Scene>(Scene.Realm);
+
+    public IObservable<Scene> sceneRx
+    {
+        get { return scene; }
+    }
 
     [HideInInspector]
     public ReactiveProperty<Menu> menu = new ReactiveProperty<Menu>(Menu.index);
@@ -20,14 +39,6 @@ public class Navigation : SingletonSO<Navigation>
         set
         {
             _classCategory = value;
-            //if (_classCategory == null)
-            //{
-            //    menu.Value = Menu.secondary;
-            //}
-            //else
-            //{
-            //    menu.Value = Menu.third;
-            //}
         }
 
         get { return _classCategory; }
@@ -47,7 +58,7 @@ public class Navigation : SingletonSO<Navigation>
             }
             else
             {
-                
+
                 classType.Value = _currentType.type;
             }
         }
@@ -85,7 +96,6 @@ public class Navigation : SingletonSO<Navigation>
 
     public void Start()
     {
-        //classType = new ReactiveProperty<ClassSubject.Type?>();
         classCategory = null;
         currentSubject = null;
     }

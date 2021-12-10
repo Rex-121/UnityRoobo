@@ -23,7 +23,7 @@ public class CoursewareRoundingList : SerializedMonoBehaviour
     {
         if (rounding.next == null)
         {
-            SceneManager.LoadScene("Realm");
+            RealmNavigation.instance.LoadCWScene();
             return;
         }
 

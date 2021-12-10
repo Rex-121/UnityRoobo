@@ -30,6 +30,8 @@ public class CoursewareVideoPlaylist : CoursewareBasicPlaylist
 
     public override void RoundDidLoaded(RoundIsPlaying round)
     {
+        base.RoundDidLoaded(round);
+
         passed.Clear();
 
         videoPlayer.gameObject.SetActive(true);
@@ -53,15 +55,10 @@ public class CoursewareVideoPlaylist : CoursewareBasicPlaylist
 
     public override void Next()
     {
-        Logging.Log(videoPlayer.Control.IsPaused());
 
-        Logging.Log("replay");
 
         Observable.EveryEndOfFrame().Take(1).Subscribe(_ => videoPlayer.Play());
 
-        //videoPlayer.Play();
-
-        //Observable.EveryLateUpdate().Take(1).Subscribe(_ => videoPlayer.Play()).AddTo(this);
     }
 
     void Update()
@@ -87,6 +84,7 @@ public class CoursewareVideoPlaylist : CoursewareBasicPlaylist
 
         if (pass) return;
 
+        if (playlist == null) return;
 
         var find = playlist.FindAt(time);
 

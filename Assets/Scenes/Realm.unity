@@ -4618,6 +4618,7 @@ GameObject:
   - component: {fileID: 1396498495}
   - component: {fileID: 1396498494}
   - component: {fileID: 1396498498}
+  - component: {fileID: 1396498499}
   m_Layer: 5
   m_Name: "\u83DC\u5355"
   m_TagString: Untagged
@@ -4726,6 +4727,19 @@ MonoBehaviour:
   sencondry: {fileID: 81739984}
   third: {fileID: 97643359}
   forth: {fileID: 304220716}
+--- !u!114 &1396498499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396498493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07dc7567f040f402c8eb3fcb72db5901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  needLoadScene: 1
 --- !u!1 &1398683672
 GameObject:
   m_ObjectHideFlags: 0

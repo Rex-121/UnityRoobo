@@ -47,17 +47,11 @@ public class CoursewareManager : MonoBehaviour
     void Start()
     {
 
-
-        FPS.Shared.LockFrame();
-
         playlist.coursewareRx.Merge(videoPlaylist.coursewareRx).Where(v => v != null).Subscribe(so =>
          {
              Logging.Log("需要播放课程" + so);
              PlayCourseware(so);
          }).AddTo(this);
-
-
-
 
         Observable.EveryEndOfFrame().Take(1)
             .Subscribe(_ => GetDataFromSO()).AddTo(this);
