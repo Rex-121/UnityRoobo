@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UniRx;
 
 /// <summary>
 /// 图片选择题
@@ -22,6 +23,8 @@ public class CW_PictureBoardChoice : CoursewarePlayer
 
     public CW_PictureChoice_Carried_SO mCarrierImage;
 
+    private System.IDisposable mSingleDisposable;
+
     /// <summary>
     /// 初始化数据
     /// </summary>
@@ -37,15 +40,88 @@ public class CW_PictureBoardChoice : CoursewarePlayer
         entity.options.ForEach(a=> {
             var contentObject = Instantiate(mContentPrafeb, mContentGrid.transform);
             SingleContentScript singleContent=contentObject.GetComponent<SingleContentScript>();
-            singleContent.InitSingleOptions(a, entity.style, new System.Action<bool>(result=> {
-                if (result)
+            singleContent.InitSingleOptions(a, entity.style, new System.Action<CW_PictrueBoardChoice_SO.PictureBoardEntity.Option>(option=> {
+                if (mSingleDisposable != null)
                 {
-                    mContentPlayer.PlayContentByType(entity.rightFeedback.content, entity.rightFeedback.type);
+                    mSingleDisposable.Dispose();
+                }
+                if (string.IsNullOrEmpty(option.audio))
+                {
+                    var result = option.isAnswer == 1;
+                    if (result)
+                    {
+                        if(entity.rightFeedback!=null)
+                        {
+                            mContentPlayer.PlayContentByType(entity.rightFeedback.content, entity.rightFeedback.type);
+                        }
+                    }
+                    else
+                    {
+                        if (entity.errorFeedback != null)
+                        {
+                            mContentPlayer.PlayContentByType(entity.errorFeedback.content, entity.errorFeedback.type);
+                        }
+                    }
+                    mSingleDisposable = mContentPlayer.status.Skip(1).Subscribe(status => {
+                        if (status == PlayerEvent.finish)
+                        {
+                            var result = option.isAnswer == 1;
+                            if (result)
+                            {
+                                Debug.Log("CW_PictureBoardChoice  PlayerEvent.finish");
+                                creditDelegate.PlayCreditOnScreen(new Score(), () => {
+                                    Debug.Log("CW_PictureBoardChoice  PlayCreditOnScreen");
+                                    DidEndCourseware(this);
+                                });
+                            }
+                        }
+
+                    }).AddTo(this);
                 }
                 else
                 {
-                    mContentPlayer.PlayContentByType(entity.errorFeedback.content, entity.errorFeedback.type);
+                    //播放对应音频
+                    mContentPlayer.PlayURL(option.audio);
+                    //监听状态播放反馈结果
+                    mSingleDisposable = mContentPlayer.status.Skip(1).Subscribe(status => {
+                        if (status == PlayerEvent.finish)
+                        {
+                            var result = option.isAnswer == 1;
+                            if (result)
+                            {
+                                if (entity.rightFeedback != null)
+                                {
+                                    mContentPlayer.PlayContentByType(entity.rightFeedback.content, entity.rightFeedback.type);
+                                }
+                            }
+                            else
+                            {
+                                if (entity.errorFeedback != null)
+                                {
+                                    mContentPlayer.PlayContentByType(entity.errorFeedback.content, entity.errorFeedback.type);
+                                }
+                            }
+                            mSingleDisposable = mContentPlayer.status.Skip(1).Subscribe(status => {
+                                if (status == PlayerEvent.finish)
+                                {
+                                    var result = option.isAnswer == 1;
+                                    if (result)
+                                    {
+                                        Debug.Log("CW_PictureBoardChoice  PlayerEvent.finish");
+                                        creditDelegate.PlayCreditOnScreen(new Score(), () => {
+                                            Debug.Log("CW_PictureBoardChoice  PlayCreditOnScreen");
+                                            DidEndCourseware(this);
+                                        });
+                                    }
+                                }
+
+                            }).AddTo(this);
+
+                        }
+
+                    }).AddTo(this);
                 }
+                
             }) );
             InitGridSpacing(entity);
         });

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UniRx;
+using System;
 
 /// <summary>
 /// 音频播放控制
@@ -40,7 +41,7 @@ public class AudioControlScript : MonoBehaviour
     /// 初始化音频播放信息
     /// </summary>
     /// <param name="freezeEntity"></param>
-    public void InitAudioAndPlayType(CW_Freeze_SO.FreezeEntity freezeEntity,System.Action<PlayerEvent> callback=null)
+    public void InitAudioAndPlayType(CW_Freeze_SO.FreezeEntity freezeEntity,System.Action<Tuple<PlayerEvent, bool>> callback=null)
     {
         var showHidePlay = freezeEntity.isRepeat;
         mPlayPauseImage.gameObject.SetActive(showHidePlay);
@@ -98,7 +99,8 @@ public class AudioControlScript : MonoBehaviour
                 InitPlayPauseImage(true);
             }
             if (callback!=null) {
-                callback(v);
+                var pair = new Tuple<PlayerEvent,bool>(v,mIsLoop);
+                callback(pair);
             }
         }).AddTo(this);
     }

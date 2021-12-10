@@ -25,6 +25,7 @@ public class CW_PictrueBoardChoice_SO : CoursewarePlayer_SO
 
     public class PictureBoardEntity {
 
+        public string optionType;
         public TemplateType templateType;
         public List<Option> options;
         public Question question;
@@ -41,9 +42,11 @@ public class CW_PictrueBoardChoice_SO : CoursewarePlayer_SO
 
         public class Option
         {
+            public string audio;//url类型
             public string content;
             public string id;
             public int isAnswer;
+            public bool playing;
         }
 
         public class Question

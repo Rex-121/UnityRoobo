@@ -15,6 +15,12 @@ public class CW_PictureChoice_Carried_SO : SerializedScriptableObject
         [LabelText("遮罩边框图片"), PreviewField(Height = 50)]
         public Sprite mask;
 
+        [LabelText("圆角遮罩边框图片"), PreviewField(Height = 50)]
+        public Sprite roundMask;
+
+        [LabelText("圆角遮罩边框颜色")]
+        public Color roundMaskColor;
+
         [LabelText("载体图片居上距离")]
         public float carrierPosY;
 

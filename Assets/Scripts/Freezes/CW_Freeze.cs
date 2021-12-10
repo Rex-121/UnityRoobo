@@ -35,6 +35,9 @@ public class CW_Freeze : CoursewarePlayer
     [LabelText("Pudding动画")]
     public Pudding mPudding;
 
+    [LabelText("放大图带音频遮罩 ")]
+    public Transform mShadowAudioImage;
+
     private void Start()
     {
         GetComponent<Canvas>().worldCamera = Camera.main;
@@ -76,8 +79,10 @@ public class CW_Freeze : CoursewarePlayer
                     mPudding.gameObject.SetActive(true);
                     mAudioControl.gameObject.SetActive(true);
                     AudioControlScript audioControlWithDynamic = mAudioControl.GetComponent<AudioControlScript>();
-                    audioControlWithDynamic.InitAudioAndPlayType(freezeEntity, status =>
+                    audioControlWithDynamic.InitAudioAndPlayType(freezeEntity, (turple) =>
                     {
+                        var status = turple.Item1;
+                        var isLoop = turple.Item2;
                         bool isPlay = false;
                         switch (status)
                         {
@@ -99,19 +104,36 @@ public class CW_Freeze : CoursewarePlayer
                                 break;
                             case PlayerEvent.finish:
                                 isPlay = false;
-                                if (freezeEntity.isLoop)
-                                {
-
-                                }
                                 break;
                             case PlayerEvent.none:
                                 isPlay = false;
                                 break;
                         }
+                        if (!isLoop)
+                        {
+                            if (isPlay)
+                            {
+                                mPudding.DoSpeak();
+                            }
+                            else
+                            {
+                                mPudding.DoStop();
+                            }
+                        }
+                        else
+                        {
+                            mPudding.DoSpeak();
+                        }
+                        
                     });
-
-
-
+                    break;
+                case CW_Freeze_SO.FreezeEntity.Type.manyAudioAndImage:
+                    //mAudioControl.gameObject.SetActive(true);
+                    //AudioControlScript audioControlWithManyAudioImage = mAudioControl.GetComponent<AudioControlScript>();
+                    var manyAudioImage = Instantiate(prefabImage, freezeContainer.transform);
+                    var fzImage = manyAudioImage.GetComponent<FreezeAudioImageView>();
+                    fzImage.mShadow = mShadowAudioImage;
+                    fzImage.InitGrids(freezeEntity);
                     break;
             }
         }
@@ -144,5 +166,18 @@ public class CW_Freeze : CoursewarePlayer
         //释放播放器资源
         mShadowPlayer.Control.CloseMedia();
         mShadowVideo.gameObject.SetActive(false);
+    }
+
+    /// <summary>
+    /// 遮罩图片带音频点击隐藏
+    /// </summary>
+    public void OnOffActiveImageAudioShadow()
+    {
+        Debug.Log("OnClickToMoteScale OnOffActiveImageAudioShadow");
+        for (int i = 0; i < mShadowAudioImage.childCount; i++)
+        {
+            Destroy(mShadowAudioImage.GetChild(i).gameObject);
+        }
+        mShadowAudioImage.gameObject.SetActive(false);
     }
 }

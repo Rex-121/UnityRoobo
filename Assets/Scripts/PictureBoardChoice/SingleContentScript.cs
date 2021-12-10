@@ -36,14 +36,14 @@ public class SingleContentScript : MonoBehaviour
 
     private CW_PictrueBoardChoice_SO.PictureBoardEntity.Option option;
 
-    private System.Action<bool> resultAction;
+    private System.Action<CW_PictrueBoardChoice_SO.PictureBoardEntity.Option> resultAction;
 
     /// <summary>
     /// 初始化单个内容
     /// </summary>
     public void InitSingleOptions(CW_PictrueBoardChoice_SO.PictureBoardEntity.Option option, 
         CW_PictrueBoardChoice_SO.PictureBoardEntity.QuestionStyle style, 
-        System.Action<bool> resultAction)
+        System.Action<CW_PictrueBoardChoice_SO.PictureBoardEntity.Option> resultAction)
     {
         this.option = option;
         this.resultAction = resultAction;
@@ -65,7 +65,7 @@ public class SingleContentScript : MonoBehaviour
             Debug.Log("InitSingleOptions load image error:" + e);
         });
 
-        mImageCarrier.gameObject.SetActive(style != CW_PictrueBoardChoice_SO.PictureBoardEntity.QuestionStyle.playground);
+        //mImageCarrier.gameObject.SetActive(style != CW_PictrueBoardChoice_SO.PictureBoardEntity.QuestionStyle.playground);
         Debug.Log("QuestionStyle =>" + style);
         if (mCarrierImage.dic.ContainsKey(style)) {
             var dic = mCarrierImage.dic[style];
@@ -81,7 +81,7 @@ public class SingleContentScript : MonoBehaviour
     {
         if (option != null)
         {
-            resultAction(option.isAnswer == 1);
+            resultAction(option);
             mImageResult.gameObject.SetActive(true);
             
             Observable.Timer(System.TimeSpan.FromSeconds(1.5)).Subscribe(e=> {
@@ -98,7 +98,8 @@ public class SingleContentScript : MonoBehaviour
     {
         
         mImageMask.sprite = config.mask;
-        mImageBorder.sprite = config.mask;
+        mImageBorder.sprite = config.roundMask;
+        mImageBorder.color = config.roundMaskColor;
         mImageCarrier.sprite = config.carrier;
         mImageCarrier.SetNativeSize();
         mImageCarrier.gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, config.carrierPosY);
