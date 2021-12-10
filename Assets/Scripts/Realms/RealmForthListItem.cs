@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UniRx;
 using System;
+using UnityEngine.SceneManagement;
 
 public class RealmForthListItem : MonoBehaviour
 {
@@ -29,11 +30,14 @@ public class RealmForthListItem : MonoBehaviour
             }).AddTo(this);
         }
 
-
-
-
         label.text = this.round.name;
 
+    }
+
+
+    public void EnterCourseware()
+    {
+        SceneManager.LoadScene("Courseware");
     }
 
     private void OnDisable()
