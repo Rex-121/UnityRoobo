@@ -23,6 +23,9 @@ public class CoursewareManager : MonoBehaviour
     public GameObject cwCanvas;
 
 
+    public RealmForthDataConnect_SO dataSO;
+
+
     [LabelText("视频播放器")]
     public CoursewareVideoPlaylist videoPlaylist;
 
@@ -53,18 +56,32 @@ public class CoursewareManager : MonoBehaviour
              PlayCourseware(so);
          }).AddTo(this);
 
-        API.GetCoursePlayInfo()
-            .Subscribe(v => GetAllRoundList(v), (e) =>
-        {
-            Logging.Log((e as HttpError).message);
-        }).AddTo(this);
 
 
 
         Observable.EveryEndOfFrame().Take(1)
-            .Subscribe().AddTo(this);
+            .Subscribe(_ => GetDataFromSO()).AddTo(this);
     }
 
+    void GetDataFromSO()
+    {
+
+        if (dataSO.queue != null)
+        {
+            GetAllRoundList(dataSO.queue);
+        }
+        else
+        {
+
+            API.GetCoursePlayInfo()
+                .Subscribe(v => GetAllRoundList(v), (e) =>
+                {
+                    Logging.Log((e as HttpError).message);
+                }).AddTo(this);
+        }
+
+
+    }
 
     void GetAllRoundList(RoundQueue queue)
     {
