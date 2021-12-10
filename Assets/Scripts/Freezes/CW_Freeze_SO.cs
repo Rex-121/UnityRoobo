@@ -35,6 +35,7 @@ public class CW_Freeze_SO : CoursewarePlayer_SO
         //可能返回空 
         public string pudImage;//布丁形象
         public string pudDynamic;//布丁动效
+        public List<AudioAndImage> imgList;
 
         public enum Type
         {
@@ -43,6 +44,7 @@ public class CW_Freeze_SO : CoursewarePlayer_SO
             audio, //音频
             video,//视频
             audioAndDynamic,//音频+布丁动效
+            manyAudioAndImage //多图片+多音频
         }
 
         public class Audio
@@ -71,6 +73,13 @@ public class CW_Freeze_SO : CoursewarePlayer_SO
         public enum PudDynamic
         {
             commentary
+        }
+
+        public class AudioAndImage
+        {
+            public string audio;
+            public string img;
+            public bool isPlay;
         }
     }
 }

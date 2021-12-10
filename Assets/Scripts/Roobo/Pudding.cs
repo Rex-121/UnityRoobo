@@ -57,7 +57,15 @@ public class Pudding : MonoBehaviour
         animator.SetTrigger(action.ToString());
     }
 
+    public void DoSpeak()
+    {
+        animator.SetBool("speak", true);
+    }
 
+    public void DoStop()
+    {
+        animator.SetBool("speak", false);
+    }
 
     public void Speak(string content, string type)
     {
@@ -69,13 +77,13 @@ public class Pudding : MonoBehaviour
         player.Stop();
     }
 
-    public void DoSth()
-    {
-        Do(PuddingAction.starMagic);
-    }
+    //public void DoSth()
+    //{
+    //    Do(PuddingAction.starMagic);
+    //}
 
-    public void SpeakSth()
-    {
-        Speak("https://roobo-test.oss-cn-beijing.aliyuncs.com/appcourse/manager/2021-12-08/c6o7tnt7heu83afi10eg.wav", "audio");
-    }
+    //public void SpeakSth()
+    //{
+    //    Speak("https://roobo-test.oss-cn-beijing.aliyuncs.com/appcourse/manager/2021-12-08/c6o7tnt7heu83afi10eg.wav", "audio");
+    //}
 }

@@ -61,12 +61,12 @@ public class CoursewarePlaylist : CoursewareBasicPlaylist
     {
         base.Next();
 
-        spriteRendener.gameObject.SetActive(false);
+        //spriteRendener.gameObject.SetActive(false);
     }
 
     public override void ClearStage()
     {
-        spriteRendener.gameObject.SetActive(false);
+        //spriteRendener.gameObject.SetActive(false);
 
         base.ClearStage();
     }
