@@ -453,6 +453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12d3f573986114ee290da758d18b5a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dataSO: {fileID: 11400000, guid: f54ea07ef7d5f43fabedae9ef1af332d, type: 2}
   badge: {fileID: 3816581373034103943}
   iconImage: {fileID: 8313498468537800485}
   indexLabel: {fileID: 3816581373947429219}
