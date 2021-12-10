@@ -121,16 +121,15 @@ public class FreezeImageView : MonoBehaviour
         });
     }
 
-    private Vector3 worldPos;
     public void OnClickToMoteScale(GameObject gb)
     {
         var outerPrafeb = Instantiate(gb, mShadow.transform);
         outerPrafeb.GetComponent<Button>().enabled = false;
-        outerPrafeb.transform.localPosition = worldPos;
-        var aa=outerPrafeb.transform.DOMove(new Vector3(640, 400, 1000), 0.3f);
-        var bb=outerPrafeb.transform.DOScale(new Vector3(2, 2, 1000), 0.3f);
+        Debug.Log("OnClickToMoteScale="+ outerPrafeb.name);
+        outerPrafeb.GetComponent<RectTransform>().SetPositionAndRotation(Vector3.zero, Quaternion.identity);
         mShadow.gameObject.SetActive(true);
+        var aa = outerPrafeb.transform.DOScale(new Vector3(2, 2, 1000), 0.3f);
         aa.Complete();
-        bb.Complete();
+
     }
 }

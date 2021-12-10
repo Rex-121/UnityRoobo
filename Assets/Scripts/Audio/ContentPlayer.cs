@@ -27,7 +27,7 @@ public class ContentPlayer: MonoBehaviour
         }
 
         player = GetComponent<AudioSource>();
-        //initSvui();
+        initSvui();
     }
 
 
@@ -41,18 +41,18 @@ public class ContentPlayer: MonoBehaviour
         UpdatePlayerStatus();
     }
 
-    //private void initSvui()
-    //{
-    //    SvuiBridge.Shared.initSvui("JDJ5HOluh", "e3079fc40bf7fce29a0edcbf5fa7febb", "JD:813c0b516b3db6c78da42815e90eec4f", true).TakeLast(1)
-    //    .DoOnError(e =>
-    //    {
-    //        Logging.Log("svui init failed:" + e.Message);
-    //    })
-    //  .Subscribe(success =>
-    //  {
-    //      Logging.Log("success");
-    //  });
-    //}
+    private void initSvui()
+    {
+        SvuiBridge.Shared.initSvui("JDJ5HOluh", "e3079fc40bf7fce29a0edcbf5fa7febb", "JD:813c0b516b3db6c78da42815e90eec4f", true).TakeLast(1)
+        .DoOnError(e =>
+        {
+            Logging.Log("svui init failed:" + e.Message);
+        })
+      .Subscribe(success =>
+      {
+          Logging.Log("success");
+      });
+    }
 
     public void PlayContentByType(string content, string type)
     {
@@ -74,7 +74,7 @@ public class ContentPlayer: MonoBehaviour
     public void PlayTTS(string tts)
     {
         status.Value = PlayerEvent.loading;
-        SvuiBridge.Shared.tts(tts, SvuiBridge.Language.ENG).TakeLast(1)
+        SvuiBridge.Shared.tts(tts).TakeLast(1)
           .DoOnError(e =>
           {
               status.Value = PlayerEvent.none;

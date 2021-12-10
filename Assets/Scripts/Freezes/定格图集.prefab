@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 8699276079206489960}
   - component: {fileID: 5207839488494879916}
   - component: {fileID: 6344595918870452939}
+  - component: {fileID: 5132837733706329102}
   m_Layer: 5
   m_Name: "\u5B9A\u683C\u56FE\u96C6"
   m_TagString: Untagged
@@ -194,6 +195,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f55ea418ea80776499043379bfe3fc2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTopGrid: {fileID: 5207839489871575147}
+  mBottomGrid: {fileID: 5207839489684059386}
+  mCenterGrid: {fileID: 5207839487908803668}
+  mShadow: {fileID: 0}
+  prefabImage: {fileID: 5735477048195443424, guid: f5b03245e1863d242a7a942fcd71c4fc, type: 3}
+--- !u!114 &5132837733706329102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5207839488494879912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2011817d6b2a93049b732d730833b617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mTopGrid: {fileID: 5207839489871575147}

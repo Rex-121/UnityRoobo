@@ -1,0 +1,405 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41427d3d078a9984baa366752224b122, type: 3}
+  m_Name: "\u753B\u677F\u8F7D\u4F53\u56FE"
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects:
+    - {fileID: 21300000, guid: 485c6ca2ef26ebe42b4326c2a6fa8248, type: 3}
+    - {fileID: 21300000, guid: 62ed3a1ad92b71346903da232553c9a1, type: 3}
+    - {fileID: 21300000, guid: 8804e083776c5ee49a3b5394ffe06673, type: 3}
+    - {fileID: 21300000, guid: 3ac687aa9a22a7b46a30ed589729a270, type: 3}
+    - {fileID: 21300000, guid: 7b0f4f5017394ff47a1ea3ef4b84be2e, type: 3}
+    - {fileID: 21300000, guid: 517ef1100070a214a9d5659e9eac6a98, type: 3}
+    - {fileID: 21300000, guid: 195174f0db9011a499085e9329182752, type: 3}
+    - {fileID: 21300000, guid: 53b8ba11321830e429c4489815437d03, type: 3}
+    - {fileID: 21300000, guid: 0d1b97e7d3f104b439140b23c65a1602, type: 3}
+    - {fileID: 21300000, guid: 6d73b495351a09c42a89d64aba5982b6, type: 3}
+    - {fileID: 21300000, guid: e78f92b3d88359a47bd2ac6637644677, type: 3}
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: dic
+      Entry: 7
+      Data: 0|Ludiq.FlexibleDictionary`2[[CW_PictrueBoardChoice_SO+PictureBoardEntity+QuestionStyle,
+        Assembly-CSharp],[CW_PictureChoice_Carried_SO+Config, Assembly-CSharp]],
+        Ludiq.Core.Runtime
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[CW_PictrueBoardChoice_SO+PictureBoardEntity+QuestionStyle,
+        Assembly-CSharp]], mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 4
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: CW_PictureChoice_Carried_SO+Config, Assembly-CSharp
+    - Name: carrier
+      Entry: 10
+      Data: 0
+    - Name: mask
+      Entry: 10
+      Data: 1
+    - Name: roundMask
+      Entry: 10
+      Data: 2
+    - Name: roundMaskColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 0.9137255
+    - Name: 
+      Entry: 4
+      Data: 0.5372549
+    - Name: 
+      Entry: 4
+      Data: 0.321568638
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: carrierPosY
+      Entry: 4
+      Data: 20
+    - Name: dic
+      Entry: 7
+      Data: 2|Ludiq.FlexibleDictionary`2[[System.Int32, mscorlib],[System.Single,
+        mscorlib]], Ludiq.Core.Runtime
+    - Name: comparer
+      Entry: 7
+      Data: 3|System.Collections.Generic.GenericEqualityComparer`1[[System.Int32,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 4
+      Data: 50
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 4
+      Data: 150
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: CW_PictureChoice_Carried_SO+Config, Assembly-CSharp
+    - Name: carrier
+      Entry: 10
+      Data: 3
+    - Name: mask
+      Entry: 10
+      Data: 4
+    - Name: roundMask
+      Entry: 10
+      Data: 5
+    - Name: roundMaskColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.7137255
+    - Name: 
+      Entry: 4
+      Data: 0.392156869
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: carrierPosY
+      Entry: 4
+      Data: -90
+    - Name: dic
+      Entry: 7
+      Data: 4|Ludiq.FlexibleDictionary`2[[System.Int32, mscorlib],[System.Single,
+        mscorlib]], Ludiq.Core.Runtime
+    - Name: comparer
+      Entry: 9
+      Data: 3
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 4
+      Data: 30
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 4
+      Data: 60
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: CW_PictureChoice_Carried_SO+Config, Assembly-CSharp
+    - Name: carrier
+      Entry: 10
+      Data: 6
+    - Name: mask
+      Entry: 10
+      Data: 6
+    - Name: roundMask
+      Entry: 10
+      Data: 7
+    - Name: roundMaskColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 0.607843161
+    - Name: 
+      Entry: 4
+      Data: 0
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: carrierPosY
+      Entry: 4
+      Data: 0
+    - Name: dic
+      Entry: 7
+      Data: 5|Ludiq.FlexibleDictionary`2[[System.Int32, mscorlib],[System.Single,
+        mscorlib]], Ludiq.Core.Runtime
+    - Name: comparer
+      Entry: 9
+      Data: 3
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 4
+      Data: 100
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 4
+      Data: 70
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: CW_PictureChoice_Carried_SO+Config, Assembly-CSharp
+    - Name: carrier
+      Entry: 10
+      Data: 8
+    - Name: mask
+      Entry: 10
+      Data: 9
+    - Name: roundMask
+      Entry: 10
+      Data: 10
+    - Name: roundMaskColor
+      Entry: 7
+      Data: UnityEngine.Color, UnityEngine.CoreModule
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 4
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: carrierPosY
+      Entry: 4
+      Data: -58
+    - Name: dic
+      Entry: 7
+      Data: 6|Ludiq.FlexibleDictionary`2[[System.Int32, mscorlib],[System.Single,
+        mscorlib]], Ludiq.Core.Runtime
+    - Name: comparer
+      Entry: 9
+      Data: 3
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 4
+      Data: 80
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 4
+      Data: 20
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 

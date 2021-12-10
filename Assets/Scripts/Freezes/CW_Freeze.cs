@@ -2,6 +2,7 @@ using RenderHeads.Media.AVProVideo;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
+using UniRx;
 
 public class CW_Freeze : CoursewarePlayer
 {
@@ -33,6 +34,9 @@ public class CW_Freeze : CoursewarePlayer
 
     [LabelText("Pudding动画")]
     public Pudding mPudding;
+
+    [LabelText("放大图带音频遮罩 ")]
+    public Transform mShadowAudioImage;
 
     private void Start()
     {
@@ -72,13 +76,64 @@ public class CW_Freeze : CoursewarePlayer
                     videoView.InitGrids(freezeEntity.videoList);
                     break;
                 case CW_Freeze_SO.FreezeEntity.Type.audioAndDynamic:
+                    mPudding.gameObject.SetActive(true);
                     mAudioControl.gameObject.SetActive(true);
                     AudioControlScript audioControlWithDynamic = mAudioControl.GetComponent<AudioControlScript>();
-                    audioControlWithDynamic.InitAudioAndPlayType(freezeEntity);
-
-                    //mPudding.Do(PuddingAction.speak);
-
-
+                    audioControlWithDynamic.InitAudioAndPlayType(freezeEntity, (turple) =>
+                    {
+                        var status = turple.Item1;
+                        var isLoop = turple.Item2;
+                        bool isPlay = false;
+                        switch (status)
+                        {
+                            case PlayerEvent.def:
+                                isPlay = false;
+                                break;
+                            case PlayerEvent.playing:
+                                isPlay = true;
+                                break;
+                            case PlayerEvent.pause:
+                                isPlay = false;
+                                break;
+                            case PlayerEvent.resume:
+                                isPlay = true;
+                                break;
+                            case PlayerEvent.stop:
+                                break;
+                            case PlayerEvent.interrupt:
+                                break;
+                            case PlayerEvent.finish:
+                                isPlay = false;
+                                break;
+                            case PlayerEvent.none:
+                                isPlay = false;
+                                break;
+                        }
+                        if (!isLoop)
+                        {
+                            if (isPlay)
+                            {
+                                mPudding.DoSpeak();
+                            }
+                            else
+                            {
+                                mPudding.DoStop();
+                            }
+                        }
+                        else
+                        {
+                            mPudding.DoSpeak();
+                        }
+                        
+                    });
+                    break;
+                case CW_Freeze_SO.FreezeEntity.Type.manyAudioAndImage:
+                    //mAudioControl.gameObject.SetActive(true);
+                    //AudioControlScript audioControlWithManyAudioImage = mAudioControl.GetComponent<AudioControlScript>();
+                    var manyAudioImage = Instantiate(prefabImage, freezeContainer.transform);
+                    var fzImage = manyAudioImage.GetComponent<FreezeAudioImageView>();
+                    fzImage.mShadow = mShadowAudioImage;
+                    fzImage.InitGrids(freezeEntity);
                     break;
             }
         }
@@ -111,5 +166,18 @@ public class CW_Freeze : CoursewarePlayer
         //释放播放器资源
         mShadowPlayer.Control.CloseMedia();
         mShadowVideo.gameObject.SetActive(false);
+    }
+
+    /// <summary>
+    /// 遮罩图片带音频点击隐藏
+    /// </summary>
+    public void OnOffActiveImageAudioShadow()
+    {
+        Debug.Log("OnClickToMoteScale OnOffActiveImageAudioShadow");
+        for (int i = 0; i < mShadowAudioImage.childCount; i++)
+        {
+            Destroy(mShadowAudioImage.GetChild(i).gameObject);
+        }
+        mShadowAudioImage.gameObject.SetActive(false);
     }
 }
