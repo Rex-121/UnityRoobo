@@ -34,29 +34,6 @@ public class RealmLevelsList : SerializedMonoBehaviour
     [LabelText("课程等级")]
     public ClassLevels levelsSeek;
 
-    //public class CourseLevels
-    //{
-
-    //    public Dictionary<int, CourseLevels_Net.Levels> levels = new Dictionary<int, CourseLevels_Net.Levels>();
-
-
-    //    public CourseLevels(CourseLevels_Net net)
-    //    {
-    //        if (net.items != null)
-    //        {
-    //            for (int i = 0; i < Math.Max(6, net.items.Count); i++)
-    //            {
-    //                var n = net.items[i];
-
-    //                if (n != null)
-    //                {
-    //                    levels.Add(i + 1, n);
-    //                }
-    //            }
-    //        }
-
-    //    }
-    //}
 
     IDisposable dis;
     private void Start()

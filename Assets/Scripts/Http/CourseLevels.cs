@@ -75,7 +75,7 @@ public class CourseLevels_Net
         //}
 
 
-
+        public RoundQueue queue;
 
         public RoundIsPlaying Merge()
         {
@@ -89,7 +89,7 @@ public class CourseLevels_Net
                 r.Add(new Round(v));
             }
 
-            //RoundQueue
+            queue = new RoundQueue(r);
 
             List<RoundIsPlaying> play = new List<RoundIsPlaying>();
 

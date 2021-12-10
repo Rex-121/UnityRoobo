@@ -11,6 +11,8 @@ using Newtonsoft.Json.Linq;
 using System.ComponentModel;
 using Newtonsoft.Json.Converters;
 
+using Sirenix.OdinInspector;
+
 public class ForgeData
 {
 
@@ -38,7 +40,16 @@ public class ForgeData
 
         public enum Type
         {
-            Video, Picture, PicBook, WordFuns, Dubbing
+            [LabelText("视频")]
+            Video,
+            [LabelText("图片")]
+            Picture,
+            [LabelText("电子绘本")]
+            PicBook,
+            [LabelText("闪卡")]
+            WordFuns,
+            [LabelText("趣配音")]
+            Dubbing
         }
 
         [JsonConverter(typeof(StringEnumConverter))]
@@ -49,21 +60,21 @@ public class ForgeData
 
         public enum DisplayMode
         {
-            [Description("串场")]
+            [Description("串场"), LabelText("串场")]
             only_play,
-            [Description("不展示")]
+            [Description("不展示"), LabelText("不展示")]
             no_display,
-            [Description("展示")]
+            [Description("展示"), LabelText("展示")]
             common
         }
 
         public enum Pipeline
         {
-            [Description("返回")]
+            [Description("返回"), LabelText("返回")]
             pop,
-            [Description("暂停")]
+            [Description("暂停"), LabelText("暂停")]
             pause,
-            [Description("继续")]
+            [Description("继续"), LabelText("继续")]
             continues
         }
 
