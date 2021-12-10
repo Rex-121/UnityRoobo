@@ -10,6 +10,9 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel;
 using Newtonsoft.Json.Converters;
+using System.Linq;
+
+using Sirenix.OdinInspector;
 
 public class Forge
 {
@@ -152,8 +155,23 @@ public class RoundQueue
     public RoundQueue(List<Round> r)
     {
         rounds = r;
+
+        if (r == null || r.Count == 0) return;
+
+        round = r.First();
+
+        if (r.Count <= 1) return;
+
+        var newRound = round;
+
+        for (int i = 1; i < r.Count; i++)
+        {
+            newRound.next = r[i];
+            newRound = r[i];
+        }
     }
 
+    [ShowInInspector]
     public Round round;
 }
 
@@ -161,13 +179,18 @@ public class RoundQueue
 public class Round
 {
 
+
+    [ShowInInspector, HideLabel]
     /// <summary>
     /// 名称
     /// </summary>
     public string name;
 
+    [Sirenix.OdinInspector.ReadOnly]
+    [Title("$name", subtitle: "$id"), HideLabel]
     public string icon;
 
+    [HideInInspector]
     public int id;
 
     public ForgeData.Rounds.DisplayMode displayMode;
@@ -198,17 +221,51 @@ public class Round
 
     public List<RoundIsPlaying> playlist;
 
+    [Sirenix.OdinInspector.ReadOnly]
     public string pauseImage;
 
-    struct Picture
-    {
-        public string src;
+    public Round next;
 
-        public ForgeData.RoundProcess.Process process;
+    [ShowInInspector]
+    public int displayCount
+    {
+        get
+        {
+            return allDisplayInRealm.Count;
+        }
+    }
+
+    [HideInInspector]
+    public List<Round> allDisplayInRealm
+    {
+        get
+        {
+            List<Round> r = new List<Round>();
+
+            r.Add(diaplayInRealm);
+
+            if (next == null) return r;
+
+            r.AddRange(next.allDisplayInRealm);
+
+            r.RemoveAll(v => v == null);
+
+            return r;
+        }
     }
 
 
-    public Round next;
+    private Round diaplayInRealm
+    {
+        get
+        {
+            switch (displayMode)
+            {
+                case ForgeData.Rounds.DisplayMode.common: return this;
+                default: return null;
+            }
+        }
+    }
 
 }
 
